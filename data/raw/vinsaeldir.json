@@ -1,0 +1,4643 @@
+{
+ "popularity": [
+  {
+   "nafn": "Anna",
+   "afbrigdi": [],
+   "saeti": 1,
+   "fyrraSaeti": 2,
+   "fjoldi": 4782,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Guðrún",
+   "afbrigdi": [],
+   "saeti": 2,
+   "fyrraSaeti": 1,
+   "fjoldi": 4472,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Kristín",
+   "afbrigdi": [],
+   "saeti": 3,
+   "fyrraSaeti": 3,
+   "fjoldi": 3383,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Sigríður",
+   "afbrigdi": [],
+   "saeti": 4,
+   "fyrraSaeti": 4,
+   "fjoldi": 3192,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Margrét",
+   "afbrigdi": [
+    "Margrjet",
+    "Margret"
+   ],
+   "saeti": 5,
+   "fyrraSaeti": 5,
+   "fjoldi": 2838,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Helga",
+   "afbrigdi": [],
+   "saeti": 6,
+   "fyrraSaeti": 6,
+   "fjoldi": 2674,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Sigrún",
+   "afbrigdi": [],
+   "saeti": 7,
+   "fyrraSaeti": 7,
+   "fjoldi": 2466,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ingibjörg",
+   "afbrigdi": [],
+   "saeti": 8,
+   "fyrraSaeti": 8,
+   "fjoldi": 2054,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "María",
+   "afbrigdi": [],
+   "saeti": 9,
+   "fyrraSaeti": 9,
+   "fjoldi": 1964,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Jóhanna",
+   "afbrigdi": [],
+   "saeti": 10,
+   "fyrraSaeti": 10,
+   "fjoldi": 1855,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Katrín",
+   "afbrigdi": [],
+   "saeti": 11,
+   "fyrraSaeti": 12,
+   "fjoldi": 1627,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Elín",
+   "afbrigdi": [],
+   "saeti": 12,
+   "fyrraSaeti": 11,
+   "fjoldi": 1610,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Eva",
+   "afbrigdi": [],
+   "saeti": 13,
+   "fyrraSaeti": 14,
+   "fjoldi": 1460,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Hildur",
+   "afbrigdi": [],
+   "saeti": 13,
+   "fyrraSaeti": 13,
+   "fjoldi": 1460,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Sara",
+   "afbrigdi": [],
+   "saeti": 15,
+   "fyrraSaeti": 21,
+   "fjoldi": 1394,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Lilja",
+   "afbrigdi": [],
+   "saeti": 16,
+   "fyrraSaeti": 15,
+   "fjoldi": 1359,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Elísabet",
+   "afbrigdi": [
+    "Elísabeth"
+   ],
+   "saeti": 17,
+   "fyrraSaeti": 19,
+   "fjoldi": 1314,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ragnheiður",
+   "afbrigdi": [],
+   "saeti": 18,
+   "fyrraSaeti": 16,
+   "fjoldi": 1241,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ásta",
+   "afbrigdi": [],
+   "saeti": 19,
+   "fyrraSaeti": 17,
+   "fjoldi": 1237,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Guðbjörg",
+   "afbrigdi": [],
+   "saeti": 20,
+   "fyrraSaeti": 18,
+   "fjoldi": 1171,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Erla",
+   "afbrigdi": [],
+   "saeti": 21,
+   "fyrraSaeti": 20,
+   "fjoldi": 1168,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Auður",
+   "afbrigdi": [],
+   "saeti": 22,
+   "fyrraSaeti": 25,
+   "fjoldi": 1113,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Steinunn",
+   "afbrigdi": [],
+   "saeti": 23,
+   "fyrraSaeti": 24,
+   "fjoldi": 1106,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Guðný",
+   "afbrigdi": [],
+   "saeti": 24,
+   "fyrraSaeti": 22,
+   "fjoldi": 1088,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Kolbrún",
+   "afbrigdi": [],
+   "saeti": 25,
+   "fyrraSaeti": 26,
+   "fjoldi": 1085,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Íris",
+   "afbrigdi": [],
+   "saeti": 26,
+   "fyrraSaeti": 31,
+   "fjoldi": 1077,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ólöf",
+   "afbrigdi": [],
+   "saeti": 27,
+   "fyrraSaeti": 23,
+   "fjoldi": 1071,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Inga",
+   "afbrigdi": [],
+   "saeti": 28,
+   "fyrraSaeti": 27,
+   "fjoldi": 1050,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Inga",
+   "afbrigdi": [],
+   "saeti": 28,
+   "fyrraSaeti": 2928,
+   "fjoldi": 1050,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Bryndís",
+   "afbrigdi": [],
+   "saeti": 29,
+   "fyrraSaeti": 28,
+   "fjoldi": 1049,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Berglind",
+   "afbrigdi": [],
+   "saeti": 30,
+   "fyrraSaeti": 30,
+   "fjoldi": 1047,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Sólveig",
+   "afbrigdi": [
+    "Solveig"
+   ],
+   "saeti": 31,
+   "fyrraSaeti": 29,
+   "fjoldi": 1036,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Rakel",
+   "afbrigdi": [],
+   "saeti": 32,
+   "fyrraSaeti": 37,
+   "fjoldi": 1025,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Hrafnhildur",
+   "afbrigdi": [],
+   "saeti": 33,
+   "fyrraSaeti": 36,
+   "fjoldi": 1013,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ásdís",
+   "afbrigdi": [],
+   "saeti": 34,
+   "fyrraSaeti": 32,
+   "fjoldi": 1007,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Þórunn",
+   "afbrigdi": [],
+   "saeti": 35,
+   "fyrraSaeti": 33,
+   "fjoldi": 996,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Unnur",
+   "afbrigdi": [],
+   "saeti": 36,
+   "fyrraSaeti": 35,
+   "fjoldi": 986,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Hulda",
+   "afbrigdi": [],
+   "saeti": 37,
+   "fyrraSaeti": 34,
+   "fjoldi": 978,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Þóra",
+   "afbrigdi": [],
+   "saeti": 38,
+   "fyrraSaeti": 38,
+   "fjoldi": 913,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Þórdís",
+   "afbrigdi": [],
+   "saeti": 39,
+   "fyrraSaeti": 40,
+   "fjoldi": 901,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Birna",
+   "afbrigdi": [],
+   "saeti": 40,
+   "fyrraSaeti": 39,
+   "fjoldi": 886,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Hanna",
+   "afbrigdi": [],
+   "saeti": 41,
+   "fyrraSaeti": 46,
+   "fjoldi": 871,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Emilía",
+   "afbrigdi": [
+    "Emelía"
+   ],
+   "saeti": 42,
+   "fyrraSaeti": 52,
+   "fjoldi": 863,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Halldóra",
+   "afbrigdi": [],
+   "saeti": 43,
+   "fyrraSaeti": 42,
+   "fjoldi": 823,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Karen",
+   "afbrigdi": [],
+   "saeti": 44,
+   "fyrraSaeti": 44,
+   "fjoldi": 822,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Sandra",
+   "afbrigdi": [],
+   "saeti": 45,
+   "fyrraSaeti": 47,
+   "fjoldi": 820,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Linda",
+   "afbrigdi": [],
+   "saeti": 46,
+   "fyrraSaeti": 45,
+   "fjoldi": 813,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Harpa",
+   "afbrigdi": [],
+   "saeti": 47,
+   "fyrraSaeti": 49,
+   "fjoldi": 811,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Erna",
+   "afbrigdi": [],
+   "saeti": 48,
+   "fyrraSaeti": 43,
+   "fjoldi": 809,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Andrea",
+   "afbrigdi": [],
+   "saeti": 49,
+   "fyrraSaeti": 55,
+   "fjoldi": 803,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Andrea",
+   "afbrigdi": [],
+   "saeti": 49,
+   "fyrraSaeti": 1067,
+   "fjoldi": 803,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Jóna",
+   "afbrigdi": [],
+   "saeti": 50,
+   "fyrraSaeti": 41,
+   "fjoldi": 800,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Telma",
+   "afbrigdi": [
+    "Thelma"
+   ],
+   "saeti": 51,
+   "fyrraSaeti": 50,
+   "fjoldi": 798,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Edda",
+   "afbrigdi": [],
+   "saeti": 52,
+   "fyrraSaeti": 48,
+   "fjoldi": 777,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Hafdís",
+   "afbrigdi": [],
+   "saeti": 53,
+   "fyrraSaeti": 51,
+   "fjoldi": 756,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Helena",
+   "afbrigdi": [],
+   "saeti": 54,
+   "fyrraSaeti": 58,
+   "fjoldi": 740,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Tinna",
+   "afbrigdi": [],
+   "saeti": 55,
+   "fyrraSaeti": 54,
+   "fjoldi": 735,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Brynja",
+   "afbrigdi": [],
+   "saeti": 56,
+   "fyrraSaeti": 56,
+   "fjoldi": 729,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Sóley",
+   "afbrigdi": [],
+   "saeti": 57,
+   "fyrraSaeti": 63,
+   "fjoldi": 726,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Aníta",
+   "afbrigdi": [
+    "Anita"
+   ],
+   "saeti": 58,
+   "fyrraSaeti": 64,
+   "fjoldi": 704,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Valgerður",
+   "afbrigdi": [],
+   "saeti": 59,
+   "fyrraSaeti": 53,
+   "fjoldi": 693,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Lára",
+   "afbrigdi": [],
+   "saeti": 60,
+   "fyrraSaeti": 62,
+   "fjoldi": 660,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Arna",
+   "afbrigdi": [],
+   "saeti": 61,
+   "fyrraSaeti": 66,
+   "fjoldi": 657,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Jónína",
+   "afbrigdi": [],
+   "saeti": 62,
+   "fyrraSaeti": 57,
+   "fjoldi": 648,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Sigurbjörg",
+   "afbrigdi": [],
+   "saeti": 63,
+   "fyrraSaeti": 60,
+   "fjoldi": 647,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Guðlaug",
+   "afbrigdi": [],
+   "saeti": 64,
+   "fyrraSaeti": 59,
+   "fjoldi": 637,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Kristjana",
+   "afbrigdi": [],
+   "saeti": 65,
+   "fyrraSaeti": 61,
+   "fjoldi": 632,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Marta",
+   "afbrigdi": [
+    "Martha"
+   ],
+   "saeti": 66,
+   "fyrraSaeti": 77,
+   "fjoldi": 626,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Hjördís",
+   "afbrigdi": [],
+   "saeti": 67,
+   "fyrraSaeti": 65,
+   "fjoldi": 622,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Freyja",
+   "afbrigdi": [],
+   "saeti": 68,
+   "fyrraSaeti": 82,
+   "fjoldi": 621,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Stefanía",
+   "afbrigdi": [],
+   "saeti": 69,
+   "fyrraSaeti": 67,
+   "fjoldi": 601,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Viktoría",
+   "afbrigdi": [],
+   "saeti": 70,
+   "fyrraSaeti": 81,
+   "fjoldi": 590,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Alexandra",
+   "afbrigdi": [],
+   "saeti": 71,
+   "fyrraSaeti": 90,
+   "fjoldi": 584,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Júlía",
+   "afbrigdi": [],
+   "saeti": 72,
+   "fyrraSaeti": 83,
+   "fjoldi": 579,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Sunna",
+   "afbrigdi": [],
+   "saeti": 73,
+   "fyrraSaeti": 74,
+   "fjoldi": 570,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Rósa",
+   "afbrigdi": [],
+   "saeti": 74,
+   "fyrraSaeti": 71,
+   "fjoldi": 565,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Hrefna",
+   "afbrigdi": [],
+   "saeti": 75,
+   "fyrraSaeti": 69,
+   "fjoldi": 563,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ísabella",
+   "afbrigdi": [
+    "Ísabel",
+    "Isabella",
+    "Isabel"
+   ],
+   "saeti": 75,
+   "fyrraSaeti": 96,
+   "fjoldi": 563,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Laufey",
+   "afbrigdi": [],
+   "saeti": 77,
+   "fyrraSaeti": 73,
+   "fjoldi": 561,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ragnhildur",
+   "afbrigdi": [],
+   "saeti": 77,
+   "fyrraSaeti": 68,
+   "fjoldi": 561,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Hólmfríður",
+   "afbrigdi": [],
+   "saeti": 79,
+   "fyrraSaeti": 72,
+   "fjoldi": 541,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Aðalheiður",
+   "afbrigdi": [],
+   "saeti": 80,
+   "fyrraSaeti": 70,
+   "fjoldi": 535,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Katla",
+   "afbrigdi": [],
+   "saeti": 80,
+   "fyrraSaeti": 96,
+   "fjoldi": 535,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Dagný",
+   "afbrigdi": [],
+   "saeti": 82,
+   "fyrraSaeti": 78,
+   "fjoldi": 534,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Áslaug",
+   "afbrigdi": [],
+   "saeti": 83,
+   "fyrraSaeti": 74,
+   "fjoldi": 533,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Emma",
+   "afbrigdi": [],
+   "saeti": 84,
+   "fyrraSaeti": 105,
+   "fjoldi": 524,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Birta",
+   "afbrigdi": [],
+   "saeti": 85,
+   "fyrraSaeti": 91,
+   "fjoldi": 521,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Agnes",
+   "afbrigdi": [],
+   "saeti": 86,
+   "fyrraSaeti": 85,
+   "fjoldi": 512,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Björg",
+   "afbrigdi": [],
+   "saeti": 86,
+   "fyrraSaeti": 76,
+   "fjoldi": 512,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Halla",
+   "afbrigdi": [],
+   "saeti": 88,
+   "fyrraSaeti": 79,
+   "fjoldi": 510,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ágústa",
+   "afbrigdi": [],
+   "saeti": 89,
+   "fyrraSaeti": 80,
+   "fjoldi": 508,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Embla",
+   "afbrigdi": [],
+   "saeti": 90,
+   "fyrraSaeti": 115,
+   "fjoldi": 506,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Elva",
+   "afbrigdi": [
+    "Elfa"
+   ],
+   "saeti": 91,
+   "fyrraSaeti": 87,
+   "fjoldi": 505,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Hekla",
+   "afbrigdi": [],
+   "saeti": 92,
+   "fyrraSaeti": 106,
+   "fjoldi": 503,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Elsa",
+   "afbrigdi": [],
+   "saeti": 93,
+   "fyrraSaeti": 86,
+   "fjoldi": 487,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ingunn",
+   "afbrigdi": [],
+   "saeti": 94,
+   "fyrraSaeti": 84,
+   "fjoldi": 486,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Soffía",
+   "afbrigdi": [
+    "Sofie"
+   ],
+   "saeti": 95,
+   "fyrraSaeti": 89,
+   "fjoldi": 478,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Fanney",
+   "afbrigdi": [],
+   "saeti": 96,
+   "fyrraSaeti": 99,
+   "fjoldi": 474,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Maria",
+   "afbrigdi": [],
+   "saeti": 97,
+   "fyrraSaeti": 144,
+   "fjoldi": 473,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Rebekka",
+   "afbrigdi": [],
+   "saeti": 98,
+   "fyrraSaeti": 100,
+   "fjoldi": 469,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Vigdís",
+   "afbrigdi": [],
+   "saeti": 99,
+   "fyrraSaeti": 95,
+   "fjoldi": 467,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Ása",
+   "afbrigdi": [],
+   "saeti": 100,
+   "fyrraSaeti": 94,
+   "fjoldi": 457,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Rannveig",
+   "afbrigdi": [],
+   "saeti": 100,
+   "fyrraSaeti": 92,
+   "fjoldi": 457,
+   "gender": "kvk"
+  },
+  {
+   "nafn": "Jón",
+   "afbrigdi": [],
+   "saeti": 1,
+   "fyrraSaeti": 1,
+   "fjoldi": 5052,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Sigurður",
+   "afbrigdi": [],
+   "saeti": 2,
+   "fyrraSaeti": 2,
+   "fjoldi": 4073,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Guðmundur",
+   "afbrigdi": [],
+   "saeti": 3,
+   "fyrraSaeti": 3,
+   "fjoldi": 3838,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Gunnar",
+   "afbrigdi": [],
+   "saeti": 4,
+   "fyrraSaeti": 4,
+   "fjoldi": 3074,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ólafur",
+   "afbrigdi": [
+    "Olav"
+   ],
+   "saeti": 5,
+   "fyrraSaeti": 5,
+   "fjoldi": 2743,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Kristján",
+   "afbrigdi": [
+    "Kristian",
+    "Christian"
+   ],
+   "saeti": 6,
+   "fyrraSaeti": 7,
+   "fjoldi": 2451,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Einar",
+   "afbrigdi": [],
+   "saeti": 7,
+   "fyrraSaeti": 6,
+   "fjoldi": 2390,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Magnús",
+   "afbrigdi": [],
+   "saeti": 8,
+   "fyrraSaeti": 8,
+   "fjoldi": 2287,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Stefán",
+   "afbrigdi": [
+    "Stefan"
+   ],
+   "saeti": 9,
+   "fyrraSaeti": 9,
+   "fjoldi": 2281,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Jóhann",
+   "afbrigdi": [],
+   "saeti": 10,
+   "fyrraSaeti": 10,
+   "fjoldi": 2039,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Arnar",
+   "afbrigdi": [],
+   "saeti": 11,
+   "fyrraSaeti": 12,
+   "fjoldi": 1742,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Björn",
+   "afbrigdi": [],
+   "saeti": 12,
+   "fyrraSaeti": 11,
+   "fjoldi": 1715,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Árni",
+   "afbrigdi": [],
+   "saeti": 13,
+   "fyrraSaeti": 13,
+   "fjoldi": 1558,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Bjarni",
+   "afbrigdi": [],
+   "saeti": 14,
+   "fyrraSaeti": 14,
+   "fjoldi": 1473,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Aron",
+   "afbrigdi": [],
+   "saeti": 15,
+   "fyrraSaeti": 22,
+   "fjoldi": 1451,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Daníel",
+   "afbrigdi": [],
+   "saeti": 16,
+   "fyrraSaeti": 18,
+   "fjoldi": 1448,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Helgi",
+   "afbrigdi": [],
+   "saeti": 17,
+   "fyrraSaeti": 15,
+   "fjoldi": 1435,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Pétur",
+   "afbrigdi": [
+    "Pjetur"
+   ],
+   "saeti": 18,
+   "fyrraSaeti": 17,
+   "fjoldi": 1402,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Halldór",
+   "afbrigdi": [],
+   "saeti": 19,
+   "fyrraSaeti": 16,
+   "fjoldi": 1394,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Kristinn",
+   "afbrigdi": [],
+   "saeti": 20,
+   "fyrraSaeti": 19,
+   "fjoldi": 1282,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ragnar",
+   "afbrigdi": [],
+   "saeti": 21,
+   "fyrraSaeti": 20,
+   "fjoldi": 1256,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Róbert",
+   "afbrigdi": [
+    "Robert"
+   ],
+   "saeti": 22,
+   "fyrraSaeti": 25,
+   "fjoldi": 1237,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Alexander",
+   "afbrigdi": [],
+   "saeti": 23,
+   "fyrraSaeti": 27,
+   "fjoldi": 1235,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Viktor",
+   "afbrigdi": [
+    "Victor"
+   ],
+   "saeti": 24,
+   "fyrraSaeti": 33,
+   "fjoldi": 1220,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Gísli",
+   "afbrigdi": [],
+   "saeti": 25,
+   "fyrraSaeti": 21,
+   "fjoldi": 1204,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Þorsteinn",
+   "afbrigdi": [],
+   "saeti": 26,
+   "fyrraSaeti": 23,
+   "fjoldi": 1157,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Guðjón",
+   "afbrigdi": [],
+   "saeti": 27,
+   "fyrraSaeti": 24,
+   "fjoldi": 1117,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Andri",
+   "afbrigdi": [],
+   "saeti": 28,
+   "fyrraSaeti": 32,
+   "fjoldi": 1084,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Óskar",
+   "afbrigdi": [],
+   "saeti": 29,
+   "fyrraSaeti": 29,
+   "fjoldi": 1064,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Davíð",
+   "afbrigdi": [],
+   "saeti": 30,
+   "fyrraSaeti": 28,
+   "fjoldi": 1040,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Birgir",
+   "afbrigdi": [],
+   "saeti": 31,
+   "fyrraSaeti": 30,
+   "fjoldi": 1021,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Bjarki",
+   "afbrigdi": [],
+   "saeti": 32,
+   "fyrraSaeti": 34,
+   "fjoldi": 1020,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Tómas",
+   "afbrigdi": [],
+   "saeti": 33,
+   "fyrraSaeti": 35,
+   "fjoldi": 1016,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Sveinn",
+   "afbrigdi": [
+    "Svend"
+   ],
+   "saeti": 34,
+   "fyrraSaeti": 26,
+   "fjoldi": 1013,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Páll",
+   "afbrigdi": [],
+   "saeti": 35,
+   "fyrraSaeti": 31,
+   "fjoldi": 979,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Haukur",
+   "afbrigdi": [],
+   "saeti": 36,
+   "fyrraSaeti": 36,
+   "fjoldi": 929,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Brynjar",
+   "afbrigdi": [],
+   "saeti": 37,
+   "fyrraSaeti": 41,
+   "fjoldi": 908,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ágúst",
+   "afbrigdi": [],
+   "saeti": 38,
+   "fyrraSaeti": 37,
+   "fjoldi": 905,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Kári",
+   "afbrigdi": [],
+   "saeti": 39,
+   "fyrraSaeti": 51,
+   "fjoldi": 898,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Benedikt",
+   "afbrigdi": [],
+   "saeti": 40,
+   "fyrraSaeti": 43,
+   "fjoldi": 866,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Jóhannes",
+   "afbrigdi": [],
+   "saeti": 41,
+   "fyrraSaeti": 38,
+   "fjoldi": 864,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Kristófer",
+   "afbrigdi": [],
+   "saeti": 42,
+   "fyrraSaeti": 49,
+   "fjoldi": 857,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Atli",
+   "afbrigdi": [],
+   "saeti": 43,
+   "fyrraSaeti": 44,
+   "fjoldi": 847,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Karl",
+   "afbrigdi": [
+    "Carl"
+   ],
+   "saeti": 44,
+   "fyrraSaeti": 39,
+   "fjoldi": 842,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ásgeir",
+   "afbrigdi": [],
+   "saeti": 45,
+   "fyrraSaeti": 40,
+   "fjoldi": 827,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Haraldur",
+   "afbrigdi": [],
+   "saeti": 46,
+   "fyrraSaeti": 42,
+   "fjoldi": 825,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Baldur",
+   "afbrigdi": [],
+   "saeti": 47,
+   "fyrraSaeti": 48,
+   "fjoldi": 818,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Kjartan",
+   "afbrigdi": [],
+   "saeti": 48,
+   "fyrraSaeti": 45,
+   "fjoldi": 807,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Hilmar",
+   "afbrigdi": [],
+   "saeti": 49,
+   "fyrraSaeti": 50,
+   "fjoldi": 782,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Friðrik",
+   "afbrigdi": [],
+   "saeti": 50,
+   "fyrraSaeti": 46,
+   "fjoldi": 773,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Rúnar",
+   "afbrigdi": [],
+   "saeti": 51,
+   "fyrraSaeti": 53,
+   "fjoldi": 765,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Sigurjón",
+   "afbrigdi": [],
+   "saeti": 52,
+   "fyrraSaeti": 47,
+   "fjoldi": 763,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Þórður",
+   "afbrigdi": [],
+   "saeti": 53,
+   "fyrraSaeti": 51,
+   "fjoldi": 752,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Egill",
+   "afbrigdi": [],
+   "saeti": 54,
+   "fyrraSaeti": 56,
+   "fjoldi": 724,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Sindri",
+   "afbrigdi": [],
+   "saeti": 55,
+   "fyrraSaeti": 57,
+   "fjoldi": 722,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Hörður",
+   "afbrigdi": [],
+   "saeti": 56,
+   "fyrraSaeti": 54,
+   "fjoldi": 713,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Emil",
+   "afbrigdi": [],
+   "saeti": 57,
+   "fyrraSaeti": 80,
+   "fjoldi": 706,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Jónas",
+   "afbrigdi": [],
+   "saeti": 58,
+   "fyrraSaeti": 55,
+   "fjoldi": 701,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Elvar",
+   "afbrigdi": [
+    "Elfar"
+   ],
+   "saeti": 59,
+   "fyrraSaeti": 60,
+   "fjoldi": 690,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Eiríkur",
+   "afbrigdi": [],
+   "saeti": 60,
+   "fyrraSaeti": 58,
+   "fjoldi": 669,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Björgvin",
+   "afbrigdi": [],
+   "saeti": 61,
+   "fyrraSaeti": 59,
+   "fjoldi": 667,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Adam",
+   "afbrigdi": [],
+   "saeti": 62,
+   "fyrraSaeti": 86,
+   "fjoldi": 655,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ísak",
+   "afbrigdi": [],
+   "saeti": 63,
+   "fyrraSaeti": 66,
+   "fjoldi": 650,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Hlynur",
+   "afbrigdi": [],
+   "saeti": 64,
+   "fyrraSaeti": 62,
+   "fjoldi": 642,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ari",
+   "afbrigdi": [],
+   "saeti": 65,
+   "fyrraSaeti": 67,
+   "fjoldi": 640,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Dagur",
+   "afbrigdi": [],
+   "saeti": 66,
+   "fyrraSaeti": 71,
+   "fjoldi": 638,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Matthías",
+   "afbrigdi": [
+    "Mattías",
+    "Mathías"
+   ],
+   "saeti": 67,
+   "fyrraSaeti": 73,
+   "fjoldi": 616,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Jakob",
+   "afbrigdi": [
+    "Jakop"
+   ],
+   "saeti": 68,
+   "fyrraSaeti": 69,
+   "fjoldi": 608,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Sævar",
+   "afbrigdi": [
+    "Sævarr"
+   ],
+   "saeti": 69,
+   "fyrraSaeti": 61,
+   "fjoldi": 606,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Mikael",
+   "afbrigdi": [
+    "Mikkael",
+    "Mikkel"
+   ],
+   "saeti": 70,
+   "fyrraSaeti": 90,
+   "fjoldi": 601,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Birkir",
+   "afbrigdi": [],
+   "saeti": 71,
+   "fyrraSaeti": 78,
+   "fjoldi": 598,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Piotr",
+   "afbrigdi": [],
+   "saeti": 72,
+   "fyrraSaeti": 95,
+   "fjoldi": 590,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ómar",
+   "afbrigdi": [],
+   "saeti": 73,
+   "fyrraSaeti": 64,
+   "fjoldi": 589,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Snorri",
+   "afbrigdi": [],
+   "saeti": 74,
+   "fyrraSaeti": 72,
+   "fjoldi": 586,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Guðni",
+   "afbrigdi": [],
+   "saeti": 75,
+   "fyrraSaeti": 63,
+   "fjoldi": 585,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Anton",
+   "afbrigdi": [],
+   "saeti": 76,
+   "fyrraSaeti": 78,
+   "fjoldi": 584,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Arnór",
+   "afbrigdi": [],
+   "saeti": 77,
+   "fyrraSaeti": 76,
+   "fjoldi": 583,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ingvar",
+   "afbrigdi": [],
+   "saeti": 78,
+   "fyrraSaeti": 70,
+   "fjoldi": 559,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Sverrir",
+   "afbrigdi": [],
+   "saeti": 78,
+   "fyrraSaeti": 65,
+   "fjoldi": 559,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Örn",
+   "afbrigdi": [],
+   "saeti": 80,
+   "fyrraSaeti": 67,
+   "fjoldi": 557,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ívar",
+   "afbrigdi": [],
+   "saeti": 81,
+   "fyrraSaeti": 74,
+   "fjoldi": 551,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Axel",
+   "afbrigdi": [],
+   "saeti": 82,
+   "fyrraSaeti": 84,
+   "fjoldi": 529,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Daniel",
+   "afbrigdi": [],
+   "saeti": 83,
+   "fyrraSaeti": 128,
+   "fjoldi": 528,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Tomasz",
+   "afbrigdi": [],
+   "saeti": 83,
+   "fyrraSaeti": 107,
+   "fjoldi": 528,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Tomasz",
+   "afbrigdi": [],
+   "saeti": 83,
+   "fyrraSaeti": 2990,
+   "fjoldi": 528,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Eyþór",
+   "afbrigdi": [],
+   "saeti": 85,
+   "fyrraSaeti": 82,
+   "fjoldi": 527,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Hafsteinn",
+   "afbrigdi": [],
+   "saeti": 85,
+   "fyrraSaeti": 82,
+   "fjoldi": 527,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Jökull",
+   "afbrigdi": [],
+   "saeti": 87,
+   "fyrraSaeti": 109,
+   "fjoldi": 525,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Reynir",
+   "afbrigdi": [],
+   "saeti": 88,
+   "fyrraSaeti": 75,
+   "fjoldi": 521,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Ingólfur",
+   "afbrigdi": [],
+   "saeti": 89,
+   "fyrraSaeti": 77,
+   "fjoldi": 517,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Marcin",
+   "afbrigdi": [],
+   "saeti": 90,
+   "fyrraSaeti": 109,
+   "fjoldi": 504,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Marcin",
+   "afbrigdi": [],
+   "saeti": 90,
+   "fyrraSaeti": 2990,
+   "fjoldi": 504,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Garðar",
+   "afbrigdi": [],
+   "saeti": 91,
+   "fyrraSaeti": 80,
+   "fjoldi": 503,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Michal",
+   "afbrigdi": [],
+   "saeti": 91,
+   "fyrraSaeti": 125,
+   "fjoldi": 503,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Michal",
+   "afbrigdi": [],
+   "saeti": 91,
+   "fyrraSaeti": 2990,
+   "fjoldi": 503,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Tryggvi",
+   "afbrigdi": [],
+   "saeti": 91,
+   "fyrraSaeti": 89,
+   "fjoldi": 503,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Krzysztof",
+   "afbrigdi": [],
+   "saeti": 94,
+   "fyrraSaeti": 101,
+   "fjoldi": 502,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Steinar",
+   "afbrigdi": [],
+   "saeti": 95,
+   "fyrraSaeti": 92,
+   "fjoldi": 501,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Gabríel",
+   "afbrigdi": [],
+   "saeti": 96,
+   "fyrraSaeti": 102,
+   "fjoldi": 492,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Þórarinn",
+   "afbrigdi": [],
+   "saeti": 97,
+   "fyrraSaeti": 85,
+   "fjoldi": 490,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Þórir",
+   "afbrigdi": [],
+   "saeti": 97,
+   "fyrraSaeti": 87,
+   "fjoldi": 490,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Valdimar",
+   "afbrigdi": [
+    "Valdemar"
+   ],
+   "saeti": 99,
+   "fyrraSaeti": 91,
+   "fjoldi": 487,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Grétar",
+   "afbrigdi": [
+    "Gretar"
+   ],
+   "saeti": 100,
+   "fyrraSaeti": 87,
+   "fjoldi": 486,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Pawel",
+   "afbrigdi": [],
+   "saeti": 100,
+   "fyrraSaeti": 119,
+   "fjoldi": 486,
+   "gender": "kk"
+  },
+  {
+   "nafn": "Pawel",
+   "afbrigdi": [],
+   "saeti": 100,
+   "fyrraSaeti": 2990,
+   "fjoldi": 486,
+   "gender": "kk"
+  }
+ ],
+ "ageBands": [
+  {
+   "nafn": "Aleksandra",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 310,
+    "5-9": 172,
+    "10-14": 167,
+    "15-19": 139,
+    "20-24": 68,
+    "25-29": 19,
+    "30-34": 57,
+    "35-39": 109,
+    "40-44": 163,
+    "45-49": 147,
+    "50-54": 249,
+    "55-59": 400,
+    "60-64": 720
+   }
+  },
+  {
+   "nafn": "Andrea",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 4,
+    "5-9": 19,
+    "10-14": 43,
+    "15-19": 23,
+    "20-24": 12,
+    "25-29": 16,
+    "30-34": 22,
+    "35-39": 69,
+    "40-44": 94,
+    "45-49": 117,
+    "50-54": 102,
+    "55-59": 121,
+    "60-64": 203,
+    "65-69": 184,
+    "70-74": 223,
+    "75-79": 221,
+    "85+": 160
+   }
+  },
+  {
+   "nafn": "Aníta",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 51,
+    "5-9": 34,
+    "10-14": 16,
+    "15-19": 15,
+    "20-24": 18,
+    "25-29": 26,
+    "30-34": 60,
+    "35-39": 164,
+    "40-44": 272,
+    "45-49": 250,
+    "50-54": 267,
+    "55-59": 1003,
+    "65-69": 441
+   }
+  },
+  {
+   "nafn": "Anna",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 9,
+    "5-9": 2,
+    "10-14": 1,
+    "15-19": 1,
+    "20-24": 1,
+    "25-29": 1,
+    "30-34": 1,
+    "35-39": 1,
+    "40-44": 1,
+    "45-49": 1,
+    "50-54": 2,
+    "55-59": 1,
+    "60-64": 2,
+    "65-69": 3,
+    "70-74": 3,
+    "75-79": 5,
+    "80-84": 4,
+    "85+": 4
+   }
+  },
+  {
+   "nafn": "Auður",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 49,
+    "5-9": 32,
+    "10-14": 45,
+    "15-19": 39,
+    "20-24": 50,
+    "25-29": 39,
+    "30-34": 28,
+    "35-39": 26,
+    "40-44": 41,
+    "45-49": 34,
+    "50-54": 38,
+    "55-59": 39,
+    "60-64": 22,
+    "65-69": 20,
+    "70-74": 33,
+    "75-79": 28,
+    "80-84": 24,
+    "85+": 16
+   }
+  },
+  {
+   "nafn": "Aþena",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 15,
+    "5-9": 36,
+    "10-14": 73,
+    "15-19": 79,
+    "20-24": 135,
+    "25-29": 502,
+    "30-34": 475,
+    "35-39": 1514,
+    "45-49": 1084
+   }
+  },
+  {
+   "nafn": "Ásta",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 95,
+    "5-9": 114,
+    "10-14": 50,
+    "15-19": 51,
+    "20-24": 25,
+    "25-29": 60,
+    "30-34": 27,
+    "35-39": 23,
+    "40-44": 24,
+    "45-49": 25,
+    "50-54": 12,
+    "55-59": 15,
+    "60-64": 14,
+    "65-69": 15,
+    "70-74": 20,
+    "75-79": 26,
+    "80-84": 12,
+    "85+": 13
+   }
+  },
+  {
+   "nafn": "Berglind",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 89,
+    "5-9": 96,
+    "10-14": 61,
+    "15-19": 61,
+    "20-24": 46,
+    "25-29": 28,
+    "30-34": 18,
+    "35-39": 14,
+    "40-44": 6,
+    "45-49": 7,
+    "50-54": 16,
+    "55-59": 25,
+    "60-64": 66,
+    "65-69": 154,
+    "70-74": 260,
+    "75-79": 608,
+    "80-84": 260
+   }
+  },
+  {
+   "nafn": "Birta",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 37,
+    "5-9": 26,
+    "10-14": 47,
+    "15-19": 29,
+    "20-24": 4,
+    "25-29": 50,
+    "30-34": 164,
+    "35-39": 262,
+    "40-44": 246,
+    "45-49": 278,
+    "50-54": 585,
+    "85+": 283
+   }
+  },
+  {
+   "nafn": "Bríet",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 7,
+    "5-9": 37,
+    "10-14": 33,
+    "15-19": 53,
+    "20-24": 93,
+    "25-29": 317,
+    "30-34": 230,
+    "35-39": 471,
+    "40-44": 435,
+    "45-49": 463,
+    "50-54": 395,
+    "55-59": 1440,
+    "60-64": 737,
+    "65-69": 927,
+    "70-74": 625,
+    "80-84": 520
+   }
+  },
+  {
+   "nafn": "Bryndís",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 124,
+    "5-9": 88,
+    "10-14": 34,
+    "15-19": 43,
+    "20-24": 70,
+    "25-29": 20,
+    "30-34": 33,
+    "35-39": 36,
+    "40-44": 34,
+    "45-49": 29,
+    "50-54": 22,
+    "55-59": 23,
+    "60-64": 16,
+    "65-69": 30,
+    "70-74": 43,
+    "75-79": 52,
+    "80-84": 46,
+    "85+": 102
+   }
+  },
+  {
+   "nafn": "Edda",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 59,
+    "5-9": 61,
+    "10-14": 79,
+    "15-19": 84,
+    "20-24": 112,
+    "25-29": 87,
+    "30-34": 65,
+    "35-39": 53,
+    "40-44": 50,
+    "45-49": 58,
+    "50-54": 58,
+    "55-59": 58,
+    "60-64": 40,
+    "65-69": 47,
+    "70-74": 47,
+    "75-79": 24,
+    "80-84": 15,
+    "85+": 40
+   }
+  },
+  {
+   "nafn": "Elín",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 46,
+    "5-9": 27,
+    "10-14": 26,
+    "15-19": 31,
+    "20-24": 20,
+    "25-29": 18,
+    "30-34": 17,
+    "35-39": 19,
+    "40-44": 20,
+    "45-49": 14,
+    "50-54": 11,
+    "55-59": 11,
+    "60-64": 10,
+    "65-69": 12,
+    "70-74": 13,
+    "75-79": 10,
+    "80-84": 13,
+    "85+": 14
+   }
+  },
+  {
+   "nafn": "Elísabet",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 14,
+    "5-9": 7,
+    "10-14": 10,
+    "15-19": 16,
+    "20-24": 15,
+    "25-29": 36,
+    "30-34": 30,
+    "35-39": 44,
+    "40-44": 39,
+    "45-49": 28,
+    "50-54": 34,
+    "55-59": 35,
+    "60-64": 35,
+    "65-69": 28,
+    "70-74": 27,
+    "75-79": 42,
+    "80-84": 25,
+    "85+": 38
+   }
+  },
+  {
+   "nafn": "Embla",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 1,
+    "5-9": 11,
+    "10-14": 19,
+    "15-19": 19,
+    "20-24": 56,
+    "25-29": 173,
+    "30-34": 450,
+    "35-39": 515,
+    "40-44": 485,
+    "45-49": 1349,
+    "50-54": 614,
+    "65-69": 798
+   }
+  },
+  {
+   "nafn": "Emilía",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 3,
+    "5-9": 4,
+    "10-14": 4,
+    "15-19": 8,
+    "20-24": 62,
+    "25-29": 115,
+    "30-34": 242,
+    "35-39": 286,
+    "40-44": 205,
+    "45-49": 211,
+    "50-54": 263,
+    "55-59": 240,
+    "60-64": 162,
+    "65-69": 155,
+    "70-74": 143,
+    "75-79": 195,
+    "80-84": 141,
+    "85+": 99
+   }
+  },
+  {
+   "nafn": "Emma",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 10,
+    "5-9": 5,
+    "10-14": 13,
+    "15-19": 34,
+    "20-24": 117,
+    "25-29": 181,
+    "30-34": 215,
+    "35-39": 268,
+    "40-44": 220,
+    "45-49": 230,
+    "50-54": 279,
+    "55-59": 367,
+    "60-64": 279,
+    "65-69": 217,
+    "70-74": 172,
+    "75-79": 259,
+    "80-84": 163,
+    "85+": 184
+   }
+  },
+  {
+   "nafn": "Erla",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 129,
+    "5-9": 70,
+    "10-14": 86,
+    "15-19": 65,
+    "20-24": 90,
+    "25-29": 37,
+    "30-34": 37,
+    "35-39": 18,
+    "40-44": 15,
+    "45-49": 23,
+    "50-54": 32,
+    "55-59": 33,
+    "60-64": 20,
+    "65-69": 21,
+    "70-74": 28,
+    "75-79": 11,
+    "80-84": 9,
+    "85+": 10
+   }
+  },
+  {
+   "nafn": "Eva",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 5,
+    "5-9": 6,
+    "10-14": 5,
+    "15-19": 4,
+    "20-24": 10,
+    "25-29": 12,
+    "30-34": 11,
+    "35-39": 5,
+    "40-44": 7,
+    "45-49": 17,
+    "50-54": 39,
+    "55-59": 77,
+    "60-64": 94,
+    "65-69": 117,
+    "70-74": 139,
+    "75-79": 142,
+    "80-84": 154,
+    "85+": 94
+   }
+  },
+  {
+   "nafn": "Freyja",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 6,
+    "5-9": 8,
+    "10-14": 11,
+    "15-19": 18,
+    "20-24": 66,
+    "25-29": 132,
+    "30-34": 134,
+    "35-39": 144,
+    "40-44": 170,
+    "45-49": 207,
+    "50-54": 190,
+    "55-59": 213,
+    "60-64": 188,
+    "65-69": 172,
+    "70-74": 280,
+    "75-79": 169,
+    "80-84": 208,
+    "85+": 130
+   }
+  },
+  {
+   "nafn": "Guðbjörg",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 412,
+    "5-9": 103,
+    "10-14": 68,
+    "15-19": 123,
+    "20-24": 61,
+    "25-29": 71,
+    "30-34": 62,
+    "35-39": 48,
+    "40-44": 42,
+    "45-49": 21,
+    "50-54": 14,
+    "55-59": 14,
+    "60-64": 11,
+    "65-69": 11,
+    "70-74": 10,
+    "75-79": 14,
+    "80-84": 14,
+    "85+": 11
+   }
+  },
+  {
+   "nafn": "Guðlaug",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 1067,
+    "5-9": 298,
+    "10-14": 175,
+    "15-19": 163,
+    "20-24": 167,
+    "25-29": 133,
+    "30-34": 140,
+    "35-39": 91,
+    "40-44": 65,
+    "45-49": 65,
+    "50-54": 42,
+    "55-59": 45,
+    "60-64": 36,
+    "65-69": 38,
+    "70-74": 24,
+    "75-79": 19,
+    "80-84": 32,
+    "85+": 26
+   }
+  },
+  {
+   "nafn": "Guðný",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 219,
+    "5-9": 108,
+    "10-14": 111,
+    "15-19": 76,
+    "20-24": 59,
+    "25-29": 54,
+    "30-34": 63,
+    "35-39": 49,
+    "40-44": 30,
+    "45-49": 26,
+    "50-54": 21,
+    "55-59": 13,
+    "60-64": 17,
+    "65-69": 14,
+    "70-74": 14,
+    "75-79": 16,
+    "80-84": 11,
+    "85+": 37
+   }
+  },
+  {
+   "nafn": "Guðrún",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 20,
+    "5-9": 22,
+    "10-14": 6,
+    "15-19": 6,
+    "20-24": 5,
+    "25-29": 3,
+    "30-34": 3,
+    "35-39": 2,
+    "40-44": 2,
+    "45-49": 2,
+    "50-54": 1,
+    "55-59": 2,
+    "60-64": 1,
+    "65-69": 1,
+    "70-74": 1,
+    "75-79": 1,
+    "80-84": 1,
+    "85+": 1
+   }
+  },
+  {
+   "nafn": "Halldóra",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 100,
+    "5-9": 117,
+    "10-14": 152,
+    "15-19": 93,
+    "20-24": 114,
+    "25-29": 86,
+    "30-34": 92,
+    "35-39": 59,
+    "40-44": 60,
+    "45-49": 38,
+    "50-54": 27,
+    "55-59": 38,
+    "60-64": 25,
+    "65-69": 23,
+    "70-74": 26,
+    "75-79": 32,
+    "80-84": 20,
+    "85+": 21
+   }
+  },
+  {
+   "nafn": "Hekla",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 12,
+    "5-9": 18,
+    "10-14": 21,
+    "15-19": 20,
+    "20-24": 34,
+    "25-29": 101,
+    "30-34": 211,
+    "35-39": 383,
+    "40-44": 637,
+    "45-49": 272,
+    "50-54": 264,
+    "55-59": 344,
+    "60-64": 435,
+    "65-69": 761,
+    "75-79": 281,
+    "80-84": 214,
+    "85+": 483
+   }
+  },
+  {
+   "nafn": "Helga",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 39,
+    "5-9": 21,
+    "10-14": 32,
+    "15-19": 9,
+    "20-24": 8,
+    "25-29": 6,
+    "30-34": 4,
+    "35-39": 4,
+    "40-44": 5,
+    "45-49": 6,
+    "50-54": 5,
+    "55-59": 6,
+    "60-64": 7,
+    "65-69": 7,
+    "70-74": 8,
+    "75-79": 7,
+    "80-84": 8,
+    "85+": 6
+   }
+  },
+  {
+   "nafn": "Hildur",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 29,
+    "5-9": 35,
+    "10-14": 18,
+    "15-19": 13,
+    "20-24": 16,
+    "25-29": 24,
+    "30-34": 7,
+    "35-39": 9,
+    "40-44": 14,
+    "45-49": 12,
+    "50-54": 17,
+    "55-59": 22,
+    "60-64": 24,
+    "65-69": 37,
+    "70-74": 36,
+    "75-79": 39,
+    "80-84": 62,
+    "85+": 59
+   }
+  },
+  {
+   "nafn": "Hulda",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 159,
+    "5-9": 123,
+    "10-14": 91,
+    "15-19": 67,
+    "20-24": 89,
+    "25-29": 58,
+    "30-34": 72,
+    "35-39": 35,
+    "40-44": 31,
+    "45-49": 18,
+    "50-54": 20,
+    "55-59": 29,
+    "60-64": 19,
+    "65-69": 39,
+    "70-74": 44,
+    "75-79": 36,
+    "80-84": 21,
+    "85+": 12
+   }
+  },
+  {
+   "nafn": "Inga",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 149,
+    "5-9": 77,
+    "10-14": 105,
+    "15-19": 57,
+    "20-24": 39,
+    "25-29": 73,
+    "30-34": 47,
+    "35-39": 21,
+    "40-44": 12,
+    "45-49": 20,
+    "50-54": 18,
+    "55-59": 20,
+    "60-64": 34,
+    "65-69": 26,
+    "70-74": 39,
+    "75-79": 33,
+    "80-84": 53,
+    "85+": 31
+   }
+  },
+  {
+   "nafn": "Ingibjörg",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 47,
+    "5-9": 44,
+    "10-14": 55,
+    "15-19": 40,
+    "20-24": 33,
+    "25-29": 17,
+    "30-34": 23,
+    "35-39": 17,
+    "40-44": 16,
+    "45-49": 9,
+    "50-54": 8,
+    "55-59": 8,
+    "60-64": 9,
+    "65-69": 8,
+    "70-74": 7,
+    "75-79": 8,
+    "80-84": 6,
+    "85+": 5
+   }
+  },
+  {
+   "nafn": "Íris",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 41,
+    "5-9": 24,
+    "10-14": 28,
+    "15-19": 35,
+    "20-24": 26,
+    "25-29": 22,
+    "30-34": 9,
+    "35-39": 11,
+    "40-44": 17,
+    "45-49": 13,
+    "50-54": 29,
+    "55-59": 49,
+    "60-64": 104,
+    "65-69": 216,
+    "70-74": 204,
+    "75-79": 615,
+    "80-84": 123,
+    "85+": 237
+   }
+  },
+  {
+   "nafn": "Ísabella",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 23,
+    "5-9": 15,
+    "10-14": 23,
+    "15-19": 17,
+    "20-24": 54,
+    "25-29": 217,
+    "30-34": 700,
+    "40-44": 358,
+    "45-49": 873,
+    "50-54": 418,
+    "65-69": 376,
+    "70-74": 308
+   }
+  },
+  {
+   "nafn": "Jóhanna",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 82,
+    "5-9": 38,
+    "10-14": 35,
+    "15-19": 33,
+    "20-24": 28,
+    "25-29": 31,
+    "30-34": 14,
+    "35-39": 16,
+    "40-44": 11,
+    "45-49": 10,
+    "50-54": 9,
+    "55-59": 9,
+    "60-64": 8,
+    "65-69": 9,
+    "70-74": 9,
+    "75-79": 9,
+    "80-84": 10,
+    "85+": 9
+   }
+  },
+  {
+   "nafn": "Jóna",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 230,
+    "5-9": 206,
+    "10-14": 200,
+    "15-19": 140,
+    "20-24": 97,
+    "25-29": 116,
+    "30-34": 91,
+    "35-39": 71,
+    "40-44": 40,
+    "45-49": 51,
+    "50-54": 45,
+    "55-59": 32,
+    "60-64": 27,
+    "65-69": 16,
+    "70-74": 17,
+    "75-79": 21,
+    "80-84": 33,
+    "85+": 15
+   }
+  },
+  {
+   "nafn": "Jónína",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 213,
+    "5-9": 258,
+    "10-14": 400,
+    "15-19": 183,
+    "20-24": 156,
+    "25-29": 167,
+    "30-34": 128,
+    "35-39": 87,
+    "40-44": 93,
+    "45-49": 88,
+    "50-54": 52,
+    "55-59": 42,
+    "60-64": 32,
+    "65-69": 19,
+    "70-74": 21,
+    "75-79": 23,
+    "80-84": 19,
+    "85+": 23
+   }
+  },
+  {
+   "nafn": "Júlía",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 18,
+    "5-9": 23,
+    "10-14": 22,
+    "15-19": 14,
+    "20-24": 49,
+    "25-29": 76,
+    "30-34": 135,
+    "35-39": 190,
+    "40-44": 136,
+    "45-49": 124,
+    "50-54": 164,
+    "55-59": 167,
+    "60-64": 236,
+    "65-69": 267,
+    "70-74": 167,
+    "75-79": 184,
+    "80-84": 435,
+    "85+": 156
+   }
+  },
+  {
+   "nafn": "Karen",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 66,
+    "5-9": 41,
+    "10-14": 20,
+    "15-19": 24,
+    "20-24": 13,
+    "25-29": 9,
+    "30-34": 19,
+    "35-39": 45,
+    "40-44": 57,
+    "45-49": 75,
+    "50-54": 154,
+    "55-59": 182,
+    "60-64": 186,
+    "65-69": 158,
+    "70-74": 173,
+    "75-79": 133,
+    "80-84": 190,
+    "85+": 254
+   }
+  },
+  {
+   "nafn": "Karolina",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 474,
+    "5-9": 437,
+    "10-14": 213,
+    "15-19": 228,
+    "20-24": 58,
+    "25-29": 13,
+    "30-34": 75,
+    "35-39": 82,
+    "40-44": 191,
+    "45-49": 376
+   }
+  },
+  {
+   "nafn": "Katla",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 11,
+    "5-9": 12,
+    "10-14": 14,
+    "15-19": 26,
+    "20-24": 38,
+    "25-29": 140,
+    "30-34": 207,
+    "35-39": 207,
+    "40-44": 155,
+    "45-49": 303,
+    "50-54": 576,
+    "55-59": 390,
+    "60-64": 294,
+    "65-69": 332,
+    "70-74": 423,
+    "75-79": 438,
+    "80-84": 198,
+    "85+": 348
+   }
+  },
+  {
+   "nafn": "Katrín",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 17,
+    "5-9": 3,
+    "10-14": 3,
+    "15-19": 3,
+    "20-24": 7,
+    "25-29": 8,
+    "30-34": 12,
+    "35-39": 15,
+    "40-44": 13,
+    "45-49": 27,
+    "50-54": 24,
+    "55-59": 28,
+    "60-64": 28,
+    "65-69": 32,
+    "70-74": 42,
+    "75-79": 47,
+    "80-84": 63,
+    "85+": 74
+   }
+  },
+  {
+   "nafn": "Kolbrún",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 38,
+    "5-9": 56,
+    "10-14": 40,
+    "15-19": 44,
+    "20-24": 37,
+    "25-29": 45,
+    "30-34": 46,
+    "35-39": 41,
+    "40-44": 29,
+    "45-49": 30,
+    "50-54": 25,
+    "55-59": 31,
+    "60-64": 38,
+    "65-69": 33,
+    "70-74": 19,
+    "75-79": 25,
+    "80-84": 26,
+    "85+": 41
+   }
+  },
+  {
+   "nafn": "Kristín",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 21,
+    "5-9": 14,
+    "10-14": 8,
+    "15-19": 7,
+    "20-24": 3,
+    "25-29": 2,
+    "30-34": 2,
+    "35-39": 3,
+    "40-44": 3,
+    "45-49": 3,
+    "50-54": 4,
+    "55-59": 4,
+    "60-64": 4,
+    "65-69": 4,
+    "70-74": 4,
+    "75-79": 3,
+    "80-84": 2,
+    "85+": 3
+   }
+  },
+  {
+   "nafn": "Lilja",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 19,
+    "5-9": 9,
+    "10-14": 12,
+    "15-19": 12,
+    "20-24": 27,
+    "25-29": 29,
+    "30-34": 35,
+    "35-39": 22,
+    "40-44": 18,
+    "45-49": 19,
+    "50-54": 19,
+    "55-59": 26,
+    "60-64": 33,
+    "65-69": 41,
+    "70-74": 25,
+    "75-79": 40,
+    "80-84": 48,
+    "85+": 29
+   }
+  },
+  {
+   "nafn": "Linda",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 204,
+    "5-9": 130,
+    "10-14": 139,
+    "15-19": 107,
+    "20-24": 95,
+    "25-29": 61,
+    "30-34": 29,
+    "35-39": 28,
+    "40-44": 19,
+    "45-49": 15,
+    "50-54": 13,
+    "55-59": 21,
+    "60-64": 60,
+    "65-69": 82,
+    "70-74": 151,
+    "75-79": 140
+   }
+  },
+  {
+   "nafn": "Margrét",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 34,
+    "5-9": 10,
+    "10-14": 15,
+    "15-19": 10,
+    "20-24": 9,
+    "25-29": 5,
+    "30-34": 8,
+    "35-39": 7,
+    "40-44": 10,
+    "45-49": 5,
+    "50-54": 6,
+    "55-59": 5,
+    "60-64": 6,
+    "65-69": 5,
+    "70-74": 5,
+    "75-79": 4,
+    "80-84": 5,
+    "85+": 7
+   }
+  },
+  {
+   "nafn": "María",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 42,
+    "5-9": 16,
+    "10-14": 9,
+    "15-19": 5,
+    "20-24": 6,
+    "25-29": 10,
+    "30-34": 15,
+    "35-39": 12,
+    "40-44": 9,
+    "45-49": 11,
+    "50-54": 10,
+    "55-59": 10,
+    "60-64": 12,
+    "65-69": 10,
+    "70-74": 11,
+    "75-79": 13,
+    "80-84": 17,
+    "85+": 17
+   }
+  },
+  {
+   "nafn": "Marta",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 351,
+    "5-9": 181,
+    "10-14": 209,
+    "15-19": 113,
+    "20-24": 74,
+    "25-29": 30,
+    "30-34": 20,
+    "35-39": 25,
+    "40-44": 53,
+    "45-49": 104,
+    "50-54": 82,
+    "55-59": 105,
+    "60-64": 121,
+    "65-69": 98,
+    "70-74": 89,
+    "75-79": 124,
+    "80-84": 135,
+    "85+": 67
+   }
+  },
+  {
+   "nafn": "Matthildur",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 16,
+    "5-9": 47,
+    "10-14": 65,
+    "15-19": 66,
+    "20-24": 138,
+    "25-29": 215,
+    "30-34": 330,
+    "35-39": 168,
+    "40-44": 198,
+    "45-49": 210,
+    "50-54": 139,
+    "55-59": 137,
+    "60-64": 99,
+    "65-69": 108,
+    "70-74": 125,
+    "75-79": 100,
+    "80-84": 114,
+    "85+": 105
+   }
+  },
+  {
+   "nafn": "Ólöf",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 125,
+    "5-9": 76,
+    "10-14": 70,
+    "15-19": 64,
+    "20-24": 43,
+    "25-29": 25,
+    "30-34": 43,
+    "35-39": 50,
+    "40-44": 38,
+    "45-49": 37,
+    "50-54": 28,
+    "55-59": 18,
+    "60-64": 15,
+    "65-69": 18,
+    "70-74": 18,
+    "75-79": 18,
+    "80-84": 30,
+    "85+": 24
+   }
+  },
+  {
+   "nafn": "Ragnheiður",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 122,
+    "5-9": 52,
+    "10-14": 44,
+    "15-19": 48,
+    "20-24": 42,
+    "25-29": 68,
+    "30-34": 52,
+    "35-39": 47,
+    "40-44": 26,
+    "45-49": 16,
+    "50-54": 15,
+    "55-59": 12,
+    "60-64": 13,
+    "65-69": 13,
+    "70-74": 12,
+    "75-79": 12,
+    "80-84": 23,
+    "85+": 25
+   }
+  },
+  {
+   "nafn": "Rakel",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 33,
+    "5-9": 20,
+    "10-14": 7,
+    "15-19": 11,
+    "20-24": 11,
+    "25-29": 11,
+    "30-34": 16,
+    "35-39": 29,
+    "40-44": 22,
+    "45-49": 39,
+    "50-54": 66,
+    "55-59": 170,
+    "60-64": 189,
+    "65-69": 197,
+    "70-74": 189,
+    "75-79": 147,
+    "80-84": 169,
+    "85+": 164
+   }
+  },
+  {
+   "nafn": "Sandra",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 130,
+    "5-9": 66,
+    "10-14": 67,
+    "15-19": 49,
+    "20-24": 17,
+    "25-29": 7,
+    "30-34": 5,
+    "35-39": 13,
+    "40-44": 27,
+    "45-49": 73,
+    "50-54": 127,
+    "55-59": 161,
+    "60-64": 205,
+    "65-69": 588,
+    "75-79": 495,
+    "80-84": 261,
+    "85+": 410
+   }
+  },
+  {
+   "nafn": "Sara",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 2,
+    "5-9": 1,
+    "10-14": 2,
+    "15-19": 2,
+    "20-24": 2,
+    "25-29": 4,
+    "30-34": 6,
+    "35-39": 20,
+    "40-44": 35,
+    "45-49": 61,
+    "50-54": 210,
+    "55-59": 245,
+    "60-64": 395,
+    "65-69": 201,
+    "70-74": 177,
+    "75-79": 317,
+    "80-84": 186,
+    "85+": 266
+   }
+  },
+  {
+   "nafn": "Sigríður",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 62,
+    "5-9": 54,
+    "10-14": 46,
+    "15-19": 38,
+    "20-24": 19,
+    "25-29": 14,
+    "30-34": 10,
+    "35-39": 6,
+    "40-44": 4,
+    "45-49": 4,
+    "50-54": 3,
+    "55-59": 3,
+    "60-64": 3,
+    "65-69": 2,
+    "70-74": 2,
+    "75-79": 2,
+    "80-84": 3,
+    "85+": 2
+   }
+  },
+  {
+   "nafn": "Sigrún",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 45,
+    "5-9": 25,
+    "10-14": 25,
+    "15-19": 22,
+    "20-24": 14,
+    "25-29": 15,
+    "30-34": 13,
+    "35-39": 8,
+    "40-44": 8,
+    "45-49": 8,
+    "50-54": 7,
+    "55-59": 7,
+    "60-64": 5,
+    "65-69": 6,
+    "70-74": 6,
+    "75-79": 6,
+    "80-84": 7,
+    "85+": 8
+   }
+  },
+  {
+   "nafn": "Sóley",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 8,
+    "5-9": 17,
+    "10-14": 24,
+    "15-19": 27,
+    "20-24": 21,
+    "25-29": 35,
+    "30-34": 86,
+    "35-39": 90,
+    "40-44": 131,
+    "45-49": 97,
+    "50-54": 107,
+    "55-59": 104,
+    "60-64": 137,
+    "65-69": 180,
+    "70-74": 133,
+    "75-79": 114,
+    "80-84": 153,
+    "85+": 168
+   }
+  },
+  {
+   "nafn": "Sólveig",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 144,
+    "5-9": 80,
+    "10-14": 88,
+    "15-19": 50,
+    "20-24": 77,
+    "25-29": 46,
+    "30-34": 42,
+    "35-39": 46,
+    "40-44": 49,
+    "45-49": 35,
+    "50-54": 33,
+    "55-59": 27,
+    "60-64": 18,
+    "65-69": 22,
+    "70-74": 22,
+    "75-79": 29,
+    "80-84": 18,
+    "85+": 32
+   }
+  },
+  {
+   "nafn": "Steinunn",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 67,
+    "5-9": 45,
+    "10-14": 42,
+    "15-19": 60,
+    "20-24": 71,
+    "25-29": 52,
+    "30-34": 31,
+    "35-39": 43,
+    "40-44": 43,
+    "45-49": 32,
+    "50-54": 26,
+    "55-59": 19,
+    "60-64": 21,
+    "65-69": 24,
+    "70-74": 16,
+    "75-79": 17,
+    "80-84": 16,
+    "85+": 19
+   }
+  },
+  {
+   "nafn": "Tinna",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 65,
+    "5-9": 67,
+    "10-14": 17,
+    "15-19": 21,
+    "20-24": 32,
+    "25-29": 59,
+    "30-34": 21,
+    "35-39": 10,
+    "40-44": 21,
+    "45-49": 139,
+    "50-54": 240,
+    "55-59": 280,
+    "65-69": 505,
+    "70-74": 459
+   }
+  },
+  {
+   "nafn": "Unnur",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 64,
+    "5-9": 43,
+    "10-14": 52,
+    "15-19": 59,
+    "20-24": 76,
+    "25-29": 57,
+    "30-34": 26,
+    "35-39": 37,
+    "40-44": 45,
+    "45-49": 47,
+    "50-54": 31,
+    "55-59": 17,
+    "60-64": 41,
+    "65-69": 40,
+    "70-74": 54,
+    "75-79": 43,
+    "80-84": 28,
+    "85+": 18
+   }
+  },
+  {
+   "nafn": "Valgerður",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 214,
+    "5-9": 144,
+    "10-14": 114,
+    "15-19": 126,
+    "20-24": 128,
+    "25-29": 108,
+    "30-34": 78,
+    "35-39": 66,
+    "40-44": 72,
+    "45-49": 54,
+    "50-54": 48,
+    "55-59": 50,
+    "60-64": 39,
+    "65-69": 35,
+    "70-74": 34,
+    "75-79": 20,
+    "80-84": 29,
+    "85+": 28
+   }
+  },
+  {
+   "nafn": "VIktoría",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 13,
+    "5-9": 13,
+    "10-14": 31,
+    "15-19": 25,
+    "20-24": 60,
+    "25-29": 75,
+    "30-34": 205,
+    "35-39": 212,
+    "40-44": 276,
+    "45-49": 337,
+    "50-54": 219,
+    "55-59": 458,
+    "60-64": 285,
+    "65-69": 307,
+    "70-74": 470,
+    "75-79": 244,
+    "80-84": 143,
+    "85+": 175
+   }
+  },
+  {
+   "nafn": "Þóra",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 185,
+    "5-9": 132,
+    "10-14": 98,
+    "15-19": 85,
+    "20-24": 87,
+    "25-29": 91,
+    "30-34": 64,
+    "35-39": 39,
+    "40-44": 25,
+    "45-49": 42,
+    "50-54": 37,
+    "55-59": 16,
+    "60-64": 31,
+    "65-69": 17,
+    "70-74": 23,
+    "75-79": 35,
+    "80-84": 31,
+    "85+": 30
+   }
+  },
+  {
+   "nafn": "Þórunn",
+   "gender": "kvk",
+   "saetiEftirAldri": {
+    "0-4": 119,
+    "5-9": 79,
+    "10-14": 71,
+    "15-19": 54,
+    "20-24": 53,
+    "25-29": 66,
+    "30-34": 54,
+    "35-39": 55,
+    "40-44": 37,
+    "45-49": 33,
+    "50-54": 23,
+    "55-59": 30,
+    "60-64": 30,
+    "65-69": 27,
+    "70-74": 15,
+    "75-79": 15,
+    "80-84": 35,
+    "85+": 20
+   }
+  },
+  {
+   "nafn": "Alexander",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 2,
+    "5-9": 2,
+    "10-14": 2,
+    "15-19": 4,
+    "20-24": 6,
+    "25-29": 10,
+    "30-34": 26,
+    "35-39": 132,
+    "40-44": 211,
+    "45-49": 172,
+    "50-54": 179,
+    "55-59": 172,
+    "60-64": 204,
+    "65-69": 264,
+    "70-74": 187,
+    "75-79": 222,
+    "80-84": 321
+   }
+  },
+  {
+   "nafn": "Andri",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 71,
+    "5-9": 45,
+    "10-14": 34,
+    "15-19": 20,
+    "20-24": 11,
+    "25-29": 11,
+    "30-34": 4,
+    "35-39": 8,
+    "40-44": 28,
+    "45-49": 98,
+    "50-54": 130,
+    "55-59": 202,
+    "60-64": 434,
+    "65-69": 722,
+    "70-74": 555,
+    "75-79": 478,
+    "85+": 376
+   }
+  },
+  {
+   "nafn": "Arnar",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 25,
+    "5-9": 9,
+    "10-14": 6,
+    "15-19": 6,
+    "20-24": 5,
+    "25-29": 4,
+    "30-34": 3,
+    "35-39": 7,
+    "40-44": 13,
+    "45-49": 11,
+    "50-54": 14,
+    "55-59": 26,
+    "60-64": 98,
+    "65-69": 106,
+    "70-74": 135,
+    "75-79": 140,
+    "80-84": 73,
+    "85+": 111
+   }
+  },
+  {
+   "nafn": "Aron",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 1,
+    "5-9": 1,
+    "10-14": 1,
+    "15-19": 3,
+    "20-24": 3,
+    "25-29": 5,
+    "30-34": 11,
+    "35-39": 54,
+    "40-44": 212,
+    "45-49": 283,
+    "50-54": 466,
+    "55-59": 306,
+    "60-64": 500,
+    "70-74": 365
+   }
+  },
+  {
+   "nafn": "Atli",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 84,
+    "5-9": 91,
+    "10-14": 51,
+    "15-19": 37,
+    "20-24": 28,
+    "25-29": 36,
+    "30-34": 20,
+    "35-39": 21,
+    "40-44": 23,
+    "45-49": 40,
+    "50-54": 103,
+    "55-59": 79,
+    "60-64": 93,
+    "65-69": 97,
+    "70-74": 173,
+    "75-79": 107,
+    "80-84": 154
+   }
+  },
+  {
+   "nafn": "Árni",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 96,
+    "5-9": 42,
+    "10-14": 44,
+    "15-19": 46,
+    "20-24": 50,
+    "25-29": 23,
+    "30-34": 23,
+    "35-39": 17,
+    "40-44": 9,
+    "45-49": 12,
+    "50-54": 19,
+    "55-59": 12,
+    "60-64": 12,
+    "65-69": 14,
+    "70-74": 9,
+    "75-79": 18,
+    "80-84": 19,
+    "85+": 20
+   }
+  },
+  {
+   "nafn": "Baltasar",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 16,
+    "5-9": 25,
+    "10-14": 80,
+    "15-19": 161,
+    "20-24": 402,
+    "25-29": 1424,
+    "30-34": 2381,
+    "55-59": 918,
+    "80-84": 306
+   }
+  },
+  {
+   "nafn": "Birgir",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 116,
+    "5-9": 102,
+    "10-14": 65,
+    "15-19": 43,
+    "20-24": 63,
+    "25-29": 66,
+    "30-34": 46,
+    "35-39": 31,
+    "40-44": 30,
+    "45-49": 38,
+    "50-54": 26,
+    "55-59": 28,
+    "60-64": 25,
+    "65-69": 29,
+    "70-74": 24,
+    "75-79": 21,
+    "80-84": 14,
+    "85+": 52
+   }
+  },
+  {
+   "nafn": "Birkir",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 15,
+    "5-9": 38,
+    "10-14": 54,
+    "15-19": 38,
+    "20-24": 54,
+    "25-29": 32,
+    "30-34": 58,
+    "35-39": 69,
+    "40-44": 129,
+    "45-49": 114,
+    "50-54": 183,
+    "55-59": 221,
+    "60-64": 219,
+    "70-74": 649,
+    "75-79": 349,
+    "80-84": 224,
+    "85+": 353
+   }
+  },
+  {
+   "nafn": "Bjarki",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 41,
+    "5-9": 20,
+    "10-14": 21,
+    "15-19": 23,
+    "20-24": 16,
+    "25-29": 8,
+    "30-34": 16,
+    "35-39": 68,
+    "40-44": 40,
+    "45-49": 46,
+    "50-54": 56,
+    "55-59": 89,
+    "60-64": 281,
+    "65-69": 210,
+    "70-74": 207,
+    "75-79": 163,
+    "85+": 253
+   }
+  },
+  {
+   "nafn": "Bjarni",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 85,
+    "5-9": 73,
+    "10-14": 35,
+    "15-19": 45,
+    "20-24": 32,
+    "25-29": 29,
+    "30-34": 25,
+    "35-39": 26,
+    "40-44": 19,
+    "45-49": 14,
+    "50-54": 16,
+    "55-59": 15,
+    "60-64": 14,
+    "65-69": 13,
+    "70-74": 14,
+    "75-79": 12,
+    "80-84": 11,
+    "85+": 10
+   }
+  },
+  {
+   "nafn": "Björn",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 22,
+    "5-9": 35,
+    "10-14": 37,
+    "15-19": 29,
+    "20-24": 29,
+    "25-29": 42,
+    "30-34": 36,
+    "35-39": 27,
+    "40-44": 14,
+    "45-49": 13,
+    "50-54": 11,
+    "55-59": 10,
+    "60-64": 11,
+    "65-69": 9,
+    "70-74": 10,
+    "75-79": 8,
+    "80-84": 9,
+    "85+": 16
+   }
+  },
+  {
+   "nafn": "Brynjar",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 14,
+    "5-9": 36,
+    "10-14": 24,
+    "15-19": 27,
+    "20-24": 26,
+    "25-29": 30,
+    "30-34": 27,
+    "35-39": 34,
+    "40-44": 45,
+    "45-49": 52,
+    "50-54": 84,
+    "55-59": 65,
+    "60-64": 87,
+    "65-69": 105,
+    "70-74": 189,
+    "75-79": 161,
+    "80-84": 197,
+    "85+": 82
+   }
+  },
+  {
+   "nafn": "Dagur",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 32,
+    "5-9": 16,
+    "10-14": 20,
+    "15-19": 13,
+    "20-24": 24,
+    "25-29": 54,
+    "30-34": 150,
+    "35-39": 236,
+    "40-44": 239,
+    "45-49": 181,
+    "50-54": 306,
+    "55-59": 203,
+    "60-64": 345,
+    "65-69": 428,
+    "75-79": 319,
+    "85+": 295
+   }
+  },
+  {
+   "nafn": "Daníel",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 31,
+    "5-9": 11,
+    "10-14": 5,
+    "15-19": 2,
+    "20-24": 2,
+    "25-29": 2,
+    "30-34": 8,
+    "35-39": 24,
+    "40-44": 37,
+    "45-49": 76,
+    "50-54": 104,
+    "55-59": 147,
+    "60-64": 133,
+    "65-69": 114,
+    "70-74": 84,
+    "75-79": 135,
+    "80-84": 161,
+    "85+": 131
+   }
+  },
+  {
+   "nafn": "Davíð",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 170,
+    "5-9": 68,
+    "10-14": 60,
+    "15-19": 34,
+    "20-24": 27,
+    "25-29": 48,
+    "30-34": 14,
+    "35-39": 12,
+    "40-44": 7,
+    "45-49": 22,
+    "50-54": 35,
+    "55-59": 77,
+    "60-64": 80,
+    "65-69": 102,
+    "70-74": 118,
+    "75-79": 141,
+    "80-84": 62,
+    "85+": 121
+   }
+  },
+  {
+   "nafn": "Einar",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 28,
+    "5-9": 30,
+    "10-14": 19,
+    "15-19": 18,
+    "20-24": 10,
+    "25-29": 16,
+    "30-34": 9,
+    "35-39": 5,
+    "40-44": 5,
+    "45-49": 6,
+    "50-54": 8,
+    "55-59": 6,
+    "60-64": 7,
+    "65-69": 8,
+    "70-74": 7,
+    "75-79": 7,
+    "80-84": 6,
+    "85+": 7
+   }
+  },
+  {
+   "nafn": "Elmar",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 11,
+    "5-9": 31,
+    "10-14": 68,
+    "15-19": 110,
+    "20-24": 95,
+    "25-29": 129,
+    "30-34": 267,
+    "35-39": 176,
+    "40-44": 130,
+    "45-49": 147,
+    "50-54": 572,
+    "55-59": 638,
+    "65-69": 828
+   }
+  },
+  {
+   "nafn": "Emil",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 3,
+    "5-9": 14,
+    "10-14": 31,
+    "15-19": 28,
+    "20-24": 69,
+    "25-29": 68,
+    "30-34": 122,
+    "35-39": 157,
+    "40-44": 155,
+    "45-49": 122,
+    "50-54": 174,
+    "55-59": 128,
+    "60-64": 116,
+    "65-69": 124,
+    "70-74": 238,
+    "75-79": 145,
+    "80-84": 136,
+    "85+": 68
+   }
+  },
+  {
+   "nafn": "Gabríel",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 30,
+    "5-9": 28,
+    "10-14": 25,
+    "15-19": 15,
+    "20-24": 23,
+    "25-29": 120,
+    "30-34": 308,
+    "35-39": 2387,
+    "40-44": 550,
+    "45-49": 1628,
+    "70-74": 515
+   }
+  },
+  {
+   "nafn": "Gísli",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 111,
+    "5-9": 104,
+    "10-14": 74,
+    "15-19": 70,
+    "20-24": 58,
+    "25-29": 55,
+    "30-34": 37,
+    "35-39": 30,
+    "40-44": 25,
+    "45-49": 25,
+    "50-54": 21,
+    "55-59": 18,
+    "60-64": 20,
+    "65-69": 17,
+    "70-74": 19,
+    "75-79": 11,
+    "80-84": 13,
+    "85+": 33
+   }
+  },
+  {
+   "nafn": "Guðjón",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 126,
+    "5-9": 107,
+    "10-14": 56,
+    "15-19": 73,
+    "20-24": 42,
+    "25-29": 46,
+    "30-34": 45,
+    "35-39": 46,
+    "40-44": 26,
+    "45-49": 43,
+    "50-54": 25,
+    "55-59": 23,
+    "60-64": 22,
+    "65-69": 21,
+    "70-74": 18,
+    "75-79": 23,
+    "80-84": 16,
+    "85+": 26
+   }
+  },
+  {
+   "nafn": "Guðmundur",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 10,
+    "5-9": 5,
+    "10-14": 8,
+    "15-19": 9,
+    "20-24": 18,
+    "25-29": 6,
+    "30-34": 5,
+    "35-39": 3,
+    "40-44": 2,
+    "45-49": 2,
+    "50-54": 3,
+    "55-59": 3,
+    "60-64": 3,
+    "65-69": 2,
+    "70-74": 3,
+    "75-79": 2,
+    "80-84": 3,
+    "85+": 2
+   }
+  },
+  {
+   "nafn": "Gunnar",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 17,
+    "5-9": 12,
+    "10-14": 9,
+    "15-19": 19,
+    "20-24": 7,
+    "25-29": 7,
+    "30-34": 6,
+    "35-39": 4,
+    "40-44": 4,
+    "45-49": 4,
+    "50-54": 4,
+    "55-59": 4,
+    "60-64": 4,
+    "65-69": 4,
+    "70-74": 4,
+    "75-79": 4,
+    "80-84": 4,
+    "85+": 5
+   }
+  },
+  {
+   "nafn": "Halldór",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 103,
+    "5-9": 54,
+    "10-14": 71,
+    "15-19": 42,
+    "20-24": 40,
+    "25-29": 34,
+    "30-34": 33,
+    "35-39": 28,
+    "40-44": 21,
+    "45-49": 15,
+    "50-54": 12,
+    "55-59": 14,
+    "60-64": 16,
+    "65-69": 12,
+    "70-74": 16,
+    "75-79": 15,
+    "80-84": 17,
+    "85+": 22
+   }
+  },
+  {
+   "nafn": "Haukur",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 67,
+    "5-9": 46,
+    "10-14": 42,
+    "15-19": 55,
+    "20-24": 62,
+    "25-29": 63,
+    "30-34": 41,
+    "35-39": 37,
+    "40-44": 31,
+    "45-49": 35,
+    "50-54": 39,
+    "55-59": 38,
+    "60-64": 46,
+    "65-69": 42,
+    "70-74": 46,
+    "75-79": 52,
+    "80-84": 35,
+    "85+": 18
+   }
+  },
+  {
+   "nafn": "Helgi",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 104,
+    "5-9": 67,
+    "10-14": 38,
+    "15-19": 32,
+    "20-24": 30,
+    "25-29": 40,
+    "30-34": 30,
+    "35-39": 19,
+    "40-44": 17,
+    "45-49": 17,
+    "50-54": 13,
+    "55-59": 17,
+    "60-64": 13,
+    "65-69": 16,
+    "70-74": 15,
+    "75-79": 19,
+    "80-84": 21,
+    "85+": 21
+   }
+  },
+  {
+   "nafn": "Hörður",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 134,
+    "5-9": 138,
+    "10-14": 141,
+    "15-19": 117,
+    "20-24": 122,
+    "25-29": 131,
+    "30-34": 66,
+    "35-39": 66,
+    "40-44": 50,
+    "45-49": 64,
+    "50-54": 43,
+    "55-59": 32,
+    "60-64": 35,
+    "65-69": 28,
+    "70-74": 43,
+    "75-79": 39,
+    "80-84": 26,
+    "85+": 19
+   }
+  },
+  {
+   "nafn": "Ísak",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 27,
+    "5-9": 39,
+    "10-14": 17,
+    "15-19": 14,
+    "20-24": 17,
+    "25-29": 50,
+    "30-34": 100,
+    "35-39": 189,
+    "40-44": 313,
+    "45-49": 507,
+    "50-54": 381,
+    "55-59": 272,
+    "60-64": 365,
+    "65-69": 345,
+    "70-74": 387,
+    "85+": 223
+   }
+  },
+  {
+   "nafn": "Jóhann",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 13,
+    "5-9": 18,
+    "10-14": 18,
+    "15-19": 24,
+    "20-24": 22,
+    "25-29": 13,
+    "30-34": 10,
+    "35-39": 16,
+    "40-44": 8,
+    "45-49": 9,
+    "50-54": 9,
+    "55-59": 9,
+    "60-64": 10,
+    "65-69": 11,
+    "70-74": 11,
+    "75-79": 13,
+    "80-84": 10,
+    "85+": 13
+   }
+  },
+  {
+   "nafn": "Jón",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 6,
+    "5-9": 4,
+    "10-14": 3,
+    "15-19": 1,
+    "20-24": 1,
+    "25-29": 1,
+    "30-34": 1,
+    "35-39": 1,
+    "40-44": 1,
+    "45-49": 1,
+    "50-54": 1,
+    "55-59": 1,
+    "60-64": 1,
+    "65-69": 1,
+    "70-74": 1,
+    "75-79": 1,
+    "80-84": 1,
+    "85+": 1
+   }
+  },
+  {
+   "nafn": "Jökull",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 4,
+    "5-9": 10,
+    "10-14": 28,
+    "15-19": 64,
+    "20-24": 67,
+    "25-29": 119,
+    "30-34": 137,
+    "35-39": 222,
+    "40-44": 251,
+    "45-49": 250,
+    "50-54": 328,
+    "55-59": 285,
+    "60-64": 414,
+    "65-69": 420,
+    "70-74": 399,
+    "80-84": 264,
+    "85+": 442
+   }
+  },
+  {
+   "nafn": "Kamil",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "5-9": 445,
+    "10-14": 362,
+    "15-19": 265,
+    "20-24": 97,
+    "25-29": 21,
+    "30-34": 32,
+    "35-39": 36,
+    "40-44": 198,
+    "45-49": 619
+   }
+  },
+  {
+   "nafn": "Karl",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 205,
+    "5-9": 152,
+    "10-14": 159,
+    "15-19": 97,
+    "20-24": 114,
+    "25-29": 88,
+    "30-34": 102,
+    "35-39": 42,
+    "40-44": 42,
+    "45-49": 42,
+    "50-54": 31,
+    "55-59": 25,
+    "60-64": 27,
+    "65-69": 22,
+    "70-74": 27,
+    "75-79": 31,
+    "80-84": 25,
+    "85+": 17
+   }
+  },
+  {
+   "nafn": "Kári",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 5,
+    "5-9": 6,
+    "10-14": 10,
+    "15-19": 25,
+    "20-24": 49,
+    "25-29": 92,
+    "30-34": 85,
+    "35-39": 43,
+    "40-44": 68,
+    "45-49": 101,
+    "50-54": 90,
+    "55-59": 94,
+    "60-64": 74,
+    "65-69": 118,
+    "70-74": 107,
+    "75-79": 105,
+    "80-84": 132,
+    "85+": 59
+   }
+  },
+  {
+   "nafn": "Kristinn",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 95,
+    "5-9": 72,
+    "10-14": 58,
+    "15-19": 60,
+    "20-24": 43,
+    "25-29": 25,
+    "30-34": 29,
+    "35-39": 29,
+    "40-44": 18,
+    "45-49": 18,
+    "50-54": 20,
+    "55-59": 16,
+    "60-64": 17,
+    "65-69": 18,
+    "70-74": 21,
+    "75-79": 25,
+    "80-84": 22,
+    "85+": 23
+   }
+  },
+  {
+   "nafn": "Kristján",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 24,
+    "5-9": 13,
+    "10-14": 12,
+    "15-19": 8,
+    "20-24": 12,
+    "25-29": 15,
+    "30-34": 12,
+    "35-39": 13,
+    "40-44": 10,
+    "45-49": 8,
+    "50-54": 10,
+    "55-59": 7,
+    "60-64": 8,
+    "65-69": 6,
+    "70-74": 8,
+    "75-79": 6,
+    "80-84": 8,
+    "85+": 8
+   }
+  },
+  {
+   "nafn": "Kristófer",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 12,
+    "5-9": 7,
+    "10-14": 11,
+    "15-19": 21,
+    "20-24": 8,
+    "25-29": 18,
+    "30-34": 86,
+    "35-39": 120,
+    "40-44": 238,
+    "45-49": 218,
+    "50-54": 252,
+    "55-59": 204,
+    "60-64": 258,
+    "65-69": 330,
+    "70-74": 179,
+    "75-79": 234,
+    "80-84": 430,
+    "85+": 168
+   }
+  },
+  {
+   "nafn": "Lukasz",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 859,
+    "10-14": 500,
+    "15-19": 292,
+    "20-24": 152,
+    "25-29": 51,
+    "30-34": 22,
+    "35-39": 10,
+    "40-44": 35,
+    "45-49": 274
+   }
+  },
+  {
+   "nafn": "Magnús",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 38,
+    "5-9": 26,
+    "10-14": 22,
+    "15-19": 11,
+    "20-24": 19,
+    "25-29": 19,
+    "30-34": 15,
+    "35-39": 9,
+    "40-44": 12,
+    "45-49": 7,
+    "50-54": 6,
+    "55-59": 8,
+    "60-64": 6,
+    "65-69": 7,
+    "70-74": 6,
+    "75-79": 9,
+    "80-84": 7,
+    "85+": 6
+   }
+  },
+  {
+   "nafn": "Marcin",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 1279,
+    "10-14": 467,
+    "15-19": 342,
+    "20-24": 125,
+    "25-29": 52,
+    "30-34": 28,
+    "35-39": 15,
+    "40-44": 15,
+    "45-49": 44,
+    "50-54": 307,
+    "55-59": 504
+   }
+  },
+  {
+   "nafn": "Mateusz",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 421,
+    "5-9": 425,
+    "10-14": 251,
+    "15-19": 154,
+    "20-24": 52,
+    "25-29": 17,
+    "30-34": 17,
+    "35-39": 99,
+    "40-44": 641,
+    "45-49": 567
+   }
+  },
+  {
+   "nafn": "Matthías",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 19,
+    "5-9": 33,
+    "10-14": 27,
+    "15-19": 35,
+    "20-24": 61,
+    "25-29": 94,
+    "30-34": 127,
+    "35-39": 137,
+    "40-44": 122,
+    "45-49": 141,
+    "50-54": 178,
+    "55-59": 125,
+    "60-64": 153,
+    "65-69": 174,
+    "70-74": 74,
+    "75-79": 91,
+    "80-84": 125,
+    "85+": 84
+   }
+  },
+  {
+   "nafn": "Michal",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 358,
+    "5-9": 282,
+    "10-14": 217,
+    "15-19": 299,
+    "20-24": 68,
+    "25-29": 20,
+    "30-34": 18,
+    "35-39": 14,
+    "40-44": 46,
+    "45-49": 161,
+    "50-54": 514,
+    "55-59": 325,
+    "60-64": 852
+   }
+  },
+  {
+   "nafn": "Mikael",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 8,
+    "5-9": 17,
+    "10-14": 14,
+    "15-19": 17,
+    "20-24": 36,
+    "25-29": 157,
+    "30-34": 296,
+    "35-39": 378,
+    "40-44": 291,
+    "45-49": 282,
+    "50-54": 491,
+    "55-59": 338,
+    "60-64": 460,
+    "65-69": 914,
+    "70-74": 316,
+    "75-79": 318,
+    "80-84": 279,
+    "85+": 201
+   }
+  },
+  {
+   "nafn": "Ólafur",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 35,
+    "5-9": 21,
+    "10-14": 15,
+    "15-19": 16,
+    "20-24": 13,
+    "25-29": 14,
+    "30-34": 13,
+    "35-39": 6,
+    "40-44": 6,
+    "45-49": 5,
+    "50-54": 5,
+    "55-59": 5,
+    "60-64": 5,
+    "65-69": 5,
+    "70-74": 5,
+    "75-79": 5,
+    "80-84": 5,
+    "85+": 4
+   }
+  },
+  {
+   "nafn": "Óliver",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 7,
+    "5-9": 19,
+    "10-14": 47,
+    "15-19": 62,
+    "20-24": 107,
+    "25-29": 452,
+    "45-49": 1647,
+    "65-69": 617
+   }
+  },
+  {
+   "nafn": "Óskar",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 39,
+    "5-9": 34,
+    "10-14": 32,
+    "15-19": 31,
+    "20-24": 48,
+    "25-29": 72,
+    "30-34": 62,
+    "35-39": 32,
+    "40-44": 49,
+    "45-49": 20,
+    "50-54": 29,
+    "55-59": 30,
+    "60-64": 23,
+    "65-69": 31,
+    "70-74": 40,
+    "75-79": 40,
+    "80-84": 54,
+    "85+": 40
+   }
+  },
+  {
+   "nafn": "Pawel",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "5-9": 702,
+    "10-14": 713,
+    "15-19": 282,
+    "20-24": 173,
+    "25-29": 35,
+    "30-34": 24,
+    "35-39": 20,
+    "40-44": 24,
+    "45-49": 77,
+    "50-54": 125,
+    "55-59": 157,
+    "65-69": 626,
+    "70-74": 496
+   }
+  },
+  {
+   "nafn": "Páll",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 268,
+    "5-9": 119,
+    "10-14": 164,
+    "15-19": 150,
+    "20-24": 79,
+    "25-29": 76,
+    "30-34": 71,
+    "35-39": 51,
+    "40-44": 51,
+    "45-49": 28,
+    "50-54": 22,
+    "55-59": 20,
+    "60-64": 15,
+    "65-69": 20,
+    "70-74": 20,
+    "75-79": 20,
+    "80-84": 24,
+    "85+": 14
+   }
+  },
+  {
+   "nafn": "Pétur",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 65,
+    "5-9": 63,
+    "10-14": 41,
+    "15-19": 33,
+    "20-24": 45,
+    "25-29": 31,
+    "30-34": 39,
+    "35-39": 23,
+    "40-44": 22,
+    "45-49": 19,
+    "50-54": 15,
+    "55-59": 19,
+    "60-64": 18,
+    "65-69": 15,
+    "70-74": 17,
+    "75-79": 16,
+    "80-84": 15,
+    "85+": 15
+   }
+  },
+  {
+   "nafn": "Piotr",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 331,
+    "5-9": 248,
+    "10-14": 450,
+    "15-19": 294,
+    "20-24": 141,
+    "25-29": 37,
+    "30-34": 21,
+    "35-39": 18,
+    "40-44": 29,
+    "45-49": 24,
+    "50-54": 70,
+    "55-59": 105,
+    "60-64": 209,
+    "65-69": 240,
+    "70-74": 593
+   }
+  },
+  {
+   "nafn": "Ragnar",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 49,
+    "5-9": 49,
+    "10-14": 59,
+    "15-19": 65,
+    "20-24": 44,
+    "25-29": 49,
+    "30-34": 35,
+    "35-39": 25,
+    "40-44": 20,
+    "45-49": 16,
+    "50-54": 17,
+    "55-59": 22,
+    "60-64": 21,
+    "65-69": 24,
+    "70-74": 28,
+    "75-79": 22,
+    "80-84": 29,
+    "85+": 12
+   }
+  },
+  {
+   "nafn": "Róbert",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 80,
+    "5-9": 22,
+    "10-14": 26,
+    "15-19": 22,
+    "20-24": 15,
+    "25-29": 33,
+    "30-34": 87,
+    "35-39": 70,
+    "40-44": 43,
+    "45-49": 36,
+    "50-54": 40,
+    "55-59": 114,
+    "60-64": 152,
+    "65-69": 134,
+    "70-74": 114,
+    "75-79": 203,
+    "80-84": 140,
+    "85+": 450
+   }
+  },
+  {
+   "nafn": "Sigurður",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 20,
+    "5-9": 8,
+    "10-14": 7,
+    "15-19": 12,
+    "20-24": 4,
+    "25-29": 3,
+    "30-34": 2,
+    "35-39": 2,
+    "40-44": 3,
+    "45-49": 3,
+    "50-54": 2,
+    "55-59": 2,
+    "60-64": 2,
+    "65-69": 3,
+    "70-74": 2,
+    "75-79": 3,
+    "80-84": 2,
+    "85+": 3
+   }
+  },
+  {
+   "nafn": "Sindri",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 106,
+    "5-9": 77,
+    "10-14": 36,
+    "15-19": 26,
+    "20-24": 20,
+    "25-29": 12,
+    "30-34": 19,
+    "35-39": 49,
+    "40-44": 86,
+    "45-49": 257,
+    "50-54": 233,
+    "55-59": 261,
+    "60-64": 439,
+    "65-69": 555,
+    "70-74": 472
+   }
+  },
+  {
+   "nafn": "Stefán",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 18,
+    "5-9": 15,
+    "10-14": 13,
+    "15-19": 10,
+    "20-24": 14,
+    "25-29": 9,
+    "30-34": 7,
+    "35-39": 11,
+    "40-44": 11,
+    "45-49": 10,
+    "50-54": 7,
+    "55-59": 11,
+    "60-64": 9,
+    "65-69": 10,
+    "70-74": 13,
+    "75-79": 10,
+    "80-84": 12,
+    "85+": 11
+   }
+  },
+  {
+   "nafn": "Sveinn",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 162,
+    "5-9": 110,
+    "10-14": 86,
+    "15-19": 72,
+    "20-24": 66,
+    "25-29": 81,
+    "30-34": 60,
+    "35-39": 40,
+    "40-44": 32,
+    "45-49": 29,
+    "50-54": 23,
+    "55-59": 27,
+    "60-64": 24,
+    "65-69": 23,
+    "70-74": 22,
+    "75-79": 17,
+    "80-84": 20,
+    "85+": 9
+   }
+  },
+  {
+   "nafn": "Tomasz",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 590,
+    "5-9": 538,
+    "10-14": 948,
+    "15-19": 244,
+    "20-24": 198,
+    "25-29": 60,
+    "30-34": 38,
+    "35-39": 22,
+    "40-44": 16,
+    "45-49": 26,
+    "50-54": 59,
+    "55-59": 175,
+    "60-64": 292,
+    "65-69": 721
+   }
+  },
+  {
+   "nafn": "Tómas",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 23,
+    "5-9": 23,
+    "10-14": 16,
+    "15-19": 7,
+    "20-24": 21,
+    "25-29": 27,
+    "30-34": 42,
+    "35-39": 55,
+    "40-44": 76,
+    "45-49": 66,
+    "50-54": 67,
+    "55-59": 83,
+    "60-64": 70,
+    "65-69": 56,
+    "70-74": 81,
+    "75-79": 64,
+    "80-84": 53,
+    "85+": 102
+   }
+  },
+  {
+   "nafn": "Viktor",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 9,
+    "5-9": 3,
+    "10-14": 4,
+    "15-19": 5,
+    "20-24": 9,
+    "25-29": 26,
+    "30-34": 34,
+    "35-39": 91,
+    "40-44": 243,
+    "45-49": 224,
+    "50-54": 203,
+    "55-59": 163,
+    "60-64": 230,
+    "65-69": 226,
+    "70-74": 183,
+    "75-79": 217,
+    "80-84": 269,
+    "85+": 381
+   }
+  },
+  {
+   "nafn": "Þorsteinn",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 113,
+    "5-9": 84,
+    "10-14": 55,
+    "15-19": 40,
+    "20-24": 53,
+    "25-29": 64,
+    "30-34": 55,
+    "35-39": 47,
+    "40-44": 44,
+    "45-49": 47,
+    "50-54": 18,
+    "55-59": 13,
+    "60-64": 19,
+    "65-69": 19,
+    "70-74": 12,
+    "75-79": 14,
+    "80-84": 31,
+    "85+": 25
+   }
+  },
+  {
+   "nafn": "Örn",
+   "gender": "kk",
+   "saetiEftirAldri": {
+    "0-4": 234,
+    "5-9": 222,
+    "10-14": 177,
+    "15-19": 122,
+    "20-24": 241,
+    "25-29": 177,
+    "30-34": 120,
+    "35-39": 142,
+    "40-44": 141,
+    "45-49": 99,
+    "50-54": 87,
+    "55-59": 35,
+    "60-64": 30,
+    "65-69": 37,
+    "70-74": 30,
+    "75-79": 24,
+    "80-84": 18,
+    "85+": 46
+   }
+  }
+ ]
+}

@@ -1,0 +1,376 @@
+# Handvirkar skýringar — hand-written entries that beat everything else.
+#
+# This file is the top of the precedence chain: overrides → lexicon → AI draft.
+# It exists for two kinds of name the decomposer cannot and should not handle:
+#
+#   1. BORROWED NAMES. Anna, Daníel and Alexander are not Old Norse compounds;
+#      no amount of element curation will explain them. They need a real
+#      etymology written out.
+#
+#   2. ERODED COMPOUNDS. Sigurður IS sigr + vǫrðr, but the second element has
+#      worn away to the point that no honest segmentation recovers it. Here we
+#      state the parts explicitly with `lidir`, and the build assembles the
+#      breakdown from the lexicon so the reader still gets the element links.
+#
+# Everything here is treated as `stadfest` (verified) unless it says otherwise,
+# because a human wrote it and cited it.
+#
+# FIELDS
+#   nafn       lowercase register form — must match mannanafnaskrá exactly
+#   merking    short gloss
+#   skyring    the interesting part; this is what people came to read
+#   lidir      explicit element ids when the name IS a compound (from elements.yaml)
+#   uppruni    language of origin; drives the "erlend að uppruna" filter
+#   flokkar    extra categories beyond what the elements confer
+#   heimild    source
+#   confidence override the default of stadfest when genuinely uncertain
+
+names:
+  # ── Nöfnin sem spurt er um ────────────────────────────────────────────────
+  - nafn: lóa
+    merking: heiðlóa
+    skyring: >-
+      Lóan er farfugl sem kemur til Íslands í apríl, og koma hennar er í
+      hugum landsmanna sjálfur vorboðinn — „lóan er komin“ merkir að
+      veturinn sé á enda. Nafnið er líka stytting á Ólöf og Sólveig.
+    lidir: [lóa]
+    uppruni: íslenska
+    flokkar: [dyr, nattura]
+    heimild: Zoëga 1910
+  - nafn: högni
+    merking: Högni, hetja úr Niflungasögnum; högni, fressköttur
+    skyring: >-
+      Tvöföld saga. Hǫgni er hetja í Völsunga sögu og Niflungakviðum, bróðir
+      Guðrúnar Gjúkadóttur. En í nútímamáli merkir högni einfaldlega
+      fresskött, og Högni er eitt allra algengasta kattarnafn á Íslandi.
+    uppruni: norræna
+    flokkar: [sogupersonur, dyr]
+    heimild: Zoëga 1910
+
+  # ── Algengustu nöfnin sem orðasafnið ræður ekki við ───────────────────────
+  - nafn: sigurður
+    merking: sigur + vörður — „sá sem stendur vörð um sigurinn“
+    skyring: >-
+      Af sigr, „sigur“, og vǫrðr, „vörður, verndari“. Viðliðurinn hefur máðst
+      svo í tímans rás að hann sést varla í nútímamyndinni. Sigurður
+      Fáfnisbani er frægasta hetja norrænna sagna.
+    lidir: [sig, varð]
+    uppruni: norræna
+    flokkar: [sogupersonur]
+    heimild: Zoëga 1910
+  - nafn: anna
+    merking: náð, hylli
+    skyring: >-
+      Úr hebresku Ḥannāh, „náð“ eða „hylli“, gegnum grísku og latínu. Algengasta
+      kvenmannsnafn Íslands.
+    uppruni: hebreska
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: kristín
+    merking: kristin, fylgjandi Krists
+    skyring: Kvenkynsmynd latneska orðsins Christianus, „kristinn maður“.
+    uppruni: latína
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: kristján
+    merking: kristinn maður
+    uppruni: latína
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: kristinn
+    merking: kristinn maður
+    uppruni: latína
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: margrét
+    merking: perla
+    skyring: >-
+      Úr grísku margarítēs, „perla“, sem aftur er talið komið úr austrænum
+      málum. Barst til Norðurlanda með dýrlingadýrkun.
+    uppruni: gríska
+    flokkar: [fegurd, kristni]
+    heimild: CV 1874
+  - nafn: magnús
+    merking: mikill, stór
+    skyring: >-
+      Af latneska lýsingarorðinu magnus, „mikill“. Nafnið barst norður eftir
+      Karlamagnúsi — Carolus Magnus — og var fyrst gefið Magnúsi góða
+      Ólafssyni Noregskonungi.
+    uppruni: latína
+    flokkar: [konungborin]
+    heimild: CV 1874
+  - nafn: stefán
+    merking: kóróna, sveigur
+    uppruni: gríska
+    flokkar: [konungborin, kristni]
+    heimild: CV 1874
+  - nafn: katrín
+    merking: hrein
+    skyring: >-
+      Úr grísku Aikaterínē. Merkingin er óviss en nafnið var snemma tengt
+      katharós, „hreinn“.
+    uppruni: gríska
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: elín
+    merking: ljós, blys
+    skyring: Íslensk mynd af Helenu, sem er líklega dregið af grísku hḗlē, „blys“.
+    uppruni: gríska
+    flokkar: [ljos]
+    heimild: CV 1874
+  - nafn: helena
+    merking: ljós, blys
+    uppruni: gríska
+    flokkar: [ljos]
+    heimild: CV 1874
+  - nafn: eva
+    merking: sú sem lifir, lífgjafi
+    uppruni: hebreska
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: árni
+    merking: örn
+    skyring: >-
+      Íslensk mynd sem gengur út frá ǫrn, „örn“, og er skyld Arnar og Örn.
+    lidir: [örn]
+    uppruni: norræna
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - nafn: sara
+    merking: höfðingskona, prinsessa
+    uppruni: hebreska
+    flokkar: [kristni, konungborin]
+    heimild: CV 1874
+  - nafn: aron
+    merking: óviss merking; nafn bróður Móse
+    skyring: >-
+      Úr hebresku Aharon. Merkingin er umdeild og engin skýring hefur hlotið
+      almennt fylgi.
+    uppruni: hebreska
+    flokkar: [kristni]
+    heimild: CV 1874
+    confidence: likleg
+  - nafn: daníel
+    merking: „Guð er dómari minn“
+    uppruni: hebreska
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: elísabet
+    merking: „Guð minn er eiður“
+    uppruni: hebreska
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: alexander
+    merking: verndari manna
+    skyring: Af grísku alexein, „að verja“, og anḗr, „maður“.
+    uppruni: gríska
+    flokkar: [hernadur]
+    heimild: CV 1874
+  - nafn: viktor
+    merking: sigurvegari
+    uppruni: latína
+    flokkar: [hernadur]
+    heimild: CV 1874
+  - nafn: kolbrún
+    merking: kol + brún — „sú dökkbrýnda“
+    skyring: >-
+      Lýsir dökkum augabrúnum. Þekktast úr Fóstbræðra sögu, þar sem
+      Þormóður Kolbrúnarskáld dregur viðurnefni sitt af nafninu.
+    lidir: [kol]
+    uppruni: norræna
+    flokkar: [litir, fegurd, sogupersonur]
+    heimild: Zoëga 1910
+  - nafn: íris
+    merking: regnbogi
+    skyring: Íris var regnbogagyðja Grikkja og sendiboði goðanna.
+    uppruni: gríska
+    flokkar: [litir, nattura]
+    heimild: CV 1874
+  - nafn: ólöf
+    merking: arfleifð forföðurins
+    skyring: Kvenkynsmynd Ólafs, af *anu-laibaR — sami viðliður og í -leifur.
+    lidir: [ólafur]
+    uppruni: norræna
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - nafn: andri
+    merking: skíði, snjóþrúga
+    skyring: >-
+      Af andri, „skíði“. Einnig notað sem stytting á Andrés, sem er af
+      grísku andreíos, „karlmannlegur“.
+    uppruni: norræna
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - nafn: óskar
+    merking: ás + geir — „spjót goðanna“
+    lidir: [ás, geir]
+    uppruni: norræna
+    flokkar: [godafraedi, hernadur]
+    heimild: Zoëga 1910
+  - nafn: davíð
+    merking: ástkær, elskaður
+    uppruni: hebreska
+    flokkar: [kristni, gledi]
+    heimild: CV 1874
+  - nafn: birgir
+    merking: sá sem bjargar eða birgir upp
+    skyring: Af birgja, „að sjá fyrir, birgja upp“ — sá sem veitir öðrum bjargir.
+    uppruni: norræna
+    flokkar: []
+    heimild: Zoëga 1910
+  - nafn: rakel
+    merking: ær, kind
+    uppruni: hebreska
+    flokkar: [kristni, dyr]
+    heimild: CV 1874
+  - nafn: tómas
+    merking: tvíburi
+    uppruni: arameíska
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: hulda
+    merking: hulin, leynd
+    skyring: >-
+      Af huld, „hulinn“. Orðið tengist huldufólki — því sem hulið er
+      mannlegum augum.
+    uppruni: norræna
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - nafn: ágúst
+    merking: tignarlegur, virðulegur
+    uppruni: latína
+    flokkar: [konungborin]
+    heimild: CV 1874
+  - nafn: kári
+    merking: vindhviða
+    skyring: >-
+      Kári er persónugervingur vindsins í norrænni goðafræði, sonur Fornjóts
+      og bróðir Ægis og Loga — vindur, haf og eldur.
+    uppruni: norræna
+    flokkar: [vedur, godafraedi]
+    heimild: Zoëga 1910
+  - nafn: benedikt
+    merking: blessaður
+    uppruni: latína
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: hanna
+    merking: náð, hylli
+    skyring: Stytting á Jóhanna, en einnig sjálfstæð mynd hebreska nafnsins Ḥannāh.
+    uppruni: hebreska
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: kristófer
+    merking: sá sem ber Krist
+    uppruni: gríska
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: atli
+    merking: faðir
+    skyring: >-
+      Gæluorð myndað af orði fyrir föður. Atli er nafn Attila Húnakonungs í
+      norrænum sögnum, þar sem hann kemur fyrir í Atlakviðu.
+    uppruni: norræna
+    flokkar: [sogupersonur]
+    heimild: Zoëga 1910
+  - nafn: karen
+    merking: hrein
+    skyring: Dönsk mynd af Katrín.
+    uppruni: gríska
+    flokkar: [kristni]
+    heimild: CV 1874
+  - nafn: sandra
+    merking: verndari manna
+    skyring: Stytting á Alexandra.
+    uppruni: gríska
+    flokkar: [hernadur]
+    heimild: CV 1874
+  - nafn: haraldur
+    merking: her + valdur — „sá sem stýrir hernum“
+    lidir: [her, vald]
+    uppruni: norræna
+    flokkar: [hernadur, konungborin]
+    heimild: Zoëga 1910
+  - nafn: harpa
+    merking: harpa; fyrsti mánuður sumars
+    skyring: >-
+      Harpa er fyrsti mánuður sumars í gamla íslenska tímatalinu og hefst á
+      sumardaginn fyrsta. Orðið merkir líka hljóðfærið hörpu.
+    uppruni: norræna
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - nafn: kjartan
+    merking: sæfari
+    skyring: >-
+      Íslensk mynd írska nafnsins Muirchertach, „sæfari“. Kjartan Ólafsson í
+      Laxdælu er meðal þekktustu persóna Íslendingasagna.
+    uppruni: írska
+    flokkar: [sogupersonur, vatn]
+    heimild: CV 1874
+  - nafn: andrea
+    merking: karlmannleg, hraust
+    uppruni: gríska
+    flokkar: []
+    heimild: CV 1874
+  - nafn: edda
+    merking: langamma
+    skyring: >-
+      Í fornmáli merkir edda „langamma“. Nafnið er líka heiti hinna tveggja
+      Edda — Snorra-Eddu og Eddukvæða — sem varðveita norræna goðafræði.
+    uppruni: norræna
+    flokkar: [sogupersonur]
+    heimild: Zoëga 1910
+  - nafn: þórður
+    merking: samdráttur úr Þórröðr — Þór + ráð
+    skyring: >-
+      Stytt mynd af eldra Þórröðr. Fyrri liðurinn er guðinn Þór.
+    lidir: [þór, ráð]
+    uppruni: norræna
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+    confidence: likleg
+  - nafn: egill
+    merking: gæluorð af liðnum agi, „ótti, lotning“
+    skyring: >-
+      Egill Skallagrímsson, skáld og víkingur, er aðalpersóna Egils sögu og
+      eitt þekktasta nafn Íslendingasagna.
+    lidir: [agi]
+    uppruni: norræna
+    flokkar: [sogupersonur]
+    heimild: Zoëga 1910
+    confidence: likleg
+  - nafn: tinna
+    merking: tinna, harður steinn til eldkveikju
+    uppruni: norræna
+    flokkar: [nattura, ljos]
+    heimild: Zoëga 1910
+  - nafn: sindri
+    merking: neisti, gjall úr smiðju
+    skyring: >-
+      Sindri var dvergur og smiður í norrænni goðafræði; hann og bróðir hans
+      smíðuðu Mjölni, hamar Þórs.
+    uppruni: norræna
+    flokkar: [godafraedi, ljos]
+    heimild: Zoëga 1910
+  - nafn: hörður
+    merking: maður af ætt Hörða
+    skyring: >-
+      Hǫrðar voru norsk þjóð sem Hörðaland dregur nafn sitt af. Orðið er
+      einnig skylt harðr, „harður, sterkur“.
+    uppruni: norræna
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - nafn: emilía
+    merking: af rómverska ættarnafninu Aemilius
+    uppruni: latína
+    flokkar: []
+    heimild: CV 1874
+  - nafn: telma
+    merking: óviss merking
+    skyring: >-
+      Nafnið kemur fyrst fram í skáldsögunni Thelma eftir Marie Corelli
+      (1887) og virðist búið til þar. Engin eldri heimild er þekkt.
+    uppruni: enska
+    flokkar: []
+    heimild: CV 1874
+    confidence: ostadfest

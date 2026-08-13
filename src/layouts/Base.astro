@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Merking og uppruni íslenskra mannanafna.' } = Astro.props;
+const full = title === 'Nafnaval' ? title : `${title} — Nafnaval`;
+---
+
+<!doctype html>
+<html lang="is">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{full}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={full} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="is_IS" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%C3%9E%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">Nafnaval</a>
+        <nav class="site-nav">
+          <a href="/flokkar">Flokkar</a>
+          <a href="/hafnad">Hafnað</a>
+          <a href="/um">Um</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          Nafnaskrá frá <a href="https://island.is/leit-i-mannanafnaskra">Þjóðskrá Íslands</a>,
+          vinsældir frá <a href="https://hagstofa.is">Hagstofu Íslands</a>, beygingar úr
+          <a href="https://bin.arnastofnun.is">BÍN</a> (Stofnun Árna Magnússonar, CC BY-SA 4.0).
+          <a href="/um">Um heimildir og áreiðanleika</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

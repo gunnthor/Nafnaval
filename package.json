@@ -1,0 +1,29 @@
+{
+  "name": "nafnaval",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "fetch:register": "tsx scripts/fetch-register.ts",
+    "fetch:stats": "tsx scripts/fetch-stats.ts",
+    "fetch:bin": "tsx scripts/fetch-bin.ts",
+    "fetch:all": "npm run fetch:register && npm run fetch:stats && npm run fetch:bin",
+    "build:data": "tsx scripts/build-data.ts",
+    "lint:lexicon": "tsx scripts/validate-lexicon.ts",
+    "ai:gapfill": "tsx scripts/ai-gapfill.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.116.0",
+    "astro": "^5.2.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5",
+    "yaml": "^2.7.0"
+  }
+}

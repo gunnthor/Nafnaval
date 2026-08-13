@@ -1,0 +1,214 @@
+---
+import Base from '../../layouts/Base.astro';
+import TrustBadge from '../../components/TrustBadge.astro';
+import { CATEGORY_BY_SLUG } from '../../lib/categories.ts';
+import { slugify, sortNames } from '../../lib/icelandic.ts';
+import nofn from '../../data/nofn.json';
+import type { NameEntry } from '../../lib/types.ts';
+
+export async function getStaticPaths() {
+  const entries = (await import('../../data/nofn.json')).default as NameEntry[];
+  return entries.map((e) => ({ params: { slug: e.slug }, props: { entry: e } }));
+}
+
+interface Props {
+  entry: NameEntry & { skyring?: string };
+}
+
+const { entry } = Astro.props;
+const all = nofn as Array<NameEntry & { skyring?: string }>;
+
+const TYPE_LABEL: Record<string, string> = {
+  ST: 'Stúlkunafn',
+  DR: 'Drengjanafn',
+  MI: 'Millinafn',
+  KH: 'Kynhlutlaust nafn',
+  RST: 'Ritbreyting stúlkunafns',
+  RDR: 'Ritbreyting drengjanafns',
+};
+
+const STATUS_LABEL: Record<string, string> = {
+  Sam: 'Samþykkt af mannanafnanefnd',
+  Haf: 'Hafnað af mannanafnanefnd',
+  Óaf: 'Óafgreitt hjá mannanafnanefnd',
+};
+
+/** Names sharing an element — the exploration loop. */
+const elementIds = entry.lidir.map((l) => l.lidur).filter(Boolean) as string[];
+const related = elementIds.length
+  ? sortNames(
+      all.filter(
+        (e) =>
+          e.slug !== entry.slug &&
+          e.status === 'Sam' &&
+          !e.erRitbreyting &&
+          e.lidir.some((l) => l.lidur && elementIds.includes(l.lidur)),
+      ),
+      (e) => e.nafn,
+    ).slice(0, 24)
+  : [];
+
+/** Spelling variants that point at this name. */
+const variants = all.filter((e) => e.erRitbreyting && e.ritbreytingAf === entry.slug);
+
+/** For a variant, the name it defers to. */
+const parent = entry.erRitbreyting && entry.ritbreytingAf
+  ? all.find((e) => e.slug === entry.ritbreytingAf)
+  : undefined;
+
+const pop = entry.vinsaeldir;
+const trend = pop?.fyrraSaeti != null ? pop.fyrraSaeti - pop.saeti : null;
+
+const description = entry.merking
+  ? `${entry.nafn} — ${entry.merking}. ${TYPE_LABEL[entry.type] ?? ''}, ${STATUS_LABEL[entry.status ?? ''] ?? ''}.`
+  : `${entry.nafn} — ${TYPE_LABEL[entry.type] ?? 'nafn'} í íslenskri mannanafnaskrá.`;
+---
+
+<Base title={entry.nafn} description={description}>
+  <div class="wrap">
+    <div class="name-hero">
+      <h1>{entry.nafn}</h1>
+      <p class="meta">
+        {TYPE_LABEL[entry.type]}
+        {entry.status && <> · {STATUS_LABEL[entry.status]}</>}
+        {entry.verdict && <> · úrskurður {entry.verdict}</>}
+      </p>
+
+      {
+        entry.merking ? (
+          <>
+            <p class="meaning">
+              {entry.merking} <TrustBadge confidence={entry.confidence} />
+            </p>
+            {entry.skyring && <p class="skyring">{entry.skyring}</p>}
+            {entry.confidence === 'ostadfest' && (
+              <p class="notice">
+                Þessi skýring er samin af gervigreind og hefur ekki verið staðfest með heimild.
+                Hún gæti verið röng. <a href="/um#areidanleiki">Nánar um áreiðanleika</a>.
+              </p>
+            )}
+          </>
+        ) : (
+          <p class="notice">
+            Merking þessa nafns er ekki skráð hjá okkur enn.
+            {parent && (
+              <> Sjá <a href={`/nafn/${parent.slug}`}>{parent.nafn}</a>.</>
+            )}
+          </p>
+        )
+      }
+    </div>
+
+    {
+      entry.lidir.length > 0 && (
+        <section class="card">
+          {/* A one-element name is not a compound — it *is* the element. */}
+          <h2>{entry.lidir.length > 1 ? 'Nafnið er sett saman úr' : 'Nafnið er dregið af'}</h2>
+          <div class="lidir">
+            {entry.lidir.map((seg, i) => (
+              <>
+                {i > 0 && <span class="plus" aria-hidden="true">+</span>}
+                {seg.lidur ? (
+                  <a class="lidur" href={`/lidur/${slugify(seg.lidur)}`}>
+                    <span class="texti">{seg.lidur}</span>
+                    <span class="gloss">{seg.merking}</span>
+                    {seg.heimild && <span class="heimild">Heimild: {seg.heimild}</span>}
+                  </a>
+                ) : (
+                  <span class="lidur">
+                    <span class="texti">{seg.texti}</span>
+                  </span>
+                )}
+              </>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      entry.beyging && (
+        <section class="card">
+          <h2>Beyging</h2>
+          <table class="beyging">
+            <tbody>
+              <tr><th>Nefnifall</th><td>hér er {entry.beyging.nefnifall}</td></tr>
+              <tr><th>Þolfall</th><td>um {entry.beyging.tholfall}</td></tr>
+              <tr><th>Þágufall</th><td>frá {entry.beyging.thagufall}</td></tr>
+              <tr><th>Eignarfall</th><td>til {entry.beyging.eignarfall}</td></tr>
+            </tbody>
+          </table>
+        </section>
+      )
+    }
+
+    {
+      pop && (
+        <section class="card">
+          <h2>Vinsældir</h2>
+          <p class="stat">
+            <span class="big">{pop.saeti}. sæti</span>
+            {trend != null && trend !== 0 && (
+              <span class={trend > 0 ? 'trend-up' : 'trend-down'}>
+                {trend > 0 ? `↑ um ${trend} sæti` : `↓ um ${Math.abs(trend)} sæti`}
+              </span>
+            )}
+          </p>
+          {pop.fjoldi != null && (
+            <p class="skyring">
+              {pop.fjoldi.toLocaleString('is-IS')} einstaklingar bera nafnið samkvæmt þjóðskrá.
+            </p>
+          )}
+          <p class="skyring" style="font-size:0.8rem">
+            Hagstofa Íslands birtir aðeins um 100 algengustu nöfn hvors kyns, svo flest nöfn hafa engar tölur.
+          </p>
+        </section>
+      )
+    }
+
+    {
+      entry.flokkar.length > 0 && (
+        <section class="card">
+          <h2>Flokkar</h2>
+          <ul class="tag-list">
+            {entry.flokkar.map((f) => {
+              const cat = CATEGORY_BY_SLUG.get(f);
+              return cat ? (
+                <li><a class="tag" href={`/flokkur/${cat.slug}`}>{cat.heiti}</a></li>
+              ) : null;
+            })}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      variants.length > 0 && (
+        <section class="card">
+          <h2>Leyfðar ritbreytingar</h2>
+          <ul class="tag-list">
+            {variants.map((v) => (
+              <li><a class="tag" href={`/nafn/${v.slug}`}>{v.nafn}</a></li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      related.length > 0 && (
+        <section class="card">
+          <h2>Skyld nöfn</h2>
+          <p class="skyring" style="margin-bottom:0.6rem">
+            Nöfn sem deila lið með {entry.nafn}.
+          </p>
+          <ul class="tag-list">
+            {related.map((r) => (
+              <li><a class="tag" href={`/nafn/${r.slug}`}>{r.nafn}</a></li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </div>
+</Base>

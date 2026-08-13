@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import { CATEGORY_BY_SLUG } from '../../lib/categories.ts';
+import { sortNames } from '../../lib/icelandic.ts';
+import type { LexiconElement } from '../../lib/types.ts';
+
+interface ElementPage extends LexiconElement {
+  slug: string;
+  nofn: Array<{ nafn: string; slug: string; gender: string; status: string | null }>;
+}
+
+export async function getStaticPaths() {
+  const lidir = (await import('../../data/lidir.json')).default as ElementPage[];
+  return lidir
+    // An element nothing resolves to has no page worth visiting.
+    .filter((el) => el.nofn.length > 0)
+    .map((el) => ({ params: { slug: el.slug }, props: { el } }));
+}
+
+interface Props {
+  el: ElementPage;
+}
+
+const { el } = Astro.props;
+const names = sortNames(el.nofn, (n) => n.nafn);
+
+const POSITION: Record<string, string> = {
+  forlidur: 'forliður',
+  vidlidur: 'viðliður',
+};
+const positions = el.stada.map((p) => POSITION[p]).join(' og ');
+---
+
+<Base
+  title={`Liðurinn ${el.id}`}
+  description={`${el.id} merkir ${el.merking}. ${names.length} íslensk nöfn innihalda þennan lið.`}
+>
+  <div class="wrap">
+    <div class="name-hero">
+      <p class="meta">Nafnliður</p>
+      <h1>{el.id}</h1>
+      <p class="meaning">{el.merking}</p>
+      {el.skyring && <p class="skyring">{el.skyring}</p>}
+      <p class="meta" style="margin-top:0.75rem">
+        Kemur fyrir sem {positions}. Heimild: {el.heimild}.
+        {el.afbrigdi?.length ? <> Afbrigði: {el.afbrigdi.join(', ')}.</> : null}
+      </p>
+    </div>
+
+    {
+      el.flokkar.length > 0 && (
+        <section class="card">
+          <h2>Flokkar sem liðurinn gefur</h2>
+          <ul class="tag-list">
+            {el.flokkar.map((f) => {
+              const cat = CATEGORY_BY_SLUG.get(f);
+              return cat ? <li><a class="tag" href={`/flokkur/${cat.slug}`}>{cat.heiti}</a></li> : null;
+            })}
+          </ul>
+        </section>
+      )
+    }
+
+    <section class="card">
+      <h2>{names.length} nöfn með þennan lið</h2>
+      <ul class="name-list">
+        {
+          names.map((n) => (
+            <li>
+              <a href={`/nafn/${n.slug}`}>
+                <span class="gender">{n.gender === 'kvk' ? 'kvk' : n.gender === 'kk' ? 'kk' : '—'}</span>
+                <span class="nafn">{n.nafn}</span>
+                {n.status === 'Haf' && <span class="merking">hafnað</span>}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import { CATEGORIES } from '../../lib/categories.ts';
+import { sortNames } from '../../lib/icelandic.ts';
+import type { NameEntry } from '../../lib/types.ts';
+
+export async function getStaticPaths() {
+  const entries = (await import('../../data/nofn.json')).default as NameEntry[];
+  return CATEGORIES.map((cat) => ({
+    params: { slug: cat.slug },
+    props: {
+      cat,
+      names: sortNames(
+        entries.filter(
+          (e) => e.status === 'Sam' && !e.erRitbreyting && e.flokkar.includes(cat.slug),
+        ),
+        (e) => e.nafn,
+      ),
+    },
+  }));
+}
+
+const { cat, names } = Astro.props;
+---
+
+<Base title={cat.heiti} description={`${names.length} íslensk nöfn í flokknum ${cat.heiti}. ${cat.lysing}.`}>
+  <div class="wrap">
+    <div class="name-hero">
+      <p class="meta">Flokkur</p>
+      <h1>{cat.heiti}</h1>
+      <p class="skyring">{cat.lysing}.</p>
+      <p class="meta">{names.length.toLocaleString('is-IS')} nöfn</p>
+    </div>
+
+    {
+      names.length > 0 ? (
+        <ul class="name-list">
+          {names.map((e) => (
+            <li>
+              <a href={`/nafn/${e.slug}`}>
+                <span class="gender">{e.gender === 'kvk' ? 'kvk' : e.gender === 'kk' ? 'kk' : '—'}</span>
+                <span class="nafn">{e.nafn}</span>
+                <span class="merking">{e.merking ?? ''}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="empty">Engin nöfn eru skráð í þennan flokk enn.</p>
+      )
+    }
+  </div>
+</Base>

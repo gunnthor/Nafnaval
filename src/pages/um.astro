@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro';
+import nofn from '../data/nofn.json';
+import lidirData from '../data/lidir.json';
+import type { NameEntry } from '../lib/types.ts';
+
+const entries = nofn as NameEntry[];
+const approved = entries.filter((e) => e.status === 'Sam');
+const counts = {
+  alls: entries.length,
+  samthykkt: approved.length,
+  stadfest: approved.filter((e) => e.confidence === 'stadfest').length,
+  likleg: approved.filter((e) => e.confidence === 'likleg').length,
+  ostadfest: approved.filter((e) => e.confidence === 'ostadfest').length,
+  ekkert: approved.filter((e) => !e.confidence).length,
+  lidir: (lidirData as unknown[]).length,
+  beygingar: entries.filter((e) => e.beyging).length,
+};
+const pct = (n: number) => `${((100 * n) / counts.samthykkt).toFixed(0)}%`;
+---
+
+<Base title="Um Nafnaval" description="Heimildir, aðferðafræði og áreiðanleiki gagnanna á Nafnavali.">
+  <div class="wrap">
+    <div class="name-hero">
+      <h1>Um Nafnaval</h1>
+      <p class="skyring">
+        Nafnaval sýnir öll nöfn í íslenskri mannanafnaskrá og reynir að útskýra hvað þau merkja
+        með því að brjóta þau niður í liðina sem þau eru byggð úr.
+      </p>
+    </div>
+
+    <section class="card" id="areidanleiki">
+      <h2>Áreiðanleiki — lestu þetta</h2>
+      <p>
+        Skýringarnar hér eru ekki allar jafn traustar, og við merkjum muninn í stað þess að fela hann.
+        Hver skýring ber eitt af þremur merkjum:
+      </p>
+      <ul>
+        <li>
+          <span class="badge badge-stadfest">Staðfest</span> — greining byggð á orðabók sem
+          vitnað er í, eða skýring skrifuð í höndunum. {counts.stadfest.toLocaleString('is-IS')} nöfn
+          ({pct(counts.stadfest)}).
+        </li>
+        <li>
+          <span class="badge badge-likleg">Líkleg</span> — orðasafnið réð við nafnið en
+          greiningin er ekki fullviss. {counts.likleg.toLocaleString('is-IS')} nöfn ({pct(counts.likleg)}).
+        </li>
+        <li>
+          <span class="badge badge-ostadfest">Óstaðfest</span> — samið af gervigreind og
+          <strong>ekki staðfest með heimild</strong>. Getur verið rangt.
+          {counts.ostadfest.toLocaleString('is-IS')} nöfn ({pct(counts.ostadfest)}).
+        </li>
+      </ul>
+      <p>
+        {counts.ekkert.toLocaleString('is-IS')} nöfn ({pct(counts.ekkert)}) hafa enga skráða merkingu.
+        Við kjósum að segja það frekar en að búa til skýringu.
+      </p>
+      <p class="notice">
+        Þetta er ekki fræðirit. Ef nafn skiptir þig máli — til dæmis ef þú ert að velja nafn á barn —
+        er rétt að fletta því líka upp í <em>Nöfnum Íslendinga</em> eftir Guðrúnu Kvaran og
+        Sigurð Jónsson, sem er ítarlegasta heimildin um íslensk mannanöfn.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Hvernig greiningin virkar</h2>
+      <p>
+        Íslensk nöfn eru að miklu leyti samsett: Þórbjörg er Þór + björg, Guðrún er guð + rún.
+        Við höfum byggt orðasafn með {counts.lidir} nafnliðum þar sem hver liður hefur merkingu,
+        heimild og flokka. Nafn er greint með því að fletta liðunum upp — og af því að liðirnir
+        bera flokkana, þarf ekki að merkja hvert nafn handvirkt.
+      </p>
+      <p>
+        Greiningin þarf að ráða við beygingarendingar (Guðmundur er guð + mund + -ur),
+        u-hljóðvarp (björn en Bjarnheiður) og samlögun (Halldór er hall + Þór, Eiríkur er eir + ríkur).
+        Þegar hún ræður ekki við nafnið er betra að segja það en að giska.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Heimildir</h2>
+      <ul>
+        <li>
+          <strong>Mannanafnaskrá</strong> — {counts.alls.toLocaleString('is-IS')} nöfn frá
+          Þjóðskrá Íslands og mannanafnanefnd, sótt gegnum
+          <a href="https://island.is/leit-i-mannanafnaskra">island.is</a>.
+        </li>
+        <li>
+          <strong>Beygingar</strong> — {counts.beygingar.toLocaleString('is-IS')} nöfn úr
+          <a href="https://bin.arnastofnun.is">Beygingarlýsingu íslensks nútímamáls (BÍN)</a>.
+          Rétthafi er Stofnun Árna Magnússonar í íslenskum fræðum. Gögnin eru notuð samkvæmt
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.is">CC BY-SA 4.0</a>.
+        </li>
+        <li>
+          <strong>Vinsældir</strong> — <a href="https://hagstofa.is">Hagstofa Íslands</a>,
+          eiginnöfn 1. janúar 2023. Aðeins um 100 algengustu nöfn hvors kyns eru birt.
+        </li>
+        <li>
+          <strong>Merkingar liða</strong> — Geir T. Zoëga, <em>A Concise Dictionary of Old
+          Icelandic</em> (1910) og Cleasby &amp; Vigfusson, <em>An Icelandic-English
+          Dictionary</em> (1874). Bæði rit eru komin úr höfundarrétti.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Villur og ábendingar</h2>
+      <p>
+        Ef þú sérð ranga skýringu viljum við endilega vita af því — sérstaklega ef þú getur
+        bent á heimild. Handskrifaðar leiðréttingar ganga framar öllu öðru í gagnasafninu.
+      </p>
+    </section>
+  </div>
+</Base>

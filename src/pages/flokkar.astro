@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { CATEGORIES, GROUP_LABELS, type Category } from '../lib/categories.ts';
+import nofn from '../data/nofn.json';
+import type { NameEntry } from '../lib/types.ts';
+
+const entries = nofn as NameEntry[];
+const browsable = entries.filter((e) => e.status === 'Sam' && !e.erRitbreyting);
+
+const counts = new Map<string, number>();
+for (const e of browsable) for (const f of e.flokkar) counts.set(f, (counts.get(f) ?? 0) + 1);
+
+const groups = (['nattura', 'folk', 'eiginleikar', 'hagnytt'] as const).map((g) => ({
+  heiti: GROUP_LABELS[g],
+  categories: CATEGORIES.filter((c: Category) => c.hopur === g),
+}));
+---
+
+<Base title="Flokkar" description="Allir flokkar íslenskra mannanafna á Nafnavali.">
+  <div class="wrap">
+    <div class="name-hero">
+      <h1>Flokkar</h1>
+      <p class="skyring">
+        Flestir flokkar koma beint úr liðunum sem nöfnin eru byggð úr — nafn sem inniheldur
+        liðinn <a href="/lidur/thor">þór</a> lendir sjálfkrafa í goðafræðiflokknum.
+      </p>
+    </div>
+
+    {
+      groups.map((g) => (
+        <section class="card">
+          <h2>{g.heiti}</h2>
+          <ul class="tag-list">
+            {g.categories.map((c) => (
+              <li>
+                <a class="tag" href={`/flokkur/${c.slug}`}>
+                  {c.heiti} <span style="opacity:0.7">{counts.get(c.slug) ?? 0}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</Base>

@@ -1,0 +1,294 @@
+---
+import Base from '../layouts/Base.astro';
+import { CATEGORIES, GROUP_LABELS, type Category } from '../lib/categories.ts';
+import nofn from '../data/nofn.json';
+import type { NameEntry } from '../lib/types.ts';
+
+const entries = nofn as NameEntry[];
+const browsable = entries.filter((e) => e.status === 'Sam' && !e.erRitbreyting);
+
+/** First screenful, server-rendered so the page works with JS disabled. */
+const initial = browsable.slice(0, 100);
+
+const groups = ['nattura', 'folk', 'eiginleikar', 'hagnytt'] as const;
+const byGroup = groups.map((g) => ({
+  slug: g,
+  heiti: GROUP_LABELS[g],
+  categories: CATEGORIES.filter((c: Category) => c.hopur === g),
+}));
+
+const withMeaning = browsable.filter((e) => e.merking).length;
+---
+
+<Base
+  title="Nafnaval"
+  description={`Merking og uppruni ${browsable.length} íslenskra mannanafna. Leitaðu, síaðu eftir flokkum og grafðu þig niður í liðina sem nöfnin eru byggð úr.`}
+>
+  <div class="searchbar">
+    <div class="wrap">
+      <label class="visually-hidden" for="q">Leita að nafni</label>
+      <input
+        id="q"
+        type="search"
+        placeholder="Leitaðu að nafni eða merkingu…"
+        autocomplete="off"
+        enterkeyhint="search"
+      />
+      <button class="btn filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="filters">
+        Síur
+      </button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="layout">
+      <div class="filters-backdrop" id="filters-backdrop"></div>
+      <aside class="filters" id="filters" aria-label="Síur">
+        {
+          byGroup.map((group) => (
+            <div class="filter-group">
+              <h3>{group.heiti}</h3>
+              <div class="chips">
+                {group.categories.map((c) => (
+                  <button class="chip" type="button" data-flokkur={c.slug} aria-pressed="false" title={c.lysing}>
+                    {c.heiti}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+        <div class="filter-group">
+          <h3>Kyn</h3>
+          <div class="chips">
+            <button class="chip" type="button" data-kyn="kvk" aria-pressed="false">Kvenmannsnöfn</button>
+            <button class="chip" type="button" data-kyn="kk" aria-pressed="false">Karlmannsnöfn</button>
+          </div>
+          {/*
+            No "kynhlutlaust" chip here on purpose. Middle names carry no gender
+            either, so a gender-based filter would lump the 219 millinöfn in with
+            the 43 names the register actually marks kynhlutlaust (KH). Both have
+            their own chips under Hagnýtt, where each means exactly one thing.
+          */}
+        </div>
+        <button class="btn" type="button" id="clear-filters">Hreinsa síur</button>
+      </aside>
+
+      <div>
+        <p class="result-count" id="count" data-total={browsable.length}>
+          {browsable.length.toLocaleString('is-IS')} nöfn — {withMeaning.toLocaleString('is-IS')} með skráða merkingu
+        </p>
+
+        <ul class="name-list" id="results">
+          {
+            initial.map((e) => (
+              <li>
+                <a href={`/nafn/${e.slug}`}>
+                  <span class="gender">{e.gender === 'kvk' ? 'kvk' : e.gender === 'kk' ? 'kk' : '—'}</span>
+                  <span class="nafn">{e.nafn}</span>
+                  <span class="merking">{e.merking ?? ''}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
+        <p class="empty" id="empty" hidden>Ekkert nafn fannst. Prófaðu aðra leit eða færri síur.</p>
+        <p style="padding:1rem 0">
+          <button class="btn" type="button" id="more" hidden>Sýna fleiri</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>
+
+<script>
+  import { fold, collator } from '../lib/icelandic.ts';
+
+  interface Row {
+    n: string; // nafn
+    s: string; // slug
+    g: 'kvk' | 'kk' | 'hlutlaust';
+    l: string; // folded name, for search
+    f: string[]; // flokkar
+    m: string; // merking
+    c: string; // confidence
+    v: number; // popularity rank, 0 = none
+  }
+
+  const PAGE = 200;
+
+  const q = document.getElementById('q') as HTMLInputElement;
+  const results = document.getElementById('results') as HTMLUListElement;
+  const count = document.getElementById('count') as HTMLParagraphElement;
+  const empty = document.getElementById('empty') as HTMLParagraphElement;
+  const more = document.getElementById('more') as HTMLButtonElement;
+  const filters = document.getElementById('filters') as HTMLElement;
+  const backdrop = document.getElementById('filters-backdrop') as HTMLElement;
+  const toggle = document.getElementById('filter-toggle') as HTMLButtonElement;
+  const clear = document.getElementById('clear-filters') as HTMLButtonElement;
+
+  let rows: Row[] = [];
+  let matches: Row[] = [];
+  let shown = 0;
+  const activeCategories = new Set<string>();
+  const activeGenders = new Set<string>();
+
+  const GENDER_LABEL: Record<string, string> = { kvk: 'kvk', kk: 'kk', hlutlaust: '—' };
+
+  function render(reset: boolean) {
+    if (reset) {
+      results.replaceChildren();
+      shown = 0;
+    }
+    const slice = matches.slice(shown, shown + PAGE);
+    const frag = document.createDocumentFragment();
+    for (const r of slice) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `/nafn/${r.s}`;
+
+      const g = document.createElement('span');
+      g.className = 'gender';
+      g.textContent = GENDER_LABEL[r.g] ?? '—';
+
+      const n = document.createElement('span');
+      n.className = 'nafn';
+      n.textContent = r.n;
+
+      const m = document.createElement('span');
+      m.className = 'merking';
+      m.textContent = r.m;
+
+      a.append(g, n, m);
+      li.append(a);
+      frag.append(li);
+    }
+    results.append(frag);
+    shown += slice.length;
+
+    more.hidden = shown >= matches.length;
+    empty.hidden = matches.length > 0;
+    count.textContent =
+      matches.length === rows.length
+        ? `${rows.length.toLocaleString('is-IS')} nöfn`
+        : `${matches.length.toLocaleString('is-IS')} af ${rows.length.toLocaleString('is-IS')} nöfnum`;
+  }
+
+  function apply() {
+    const needle = fold(q.value);
+    matches = rows.filter((r) => {
+      if (needle && !r.l.includes(needle) && !fold(r.m).includes(needle)) return false;
+      if (activeGenders.size && !activeGenders.has(r.g)) return false;
+      // Categories are AND-ed: each chip narrows the set further.
+      for (const c of activeCategories) if (!r.f.includes(c)) return false;
+      return true;
+    });
+
+    // Exact and prefix matches first when searching; otherwise Icelandic A–Ö.
+    if (needle) {
+      matches.sort((a, b) => {
+        const ap = a.l.startsWith(needle) ? 0 : 1;
+        const bp = b.l.startsWith(needle) ? 0 : 1;
+        return ap !== bp ? ap - bp : collator.compare(a.n, b.n);
+      });
+    }
+
+    render(true);
+    persist();
+  }
+
+  /** Reflect state in the URL so a filtered view can be shared or bookmarked. */
+  function persist() {
+    const p = new URLSearchParams();
+    if (q.value) p.set('q', q.value);
+    if (activeCategories.size) p.set('f', [...activeCategories].join(','));
+    if (activeGenders.size) p.set('k', [...activeGenders].join(','));
+    const s = p.toString();
+    history.replaceState(null, '', s ? `?${s}` : location.pathname);
+  }
+
+  function restore() {
+    const p = new URLSearchParams(location.search);
+    q.value = p.get('q') ?? '';
+    for (const c of (p.get('f') ?? '').split(',').filter(Boolean)) activeCategories.add(c);
+    for (const g of (p.get('k') ?? '').split(',').filter(Boolean)) activeGenders.add(g);
+    for (const btn of document.querySelectorAll<HTMLButtonElement>('.chip')) {
+      const cat = btn.dataset.flokkur;
+      const gen = btn.dataset.kyn;
+      const on = (cat && activeCategories.has(cat)) || (gen && activeGenders.has(gen));
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    }
+  }
+
+  let timer: number;
+  q.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = window.setTimeout(apply, 120);
+  });
+
+  for (const btn of document.querySelectorAll<HTMLButtonElement>('.chip')) {
+    btn.addEventListener('click', () => {
+      const set = btn.dataset.flokkur ? activeCategories : activeGenders;
+      const key = btn.dataset.flokkur ?? btn.dataset.kyn!;
+      const on = btn.getAttribute('aria-pressed') === 'true';
+      if (on) set.delete(key);
+      else set.add(key);
+      btn.setAttribute('aria-pressed', on ? 'false' : 'true');
+      apply();
+    });
+  }
+
+  clear.addEventListener('click', () => {
+    activeCategories.clear();
+    activeGenders.clear();
+    q.value = '';
+    for (const b of document.querySelectorAll('.chip')) b.setAttribute('aria-pressed', 'false');
+    apply();
+    closeFilters();
+  });
+
+  more.addEventListener('click', () => render(false));
+
+  function openFilters() {
+    filters.dataset.open = 'true';
+    backdrop.dataset.open = 'true';
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeFilters() {
+    delete filters.dataset.open;
+    delete backdrop.dataset.open;
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  toggle.addEventListener('click', () =>
+    toggle.getAttribute('aria-expanded') === 'true' ? closeFilters() : openFilters(),
+  );
+  backdrop.addEventListener('click', closeFilters);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeFilters();
+  });
+
+  // Load the index, then take over rendering from the server-rendered list.
+  fetch('/leit.json')
+    .then((r) => r.json())
+    .then((data: Row[]) => {
+      rows = data;
+      restore();
+      apply();
+    })
+    .catch(() => {
+      // Leave the server-rendered first 100 in place; the site still works.
+      count.textContent = 'Ekki tókst að hlaða leitarskrá. Sýni fyrstu 100 nöfnin.';
+    });
+</script>

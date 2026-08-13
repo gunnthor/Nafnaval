@@ -1,0 +1,37 @@
+---
+/**
+ * The three trust tiers, rendered so they can never be mistaken for each other.
+ * "Óstaðfest" gets a dashed border on top of the colour difference, so the
+ * distinction survives greyscale and colour-blind viewing.
+ */
+import type { Confidence } from '../lib/types.ts';
+
+interface Props {
+  confidence: Confidence | null;
+}
+
+const { confidence } = Astro.props;
+
+const LABEL: Record<Confidence, { text: string; title: string }> = {
+  stadfest: {
+    text: 'Staðfest',
+    title: 'Byggt á orðabókarheimild eða handskrifaðri skýringu.',
+  },
+  likleg: {
+    text: 'Líkleg',
+    title: 'Greining orðasafnsins er sennileg en ekki fullviss.',
+  },
+  ostadfest: {
+    text: 'Óstaðfest',
+    title: 'Samið af gervigreind og ekki staðfest með heimild.',
+  },
+};
+---
+
+{
+  confidence && (
+    <span class={`badge badge-${confidence}`} title={LABEL[confidence].title}>
+      {LABEL[confidence].text}
+    </span>
+  )
+}

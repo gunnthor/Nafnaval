@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import { sortNames } from '../lib/icelandic.ts';
+import nofn from '../data/nofn.json';
+import type { NameEntry } from '../lib/types.ts';
+
+const entries = nofn as NameEntry[];
+const rejected = sortNames(
+  entries.filter((e) => e.status === 'Haf'),
+  (e) => e.nafn,
+);
+const pending = sortNames(
+  entries.filter((e) => e.status === 'Óaf'),
+  (e) => e.nafn,
+);
+
+/** Group by ruling decade — the interesting way to read this list. */
+const byDecade = new Map<string, NameEntry[]>();
+for (const e of rejected) {
+  const year = /(\d{4})/.exec(e.verdict ?? '')?.[1];
+  const key = year ? `${year.slice(0, 3)}0` : 'óþekkt';
+  (byDecade.get(key) ?? byDecade.set(key, []).get(key)!).push(e);
+}
+const decades = [...byDecade.entries()].sort((a, b) => b[0].localeCompare(a[0]));
+---
+
+<Base
+  title="Hafnað"
+  description={`${rejected.length} nöfn sem mannanafnanefnd hefur hafnað, flokkuð eftir áratug úrskurðar.`}
+>
+  <div class="wrap">
+    <div class="name-hero">
+      <h1>Nöfn sem hefur verið hafnað</h1>
+      <p class="skyring">
+        Mannanafnanefnd hefur hafnað {rejected.length} nöfnum. Þessi nöfn má ekki gefa
+        á Íslandi, en listinn segir sína sögu um hvað þykir tækt íslenskt nafn og hvað ekki.
+        {pending.length > 0 && <> {pending.length} nöfn bíða enn úrskurðar.</>}
+      </p>
+    </div>
+
+    {
+      pending.length > 0 && (
+        <section class="card">
+          <h2>Óafgreitt</h2>
+          <ul class="tag-list">
+            {pending.map((e) => (
+              <li><a class="tag" href={`/nafn/${e.slug}`}>{e.nafn}</a></li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      decades.map(([decade, names]) => (
+        <section class="card">
+          <h2>{decade === 'óþekkt' ? 'Án dagsetningar' : `${decade}–${Number(decade) + 9}`} · {names.length} nöfn</h2>
+          <ul class="name-list">
+            {names.map((e) => (
+              <li>
+                <a href={`/nafn/${e.slug}`}>
+                  <span class="nafn">{e.nafn}</span>
+                  <span class="merking">{e.verdict ?? ''}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</Base>

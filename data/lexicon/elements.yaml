@@ -1,0 +1,1459 @@
+# Orðasafn nafnliða — the curated Old Norse element lexicon.
+#
+# This file is the heart of Nafnaval. Every entry here explains one building
+# block of Icelandic names, and because names are compounds, each element
+# tagged here explains dozens or hundreds of names at once.
+#
+# SOURCES. Glosses are drawn from works long out of copyright, so they can be
+# quoted and cited freely:
+#   Zoëga 1910  — Geir T. Zoëga, A Concise Dictionary of Old Icelandic
+#   CV 1874     — Cleasby & Vigfusson, An Icelandic-English Dictionary
+#
+# FIELDS
+#   id        canonical lowercase form used in URLs and matching
+#   merking   short Icelandic gloss — this is what the reader sees first
+#   skyring   longer note; use it for genuine ambiguity rather than hiding it
+#   afbrigdi  spelling/stem variants that should resolve to this element
+#             (u-umlaut pairs like bjarn/björn belong here)
+#   stada     where the element legitimately appears: forlidur | vidlidur
+#             This is what stops "Kristín" being split into krist + ín.
+#   flokkar   category slugs the element confers on names containing it
+#   heimild   source citation shown next to the gloss
+#
+# Adding elements: run `npx tsx scripts/analyze-elements.ts --missing` to see
+# which uncovered elements would buy the most coverage.
+
+elements:
+  # ── Goðafræði og trú ──────────────────────────────────────────────────────
+  - id: þór
+    merking: guðinn Þór, þruma
+    skyring: >-
+      Algengasti nafnliður í íslenskum nöfnum. Dregið af Þórr, þrumuguðinum,
+      og skylt orðinu þruma. Kemur bæði fram sem forliður (Þórdís) og
+      viðliður (Arnþór). Sem viðliður samlagast þ-ið oft og verður -dór:
+      Halldór er hall + Þór og Arndór er örn + Þór.
+    afbrigdi: [þor, dór, dor]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi, vedur]
+    heimild: Zoëga 1910
+  - id: ás
+    merking: ás, goð af ætt Ása
+    skyring: >-
+      Tvíræður liður. Ás merkir goð (eintala af Æsir), en áss getur einnig
+      merkt ás í landslagi — langur, mjór hryggur — og bjálka. Í nöfnum er
+      goðamerkingin yfirleitt talin upphafleg.
+    afbrigdi: [as, áss]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi, nattura]
+    heimild: Zoëga 1910
+  - id: guð
+    merking: guð
+    skyring: >-
+      Í heiðnum nöfnum vísar liðurinn til goðanna almennt, en eftir kristnitöku
+      til hins kristna guðs. Nöfn eins og Guðrún eru eldri en kristni á Íslandi.
+    afbrigdi: [gud, goð]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi, kristni]
+    heimild: Zoëga 1910
+  - id: frey
+    merking: guðinn Freyr eða gyðjan Freyja; herra, drottinn
+    afbrigdi: [freyj, frej]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - id: dís
+    merking: dís, gyðja, verndarvættur
+    skyring: >-
+      Dísir voru kvenkyns verndarvættir ættarinnar. Langalgengasti kvenkyns
+      viðliður í íslenskum nöfnum.
+    stada: [vidlidur, forlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - id: álf
+    merking: álfur
+    afbrigdi: [alf, elf]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - id: ragn
+    merking: ráðandi máttarvöld, goðin
+    skyring: >-
+      Af regin, „máttarvöldin, goðin“ — sama orð og í ragnarök. Kemur fram
+      sem ragn- vegna hljóðvarps.
+    afbrigdi: [regin, rögn, ragin]
+    stada: [forlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - id: ing
+    merking: guðinn Yngvi-Freyr
+    skyring: >-
+      Ing eða Yngvi var annað heiti Freys. Liðurinn er ævaforn og kemur fyrir
+      í germönskum nöfnum utan Norðurlanda líka.
+    afbrigdi: [ingi, yngv, ynge]
+    stada: [forlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - id: týr
+    merking: guðinn Týr; goð
+    afbrigdi: [tý, tyr]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - id: þrúð
+    merking: styrkur, afl
+    skyring: >-
+      Þrúðr var dóttir Þórs. Orðið merkir styrk og kemur fyrir bæði sem
+      mannsnafnaliður og í heitum Þórs.
+    afbrigdi: [thrud, þrud]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi, hernadur]
+    heimild: Zoëga 1910
+  - id: baldur
+    merking: guðinn Baldur; hugrakkur, djarfur
+    afbrigdi: [bald, baldr]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - id: óðin
+    merking: guðinn Óðinn
+    afbrigdi: [odin, óðinn]
+    stada: [forlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - id: gerður
+    merking: gerði, vörn, umgirðing
+    skyring: >-
+      Af garðr, „gerði, vörn“. Gerðr var jötnamær sem Freyr fékk að eiga.
+      Algengur kvenkyns viðliður.
+    afbrigdi: [gerd, gerð]
+    stada: [vidlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+  - id: krist
+    merking: Kristur
+    afbrigdi: [christ]
+    stada: [forlidur, vidlidur]
+    flokkar: [kristni]
+    heimild: Zoëga 1910
+  - id: jón
+    merking: Jóhannes — „Guð er náðugur“
+    skyring: >-
+      Úr hebresku Yōḥānān gegnum latínu og grísku. Algengasta karlmannsnafn
+      Íslands og afkastamikill forliður í samsettum nöfnum.
+    afbrigdi: [jóhann, johann, jóh]
+    stada: [forlidur, vidlidur]
+    flokkar: [kristni]
+    heimild: Zoëga 1910
+  - id: helg
+    merking: heilagur, vígður
+    afbrigdi: [helgi, heilag]
+    stada: [forlidur, vidlidur]
+    flokkar: [kristni]
+    heimild: Zoëga 1910
+  - id: maría
+    merking: María guðsmóðir
+    afbrigdi: [marí, mari, maria]
+    stada: [forlidur, vidlidur]
+    flokkar: [kristni]
+    heimild: Zoëga 1910
+  - id: páll
+    merking: Páll postuli — „hinn litli“
+    afbrigdi: [pál, pal, paul]
+    stada: [forlidur, vidlidur]
+    flokkar: [kristni]
+    heimild: Zoëga 1910
+  - id: pét
+    merking: Pétur postuli — „klettur“
+    afbrigdi: [pétur, petur, peter]
+    stada: [forlidur, vidlidur]
+    flokkar: [kristni]
+    heimild: Zoëga 1910
+  - id: engil
+    merking: engill
+    afbrigdi: [angel, engel]
+    stada: [forlidur, vidlidur]
+    flokkar: [kristni]
+    heimild: Zoëga 1910
+
+  # ── Dýr og fuglar ─────────────────────────────────────────────────────────
+  - id: björn
+    merking: björn
+    skyring: >-
+      Kemur fram sem bjarn- í samsetningum (Bjarnheiður) en björn- sjálfstætt,
+      vegna u-hljóðvarps.
+    afbrigdi: [bjarn, birn, biörn]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: örn
+    merking: örn
+    skyring: Stofnmyndin arn- er algengari í samsetningum en örn-.
+    afbrigdi: [arn, ǫrn, ern]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: úlf
+    merking: úlfur
+    afbrigdi: [ulf, ólf, olf, ylf]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: hrafn
+    merking: hrafn
+    skyring: >-
+      Hrafninn var fugl Óðins; Huginn og Muninn sátu á öxlum hans.
+    afbrigdi: [rafn, hrafna]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr, godafraedi]
+    heimild: Zoëga 1910
+  - id: haukur
+    merking: haukur
+    afbrigdi: [hauk, hôkr]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: ari
+    merking: örn
+    skyring: >-
+      Eldra og skáldlegra orð yfir örn en örn sjálft. Athugið að -ar í nöfnum
+      eins og Gunnar og Einar er ekki þessi liður heldur herr, „hermaður“.
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: svan
+    merking: svanur, álft
+    afbrigdi: [svann]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: lóa
+    merking: heiðlóa
+    skyring: >-
+      Lóan er vorboði á Íslandi — koma hennar markar að veturinn sé á enda.
+    afbrigdi: [ló]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr, nattura]
+    heimild: Zoëga 1910
+  - id: hjört
+    merking: hjörtur
+    afbrigdi: [hjart, hirt]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: dýr
+    merking: dýr; einnig dýrmætur, kær
+    skyring: >-
+      Tvíræður liður: dýr merkir bæði ferfætling og „dýrmætur“. Báðar
+      merkingar eru virkar í nöfnum.
+    afbrigdi: [dyr, dír]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr, fegurd]
+    heimild: Zoëga 1910
+  - id: ormur
+    merking: ormur, dreki
+    afbrigdi: [orm]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: refur
+    merking: refur
+    afbrigdi: [ref]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: þröstur
+    merking: þröstur
+    afbrigdi: [þrast, þröst]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: erla
+    merking: maríuerla
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: ugla
+    merking: ugla
+    afbrigdi: [ugl]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: gaukur
+    merking: gaukur
+    afbrigdi: [gauk]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: fálki
+    merking: fálki
+    afbrigdi: [falk, fálk]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: jór
+    merking: hestur, gæðingur
+    afbrigdi: [jor]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+  - id: selur
+    merking: selur
+    afbrigdi: [sel]
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr, vatn]
+    heimild: Zoëga 1910
+  - id: lax
+    merking: lax
+    stada: [forlidur, vidlidur]
+    flokkar: [dyr, vatn]
+    heimild: Zoëga 1910
+  - id: bera
+    merking: birna, kvenbjörn
+    afbrigdi: [ber]
+    stada: [vidlidur]
+    flokkar: [dyr]
+    heimild: Zoëga 1910
+
+  # ── Stjörnur og himinn ────────────────────────────────────────────────────
+  - id: sól
+    merking: sól
+    afbrigdi: [sol, sunn]
+    stada: [forlidur, vidlidur]
+    flokkar: [stjornur, ljos]
+    heimild: Zoëga 1910
+  - id: máni
+    merking: tungl
+    afbrigdi: [mán]
+    stada: [forlidur, vidlidur]
+    flokkar: [stjornur]
+    heimild: Zoëga 1910
+  - id: stjörn
+    merking: stjarna
+    afbrigdi: [stjarn, stjern]
+    stada: [forlidur, vidlidur]
+    flokkar: [stjornur]
+    heimild: Zoëga 1910
+  - id: himin
+    merking: himinn
+    afbrigdi: [himn]
+    stada: [forlidur, vidlidur]
+    flokkar: [stjornur]
+    heimild: Zoëga 1910
+  - id: dag
+    merking: dagur; dagsbirta
+    afbrigdi: [dags, dæg]
+    stada: [forlidur, vidlidur]
+    flokkar: [stjornur, ljos]
+    heimild: Zoëga 1910
+  - id: nótt
+    merking: nótt
+    afbrigdi: [nott, nátt, natt]
+    stada: [forlidur, vidlidur]
+    flokkar: [stjornur]
+    heimild: Zoëga 1910
+  - id: aftan
+    merking: kvöld, aftann
+    afbrigdi: [aft]
+    stada: [forlidur]
+    flokkar: [stjornur]
+    heimild: Zoëga 1910
+  - id: ský
+    merking: ský
+    afbrigdi: [sky]
+    stada: [forlidur, vidlidur]
+    flokkar: [stjornur, vedur]
+    heimild: Zoëga 1910
+
+  # ── Veður og árstíðir ─────────────────────────────────────────────────────
+  - id: snæ
+    merking: snjór
+    afbrigdi: [snjó, snae, snjo]
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur, nattura]
+    heimild: Zoëga 1910
+  - id: ís
+    merking: ís
+    afbrigdi: [is, íss]
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur, nattura]
+    heimild: Zoëga 1910
+  - id: frost
+    merking: frost
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: vind
+    merking: vindur
+    afbrigdi: [vindur]
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: blær
+    merking: blíður vindur, andvari
+    afbrigdi: [blæ, blae]
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: regn
+    merking: regn
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: dögg
+    merking: dögg
+    afbrigdi: [dagg]
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur, nattura]
+    heimild: Zoëga 1910
+  - id: él
+    merking: él, snjóhryðja
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: vor
+    merking: vor
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: sumar
+    merking: sumar
+    afbrigdi: [sumr]
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: vetur
+    merking: vetur
+    afbrigdi: [vetr]
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: haust
+    merking: haust
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: logn
+    merking: logn, kyrrð
+    stada: [forlidur, vidlidur]
+    flokkar: [vedur, gledi]
+    heimild: Zoëga 1910
+  - id: þoka
+    merking: þoka
+    afbrigdi: [þok]
+    stada: [forlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+
+  # ── Vatn og haf ───────────────────────────────────────────────────────────
+  - id: haf
+    merking: haf
+    stada: [forlidur, vidlidur]
+    flokkar: [vatn, nattura]
+    heimild: Zoëga 1910
+  - id: mar
+    merking: haf, sjór; einnig hestur
+    skyring: >-
+      Tvíræður liður. Marr merkir bæði „haf“ og „hestur“ í fornmáli, og hvor
+      merkingin á við í einstökum nöfnum er oft óviss.
+    afbrigdi: [marr]
+    stada: [forlidur, vidlidur]
+    flokkar: [vatn, dyr]
+    heimild: Zoëga 1910
+  - id: sæ
+    merking: sjór, sær
+    afbrigdi: [sae, sjó, sjo, sæv]
+    stada: [forlidur, vidlidur]
+    flokkar: [vatn]
+    heimild: Zoëga 1910
+  - id: alda
+    merking: alda, bylgja
+    afbrigdi: [ald]
+    stada: [forlidur, vidlidur]
+    flokkar: [vatn]
+    heimild: Zoëga 1910
+  - id: bára
+    merking: bára, alda
+    afbrigdi: [bar, bár]
+    stada: [forlidur, vidlidur]
+    flokkar: [vatn]
+    heimild: Zoëga 1910
+  - id: brim
+    merking: brim, brimlöður
+    stada: [forlidur, vidlidur]
+    flokkar: [vatn]
+    heimild: Zoëga 1910
+  - id: unnur
+    merking: alda; einnig að unna, elska
+    skyring: >-
+      Tvíræður liður: unnr merkir „alda“ en sögnin unna merkir „að elska“.
+      Báðar skýringar eru gamlar og vel þekktar.
+    afbrigdi: [unn, ynn]
+    stada: [vidlidur, forlidur]
+    flokkar: [vatn, gledi]
+    heimild: Zoëga 1910
+  - id: lind
+    merking: lind, uppspretta; einnig lindititré
+    afbrigdi: [lindi]
+    stada: [forlidur, vidlidur]
+    flokkar: [vatn, plontur]
+    heimild: Zoëga 1910
+  - id: fjörð
+    merking: fjörður
+    afbrigdi: [fjord, firð]
+    stada: [vidlidur]
+    flokkar: [vatn, nattura]
+    heimild: Zoëga 1910
+  - id: vík
+    merking: vík, vogur
+    afbrigdi: [vik]
+    stada: [forlidur, vidlidur]
+    flokkar: [vatn, nattura]
+    heimild: Zoëga 1910
+  - id: foss
+    merking: foss
+    stada: [forlidur, vidlidur]
+    flokkar: [vatn, nattura]
+    heimild: Zoëga 1910
+  - id: á
+    merking: á, straumvatn
+    afbrigdi: [ár]
+    stada: [forlidur]
+    flokkar: [vatn, nattura]
+    heimild: Zoëga 1910
+
+  # ── Náttúra og landslag ───────────────────────────────────────────────────
+  - id: berg
+    merking: bjarg, klettur
+    afbrigdi: [birg]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: steinn
+    merking: steinn
+    afbrigdi: [stein, sten]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: hall
+    merking: steinn, klettur
+    skyring: >-
+      Af hallr, „steinn“. Ekki að rugla saman við höll, „konungshús“, þótt
+      liðirnir falli saman í nútímastafsetningu.
+    afbrigdi: [hal, höll]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: fjall
+    merking: fjall
+    afbrigdi: [fell, fjöll]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: dal
+    merking: dalur
+    afbrigdi: [dals]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: ey
+    merking: eyja
+    skyring: >-
+      Bæði forliður og einn algengasti kvenkyns viðliður (Laufey, Sóley).
+    afbrigdi: [eyj, øy]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura, vatn]
+    heimild: Zoëga 1910
+  - id: hólm
+    merking: hólmi, lítil eyja
+    afbrigdi: [holm]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura, vatn]
+    heimild: Zoëga 1910
+  - id: nes
+    merking: nes, tangi
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura, vatn]
+    heimild: Zoëga 1910
+  - id: hlíð
+    merking: hlíð, brekka
+    afbrigdi: [hlid, hlíðar]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: jökull
+    merking: jökull
+    afbrigdi: [jökul, jokul]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura, vedur]
+    heimild: Zoëga 1910
+  - id: heiður
+    merking: heiði; einnig heiður, bjartur
+    skyring: >-
+      Tvíræður liður sem féll saman: heiðr merkir „heiði, ólendi“ en einnig
+      „heiður, bjartur“ og „sómi“. Í nöfnum er birtumerkingin oftast talin
+      liggja að baki.
+    afbrigdi: [heið, heid]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura, ljos]
+    heimild: Zoëga 1910
+  - id: mold
+    merking: mold, jörð
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: sand
+    merking: sandur
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: klett
+    merking: klettur
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: norður
+    merking: norður
+    afbrigdi: [norð, nord, nor]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: austur
+    merking: austur
+    afbrigdi: [aust]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: suður
+    merking: suður
+    afbrigdi: [suð, sud]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+  - id: vestur
+    merking: vestur
+    afbrigdi: [vest]
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+
+  # ── Plöntur og blóm ───────────────────────────────────────────────────────
+  - id: björk
+    merking: björk
+    afbrigdi: [birk, bjark]
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: reyn
+    merking: reynitré
+    afbrigdi: [reynir]
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: ösp
+    merking: ösp
+    afbrigdi: [asp, esp]
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: lauf
+    merking: laufblað
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: lilja
+    merking: lilja
+    afbrigdi: [lili, lilj]
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: rós
+    merking: rós
+    afbrigdi: [ros, rosa]
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur, fegurd]
+    heimild: Zoëga 1910
+  - id: blóm
+    merking: blóm
+    afbrigdi: [blom]
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: eik
+    merking: eik
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: víði
+    merking: víðir
+    afbrigdi: [vidi, víð]
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: hlyn
+    merking: hlynur
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: elri
+    merking: elritré
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: akarn
+    merking: akarn, eikarhneta
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: korn
+    merking: korn
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: gras
+    merking: gras
+    stada: [forlidur, vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+
+  # ── Ljós og eldur ─────────────────────────────────────────────────────────
+  - id: ljós
+    merking: ljós
+    afbrigdi: [ljos, ljó]
+    stada: [forlidur, vidlidur]
+    flokkar: [ljos]
+    heimild: Zoëga 1910
+  - id: bjart
+    merking: bjartur, skínandi
+    afbrigdi: [björt, birt]
+    stada: [forlidur, vidlidur]
+    flokkar: [ljos, fegurd]
+    heimild: Zoëga 1910
+  - id: eld
+    merking: eldur
+    afbrigdi: [elds]
+    stada: [forlidur, vidlidur]
+    flokkar: [ljos]
+    heimild: Zoëga 1910
+  - id: logi
+    merking: logi, eldstunga
+    afbrigdi: [log]
+    stada: [forlidur, vidlidur]
+    flokkar: [ljos]
+    heimild: Zoëga 1910
+  - id: glóð
+    merking: glóð
+    afbrigdi: [glod]
+    stada: [forlidur, vidlidur]
+    flokkar: [ljos]
+    heimild: Zoëga 1910
+  - id: funi
+    merking: logi, eldur
+    afbrigdi: [fun]
+    stada: [vidlidur]
+    flokkar: [ljos]
+    heimild: Zoëga 1910
+  - id: geisli
+    merking: geisli
+    afbrigdi: [geisl]
+    stada: [forlidur, vidlidur]
+    flokkar: [ljos, stjornur]
+    heimild: Zoëga 1910
+  - id: skín
+    merking: að skína
+    afbrigdi: [skin]
+    stada: [forlidur]
+    flokkar: [ljos]
+    heimild: Zoëga 1910
+
+  # ── Litir ─────────────────────────────────────────────────────────────────
+  - id: kol
+    merking: kol; kolsvartur
+    stada: [forlidur]
+    flokkar: [litir]
+    heimild: Zoëga 1910
+  - id: svart
+    merking: svartur
+    afbrigdi: [svört]
+    stada: [forlidur]
+    flokkar: [litir]
+    heimild: Zoëga 1910
+  - id: hvít
+    merking: hvítur
+    afbrigdi: [hvit]
+    stada: [forlidur]
+    flokkar: [litir]
+    heimild: Zoëga 1910
+  - id: rauð
+    merking: rauður
+    afbrigdi: [raud, roð]
+    stada: [forlidur]
+    flokkar: [litir]
+    heimild: Zoëga 1910
+  - id: blá
+    merking: blár
+    afbrigdi: [bla]
+    stada: [forlidur]
+    flokkar: [litir]
+    heimild: Zoëga 1910
+  - id: grá
+    merking: grár
+    afbrigdi: [gra]
+    stada: [forlidur]
+    flokkar: [litir]
+    heimild: Zoëga 1910
+  - id: græn
+    merking: grænn
+    afbrigdi: [graen, gron]
+    stada: [forlidur]
+    flokkar: [litir, plontur]
+    heimild: Zoëga 1910
+  - id: gull
+    merking: gull
+    afbrigdi: [gyll]
+    stada: [forlidur, vidlidur]
+    flokkar: [litir, fegurd]
+    heimild: Zoëga 1910
+  - id: silfur
+    merking: silfur
+    afbrigdi: [silfr, silf]
+    stada: [forlidur, vidlidur]
+    flokkar: [litir, fegurd]
+    heimild: Zoëga 1910
+
+  # ── Hernaður og styrkur ───────────────────────────────────────────────────
+  - id: hildur
+    merking: orrusta, bardagi
+    skyring: >-
+      Hildr var valkyrjuheiti og merkir „orrusta“. Einn allra algengasti
+      kvenkyns viðliður.
+    afbrigdi: [hild, hildi]
+    stada: [vidlidur, forlidur]
+    flokkar: [hernadur, godafraedi]
+    heimild: Zoëga 1910
+  - id: gunn
+    merking: orrusta
+    skyring: >-
+      Gunnr er sama merking og hildr — bæði orð merkja orrustu. Fornmyndin
+      guðr er einnig til en er sleppt hér því hún ruglast við guð í nöfnum
+      eins og Guðrún, sem er guð + rún.
+    afbrigdi: [gunnr]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur, godafraedi]
+    heimild: Zoëga 1910
+  - id: sig
+    merking: sigur
+    afbrigdi: [sigur, sigr]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: her
+    merking: her, herlið; hermaður
+    skyring: >-
+      Sem viðliður kemur herr fram sem -arr og loks -ar: Gunnar er gunnr +
+      herr, „orrustuhermaður“, og Einar er einn + herr. Þetta er skýringin á
+      -ar í fjölda karlmannsnafna.
+    afbrigdi: [herj, hers, arr, ar]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: geir
+    merking: spjót
+    afbrigdi: [gar, geirr]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: odd
+    merking: oddur vopns
+    afbrigdi: [oddur]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: brand
+    merking: sverðsblað; eldibrandur
+    skyring: >-
+      Brandr merkir bæði „sverð“ og „brennandi kefli“ — sömu tvíræðni og í
+      enska orðinu brand.
+    afbrigdi: [brant]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur, ljos]
+    heimild: Zoëga 1910
+  - id: hjálm
+    merking: hjálmur
+    afbrigdi: [hjalm, hilm]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: ketill
+    merking: hjálmur, ketill
+    afbrigdi: [kell, ketil, kjart]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: víg
+    merking: víg, bardagi
+    afbrigdi: [vig]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: val
+    merking: valur, hinir föllnu á vígvelli; einnig fálki
+    skyring: >-
+      Tvíræður liður: valr merkir „þeir sem falla í bardaga“ — sama orð og í
+      valkyrja — en einnig „fálki“.
+    afbrigdi: [vall]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur, dyr]
+    heimild: Zoëga 1910
+  - id: magn
+    merking: máttur, afl
+    afbrigdi: [megin, magni]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: þrótt
+    merking: þróttur, kraftur
+    afbrigdi: [þrott]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: skjöld
+    merking: skjöldur
+    afbrigdi: [skjald, skjold]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: sverð
+    merking: sverð
+    afbrigdi: [sverd]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: grímur
+    merking: gríma, hjálmur
+    skyring: >-
+      Grímr merkir „gríma“ eða „hjálmgríma“ — hlífin sem huldi andlitið.
+    afbrigdi: [grím, grim]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: mundur
+    merking: hönd; vernd, forsjá
+    skyring: >-
+      Af mund, „hönd“, og þaðan „vernd“. Algengur karlkyns viðliður
+      (Guðmundur, Ásmundur).
+    afbrigdi: [mund]
+    stada: [vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: varð
+    merking: vörður, verndari
+    afbrigdi: [vörð, vard, varður]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: gísl
+    merking: gísl, tryggingarmaður
+    afbrigdi: [gisl]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: björg
+    merking: björgun, hjálp, vernd
+    skyring: >-
+      Af bjarga, „að bjarga“. Kemur fram sem bjarg- í samsetningum vegna
+      u-hljóðvarps. Mjög algengur kvenkyns viðliður.
+    afbrigdi: [bjarg]
+    stada: [vidlidur, forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: borg
+    merking: borg, virki
+    afbrigdi: [burg]
+    stada: [vidlidur, forlidur]
+    flokkar: [hernadur, konungborin]
+    heimild: Zoëga 1910
+  - id: hlíf
+    merking: hlíf, skjöldur, vernd
+    afbrigdi: [hlif]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: veig
+    merking: styrkur; einnig drykkur, mjöður
+    skyring: >-
+      Veig merkir bæði „kraftur, styrkur“ og „áfengur drykkur“. Algengur
+      kvenkyns viðliður (Sólveig, Ásveig).
+    stada: [vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  # ── Konungborin nöfn og ætt ───────────────────────────────────────────────
+  - id: ríkur
+    merking: ríkur, voldugur; höfðingi
+    afbrigdi: [rík, rik, rekr]
+    stada: [vidlidur, forlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: vald
+    merking: vald, yfirráð
+    afbrigdi: [valdur, vold]
+    stada: [vidlidur, forlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: aðal
+    merking: aðall, tign; hinn fremsti
+    afbrigdi: [adal, aðals]
+    stada: [forlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: þjóð
+    merking: þjóð, fólk
+    afbrigdi: [þjod, thjod]
+    stada: [forlidur, vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: drótt
+    merking: hirð, fylgdarlið höfðingja
+    afbrigdi: [drot]
+    stada: [forlidur, vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: jarl
+    merking: jarl, höfðingi
+    stada: [forlidur, vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: kon
+    merking: konungur; maður af tignum ættum
+    afbrigdi: [kón, kong, kóng]
+    stada: [forlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: ætt
+    merking: ætt, kynslóð
+    afbrigdi: [aett, ett]
+    stada: [forlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: óðal
+    merking: óðal, ættarjörð
+    afbrigdi: [odal]
+    stada: [forlidur]
+    flokkar: [konungborin, nattura]
+    heimild: Zoëga 1910
+  - id: leifur
+    merking: arfleifð, afkomandi
+    skyring: >-
+      Af leif, „það sem eftir er skilið“ — sá sem tekur við arfi ættarinnar.
+    afbrigdi: [leif, leiv]
+    stada: [vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: ólafur
+    merking: forfaðir, arftaki forfeðranna
+    skyring: >-
+      Úr *Anu-laibaR, „arfleifð forföðurins“ — sami viðliður og í -leifur.
+    afbrigdi: [ólaf, olaf, óleif]
+    stada: [forlidur, vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+
+  # ── Viska og ráð ──────────────────────────────────────────────────────────
+  - id: rún
+    merking: rún; leyndardómur, leynileg vísdómsfræði
+    skyring: >-
+      Rún merkti upphaflega „leyndarmál“ áður en það varð heiti á
+      leturtáknunum. Einn algengasti kvenkyns viðliður.
+    afbrigdi: [run, rúna]
+    stada: [vidlidur, forlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+  - id: ráð
+    merking: ráð, ráðagerð
+    afbrigdi: [rad, ráður, red]
+    stada: [forlidur, vidlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+  - id: hug
+    merking: hugur, hugrekki
+    afbrigdi: [hugi, hyg]
+    stada: [forlidur, vidlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+  - id: vit
+    merking: vit, skilningur
+    stada: [forlidur, vidlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+  - id: fróð
+    merking: fróður, vel að sér
+    afbrigdi: [frod]
+    stada: [forlidur, vidlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+  - id: vís
+    merking: vís, vitur
+    afbrigdi: [vis, vísi]
+    stada: [forlidur, vidlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+  - id: minni
+    merking: minni, minning
+    afbrigdi: [minn, munn]
+    stada: [forlidur, vidlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+  - id: spá
+    merking: spá, forspá
+    afbrigdi: [spa]
+    stada: [forlidur]
+    flokkar: [viska, godafraedi]
+    heimild: Zoëga 1910
+  - id: snjall
+    merking: snjall, hygginn, mælskur
+    afbrigdi: [snjal]
+    stada: [vidlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+
+  # ── Fegurð, ást og gleði ──────────────────────────────────────────────────
+  - id: fríður
+    merking: fagur, fríður
+    skyring: >-
+      Af fríðr, „fagur“. Í samsetningum fellur f-ið oft brott: Sigríður er
+      sigr + fríðr, Ástríður er ást + fríðr. Ekki að rugla saman við friður,
+      „friðsæld“, þótt orðin séu lík.
+    afbrigdi: [fríð, ríður, ríð]
+    stada: [vidlidur, forlidur]
+    flokkar: [fegurd]
+    heimild: Zoëga 1910
+  - id: friður
+    merking: friður, friðsæld
+    skyring: >-
+      Af friðr, „friður“. Kemur nær eingöngu fyrir sem forliður (Friðrik,
+      Friðbjörg), ólíkt fríður sem er algengur viðliður.
+    afbrigdi: [frið, frid, friðar]
+    stada: [forlidur, vidlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+  - id: fagur
+    merking: fagur, fallegur
+    afbrigdi: [fag, fögur]
+    stada: [forlidur]
+    flokkar: [fegurd]
+    heimild: Zoëga 1910
+  - id: ást
+    merking: ást
+    afbrigdi: [ast]
+    stada: [forlidur, vidlidur]
+    flokkar: [gledi, fegurd]
+    heimild: Zoëga 1910
+  - id: yndi
+    merking: yndi, ánægja
+    afbrigdi: [ynd, ind]
+    stada: [forlidur, vidlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+  - id: gleð
+    merking: gleði
+    afbrigdi: [glað, glad]
+    stada: [forlidur, vidlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+  - id: sæl
+    merking: sæll, hamingjusamur, blessaður
+    afbrigdi: [sael]
+    stada: [forlidur, vidlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+  - id: auður
+    merking: auður, ríkidæmi; einnig örlög
+    skyring: >-
+      Tvíræður liður: auðr merkir „auðæfi“ en einnig „örlög, hamingja“, og
+      auk þess „auður, tómur“ sem sérstakt orð.
+    afbrigdi: [auð, aud]
+    stada: [forlidur, vidlidur]
+    flokkar: [gledi, konungborin]
+    heimild: Zoëga 1910
+  - id: væn
+    merking: vænn, fagur, efnilegur
+    afbrigdi: [vaen, ven]
+    stada: [forlidur, vidlidur]
+    flokkar: [fegurd]
+    heimild: Zoëga 1910
+  - id: prúð
+    merking: prúður, tíguleg
+    afbrigdi: [prud]
+    stada: [forlidur, vidlidur]
+    flokkar: [fegurd]
+    heimild: Zoëga 1910
+  - id: gim
+    merking: gimsteinn
+    afbrigdi: [gimm]
+    stada: [forlidur]
+    flokkar: [fegurd]
+    heimild: Zoëga 1910
+  - id: perla
+    merking: perla
+    afbrigdi: [perl]
+    stada: [forlidur, vidlidur]
+    flokkar: [fegurd]
+    heimild: Zoëga 1910
+  - id: ró
+    merking: ró, kyrrð
+    stada: [forlidur, vidlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+  - id: traust
+    merking: traust, öryggi
+    stada: [forlidur, vidlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+
+  # ── Fólk, kyn og almennir liðir ───────────────────────────────────────────
+  - id: maður
+    merking: maður
+    afbrigdi: [mann]
+    stada: [vidlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: sveinn
+    merking: sveinn, ungur maður, þjónn
+    afbrigdi: [svein]
+    stada: [forlidur, vidlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: mey
+    merking: mær, ung stúlka
+    afbrigdi: [meyj, mær]
+    stada: [vidlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: ver
+    merking: maður; einnig vörn
+    afbrigdi: [verr]
+    stada: [vidlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: laug
+    merking: laug, vígt vatn
+    skyring: >-
+      Af laug, „bað“ — vísar til vatnsins sem barni var ausið við nafngjöf.
+    afbrigdi: [laugur]
+    stada: [vidlidur]
+    flokkar: [vatn]
+    heimild: Zoëga 1910
+  - id: ný
+    merking: nýr; nýtt tungl
+    skyring: >-
+      Ný merkir bæði „nýr“ og „nýtt tungl“ — vaxandi máni. Algengur kvenkyns
+      viðliður (Signý, Dagný).
+    afbrigdi: [ny]
+    stada: [vidlidur]
+    flokkar: [stjornur]
+    heimild: Zoëga 1910
+  - id: finnur
+    merking: Finni, Sami; einnig að finna
+    afbrigdi: [finn, fin]
+    stada: [forlidur, vidlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: gaut
+    merking: Gauti, maður af Gautlandi
+    afbrigdi: [gaud, göt]
+    stada: [forlidur, vidlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: dan
+    merking: Dani
+    afbrigdi: [dann]
+    stada: [forlidur, vidlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: ein
+    merking: einn, einstakur
+    stada: [forlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: al
+    merking: allur, algjörlega
+    afbrigdi: [all]
+    stada: [forlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: há
+    merking: hár, hávaxinn
+    afbrigdi: [ha, hæ]
+    stada: [forlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: lín
+    merking: lín, hör
+    skyring: >-
+      Vísar til hörsins og hörklæðanna; einnig notað um höfuðlín kvenna.
+    afbrigdi: [lin]
+    stada: [vidlidur]
+    flokkar: [plontur]
+    heimild: Zoëga 1910
+  - id: kär
+    merking: kær, ástfólginn
+    afbrigdi: [kær, kar]
+    stada: [forlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+
+  # ── Önnur umferð: liðir sem greining á óleystum nöfnum leiddi í ljós ──────
+  # Bætt við eftir keyrslu á scripts/analyze-elements.ts gegn þeim nöfnum sem
+  # orðasafnið réð ekki við í fyrstu atrennu.
+
+  - id: brynja
+    merking: brynja, hringabrynja
+    skyring: >-
+      Herklæði úr samanhnýttum hringum. Algengur forliður (Bryndís,
+      Brynhildur) og myndar líka viðliðinn -brynja.
+    afbrigdi: [bryn, brynj]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: vinur
+    merking: vinur
+    afbrigdi: [vin, vine]
+    stada: [vidlidur, forlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+  - id: vilji
+    merking: vilji, ásetningur
+    afbrigdi: [vil, vill]
+    stada: [forlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+  - id: hróður
+    merking: lof, frægð, orðstír
+    skyring: >-
+      Af hróðr, „lof og frægð“ — það sem kveðið er um mann. Sami liður og í
+      Hróaldur og Hróbjartur (sem varð Robert í öðrum málum).
+    afbrigdi: [hró, hroð, hróð, hro]
+    stada: [forlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: garður
+    merking: garður, gerði, vörn
+    skyring: >-
+      Karlkyns samsvörun við -gerður. Merkir umgirt svæði og þaðan vörn.
+    afbrigdi: [garð, gard]
+    stada: [vidlidur, forlidur]
+    flokkar: [hernadur, nattura]
+    heimild: Zoëga 1910
+  - id: bert
+    merking: bjartur, skínandi
+    skyring: >-
+      Germanskur liður (beraht, „bjartur“) sem barst inn í norrænu með
+      nöfnum eins og Albert og Aðalbert. Sami uppruni og enska bright.
+    afbrigdi: [berht]
+    stada: [vidlidur]
+    flokkar: [ljos]
+    heimild: CV 1874
+  - id: viður
+    merking: viður, tré; skógur
+    afbrigdi: [við, vid]
+    stada: [vidlidur, forlidur]
+    flokkar: [plontur, nattura]
+    heimild: Zoëga 1910
+  - id: hreinn
+    merking: hreinn, flekklaus; einnig hreindýr
+    skyring: >-
+      Tvíræður liður: hreinn merkir „flekklaus“ en einnig „hreindýr“.
+    afbrigdi: [hrein, rein]
+    stada: [vidlidur, forlidur]
+    flokkar: [dyr, fegurd]
+    heimild: Zoëga 1910
+  - id: gestur
+    merking: gestur, aðkomumaður
+    afbrigdi: [gest]
+    stada: [vidlidur, forlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: eir
+    merking: miskunn, líkn; gyðjan Eir
+    skyring: >-
+      Eir var gyðja lækninga í norrænni goðafræði og orðið merkir „líkn“.
+      Kemur fram í Eiríkur, Eirdís og Eir sjálfu.
+    afbrigdi: [eír]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi, gledi]
+    heimild: Zoëga 1910
+  - id: brá
+    merking: brá, augnahár; bjarmi
+    skyring: >-
+      Brá merkir augnalok eða brá, en einnig „að bregða birtu“ — glampa.
+      Kemur fyrir í Sólbrá og Þorbrá.
+    afbrigdi: [bra]
+    stada: [vidlidur, forlidur]
+    flokkar: [fegurd, ljos]
+    heimild: Zoëga 1910
+  - id: ægir
+    merking: sjávarguðinn Ægir; haf
+    afbrigdi: [ægi, æg, aegir]
+    stada: [forlidur, vidlidur]
+    flokkar: [godafraedi, vatn]
+    heimild: Zoëga 1910
+  - id: ævi
+    merking: ævi, líftími; ævinlega
+    afbrigdi: [æv, æfi, æf]
+    stada: [forlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: kaldur
+    merking: kaldur
+    afbrigdi: [kald, kal]
+    stada: [forlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+  - id: salur
+    merking: salur, höll
+    afbrigdi: [sal]
+    stada: [forlidur, vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: bogi
+    merking: bogi, skotvopn
+    afbrigdi: [bog]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+  - id: agi
+    merking: ótti, lotning; agi
+    skyring: >-
+      Af agi, „ótti eða lotning“. Liggur að baki Agnar (agi + herr).
+    afbrigdi: [agn, ag]
+    stada: [forlidur]
+    flokkar: []
+    heimild: Zoëga 1910
+  - id: ljótur
+    merking: bjartur, skínandi
+    skyring: >-
+      Í nöfnum er -ljótr komið af germönsku *leuhtaz, „ljós, bjartur“, og er
+      óskylt lýsingarorðinu ljótur í nútímamáli þrátt fyrir samhljóminn.
+    afbrigdi: [ljót, ljot]
+    stada: [vidlidur]
+    flokkar: [ljos]
+    heimild: CV 1874
+  - id: varr
+    merking: var um sig, athugull
+    afbrigdi: [var]
+    stada: [vidlidur]
+    flokkar: [viska]
+    heimild: Zoëga 1910
+  - id: rekur
+    merking: valdhafi, stjórnandi
+    skyring: Skylt ríkr; kemur fram í Alrekur og Sindri-nöfnum.
+    afbrigdi: [rek]
+    stada: [vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+  - id: hildingur
+    merking: höfðingi, konungur
+    afbrigdi: [ingur]
+    stada: [vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
