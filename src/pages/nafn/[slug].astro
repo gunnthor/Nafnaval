@@ -75,6 +75,22 @@ const description = entry.merking
       </p>
 
       {
+        entry.status === 'Sam' && (
+          <p style="margin:0.85rem 0 0">
+            <button
+              class="vista vista-stor"
+              type="button"
+              data-vista={entry.slug}
+              aria-pressed="false"
+              aria-label="Setja á listann"
+            >
+              ☆
+            </button>
+          </p>
+        )
+      }
+
+      {
         entry.merking ? (
           <>
             <p class="meaning">

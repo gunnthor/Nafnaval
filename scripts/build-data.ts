@@ -15,6 +15,7 @@ import { resolve } from 'node:path';
 import { parse } from 'yaml';
 import { Decomposer, meaningFromSegments } from '../src/lib/decompose.ts';
 import { slugify, displayCase, fold, isKeyboardFriendly, collator } from '../src/lib/icelandic.ts';
+import { CATEGORY_BY_SLUG } from '../src/lib/categories.ts';
 import type {
   RegisterRecord, LexiconElement, NameEntry, Segment, Gender, Confidence, Declension, Popularity,
 } from '../src/lib/types.ts';
@@ -59,6 +60,18 @@ const stats = existsSync(statsPath)
 
 const draftsPath = resolve(root, 'data/ai/drafts.json');
 const drafts = existsSync(draftsPath) ? readJson<AiDraft[]>('data/ai/drafts.json') : [];
+
+/** Faith tags keyed by lowercase name. A name may carry several. */
+const { truarbrogd } = parse(read('data/overrides/truarbrogd.yaml')) as {
+  truarbrogd: Record<string, string[]>;
+};
+const faithByName = new Map<string, Set<string>>();
+for (const [faith, list] of Object.entries(truarbrogd)) {
+  for (const nafn of list) {
+    const key = nafn.toLowerCase();
+    (faithByName.get(key) ?? faithByName.set(key, new Set()).get(key)!).add(faith);
+  }
+}
 
 const decomposer = new Decomposer(elements);
 const overrides = new Map(overrideList.map((o) => [o.nafn.toLowerCase(), o]));
@@ -167,6 +180,16 @@ for (const rec of register) {
   if (rec.icelandicName.length <= 5) flokkar.add('stutt');
   if (isKeyboardFriendly(rec.icelandicName)) flokkar.add('audvelt-erlendis');
   if (uppruni && uppruni !== 'norræna' && uppruni !== 'íslenska') flokkar.add('erlent');
+
+  // ── Faith tags, then parent inheritance ──────────────────────────────────
+  for (const faith of faithByName.get(lower) ?? []) flokkar.add(faith);
+  // A name tagged with any faith is also tagged Trúarbrögð, so the parent
+  // filter catches every tradition at once. Runs after every other tagging
+  // step so it also picks up faiths conferred by lexicon elements.
+  for (const f of [...flokkar]) {
+    const parent = CATEGORY_BY_SLUG.get(f)?.parent;
+    if (parent) flokkar.add(parent);
+  }
 
   entries.push({
     id: rec.id,

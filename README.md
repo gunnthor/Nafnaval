@@ -45,6 +45,16 @@ Precedence, highest first:
    `óstaðfest` badge. Never merged into 1 or 2.
 4. Nothing — the page says the meaning isn't recorded.
 
+Faith tags come from a separate file, `data/overrides/truarbrogd.yaml`, and are
+applied on top of whatever the chain above produced — they say which tradition a
+name belongs to, not what it means. It exists for whole names the element
+machinery cannot reach (Arabic and Hebrew names). A name may be listed under
+several faiths, and Abrahamic names should be.
+
+Categories form a shallow tree: `truarbrogd` is a parent of `kristni`, `islam`,
+`gydingdomur` and `godafraedi`, and the build tags a name with the parent whenever
+it carries any child. Add a child by giving it `parent:` in `src/lib/categories.ts`.
+
 **Tagging elements is what tags names.** A category added to `þór` applies to every name
 containing it, so the taxonomy is mostly a by-product of the lexicon.
 
@@ -57,6 +67,17 @@ npx tsx scripts/analyze-elements.ts --min 6 --missing
 Ranks recurring prefixes and suffixes among names the lexicon can't yet resolve, so
 curation effort goes where it covers the most names. Add entries to
 `data/lexicon/elements.yaml`, then `npm run lint:lexicon && npm test && npm run build:data`.
+
+## Síur og listi
+
+Filter chips are tri-state: **off → hafa með → sleppa → off**. Exclusions beat
+inclusions, so "no religious names" means none. State lives in the URL
+(`?f=` include, `?x=` exclude, `?k=`/`?kx=` gender) so a filtered view is
+shareable, and the active set is always shown as removable pills above the results.
+
+The shortlist (`/listinn`) is localStorage only — no accounts, no analytics.
+*Deila listanum* encodes the slugs into a URL; opening someone else's link offers
+to merge rather than overwriting what you already saved.
 
 ## Þrjú áreiðanleikastig
 

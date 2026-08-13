@@ -18,6 +18,12 @@
   --ostadfest: #6c6558;
   --ostadfest-bg: #efece6;
 
+  /* Exclusion and shortlist need their own hues, distinct from the trust tiers. */
+  --exclude: #a03d33;
+  --exclude-bg: #f7e9e7;
+  --save: #b1552b;
+  --save-bg: #f9ece3;
+
   --radius: 10px;
   --tap: 44px; /* minimum comfortable touch target */
 }
@@ -37,6 +43,10 @@
     --likleg-bg: #322a1a;
     --ostadfest: #a09889;
     --ostadfest-bg: #2a2722;
+    --exclude: #e08b7f;
+    --exclude-bg: #33231f;
+    --save: #e0a06f;
+    --save-bg: #33271d;
   }
 }
 
@@ -186,14 +196,133 @@ a:focus-visible {
   border-radius: 999px;
   cursor: pointer;
 }
-.chip[aria-pressed='true'] {
+/* Tri-state: off → include → exclude → off. Exclude must not read as a
+   stronger "on" — hence the strikethrough as well as the colour change. */
+.chip[data-state='inc'] {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
 }
-@media (prefers-color-scheme: dark) {
-  .chip[aria-pressed='true'] { color: #16211d; }
+.chip[data-state='exc'] {
+  background: var(--exclude-bg);
+  border-color: var(--exclude);
+  color: var(--exclude);
+  text-decoration: line-through;
 }
+.chip[data-state='exc']::before { content: '−\00a0'; text-decoration: none; }
+@media (prefers-color-scheme: dark) {
+  .chip[data-state='inc'] { color: #16211d; }
+}
+
+/* Nested faith categories sit under their parent. */
+.chips-nested {
+  margin: 0.4rem 0 0 0.75rem;
+  padding-inline-start: 0.75rem;
+  border-inline-start: 2px solid var(--border);
+}
+.chips-nested .chip { font-size: 0.82rem; }
+
+/* ── Active filter summary ───────────────────────────────────────────────── */
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 0 0.25rem;
+}
+.active-filters[hidden] { display: none; }
+.active-filters .label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-inline-end: 0.15rem;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.4rem 0.3rem 0.7rem;
+  font-size: 0.82rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+.pill-inc { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.pill-exc { background: var(--exclude-bg); color: var(--exclude); border-color: var(--exclude); }
+.pill .x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 0.09);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+@media (prefers-color-scheme: dark) {
+  .pill .x { background: rgb(255 255 255 / 0.14); }
+}
+.link-btn {
+  background: none;
+  border: 0;
+  padding: 0.3rem 0.2rem;
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ── Save-to-shortlist button ────────────────────────────────────────────── */
+.vista {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap);
+  height: var(--tap);
+  margin-inline-start: auto;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.vista[aria-pressed='true'] { color: var(--save); }
+.vista:hover { background: var(--accent-soft); }
+
+.vista-stor {
+  width: auto;
+  padding: 0 1rem;
+  gap: 0.5rem;
+  height: var(--tap);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  margin: 0;
+}
+.vista-stor[aria-pressed='true'] {
+  border-color: var(--save);
+  background: var(--save-bg);
+}
+
+.count-badge {
+  display: inline-block;
+  min-width: 1.25rem;
+  padding: 0 0.35rem;
+  margin-inline-start: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  text-align: center;
+  color: #fff;
+  background: var(--save);
+  border-radius: 999px;
+}
+@media (prefers-color-scheme: dark) { .count-badge { color: #16211d; } }
 
 /* ── Results ─────────────────────────────────────────────────────────────── */
 .result-count {
@@ -337,4 +466,48 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
   .filters-backdrop, .filter-toggle { display: none !important; }
   .name-list { columns: 2; column-gap: 2rem; }
   .name-list li { break-inside: avoid; }
+}
+
+/* ── Filter sheet chrome (mobile only) ───────────────────────────────────── */
+.filters-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.filters-head h2 { margin: 0; font-size: 1.05rem; }
+.sheet-close {
+  width: var(--tap);
+  height: var(--tap);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.sheet-close:hover { background: var(--accent-soft); }
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 650;
+}
+@media (prefers-color-scheme: dark) { .btn-primary { color: #16211d; } }
+
+/* Sticks to the bottom of the sheet so it is reachable however long the
+   filter list gets. */
+.sheet-apply {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  margin-top: 0.75rem;
+  box-shadow: 0 -0.75rem 1rem var(--surface);
+}
+
+@media (min-width: 768px) {
+  /* On desktop the sidebar is always visible, so neither control has a job. */
+  .filters-head, .sheet-apply { display: none; }
 }

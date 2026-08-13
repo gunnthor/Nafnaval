@@ -1,0 +1,182 @@
+# Trúarbrögð — which faith tradition a name belongs to.
+#
+# Hand-curated. The lexicon already tags Norse-religion and Christian *elements*
+# (þór, guð, krist, maría …), so this file exists for whole names the element
+# machinery cannot reach — chiefly Arabic and Hebrew names, which are not Old
+# Norse compounds and never will be.
+#
+# A NAME MAY APPEAR UNDER MORE THAN ONE FAITH, and often should. Abraham, Sara,
+# Adam, Ísak, Móses and Miriam are shared across Judaism, Christianity and
+# Islam; listing them once and picking a winner would be a false simplification.
+# The build tags such names with every tradition listed, plus the parent
+# `truarbrogd`.
+#
+# A NOTE ON HEBREW NAMES. Almost every Hebrew name in the Icelandic register
+# arrived through Christianity, not through a Jewish community — Iceland has
+# never had a large one. They are tagged `gydingdomur` for their origin and
+# `kristni` for how they actually entered Icelandic naming. Both facts are true
+# and the pair is more informative than either alone.
+
+truarbrogd:
+  # ── Íslam ────────────────────────────────────────────────────────────────
+  # Names from Arabic and Islamic tradition. Deliberately conservative: names
+  # that merely *occur* in Muslim-majority countries but are Greek or Persian
+  # in origin (Sofia, Arman) are left out, since the tag would be misleading.
+  islam:
+    - múhameð
+    - ali
+    - amir
+    - amír
+    - amira
+    - amína
+    - amal
+    - omar
+    - ómar
+    - aisha
+    - karim
+    - kareem
+    - samir
+    - kamal
+    - hakim
+    - salma
+    - dania
+    - emir
+    - nadia
+    - nadía
+    - laila
+    - leila
+    - leyla
+    - layla
+    - jasmín
+    - esra
+    - zahra
+    - noor
+
+  # ── Gyðingdómur (hebreskur uppruni) ──────────────────────────────────────
+  gydingdomur:
+    - daníel
+    - elísabet
+    - rakel
+    - davíð
+    - aron
+    - eva
+    - sara
+    - anna
+    - hanna
+    - jakob
+    - jósef
+    - benjamín
+    - símon
+    - gabríel
+    - míkael
+    - rebekka
+    - ester
+    - rut
+    - sakarías
+    - elías
+    - naomí
+    - abraham
+    - ísak
+    - móses
+    - miriam
+    - jóhannes
+    - tómas
+    - adam
+    - jónatan
+    - sara
+
+  # ── Kristni ──────────────────────────────────────────────────────────────
+  # The lexicon already confers `kristni` via elements (krist-, maría, páll,
+  # pét-, jón, engil, helg). Listed here are Hebrew-origin names that reached
+  # Iceland through the church, and saints' names the lexicon cannot split.
+  kristni:
+    - daníel
+    - elísabet
+    - rakel
+    - davíð
+    - aron
+    - eva
+    - sara
+    - anna
+    - hanna
+    - jakob
+    - jósef
+    - benjamín
+    - símon
+    - gabríel
+    - míkael
+    - rebekka
+    - ester
+    - rut
+    - sakarías
+    - elías
+    - abraham
+    - ísak
+    - móses
+    - tómas
+    - adam
+    - jónatan
+    - stefán
+    - benedikt
+    - katrín
+    - kristófer
+    - andrés
+    - andrea
+    - lúkas
+    - markús
+    - matteus
+    - filippus
+    - bartólómeus
+    - tímóteus
+    - klemens
+    - ágústínus
+    - frans
+    - antoníus
+    - nikulás
+    - lárus
+    - vincent
+    - teresa
+    - agnes
+    - sesselja
+    - lúsía
+    - margrét
+    - barbara
+    - klara
+    - veronika
+    - marta
+    - magdalena
+
+  # ── Norræn trú ───────────────────────────────────────────────────────────
+  # Whole mythological names the element lexicon does not decompose. Names
+  # built from mythic *elements* (Þórdís, Freydís, Ásbjörn) already get this
+  # tag from the lexicon.
+  godafraedi:
+    - óðinn
+    - loki
+    - frigg
+    - iðunn
+    - sif
+    - njörður
+    - urður
+    - skuld
+    - valkyrja
+    - askur
+    - embla
+    - ymir
+    - mímir
+    - bragi
+    - ullur
+    - váli
+    - fenrir
+    - huginn
+    - muninn
+    - ránar
+    - nanna
+    - gefjun
+    - eir
+    - saga
+    - vör
+    - hlín
+    - snotra
+    - sjöfn
+    - lofn

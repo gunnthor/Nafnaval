@@ -1,0 +1,185 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Listinn minn"
+  description="Nöfnin sem þú hefur sett á listann þinn. Geymt í vafranum þínum."
+>
+  <div class="wrap">
+    <div class="name-hero">
+      <h1>Listinn minn</h1>
+      <p class="skyring" id="intro">
+        Nöfnin sem þú hefur merkt við. Listinn er geymdur í vafranum þínum og fer hvergi annað.
+      </p>
+    </div>
+
+    <p id="tomur" class="empty" hidden>
+      Listinn er tómur. Ýttu á stjörnuna <span aria-hidden="true">☆</span> við nafn til að
+      setja það á listann. <a href="/">Byrjaðu að leita</a>.
+    </p>
+
+    <ul class="name-list" id="listi"></ul>
+
+    <div id="adgerdir" hidden style="display:flex;gap:0.5rem;flex-wrap:wrap;padding:1.25rem 0">
+      <button class="btn" type="button" id="deila">Deila listanum</button>
+      <button class="btn" type="button" id="prenta">Prenta</button>
+      <button class="btn" type="button" id="hreinsa">Hreinsa listann</button>
+    </div>
+
+    <p class="notice" id="deilt" hidden></p>
+
+    <section class="card" id="innflutningur" hidden>
+      <h2>Listi úr hlekk</h2>
+      <p id="innflutningur-texti"></p>
+      <button class="btn" type="button" id="flytja-inn">Bæta við listann minn</button>
+    </section>
+  </div>
+</Base>
+
+<style>
+  @media print {
+    .site-header, .site-footer, #adgerdir, #intro, .notice { display: none !important; }
+    .name-list a { min-height: 0; padding: 0.35rem 0; }
+    .vista { display: none !important; }
+  }
+</style>
+
+<script>
+  import { lesa, fjarlaegja, hreinsa, flytjaInn, viObreytingu, tengjaTeljara } from '../lib/listi.ts';
+  import { sortNames } from '../lib/icelandic.ts';
+
+  interface Row {
+    n: string;
+    s: string;
+    g: 'kvk' | 'kk' | 'hlutlaust';
+    l: string;
+    f: string[];
+    m: string;
+    c: string;
+    v: number;
+  }
+
+  const listi = document.getElementById('listi') as HTMLUListElement;
+  const tomur = document.getElementById('tomur') as HTMLElement;
+  const adgerdir = document.getElementById('adgerdir') as HTMLElement;
+  const deilt = document.getElementById('deilt') as HTMLElement;
+  const innflutningur = document.getElementById('innflutningur') as HTMLElement;
+
+  const GENDER_LABEL: Record<string, string> = { kvk: 'kvk', kk: 'kk', hlutlaust: '—' };
+
+  let bySlug = new Map<string, Row>();
+
+  function render() {
+    const slugs = lesa();
+    const rows = slugs.map((s) => bySlug.get(s)).filter((r): r is Row => Boolean(r));
+    const sorted = sortNames(rows, (r) => r.n);
+
+    listi.replaceChildren();
+    for (const r of sorted) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `/nafn/${r.s}`;
+
+      const g = document.createElement('span');
+      g.className = 'gender';
+      g.textContent = GENDER_LABEL[r.g] ?? '—';
+
+      const n = document.createElement('span');
+      n.className = 'nafn';
+      n.textContent = r.n;
+
+      const m = document.createElement('span');
+      m.className = 'merking';
+      m.textContent = r.m;
+
+      const rm = document.createElement('button');
+      rm.type = 'button';
+      rm.className = 'vista';
+      rm.textContent = '★';
+      rm.setAttribute('aria-pressed', 'true');
+      rm.setAttribute('aria-label', `Taka ${r.n} af listanum`);
+      rm.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        fjarlaegja(r.s);
+      });
+
+      a.append(g, n, m, rm);
+      li.append(a);
+      listi.append(li);
+    }
+
+    const any = sorted.length > 0;
+    tomur.hidden = any;
+    adgerdir.hidden = !any;
+    // A slug in storage with no matching row means the name is no longer in
+    // the register (or the index changed) — say so rather than dropping it
+    // silently.
+    const missing = slugs.length - sorted.length;
+    if (missing > 0) {
+      tomur.hidden = false;
+      tomur.textContent = `${missing} nöfn af listanum fundust ekki í nafnaskránni.`;
+    }
+  }
+
+  document.getElementById('deila')!.addEventListener('click', async () => {
+    const url = `${location.origin}/listinn?n=${lesa().join(',')}`;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: 'Nafnalistinn minn', url });
+        return;
+      }
+      await navigator.clipboard.writeText(url);
+      deilt.hidden = false;
+      deilt.textContent = 'Hlekkur afritaður. Sendu hann á hvern sem er.';
+    } catch {
+      // Share cancelled, or clipboard blocked — show the link to copy by hand.
+      deilt.hidden = false;
+      deilt.textContent = url;
+    }
+  });
+
+  document.getElementById('prenta')!.addEventListener('click', () => window.print());
+
+  document.getElementById('hreinsa')!.addEventListener('click', () => {
+    if (confirm('Viltu hreinsa allan listann?')) hreinsa();
+  });
+
+  // A shared link arrives as ?n=slug1,slug2 — merge rather than overwrite, so
+  // opening someone else's list never wipes your own.
+  const incoming = new URLSearchParams(location.search).get('n');
+  const incomingSlugs = (incoming ?? '').split(',').filter(Boolean);
+
+  viObreytingu(render);
+  tengjaTeljara();
+
+  fetch('/leit.json')
+    .then((r) => r.json())
+    .then((rows: Row[]) => {
+      bySlug = new Map(rows.map((r) => [r.s, r]));
+
+      if (incomingSlugs.length) {
+        const names = incomingSlugs
+          .map((s) => bySlug.get(s)?.n)
+          .filter(Boolean)
+          .join(', ');
+        if (names) {
+          innflutningur.hidden = false;
+          document.getElementById('innflutningur-texti')!.textContent =
+            `Hlekkurinn inniheldur ${incomingSlugs.length} nöfn: ${names}`;
+          document.getElementById('flytja-inn')!.addEventListener('click', () => {
+            flytjaInn(incomingSlugs);
+            innflutningur.hidden = true;
+            history.replaceState(null, '', '/listinn');
+          });
+        }
+      }
+
+      render();
+    })
+    .catch(() => {
+      tomur.hidden = false;
+      tomur.textContent = 'Ekki tókst að hlaða nafnaskránni.';
+    });
+</script>

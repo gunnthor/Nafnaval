@@ -33,6 +33,7 @@ const full = title === 'Nafnaval' ? title : `${title} — Nafnaval`;
         <nav class="site-nav">
           <a href="/flokkar">Flokkar</a>
           <a href="/hafnad">Hafnað</a>
+          <a href="/listinn">Listinn<span class="count-badge" id="listi-teljari" hidden></span></a>
           <a href="/um">Um</a>
         </nav>
       </div>
@@ -52,5 +53,14 @@ const full = title === 'Nafnaval' ? title : `${title} — Nafnaval`;
         </p>
       </div>
     </footer>
+
+    <script>
+      // The header counter and any save buttons on the page. Pages that manage
+      // their own list rendering (index, listinn) call these again themselves;
+      // the functions are idempotent.
+      import { tengjaTeljara, tengjaHnappa } from '../lib/listi.ts';
+      tengjaTeljara();
+      tengjaHnappa();
+    </script>
   </body>
 </html>

@@ -10,12 +10,9 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parse } from 'yaml';
 import type { LexiconElement } from '../src/lib/types.ts';
+import { INHERITABLE } from '../src/lib/categories.ts';
 
-const VALID_CATEGORIES = new Set([
-  'nattura', 'vedur', 'vatn', 'dyr', 'plontur', 'stjornur', 'ljos', 'litir',
-  'godafraedi', 'kristni', 'sogupersonur', 'konungborin',
-  'hernadur', 'fegurd', 'viska', 'gledi',
-]);
+const VALID_CATEGORIES = INHERITABLE;
 
 const VALID_POSITIONS = new Set(['forlidur', 'vidlidur']);
 

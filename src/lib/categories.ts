@@ -14,6 +14,12 @@ export interface Category {
   heiti: string;
   lysing: string;
   hopur: 'nattura' | 'folk' | 'eiginleikar' | 'hagnytt';
+  /**
+   * Slug of the parent category, for the religion tree. A name tagged with a
+   * child is automatically tagged with the parent too, so filtering on
+   * "Trúarbrögð" catches every faith at once.
+   */
+  parent?: string;
   /** Rule-based categories are not conferred by elements. */
   regla?: boolean;
 }
@@ -30,8 +36,14 @@ export const CATEGORIES: Category[] = [
   { slug: 'litir', heiti: 'Litir', lysing: 'Svart, hvítt, rautt og gull', hopur: 'nattura' },
 
   // ── Fólk og trú ───────────────────────────────────────────────────────────
-  { slug: 'godafraedi', heiti: 'Norræn goðafræði', lysing: 'Þór, Freyr, dísir og álfar', hopur: 'folk' },
-  { slug: 'kristni', heiti: 'Kristni og trú', lysing: 'Kristur, dýrlingar og biblíunöfn', hopur: 'folk' },
+  // Trúarbrögð is a parent: tagging a name with any faith below also tags it
+  // here. Abrahamic names (Adam, Sara, Abraham) legitimately carry more than
+  // one of these at once — that overlap is worth showing, not flattening.
+  { slug: 'truarbrogd', heiti: 'Trúarbrögð', lysing: 'Nöfn sem tengjast trúarbrögðum', hopur: 'folk' },
+  { slug: 'godafraedi', heiti: 'Norræn trú', lysing: 'Þór, Freyr, dísir og álfar', hopur: 'folk', parent: 'truarbrogd' },
+  { slug: 'kristni', heiti: 'Kristni', lysing: 'Kristur, dýrlingar og nöfn sem bárust með kristni', hopur: 'folk', parent: 'truarbrogd' },
+  { slug: 'gydingdomur', heiti: 'Gyðingdómur', lysing: 'Nöfn af hebreskum uppruna', hopur: 'folk', parent: 'truarbrogd' },
+  { slug: 'islam', heiti: 'Íslam', lysing: 'Nöfn úr arabískri og íslamskri hefð', hopur: 'folk', parent: 'truarbrogd' },
   { slug: 'sogupersonur', heiti: 'Sögupersónur', lysing: 'Nöfn úr Íslendingasögum og fornsögnum', hopur: 'folk' },
   { slug: 'konungborin', heiti: 'Konungborin nöfn', lysing: 'Vald, tign, ætt og höfðingjar', hopur: 'folk' },
 
@@ -63,3 +75,13 @@ export const GROUP_LABELS: Record<Category['hopur'], string> = {
 
 /** Slugs that elements may legitimately confer. Used by validate-lexicon. */
 export const INHERITABLE = new Set(CATEGORIES.filter((c) => !c.regla).map((c) => c.slug));
+
+/** Child categories of a parent, in declaration order. */
+export function childrenOf(parent: string): Category[] {
+  return CATEGORIES.filter((c) => c.parent === parent);
+}
+
+/** Top-level categories within a group — children are rendered nested. */
+export function topLevelIn(hopur: Category['hopur']): Category[] {
+  return CATEGORIES.filter((c) => c.hopur === hopur && !c.parent);
+}
