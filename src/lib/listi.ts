@@ -81,8 +81,14 @@ export function samstillaHnappa(root: ParentNode = document) {
   for (const btn of root.querySelectorAll<HTMLElement>('[data-vista]')) {
     const on = saved.has(btn.dataset.vista!);
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    // Buttons with a visible text label keep it; the star lives in its own
+    // span so repainting never destroys the wording next to it.
+    const star = btn.querySelector('.stjarna');
+    const label = btn.querySelector('.vista-texti');
+    if (star) star.textContent = on ? '★' : '☆';
+    else btn.textContent = on ? '★' : '☆';
+    if (label) label.textContent = on ? 'Á listanum' : 'Setja á listann';
     btn.setAttribute('aria-label', on ? 'Fjarlægja af listanum' : 'Setja á listann');
-    btn.textContent = on ? '★' : '☆';
   }
 }
 

@@ -53,10 +53,16 @@ const declensions = existsSync(binPath)
   ? readJson<{ entries: Array<{ nafn: string; beyging: Declension }> }>('data/raw/beygingar.json').entries
   : [];
 
-const statsPath = resolve(root, 'data/raw/vinsaeldir.json');
-const stats = existsSync(statsPath)
-  ? readJson<{ popularity: Array<{ nafn: string; saeti: number; fyrraSaeti: number | null; fjoldi: number | null; gender: string }> }>('data/raw/vinsaeldir.json')
-  : { popularity: [] };
+/**
+ * Bearer counts from Þjóðskrá. Replaces the Hagstofa popularity tables, which
+ * only ever covered ~100 names per gender; this covers essentially all of them.
+ */
+const tidniPath = resolve(root, 'data/raw/nafntidni.json');
+const tidni = existsSync(tidniPath)
+  ? readJson<{ ar: number[]; nofn: Record<string, { e: number[]; a: number[] }> }>(
+      'data/raw/nafntidni.json',
+    )
+  : { ar: [], nofn: {} };
 
 const draftsPath = resolve(root, 'data/ai/drafts.json');
 const drafts = existsSync(draftsPath) ? readJson<AiDraft[]>('data/ai/drafts.json') : [];
@@ -78,11 +84,61 @@ const overrides = new Map(overrideList.map((o) => [o.nafn.toLowerCase(), o]));
 const draftsByName = new Map(drafts.map((d) => [d.nafn.toLowerCase(), d]));
 const elementById = new Map(elements.map((e) => [e.id, e]));
 const declensionByName = new Map(declensions.map((d) => [d.nafn.toLowerCase(), d.beyging]));
-const popularityByName = new Map<string, Popularity & { gender: string }>();
-for (const p of stats.popularity) {
-  popularityByName.set(p.nafn.toLowerCase(), {
-    saeti: p.saeti, fyrraSaeti: p.fyrraSaeti, fjoldi: p.fjoldi, gender: p.gender,
-  });
+// ── Bearer counts and ranks ─────────────────────────────────────────────────
+const YEAR_AXIS = tidni.ar;
+const latest = (xs: number[]) => (xs.length ? xs[xs.length - 1] : 0);
+
+/**
+ * Rank is computed here rather than taken from a source, because no source
+ * ranks every name — Þjóðskrá publishes counts, so the ordering is ours to
+ * derive. Ranked within gender, by first-name bearers, ties sharing a rank.
+ */
+const rankByName = new Map<string, { saeti: number; af: number }>();
+{
+  const byGender = new Map<string, Array<{ nafn: string; n: number }>>();
+  for (const rec of register) {
+    if (rec.status !== 'Sam') continue;
+    if (rec.type === 'RST' || rec.type === 'RDR') continue;
+    const n = latest(tidni.nofn[rec.icelandicName]?.e ?? []);
+    if (n <= 0) continue;
+    const g = rec.type === 'ST' ? 'kvk' : rec.type === 'DR' ? 'kk' : 'annad';
+    (byGender.get(g) ?? byGender.set(g, []).get(g)!).push({ nafn: rec.icelandicName, n });
+  }
+  for (const list of byGender.values()) {
+    list.sort((a, b) => b.n - a.n);
+    let saeti = 0;
+    let prev = Number.POSITIVE_INFINITY;
+    list.forEach((item, i) => {
+      if (item.n < prev) {
+        saeti = i + 1;
+        prev = item.n;
+      }
+      rankByName.set(item.nafn, { saeti, af: list.length });
+    });
+  }
+}
+
+function popularityFor(lower: string): Popularity | null {
+  const row = tidni.nofn[lower];
+  if (!row) return null;
+  const fjoldi = latest(row.e);
+  const fjoldiAnnad = latest(row.a);
+  if (fjoldi === 0 && fjoldiAnnad === 0) return null;
+
+  // Ten years back on the same axis, so the comparison is like-for-like.
+  const tenBack = row.e.length >= 11 ? row.e[row.e.length - 11] : 0;
+  const breyting = tenBack > 0 ? Math.round(((fjoldi - tenBack) / tenBack) * 100) : null;
+  const rank = rankByName.get(lower);
+
+  return {
+    fjoldi,
+    fjoldiAnnad,
+    alls: fjoldi + fjoldiAnnad,
+    saeti: rank?.saeti ?? null,
+    afFjolda: rank?.af ?? null,
+    ferill: row.e,
+    breyting,
+  };
 }
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -169,7 +225,7 @@ for (const rec of register) {
   }
 
   // ── Rule-based categories ────────────────────────────────────────────────
-  const popularity = popularityByName.get(lower) ?? null;
+  const popularity = popularityFor(lower);
   const year = verdictYear(rec.verdict);
 
   if (rec.type === 'KH') flokkar.add('kynhlutlaust');
@@ -206,9 +262,7 @@ for (const rec of register) {
     lidir,
     confidence,
     flokkar: [...flokkar].sort(),
-    vinsaeldir: popularity
-      ? { saeti: popularity.saeti, fyrraSaeti: popularity.fyrraSaeti, fjoldi: popularity.fjoldi }
-      : null,
+    vinsaeldir: popularity,
     beyging: declensionByName.get(lower) ?? null,
     ...(skyring ? { skyring } : {}),
   } as NameEntry & { skyring?: string });
@@ -219,6 +273,7 @@ entries.sort((a, b) => collator.compare(a.nafn, b.nafn));
 // ── Write outputs ───────────────────────────────────────────────────────────
 mkdirSync(resolve(root, 'src/data'), { recursive: true });
 writeFileSync(resolve(root, 'src/data/nofn.json'), JSON.stringify(entries), 'utf8');
+writeFileSync(resolve(root, 'src/data/ar.json'), JSON.stringify(YEAR_AXIS), 'utf8');
 
 // Compact index for the client filter: only what the list view needs, with
 // short keys, since this ships to every visitor.
@@ -232,7 +287,7 @@ const index = entries
     f: e.flokkar,
     m: e.merking ?? '',
     c: e.confidence ?? '',
-    v: e.vinsaeldir?.saeti ?? 0,
+    v: e.vinsaeldir?.fjoldi ?? 0,
   }));
 // Written to public/ so the browser fetches it as a separate cacheable file
 // rather than inlining ~700 KB of JSON into every page.
@@ -271,4 +326,4 @@ console.log(`  staðfest     : ${byConfidence.get('stadfest') ?? 0}`);
 console.log(`  líkleg       : ${byConfidence.get('likleg') ?? 0}`);
 console.log(`  óstaðfest    : ${byConfidence.get('ostadfest') ?? 0}`);
 console.log(`\nUppruni merkinga: yfirskriftir ${tally.override}, orðasafn ${tally.lexicon}, gervigreind ${tally.ai}, ekkert ${tally.none}`);
-console.log(`Beygingar: ${entries.filter((e) => e.beyging).length} | Vinsældir: ${entries.filter((e) => e.vinsaeldir).length}`);
+console.log(`Beygingar: ${entries.filter((e) => e.beyging).length} | Með berendur: ${entries.filter((e) => e.vinsaeldir).length}`);

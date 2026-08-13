@@ -47,7 +47,7 @@ import Base from '../layouts/Base.astro';
 
 <script>
   import { lesa, fjarlaegja, hreinsa, flytjaInn, viObreytingu, tengjaTeljara } from '../lib/listi.ts';
-  import { sortNames } from '../lib/icelandic.ts';
+  import { collator, tala } from '../lib/icelandic.ts';
 
   interface Row {
     n: string;
@@ -73,7 +73,8 @@ import Base from '../layouts/Base.astro';
   function render() {
     const slugs = lesa();
     const rows = slugs.map((s) => bySlug.get(s)).filter((r): r is Row => Boolean(r));
-    const sorted = sortNames(rows, (r) => r.n);
+    // Commonest first, matching the ordering everywhere else on the site.
+    const sorted = [...rows].sort((a, b) => b.v - a.v || collator.compare(a.n, b.n));
 
     listi.replaceChildren();
     for (const r of sorted) {
@@ -93,6 +94,10 @@ import Base from '../layouts/Base.astro';
       m.className = 'merking';
       m.textContent = r.m;
 
+      const c = document.createElement('span');
+      c.className = 'fjoldi';
+      c.textContent = r.v > 0 ? tala(r.v) : '';
+
       const rm = document.createElement('button');
       rm.type = 'button';
       rm.className = 'vista';
@@ -105,7 +110,7 @@ import Base from '../layouts/Base.astro';
         fjarlaegja(r.s);
       });
 
-      a.append(g, n, m, rm);
+      a.append(g, n, m, c, rm);
       li.append(a);
       listi.append(li);
     }

@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { CATEGORIES } from '../../lib/categories.ts';
-import { sortNames } from '../../lib/icelandic.ts';
+import { sortNames, tala } from '../../lib/icelandic.ts';
 import type { NameEntry } from '../../lib/types.ts';
 
 export async function getStaticPaths() {
@@ -29,7 +29,7 @@ const { cat, names } = Astro.props;
       <p class="meta">Flokkur</p>
       <h1>{cat.heiti}</h1>
       <p class="skyring">{cat.lysing}.</p>
-      <p class="meta">{names.length.toLocaleString('is-IS')} nöfn</p>
+      <p class="meta">{tala(names.length)} nöfn</p>
     </div>
 
     {

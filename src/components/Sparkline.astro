@@ -1,0 +1,57 @@
+---
+import { tala } from '../lib/icelandic.ts';
+/**
+ * Inline SVG trend line for a name's bearer count over time.
+ *
+ * No charting library: it is one path, and shipping a library to every one of
+ * ~6,000 prerendered pages to draw it would be absurd.
+ *
+ * The y-axis deliberately starts at zero. Auto-scaling to the data's own range
+ * would make a name that drifted from 300 to 305 bearers look like a boom.
+ */
+interface Props {
+  /** One value per year, aligned to `ar`. */
+  gildi: number[];
+  ar: number[];
+  label?: string;
+}
+
+const { gildi, ar, label } = Astro.props;
+
+const W = 100;
+const H = 30;
+const max = Math.max(...gildi, 1);
+const step = gildi.length > 1 ? W / (gildi.length - 1) : 0;
+
+const points = gildi.map((v, i) => ({
+  x: +(i * step).toFixed(2),
+  y: +(H - (v / max) * H).toFixed(2),
+}));
+
+const line = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x},${p.y}`).join(' ');
+const area = `${line} L${W},${H} L0,${H} Z`;
+const last = points[points.length - 1];
+
+const first = ar[0];
+const latest = ar[ar.length - 1];
+const peak = Math.max(...gildi);
+---
+
+<figure style="margin:0">
+  <svg
+    class="sparkline"
+    viewBox={`0 0 ${W} ${H}`}
+    preserveAspectRatio="none"
+    role="img"
+    aria-label={label ?? `Þróun frá ${first} til ${latest}. Flest ${peak}.`}
+  >
+    <path class="area" d={area} />
+    <path class="line" d={line} vector-effect="non-scaling-stroke" />
+    <circle cx={last.x} cy={last.y} r="1.8" vector-effect="non-scaling-stroke" />
+  </svg>
+  <figcaption class="spark-axis">
+    <span>{first}</span>
+    <span>flest {tala(peak)}</span>
+    <span>{latest}</span>
+  </figcaption>
+</figure>

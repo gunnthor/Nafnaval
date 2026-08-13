@@ -4,12 +4,68 @@
  */
 
 /**
- * Collator for Icelandic alphabetical order:
- *   a á b d ð e é f g h i í j k l m n o ó p r s t u ú v x y ý þ æ ö
- * Default `Array.sort()` puts þ/æ/ö after z and sorts á next to a — both wrong.
- * Always sort user-visible name lists through this.
+ * Icelandic alphabetical order:
+ *   a á b c d ð e é f g h i í j k l m n o ó p q r s t u ú v w x y ý z þ æ ö
+ * (c, q, w, z are not native letters but occur in borrowed names.)
  */
-export const collator = new Intl.Collator('is', { sensitivity: 'base', numeric: true });
+const ALPHABET = 'aábcdðeéfghiíjklmnoópqrstuúvwxyýzþæö';
+const RANK = new Map([...ALPHABET].map((ch, i) => [ch, i]));
+
+/**
+ * Rank one character. Unknown letters are stripped of their diacritics and
+ * retried, so ü sorts with u and ñ with n; anything still unknown sorts last
+ * rather than landing somewhere arbitrary.
+ */
+function rank(ch: string): number {
+  const known = RANK.get(ch);
+  if (known !== undefined) return known;
+  // NFD only as a fallback: decomposing up front would split á into a + ´ and
+  // destroy the distinction between two separate Icelandic letters.
+  const base = ch.normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const viaBase = RANK.get(base);
+  if (viaBase !== undefined) return viaBase;
+  return ALPHABET.length + (ch.codePointAt(0) ?? 0) / 0x110000;
+}
+
+/**
+ * Compares two strings in Icelandic alphabetical order.
+ *
+ * DELIBERATELY NOT `Intl.Collator('is')`. Browsers that ship a reduced ICU —
+ * and there are plenty, including some mobile webviews — silently resolve
+ * `is` to `en-US`, which sorts Æsa before Anna and drops Ösp into the middle
+ * of the alphabet. The server (full ICU) would then disagree with the client
+ * on the same page. An explicit table is a few lines and always right.
+ */
+export function compareIcelandic(a: string, b: string): number {
+  const x = a.toLowerCase();
+  const y = b.toLowerCase();
+  const n = Math.min(x.length, y.length);
+  for (let i = 0; i < n; i++) {
+    if (x[i] === y[i]) continue;
+    const d = rank(x[i]) - rank(y[i]);
+    if (d !== 0) return d < 0 ? -1 : 1;
+  }
+  return x.length - y.length;
+}
+
+/** Same shape as an Intl.Collator, so call sites read the same. */
+export const collator = { compare: compareIcelandic };
+
+/**
+ * Formats a number the Icelandic way — 4973 becomes "4.973".
+ * Same reasoning as the collator: `toLocaleString('is-IS')` returns "4,973"
+ * wherever ICU is trimmed, so the hero and the list below it would disagree.
+ */
+export function tala(n: number): string {
+  const sign = n < 0 ? '-' : '';
+  const digits = Math.abs(Math.round(n)).toString();
+  let out = '';
+  for (let i = 0; i < digits.length; i++) {
+    if (i > 0 && (digits.length - i) % 3 === 0) out += '.';
+    out += digits[i];
+  }
+  return sign + out;
+}
 
 export function sortNames<T>(items: T[], key: (item: T) => string): T[] {
   return [...items].sort((a, b) => collator.compare(key(a), key(b)));

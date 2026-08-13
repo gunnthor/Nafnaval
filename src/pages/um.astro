@@ -1,4 +1,5 @@
 ---
+import { tala } from '../lib/icelandic.ts';
 import Base from '../layouts/Base.astro';
 import nofn from '../data/nofn.json';
 import lidirData from '../data/lidir.json';
@@ -38,21 +39,21 @@ const pct = (n: number) => `${((100 * n) / counts.samthykkt).toFixed(0)}%`;
       <ul>
         <li>
           <span class="badge badge-stadfest">Staðfest</span> — greining byggð á orðabók sem
-          vitnað er í, eða skýring skrifuð í höndunum. {counts.stadfest.toLocaleString('is-IS')} nöfn
+          vitnað er í, eða skýring skrifuð í höndunum. {tala(counts.stadfest)} nöfn
           ({pct(counts.stadfest)}).
         </li>
         <li>
           <span class="badge badge-likleg">Líkleg</span> — orðasafnið réð við nafnið en
-          greiningin er ekki fullviss. {counts.likleg.toLocaleString('is-IS')} nöfn ({pct(counts.likleg)}).
+          greiningin er ekki fullviss. {tala(counts.likleg)} nöfn ({pct(counts.likleg)}).
         </li>
         <li>
           <span class="badge badge-ostadfest">Óstaðfest</span> — samið af gervigreind og
           <strong>ekki staðfest með heimild</strong>. Getur verið rangt.
-          {counts.ostadfest.toLocaleString('is-IS')} nöfn ({pct(counts.ostadfest)}).
+          {tala(counts.ostadfest)} nöfn ({pct(counts.ostadfest)}).
         </li>
       </ul>
       <p>
-        {counts.ekkert.toLocaleString('is-IS')} nöfn ({pct(counts.ekkert)}) hafa enga skráða merkingu.
+        {tala(counts.ekkert)} nöfn ({pct(counts.ekkert)}) hafa enga skráða merkingu.
         Við kjósum að segja það frekar en að búa til skýringu.
       </p>
       <p class="notice">
@@ -118,19 +119,24 @@ const pct = (n: number) => `${((100 * n) / counts.samthykkt).toFixed(0)}%`;
       <h2>Heimildir</h2>
       <ul>
         <li>
-          <strong>Mannanafnaskrá</strong> — {counts.alls.toLocaleString('is-IS')} nöfn frá
+          <strong>Mannanafnaskrá</strong> — {tala(counts.alls)} nöfn frá
           Þjóðskrá Íslands og mannanafnanefnd, sótt gegnum
           <a href="https://island.is/leit-i-mannanafnaskra">island.is</a>.
         </li>
         <li>
-          <strong>Beygingar</strong> — {counts.beygingar.toLocaleString('is-IS')} nöfn úr
+          <strong>Beygingar</strong> — {tala(counts.beygingar)} nöfn úr
           <a href="https://bin.arnastofnun.is">Beygingarlýsingu íslensks nútímamáls (BÍN)</a>.
           Rétthafi er Stofnun Árna Magnússonar í íslenskum fræðum. Gögnin eru notuð samkvæmt
           <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.is">CC BY-SA 4.0</a>.
         </li>
         <li>
-          <strong>Vinsældir</strong> — <a href="https://hagstofa.is">Hagstofa Íslands</a>,
-          eiginnöfn 1. janúar 2023. Aðeins um 100 algengustu nöfn hvors kyns eru birt.
+          <strong>Fjöldi þeirra sem bera nafnið</strong> — Þjóðskrá Íslands, gegnum
+          þjónustuna á bak við
+          <a href="https://www.skra.is/gogn/thjodskrargattin/hversu-vinsaelt-er-nafnid/">
+            „Hversu margir heita nafninu?“</a>. Tölurnar ná til allra nafna, líka þeirra
+          sem aðeins einn ber, og fylgja hverju nafni frá 2004 til dagsins í dag.
+          Sætistalan er reiknuð af okkur út frá þessum tölum — engin heimild raðar
+          öllum nöfnum.
         </li>
         <li>
           <strong>Merkingar liða</strong> — Geir T. Zoëga, <em>A Concise Dictionary of Old
@@ -138,6 +144,22 @@ const pct = (n: number) => `${((100 * n) / counts.samthykkt).toFixed(0)}%`;
           Dictionary</em> (1874). Bæði rit eru komin úr höfundarrétti.
         </li>
       </ul>
+    </section>
+
+    <section class="card">
+      <h2>Um tölurnar</h2>
+      <p>
+        Tölur um fjölda miðast við skráð lögheimili á Íslandi og eru taldar í tvennu
+        lagi: hversu margir bera nafnið sem <em>eiginnafn</em> og hversu margir sem
+        <em>annað nafn</em>. Sum nöfn eru margfalt algengari í seinna sætinu en því fyrra,
+        svo báðar tölur eru sýndar og lagðar saman.
+      </p>
+      <p>
+        Áður studdumst við tölur Hagstofu Íslands, en þær ná aðeins til um hundrað
+        algengustu nafna hvors kyns. Þjóðskrártölurnar ná til allra nafna og því
+        gátum við hætt að sýna eyður þar sem nafn var einfaldlega of fágætt til að
+        komast á lista.
+      </p>
     </section>
 
     <section class="card">

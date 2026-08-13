@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { GROUP_LABELS, childrenOf, topLevelIn } from '../lib/categories.ts';
+import { tala } from '../lib/icelandic.ts';
 import nofn from '../data/nofn.json';
 import type { NameEntry } from '../lib/types.ts';
 
@@ -26,6 +27,17 @@ const withMeaning = browsable.filter((e) => e.merking).length;
   title="Nafnaval"
   description={`Merking og uppruni ${browsable.length} íslenskra mannanafna. Leitaðu, síaðu eftir flokkum og grafðu þig niður í liðina sem nöfnin eru byggð úr.`}
 >
+  <div class="wrap">
+    <div class="hero">
+      <h1>Hvað þýðir nafnið?</h1>
+      <p>
+        Öll <strong>{tala(browsable.length)} nöfnin</strong> í íslenskri
+        mannanafnaskrá — merking þeirra, liðirnir sem þau eru byggð úr, beygingin og
+        hversu margir bera þau í dag.
+      </p>
+    </div>
+  </div>
+
   <div class="searchbar">
     <div class="wrap">
       <label class="visually-hidden" for="q">Leita að nafni</label>
@@ -114,8 +126,16 @@ const withMeaning = browsable.filter((e) => e.merking).length;
           <span class="label">Virkar síur:</span>
         </div>
 
+        <div class="sortbar">
+          <span class="label">Raða eftir:</span>
+          <span class="seg" role="group" aria-label="Röðun">
+            <button type="button" id="sort-vinsaeldir" aria-pressed="true">Vinsældum</button>
+            <button type="button" id="sort-stafrof" aria-pressed="false">Stafrófi</button>
+          </span>
+        </div>
+
         <p class="result-count" id="count" data-total={browsable.length}>
-          {browsable.length.toLocaleString('is-IS')} nöfn — {withMeaning.toLocaleString('is-IS')} með skráða merkingu
+          {tala(browsable.length)} nöfn — {tala(withMeaning)} með skráða merkingu
         </p>
 
         <ul class="name-list" id="results">
@@ -126,6 +146,7 @@ const withMeaning = browsable.filter((e) => e.merking).length;
                   <span class="gender">{e.gender === 'kvk' ? 'kvk' : e.gender === 'kk' ? 'kk' : '—'}</span>
                   <span class="nafn">{e.nafn}</span>
                   <span class="merking">{e.merking ?? ''}</span>
+                  <span class="fjoldi">{e.vinsaeldir ? tala(e.vinsaeldir.alls) : ''}</span>
                   <button class="vista" type="button" data-vista={e.slug} aria-pressed="false" aria-label="Setja á listann">☆</button>
                 </a>
               </li>
@@ -154,7 +175,7 @@ const withMeaning = browsable.filter((e) => e.merking).length;
 </style>
 
 <script>
-  import { fold, collator } from '../lib/icelandic.ts';
+  import { fold, collator, tala } from '../lib/icelandic.ts';
   import { CATEGORY_BY_SLUG } from '../lib/categories.ts';
   import { tengjaHnappa, tengjaTeljara, samstillaHnappa } from '../lib/listi.ts';
 
@@ -188,6 +209,8 @@ const withMeaning = browsable.filter((e) => e.merking).length;
   let rows: Row[] = [];
   let matches: Row[] = [];
   let shown = 0;
+  /** Default to popularity: an A–Ö list buries every name people know. */
+  let sortBy: 'vinsaeldir' | 'stafrof' = 'vinsaeldir';
 
   /** slug -> include/exclude. Absent means the filter is off. */
   const categories = new Map<string, State>();
@@ -225,13 +248,18 @@ const withMeaning = browsable.filter((e) => e.merking).length;
       m.className = 'merking';
       m.textContent = r.m;
 
+      const c = document.createElement('span');
+      c.className = 'fjoldi';
+      c.textContent = r.v > 0 ? tala(r.v) : '';
+      c.title = r.v > 0 ? `${tala(r.v)} bera nafnið` : '';
+
       const save = document.createElement('button');
       save.type = 'button';
       save.className = 'vista';
       save.dataset.vista = r.s;
       save.textContent = '☆';
 
-      a.append(g, n, m, save);
+      a.append(g, n, m, c, save);
       li.append(a);
       frag.append(li);
     }
@@ -242,10 +270,10 @@ const withMeaning = browsable.filter((e) => e.merking).length;
     empty.hidden = matches.length > 0;
     count.textContent =
       matches.length === rows.length
-        ? `${rows.length.toLocaleString('is-IS')} nöfn`
-        : `${matches.length.toLocaleString('is-IS')} af ${rows.length.toLocaleString('is-IS')} nöfnum`;
+        ? `${tala(rows.length)} nöfn`
+        : `${tala(matches.length)} af ${tala(rows.length)} nöfnum`;
     const apply = document.getElementById('apply-filters');
-    if (apply) apply.textContent = `Sýna ${matches.length.toLocaleString('is-IS')} nöfn`;
+    if (apply) apply.textContent = `Sýna ${tala(matches.length)} nöfn`;
     samstillaHnappa();
   }
 
@@ -324,12 +352,19 @@ const withMeaning = browsable.filter((e) => e.merking).length;
       return true;
     });
 
+    // While searching, prefix matches always come first — otherwise the
+    // chosen sort applies.
     if (needle) {
       matches.sort((a, b) => {
         const ap = a.l.startsWith(needle) ? 0 : 1;
         const bp = b.l.startsWith(needle) ? 0 : 1;
-        return ap !== bp ? ap - bp : collator.compare(a.n, b.n);
+        if (ap !== bp) return ap - bp;
+        return sortBy === 'vinsaeldir' ? b.v - a.v || collator.compare(a.n, b.n) : collator.compare(a.n, b.n);
       });
+    } else if (sortBy === 'vinsaeldir') {
+      matches.sort((a, b) => b.v - a.v || collator.compare(a.n, b.n));
+    } else {
+      matches.sort((a, b) => collator.compare(a.n, b.n));
     }
 
     render(true);
@@ -409,6 +444,20 @@ const withMeaning = browsable.filter((e) => e.merking).length;
       else if (now === 'inc') map.set(slug, 'exc');
       else map.delete(slug);
       syncChips();
+      apply();
+    });
+  }
+
+  const sortButtons = {
+    vinsaeldir: document.getElementById('sort-vinsaeldir') as HTMLButtonElement,
+    stafrof: document.getElementById('sort-stafrof') as HTMLButtonElement,
+  };
+  for (const [key, btn] of Object.entries(sortButtons)) {
+    btn.addEventListener('click', () => {
+      sortBy = key as typeof sortBy;
+      for (const [k, b] of Object.entries(sortButtons)) {
+        b.setAttribute('aria-pressed', k === key ? 'true' : 'false');
+      }
       apply();
     });
   }

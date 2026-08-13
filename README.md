@@ -25,7 +25,8 @@ npm run dev
 | `npm run dev` | Astro dev server |
 | `npm run build` | Static build to `dist/` |
 | `npm run fetch:register` | Whole mannanafnaskrá from island.is (one GraphQL call) |
-| `npm run fetch:stats` | Popularity + age-band tables from Hagstofa PxWeb |
+| `npm run fetch:tidni` | Bearer counts per name from Þjóðskrá (~11k requests, resumable) |
+| `npm run fetch:stats` | Hagstofa age-band tables — **not used by the build**, kept for a possible future feature |
 | `npm run fetch:bin` | Declensions from BÍN (add `-- --clean` to delete the 450 MB extract) |
 | `npm run build:data` | Merge every source into the site's dataset |
 | `npm run lint:lexicon` | Validate `data/lexicon/elements.yaml` (catches form collisions) |

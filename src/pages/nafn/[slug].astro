@@ -1,8 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
 import TrustBadge from '../../components/TrustBadge.astro';
+import Sparkline from '../../components/Sparkline.astro';
+import arAxis from '../../data/ar.json';
 import { CATEGORY_BY_SLUG } from '../../lib/categories.ts';
-import { slugify, sortNames } from '../../lib/icelandic.ts';
+import { slugify, collator, tala } from '../../lib/icelandic.ts';
 import nofn from '../../data/nofn.json';
 import type { NameEntry } from '../../lib/types.ts';
 
@@ -33,19 +35,29 @@ const STATUS_LABEL: Record<string, string> = {
   Óaf: 'Óafgreitt hjá mannanafnanefnd',
 };
 
-/** Names sharing an element — the exploration loop. */
+/**
+ * Names sharing an element — the exploration loop.
+ *
+ * Ordered by how many people actually bear them, NOT alphabetically. Sorting
+ * A–Ö and then cutting to 24 meant every list was Aðal-, Arn-, Ás- and nothing
+ * else; the commonest name sharing the element could be invisible.
+ */
 const elementIds = entry.lidir.map((l) => l.lidur).filter(Boolean) as string[];
+
 const related = elementIds.length
-  ? sortNames(
-      all.filter(
+  ? all
+      .filter(
         (e) =>
           e.slug !== entry.slug &&
           e.status === 'Sam' &&
           !e.erRitbreyting &&
           e.lidir.some((l) => l.lidur && elementIds.includes(l.lidur)),
-      ),
-      (e) => e.nafn,
-    ).slice(0, 24)
+      )
+      .sort((a, b) => {
+        const d = (b.vinsaeldir?.alls ?? 0) - (a.vinsaeldir?.alls ?? 0);
+        return d !== 0 ? d : collator.compare(a.nafn, b.nafn);
+      })
+      .slice(0, 24)
   : [];
 
 /** Spelling variants that point at this name. */
@@ -57,7 +69,6 @@ const parent = entry.erRitbreyting && entry.ritbreytingAf
   : undefined;
 
 const pop = entry.vinsaeldir;
-const trend = pop?.fyrraSaeti != null ? pop.fyrraSaeti - pop.saeti : null;
 
 const description = entry.merking
   ? `${entry.nafn} — ${entry.merking}. ${TYPE_LABEL[entry.type] ?? ''}, ${STATUS_LABEL[entry.status ?? ''] ?? ''}.`
@@ -77,14 +88,9 @@ const description = entry.merking
       {
         entry.status === 'Sam' && (
           <p style="margin:0.85rem 0 0">
-            <button
-              class="vista vista-stor"
-              type="button"
-              data-vista={entry.slug}
-              aria-pressed="false"
-              aria-label="Setja á listann"
-            >
-              ☆
+            <button class="vista vista-stor" type="button" data-vista={entry.slug} aria-pressed="false">
+              <span class="stjarna" aria-hidden="true">☆</span>
+              <span class="vista-texti">Setja á listann</span>
             </button>
           </p>
         )
@@ -161,22 +167,50 @@ const description = entry.merking
     {
       pop && (
         <section class="card">
-          <h2>Vinsældir</h2>
-          <p class="stat">
-            <span class="big">{pop.saeti}. sæti</span>
-            {trend != null && trend !== 0 && (
-              <span class={trend > 0 ? 'trend-up' : 'trend-down'}>
-                {trend > 0 ? `↑ um ${trend} sæti` : `↓ um ${Math.abs(trend)} sæti`}
-              </span>
+          <h2>Hversu margir heita þetta?</h2>
+          <div class="pop-grid">
+            <div class="pop-figure">
+              <span class="n">{tala(pop.fjoldi)}</span>
+              <span class="k">bera það sem eiginnafn</span>
+            </div>
+            <div class="pop-figure">
+              <span class="n">{tala(pop.fjoldiAnnad)}</span>
+              <span class="k">sem annað nafn</span>
+            </div>
+            <div class="pop-figure">
+              <span class="n">{tala(pop.alls)}</span>
+              <span class="k">alls á Íslandi</span>
+            </div>
+            {pop.saeti != null && (
+              <div class="pop-figure">
+                <span class="n">{pop.saeti}.</span>
+                <span class="k">
+                  sæti af {tala(pop.afFjolda ?? 0)}
+                  {entry.gender === 'kvk' ? ' kvenmannsnöfnum' : entry.gender === 'kk' ? ' karlmannsnöfnum' : ''}
+                </span>
+              </div>
             )}
-          </p>
-          {pop.fjoldi != null && (
-            <p class="skyring">
-              {pop.fjoldi.toLocaleString('is-IS')} einstaklingar bera nafnið samkvæmt þjóðskrá.
-            </p>
+          </div>
+
+          {pop.ferill.some((v) => v > 0) && (
+            <>
+              <Sparkline gildi={pop.ferill} ar={arAxis as number[]} label={`Fjöldi sem ber nafnið ${entry.nafn} sem eiginnafn, ${arAxis[0]}–${arAxis[arAxis.length - 1]}`} />
+              {pop.breyting != null && (
+                <p style="margin:0.5rem 0 0">
+                  <span
+                    class={`delta ${pop.breyting > 3 ? 'delta-up' : pop.breyting < -3 ? 'delta-down' : 'delta-flat'}`}
+                  >
+                    {pop.breyting > 0 ? '↑' : pop.breyting < 0 ? '↓' : '→'}{' '}
+                    {Math.abs(pop.breyting)}%
+                  </span>{' '}
+                  <span class="skyring" style="font-size:0.85rem">á síðustu tíu árum</span>
+                </p>
+              )}
+            </>
           )}
-          <p class="skyring" style="font-size:0.8rem">
-            Hagstofa Íslands birtir aðeins um 100 algengustu nöfn hvors kyns, svo flest nöfn hafa engar tölur.
+
+          <p class="skyring" style="font-size:0.78rem;margin-top:0.7rem">
+            Tölur frá Þjóðskrá Íslands, miðaðar við skráð lögheimili.
           </p>
         </section>
       )
@@ -215,14 +249,19 @@ const description = entry.merking
       related.length > 0 && (
         <section class="card">
           <h2>Skyld nöfn</h2>
-          <p class="skyring" style="margin-bottom:0.6rem">
-            Nöfn sem deila lið með {entry.nafn}.
+          <p class="skyring" style="margin-bottom:0.7rem">
+            Nöfn sem deila lið með {entry.nafn}, algengustu fyrst.
           </p>
-          <ul class="tag-list">
+          <div class="related-grid">
             {related.map((r) => (
-              <li><a class="tag" href={`/nafn/${r.slug}`}>{r.nafn}</a></li>
+              <a class="related-item" href={`/nafn/${r.slug}`}>
+                <span class="n">{r.nafn}</span>
+                <span class="c">
+                  {r.vinsaeldir ? `${tala(r.vinsaeldir.alls)} bera það` : 'enginn skráður'}
+                </span>
+              </a>
             ))}
-          </ul>
+          </div>
         </section>
       )
     }

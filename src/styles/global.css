@@ -1,13 +1,19 @@
 /* Nafnaval — mobile-first, single stylesheet, no framework. */
 
 :root {
-  --bg: #fbfaf7;
+  --bg: #faf7f1;
   --surface: #ffffff;
-  --border: #e2ddd3;
-  --text: #22201c;
-  --muted: #6c6558;
-  --accent: #2f5d50;
-  --accent-soft: #e8f0ec;
+  --border: #e6dfd2;
+  --border-soft: #f0ebe1;
+  --text: #1f1d19;
+  --muted: #6b6558;
+  --accent: #285249;
+  --accent-soft: #e6efea;
+
+  /* Display face for names themselves. Icelandic orthography — the accents,
+     ð, þ, æ, ö — has more presence in a serif, and it separates the names
+     from the interface chrome around them. */
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
 
   /* Trust tiers. These three must stay visually distinct — the whole
      honesty story of the site rests on the reader telling them apart. */
@@ -30,9 +36,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #171613;
-    --surface: #201e1a;
-    --border: #37332c;
+    --bg: #16150f;
+    --surface: #1f1d17;
+    --border: #38332a;
+    --border-soft: #2a271f;
     --text: #ece8e0;
     --muted: #a09889;
     --accent: #7fc0aa;
@@ -60,16 +67,17 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.55 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   /* Icelandic text is diacritic-dense; a touch more line height reads better. */
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a { color: var(--accent); }
 a:hover { text-decoration: none; }
 
-h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5rem; font-weight: 650; }
-h1 { font-size: 1.6rem; }
+h1, h2, h3 { line-height: 1.15; margin: 0 0 0.5rem; font-weight: 650; }
+h1 { font-size: 1.75rem; letter-spacing: -0.015em; }
 h2 { font-size: 1.15rem; }
 
 .wrap {
@@ -91,11 +99,12 @@ h2 { font-size: 1.15rem; }
   flex-wrap: wrap;
 }
 .logo {
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.3rem;
   color: var(--text);
   text-decoration: none;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 .site-nav {
   margin-inline-start: auto;
@@ -117,6 +126,9 @@ h2 { font-size: 1.15rem; }
 
 input[type='search'] {
   flex: 1;
+  /* Inputs carry an intrinsic default width; without this the search box
+     refuses to shrink and pushes the Síur button off screen on a 320px phone. */
+  min-width: 0;
   min-height: var(--tap);
   padding: 0 0.85rem;
   font-size: 1rem;
@@ -282,7 +294,6 @@ a:focus-visible {
   justify-content: center;
   width: var(--tap);
   height: var(--tap);
-  margin-inline-start: auto;
   font-size: 1.25rem;
   line-height: 1;
   color: var(--muted);
@@ -331,7 +342,7 @@ a:focus-visible {
   color: var(--muted);
 }
 .name-list { list-style: none; margin: 0; padding: 0; }
-.name-list li { border-bottom: 1px solid var(--border); }
+.name-list li { border-bottom: 1px solid var(--border-soft); }
 .name-list a {
   display: flex;
   align-items: baseline;
@@ -341,8 +352,25 @@ a:focus-visible {
   color: inherit;
   text-decoration: none;
 }
+.name-list a { border-radius: 8px; transition: background 0.12s ease; }
 .name-list a:hover { background: var(--accent-soft); }
-.name-list .nafn { font-weight: 600; font-size: 1.05rem; }
+.name-list .nafn {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+/* Bearer count sits right-aligned before the save star, tabular so the
+   digits line up down the column. */
+.name-list .fjoldi {
+  margin-inline-start: auto;
+  flex: none;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.name-list .merking { flex: 1; min-width: 0; }
 .name-list .merking {
   color: var(--muted);
   font-size: 0.9rem;
@@ -371,22 +399,29 @@ a:focus-visible {
 .badge-ostadfest { color: var(--ostadfest); background: var(--ostadfest-bg); border: 1px dashed currentColor; }
 
 /* ── Name detail ─────────────────────────────────────────────────────────── */
-.name-hero { padding: 1.5rem 0 1rem; }
-.name-hero h1 { font-size: 2.1rem; margin-bottom: 0.25rem; }
+.name-hero { padding: 2rem 0 1.25rem; }
+.name-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 11vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.3rem;
+}
 .name-hero .meta { color: var(--muted); font-size: 0.9rem; }
 .meaning {
-  font-size: 1.2rem;
-  line-height: 1.4;
-  margin: 0.75rem 0;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.35;
+  margin: 0.9rem 0 0.5rem;
 }
 .skyring { color: var(--muted); max-width: 42rem; }
 
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1rem;
-  margin-bottom: 1rem;
+  border-radius: 14px;
+  padding: 1.15rem 1.15rem 1.25rem;
+  margin-bottom: 0.9rem;
 }
 .card h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 
@@ -403,7 +438,12 @@ a:focus-visible {
   border-radius: var(--radius);
 }
 .lidur:hover { border-color: var(--accent); background: var(--accent-soft); }
-.lidur .texti { display: block; font-weight: 650; font-size: 1.05rem; }
+.lidur .texti {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 .lidur .gloss { display: block; font-size: 0.875rem; color: var(--muted); }
 .lidur .heimild { display: block; margin-top: 0.3rem; font-size: 0.72rem; color: var(--muted); }
 .plus { align-self: center; color: var(--muted); font-size: 1.2rem; }
@@ -451,7 +491,10 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
 /* ── Desktop ─────────────────────────────────────────────────────────────── */
 @media (min-width: 768px) {
   h1 { font-size: 1.9rem; }
-  .layout { display: grid; grid-template-columns: 15rem 1fr; gap: 2rem; align-items: start; }
+    /* minmax(0, 1fr), not 1fr: a bare 1fr track floors at min-content, so the
+     nowrap bearer-count column pushed the whole grid past the viewport at
+     tablet widths. */
+  .layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 2rem; align-items: start; }
   .filters {
     position: sticky;
     top: 5.25rem;
@@ -464,8 +507,11 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
     padding: 1rem;
   }
   .filters-backdrop, .filter-toggle { display: none !important; }
-  .name-list { columns: 2; column-gap: 2rem; }
-  .name-list li { break-inside: avoid; }
+  /* Single column on desktop. Rows now carry a meaning, a bearer count and a
+     save button; two CSS columns overflowed the container and truncated the
+     right-hand one. */
+  .name-list a { padding-inline: 0.5rem; }
+  .name-list .merking { font-size: 0.95rem; }
 }
 
 /* ── Filter sheet chrome (mobile only) ───────────────────────────────────── */
@@ -511,3 +557,118 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
   /* On desktop the sidebar is always visible, so neither control has a job. */
   .filters-head, .sheet-apply { display: none; }
 }
+
+/* ── Home hero ───────────────────────────────────────────────────────────── */
+.hero {
+  padding: 2.25rem 0 1.5rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 8vw, 2.9rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.6rem;
+}
+.hero p {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+.hero strong { color: var(--text); font-weight: 600; }
+
+/* ── Popularity ──────────────────────────────────────────────────────────── */
+.pop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 0.9rem 1.25rem;
+  margin-bottom: 0.9rem;
+}
+.pop-figure .n {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.pop-figure .k {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+/* Trend sparkline: inline SVG, no library. */
+.sparkline { display: block; width: 100%; height: 56px; overflow: visible; }
+.sparkline path.area { fill: var(--accent-soft); }
+.sparkline path.line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; }
+.sparkline circle { fill: var(--accent); }
+.spark-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.2rem;
+}
+
+.delta { font-size: 0.85rem; font-weight: 600; }
+.delta-up { color: var(--stadfest); }
+.delta-down { color: var(--exclude); }
+.delta-flat { color: var(--muted); }
+
+/* ── Sort control ────────────────────────────────────────────────────────── */
+.sortbar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  padding-top: 0.4rem;
+}
+.sortbar .label { font-size: 0.8rem; color: var(--muted); }
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.seg button {
+  padding: 0.35rem 0.75rem;
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.seg button[aria-pressed='true'] {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+@media (prefers-color-scheme: dark) { .seg button[aria-pressed='true'] { color: #16211d; } }
+
+/* Related names get a count under each, so the ordering is legible. */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  gap: 0.5rem;
+}
+.related-item {
+  display: block;
+  padding: 0.6rem 0.7rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+}
+.related-item:hover { border-color: var(--accent); background: var(--accent-soft); }
+.related-item .n { display: block; font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+.related-item .c { display: block; font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.vista-stor .vista-texti { font-size: 0.92rem; font-weight: 550; color: var(--text); }
+.vista-stor[aria-pressed='true'] .vista-texti { color: var(--save); }

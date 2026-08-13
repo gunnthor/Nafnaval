@@ -77,13 +77,26 @@ export interface NameEntry {
   beyging: Declension | null;
 }
 
+/**
+ * Bearer counts from Þjóðskrá. Unlike the Hagstofa tables — which only publish
+ * the ~100 commonest names per gender — this covers every name down to a single
+ * bearer, so nearly all names have real numbers rather than a blank.
+ */
 export interface Popularity {
-  /** Current rank among names of this gender. */
-  saeti: number;
-  /** Previous-year rank, when the source provides it. */
-  fyrraSaeti: number | null;
-  /** Number of bearers, when available. */
-  fjoldi: number | null;
+  /** People whose FIRST name this is, today. */
+  fjoldi: number;
+  /** People whose SECOND name this is. Often much larger than `fjoldi`. */
+  fjoldiAnnad: number;
+  /** Both positions combined — the honest answer to "how many are called this". */
+  alls: number;
+  /** Rank by `fjoldi` among names of the same gender. Null when nobody bears it. */
+  saeti: number | null;
+  /** How many names of this gender are ranked, so "12 of 2,431" can be shown. */
+  afFjolda: number | null;
+  /** First-name count per year, aligned to the shared year axis. */
+  ferill: number[];
+  /** Change in first-name count over the last ten years, as a percentage. */
+  breyting: number | null;
 }
 
 /** Singular declension: the four Icelandic cases. */

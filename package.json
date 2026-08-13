@@ -10,11 +10,12 @@
     "fetch:register": "tsx scripts/fetch-register.ts",
     "fetch:stats": "tsx scripts/fetch-stats.ts",
     "fetch:bin": "tsx scripts/fetch-bin.ts",
-    "fetch:all": "npm run fetch:register && npm run fetch:stats && npm run fetch:bin",
+    "fetch:all": "npm run fetch:register && npm run fetch:tidni && npm run fetch:bin",
     "build:data": "tsx scripts/build-data.ts",
     "lint:lexicon": "tsx scripts/validate-lexicon.ts",
     "ai:gapfill": "tsx scripts/ai-gapfill.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "fetch:tidni": "tsx scripts/fetch-tidni.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.116.0",
