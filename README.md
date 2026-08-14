@@ -103,3 +103,12 @@ Never blur these — the site's honesty depends on the reader telling them apart
 
 Static output — any host works. `netlify.toml` is included; for Cloudflare Pages set
 build command `npm run build` and output directory `dist`.
+
+## Leyfi
+
+Source code: MIT (`LICENSE`).
+
+The **data is licensed separately and not all of it is permissive** — the BÍN
+declensions are CC BY-SA 4.0, which is share-alike, and that obligation extends
+to the merged `src/data/nofn.json`. Read `LICENSE-DATA.md` before reusing
+anything under `data/` or `src/data/`.
