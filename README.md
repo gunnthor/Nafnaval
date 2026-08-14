@@ -112,3 +112,15 @@ The **data is licensed separately and not all of it is permissive** — the BÍN
 declensions are CC BY-SA 4.0, which is share-alike, and that obligation extends
 to the merged `src/data/nofn.json`. Read `LICENSE-DATA.md` before reusing
 anything under `data/` or `src/data/`.
+
+## Hýsing
+
+Deployed on Vercel at [nofn.gunnthor.is](https://nofn.gunnthor.is). Astro's static
+output needs no adapter and no `vercel.json` — Vercel detects the framework and
+serves `dist/` as-is.
+
+The build runs `npm run build` only. It deliberately does **not** run any fetch
+script: the generated data under `src/data/` is committed, so a deploy never
+touches island.is, Þjóðskrá or BÍN. Those are public services and a deploy hook
+is no reason to make ~11,000 requests against them. To refresh the data, run
+`npm run fetch:all && npm run build:data` locally and commit the result.
