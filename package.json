@@ -15,13 +15,15 @@
     "lint:lexicon": "tsx scripts/validate-lexicon.ts",
     "ai:gapfill": "tsx scripts/ai-gapfill.ts",
     "test": "vitest run",
-    "fetch:tidni": "tsx scripts/fetch-tidni.ts"
+    "fetch:tidni": "tsx scripts/fetch-tidni.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.116.0",
     "astro": "^5.2.5"
   },
   "devDependencies": {
+    "@types/node": "^26.2.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vitest": "^3.0.5",

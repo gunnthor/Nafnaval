@@ -133,9 +133,15 @@ const client = new Anthropic();
 const VALID_CATEGORIES = new Set(CATEGORIES.filter((c) => !c.regla).map((c) => c.slug));
 
 async function draftChunk(names: string[]): Promise<Draft[]> {
-  const stream = client.messages.stream({
+  const stream = client.beta.messages.stream({
     model: MODEL,
     max_tokens: 32000,
+    // Safety classifiers can decline a request outright. Explaining the origin
+    // of Arabic and Hebrew names is benign but sits close enough to flagged
+    // territory to trip one occasionally, so let the API retry on a fallback
+    // model rather than dropping 20 names on the floor.
+    betas: ['server-side-fallback-2026-07-01'],
+    fallbacks: 'default',
     // The system prompt is identical on every request; cache it so only the
     // name list is billed at full rate.
     system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
