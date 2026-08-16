@@ -115,7 +115,7 @@ anything under `data/` or `src/data/`.
 
 ## Hýsing
 
-Deployed on Vercel at [nofn.gunnthor.is](https://nofn.gunnthor.is). Astro's static
+Deployed on Vercel at [nafn.gunnthor.is](https://nafn.gunnthor.is). Astro's static
 output needs no adapter and no `vercel.json` — Vercel detects the framework and
 serves `dist/` as-is.
 

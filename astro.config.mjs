@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://nofn.gunnthor.is',
+  site: 'https://nafn.gunnthor.is',
   build: { inlineStylesheets: 'auto' },
   compressHTML: true,
 });
