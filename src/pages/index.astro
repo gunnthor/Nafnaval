@@ -100,19 +100,6 @@ const withMeaning = browsable.filter((e) => e.merking).length;
             </div>
           ))
         }
-        <div class="filter-group">
-          <h3>Kyn</h3>
-          <div class="chips">
-            <button class="chip" type="button" data-kyn="kvk">Kvenmannsnöfn</button>
-            <button class="chip" type="button" data-kyn="kk">Karlmannsnöfn</button>
-          </div>
-          {/*
-            No "kynhlutlaust" chip here on purpose. Middle names carry no gender
-            either, so a gender-based filter would lump the 219 millinöfn in with
-            the 43 names the register actually marks kynhlutlaust (KH). Both have
-            their own chips under Hagnýtt, where each means exactly one thing.
-          */}
-        </div>
         <button class="btn" type="button" id="clear-filters">Hreinsa síur</button>
 
         {/* Mobile only: without this the sheet covers the very results it filters. */}
@@ -124,6 +111,21 @@ const withMeaning = browsable.filter((e) => e.merking).length;
       <div>
         <div class="active-filters" id="active-filters" hidden>
           <span class="label">Virkar síur:</span>
+        </div>
+
+        {/*
+          Gender sits outside the filter sheet on purpose. It is the first
+          thing most people narrow by when choosing a name, and it used to be
+          the last of ~30 chips inside the sheet — invisible on a phone
+          without scrolling the whole panel.
+        */}
+        <div class="sortbar">
+          <span class="label">Sýna:</span>
+          <span class="seg" role="group" aria-label="Kyn">
+            <button type="button" data-kynval="" aria-pressed="true">Öll</button>
+            <button type="button" data-kynval="kvk" aria-pressed="false">Kvenmannsnöfn</button>
+            <button type="button" data-kynval="kk" aria-pressed="false">Karlmannsnöfn</button>
+          </span>
         </div>
 
         <div class="sortbar">
@@ -402,6 +404,7 @@ const withMeaning = browsable.filter((e) => e.merking).length;
   }
 
   function syncChips() {
+    syncGenderBar();
     for (const btn of document.querySelectorAll<HTMLButtonElement>('.chip')) {
       const slug = btn.dataset.flokkur ?? btn.dataset.kyn!;
       const map = btn.dataset.flokkur ? categories : genders;
@@ -458,6 +461,24 @@ const withMeaning = browsable.filter((e) => e.merking).length;
       for (const [k, b] of Object.entries(sortButtons)) {
         b.setAttribute('aria-pressed', k === key ? 'true' : 'false');
       }
+      apply();
+    });
+  }
+
+  // The bar and the (now removed) sheet chips share one state map, so the
+  // URL, the active-filter pills and this control can never disagree.
+  const genderButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-kynval]')];
+  function syncGenderBar() {
+    const active = [...genders].find(([, v]) => v === 'inc')?.[0] ?? '';
+    for (const b of genderButtons) {
+      b.setAttribute('aria-pressed', b.dataset.kynval === active ? 'true' : 'false');
+    }
+  }
+  for (const btn of genderButtons) {
+    btn.addEventListener('click', () => {
+      genders.clear();
+      if (btn.dataset.kynval) genders.set(btn.dataset.kynval, 'inc');
+      syncGenderBar();
       apply();
     });
   }
