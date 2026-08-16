@@ -75,6 +75,12 @@ export interface NameEntry {
   vinsaeldir: Popularity | null;
   /** Declension from BÍN, when available. */
   beyging: Declension | null;
+  /**
+   * For AI-drafted meanings only: the URL the draft was based on. Shown on the
+   * page so a reader can check the claim rather than take it on trust.
+   */
+  aiHeimild?: string | null;
+  aiHeimildTitill?: string | null;
 }
 
 /**

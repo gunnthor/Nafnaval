@@ -4,10 +4,20 @@
  * These are overwhelmingly borrowed names — Aaron, Alexander, Agnes — that are
  * not Old Norse compounds and never will be explicable by element analysis.
  *
- * OUTPUT IS QUARANTINED. Everything written here lands in data/ai/drafts.json,
- * is consumed last in the precedence chain, and is rendered on the site with an
- * "óstaðfest" badge and a distinct visual treatment. It is never merged into
- * elements.yaml or overrides/names.yaml, and never presented as cited.
+ * IT SEARCHES; IT DOES NOT RECALL. An earlier version of this script asked the
+ * model to write etymologies from memory. That produces fluent, plausible text
+ * for names where no scholarship exists — the failure mode is not a blank, it
+ * is a confident invention, and self-reported confidence does not catch it.
+ *
+ * So the model is given the web-search tool and required to return a source URL
+ * for every name. Anything that comes back without a usable source is dropped
+ * here rather than shown, which means coverage is deliberately incomplete: a
+ * name nobody has written about stays blank. That is the intended outcome.
+ *
+ * OUTPUT IS STILL QUARANTINED. Everything lands in data/ai/drafts.json, is
+ * consumed last in the precedence chain, and is rendered with an "óstaðfest"
+ * badge. A cited draft is better evidence than an uncited one, but it is still
+ * a page the model chose — not a lexicographer's judgement.
  *
  * Usage:
  *   npx tsx scripts/ai-gapfill.ts              # all unresolved names
@@ -35,7 +45,9 @@ const flag = (name: string) => {
 
 const MODEL = flag('--model') ?? 'claude-opus-5';
 const LIMIT = Number(flag('--limit') ?? 0);
-const CHUNK = 20;
+// Small batches: the model has to run real searches per name, and a large
+// batch pushes it toward answering the tail from memory to finish the list.
+const CHUNK = 8;
 const CONCURRENCY = 4;
 const OUT = resolve(root, 'data/ai/drafts.json');
 
@@ -47,6 +59,9 @@ interface Draft {
   flokkar: string[];
   /** The model's own certainty. Low-certainty drafts are dropped. */
   vissa: 'ha' | 'midlungs' | 'lag';
+  /** URL the claim came from. No source, no draft. */
+  heimild: string;
+  heimildTitill?: string;
 }
 
 // ── Work out what still needs a meaning ─────────────────────────────────────
@@ -90,20 +105,32 @@ const CATEGORY_LIST = CATEGORIES.filter((c) => !c.regla)
 
 const SYSTEM = `Þú ert nafnfræðingur sem skrifar stuttar, nákvæmar skýringar á uppruna mannanafna fyrir íslenskan vef.
 
-Fyrir hvert nafn sem þú færð skaltu skila:
-- merking: stutt merking á íslensku, 2–8 orð. Dæmi: "náð, hylli" eða "sá sem ber Krist".
-- skyring: ein til þrjár setningar á íslensku um uppruna nafnsins. Nefndu upprunamálið og frummyndina þegar þú veist hana. Slepptu þessu ef þú hefur engu við merkinguna að bæta.
+VINNULAG — LESTU ÞETTA FYRST.
+Þú mátt EKKI skrifa skýringu eftir minni. Fyrir hvert nafn skaltu leita á vefnum
+og byggja svarið á heimild sem þú fannst. Gagnlegar leitir eru t.d.
+"<nafn> nafn uppruni merking", "<nafn> name etymology origin", eða
+"<nafn> mannanafn". Góðar heimildir eru orðabækur, nafnfræðirit, Wikipedia,
+Wiktionary, Nordic Names og fræðilegar síður.
+
+Ef þú finnur ENGA heimild fyrir nafni skaltu skila því með vissa: "lag" og tómri
+merkingu. Það er rétt niðurstaða — mörg þessara nafna eru nýleg, tilbúin eða
+mjög sjaldgæf og enginn hefur skrifað um þau. Ekki búa til sennilega hljómandi
+skýringu til að fylla upp í listann. Skýring án heimildar er verri en engin,
+því þessi gögn fara á vef sem fólk notar til að velja nöfn á börn.
+
+Fyrir hvert nafn skaltu skila:
+- nafn: nákvæmlega eins og það kom inn, með lágstaf.
+- merking: stutt merking á íslensku, 2–8 orð. Dæmi: "náð, hylli". Tómt ef engin heimild fannst.
+- skyring: ein til þrjár setningar á íslensku um uppruna nafnsins, byggðar á heimildinni.
 - uppruni: upprunamálið með lágstaf — t.d. hebreska, gríska, latína, norræna, íslenska, þýska, enska, franska, írska, arabíska, slavneska.
 - flokkar: núll eða fleiri af þessum flokkum, aðeins þeir sem eiga sannarlega við: ${CATEGORY_LIST}
-- vissa: "ha" ef uppruninn er vel þekktur og óumdeildur, "midlungs" ef skýringin er almennt viðurkennd en ekki fullviss, "lag" ef þú ert í reynd að giska.
+- vissa: "ha" ef heimildin er skýr og ótvíræð, "midlungs" ef heimildir eru til en ekki sammála, "lag" ef engin heimild fannst.
+- heimild: slóðin (URL) sem skýringin byggir á. Skilaðu tómum streng ef engin heimild fannst.
+- heimildTitill: stutt heiti heimildarinnar, t.d. "Wiktionary" eða "Nordic Names".
 
-MIKILVÆGT UM ÓVISSU. Þessi gögn fara á vef sem fólk notar til að velja nöfn á börn.
-Uppspunnin skýring er verri en engin. Ef þú þekkir ekki uppruna nafnsins skaltu
-setja vissa: "lag" og segja hreinskilnislega í merkingunni að uppruninn sé óviss —
-ekki búa til sennilega hljómandi skýringu. Mörg nöfnin eru nýleg, tilbúin eða
-mjög sjaldgæf og eiga enga þekkta skýringu. Það er eðlileg og rétt niðurstaða.
+Skrifaðu allt á íslensku nema slóðina sjálfa.`;
 
-Skrifaðu allt á íslensku. Nafnið sjálft skal skilað nákvæmlega eins og það kom inn, með lágstaf.`;
+
 
 const SCHEMA = {
   type: 'object',
@@ -119,8 +146,10 @@ const SCHEMA = {
           uppruni: { type: 'string' },
           flokkar: { type: 'array', items: { type: 'string' } },
           vissa: { type: 'string', enum: ['ha', 'midlungs', 'lag'] },
+          heimild: { type: 'string' },
+          heimildTitill: { type: 'string' },
         },
-        required: ['nafn', 'merking', 'skyring', 'uppruni', 'flokkar', 'vissa'],
+        required: ['nafn', 'merking', 'skyring', 'uppruni', 'flokkar', 'vissa', 'heimild', 'heimildTitill'],
         additionalProperties: false,
       },
     },
@@ -133,35 +162,50 @@ const client = new Anthropic();
 const VALID_CATEGORIES = new Set(CATEGORIES.filter((c) => !c.regla).map((c) => c.slug));
 
 async function draftChunk(names: string[]): Promise<Draft[]> {
-  const stream = client.beta.messages.stream({
-    model: MODEL,
-    max_tokens: 32000,
-    // Safety classifiers can decline a request outright. Explaining the origin
-    // of Arabic and Hebrew names is benign but sits close enough to flagged
-    // territory to trip one occasionally, so let the API retry on a fallback
-    // model rather than dropping 20 names on the floor.
-    betas: ['server-side-fallback-2026-07-01'],
-    fallbacks: 'default',
-    // The system prompt is identical on every request; cache it so only the
-    // name list is billed at full rate.
-    system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
-    output_config: {
-      effort: 'medium',
-      format: { type: 'json_schema', schema: SCHEMA },
+  const messages: Anthropic.Beta.BetaMessageParam[] = [
+    {
+      role: 'user',
+      content: `Flettu upp uppruna þessara ${names.length} nafna og skilaðu heimild fyrir hvert:\n\n${names.join('\n')}`,
     },
-    messages: [
-      {
-        role: 'user',
-        content: `Skýrðu uppruna þessara ${names.length} nafna:\n\n${names.join('\n')}`,
-      },
-    ],
-  });
+  ];
 
-  const message = await stream.finalMessage();
-  if (message.stop_reason === 'refusal') {
-    console.warn('  ⚠ Beiðni hafnað af öryggisástæðum — sleppi þessum hópi.');
-    return [];
+  let message: Anthropic.Beta.BetaMessage | undefined;
+
+  // The server-side search loop caps at 10 iterations and returns pause_turn;
+  // re-sending the assistant turn resumes it. Without this the run silently
+  // truncates on exactly the names that needed the most searching.
+  for (let turn = 0; turn < 6; turn++) {
+    const stream = client.beta.messages.stream({
+      model: MODEL,
+      max_tokens: 32000,
+      // Safety classifiers can decline a request outright. Explaining the
+      // origin of Arabic and Hebrew names is benign but sits close enough to
+      // flagged territory to trip one occasionally, so let the API retry on a
+      // fallback model rather than dropping the whole batch.
+      betas: ['server-side-fallback-2026-07-01'],
+      fallbacks: 'default',
+      tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: 16 }],
+      // The system prompt is identical on every request; cache it so only the
+      // name list is billed at full rate.
+      system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
+      output_config: {
+        effort: 'medium',
+        format: { type: 'json_schema', schema: SCHEMA },
+      },
+      messages,
+    });
+
+    message = await stream.finalMessage();
+
+    if (message.stop_reason === 'refusal') {
+      console.warn('  ⚠ Beiðni hafnað af öryggisástæðum — sleppi þessum hópi.');
+      return [];
+    }
+    if (message.stop_reason !== 'pause_turn') break;
+    messages.push({ role: 'assistant', content: message.content });
   }
+
+  if (!message) return [];
 
   const text = message.content.find((b) => b.type === 'text');
   if (!text || text.type !== 'text') return [];
@@ -176,6 +220,8 @@ async function draftChunk(names: string[]): Promise<Draft[]> {
       ...d,
       nafn: d.nafn.toLowerCase(),
       skyring: d.skyring?.trim() || undefined,
+      heimild: (d.heimild ?? '').trim(),
+      heimildTitill: d.heimildTitill?.trim() || undefined,
       flokkar: (d.flokkar ?? []).filter((f) => VALID_CATEGORIES.has(f)),
     }));
 }
@@ -199,9 +245,12 @@ async function worker(queue: string[][]) {
     if (!chunk) return;
     try {
       const drafts = await draftChunk(chunk);
-      // Honest labelling only goes so far — a draft the model itself calls a
-      // guess is not worth showing at all.
-      const keep = drafts.filter((d) => d.vissa !== 'lag');
+      // Two gates, and the source one is the load-bearing gate. Self-reported
+      // confidence only catches the cases the model knows it is unsure about;
+      // requiring a real URL is what catches a confident invention.
+      const keep = drafts.filter(
+        (d) => d.vissa !== 'lag' && /^https?:\/\/\S+$/.test(d.heimild) && d.merking.trim() !== '',
+      );
       dropped += drafts.length - keep.length;
       results.push(...keep);
       completed += chunk.length;
@@ -222,5 +271,7 @@ await Promise.all(Array.from({ length: CONCURRENCY }, () => worker(queue)));
 
 save();
 console.log(`\n✓ ${results.length} drög vistuð í data/ai/drafts.json`);
-console.log(`  ${dropped} felld niður (líkanið taldi sig vera að giska)`);
+console.log(`  ${dropped} felld niður (engin heimild fannst eða líkanið var að giska)`);
+const sourced = results.filter((d) => d.heimild).length;
+console.log(`  ${sourced} af ${results.length} með slóð á heimild`);
 console.log('\nKeyrðu `npm run build:data` til að fella þau inn.');

@@ -105,8 +105,19 @@ const description = entry.merking
             {entry.skyring && <p class="skyring">{entry.skyring}</p>}
             {entry.confidence === 'ostadfest' && (
               <p class="notice">
-                Þessi skýring er samin af gervigreind og hefur ekki verið staðfest með heimild.
-                Hún gæti verið röng. <a href="/um#areidanleiki">Nánar um áreiðanleika</a>.
+                Þessi skýring er tekin saman af gervigreind eftir leit á vefnum og hefur
+                ekki verið yfirfarin af nafnfræðingi.
+                {entry.aiHeimild ? (
+                  <>
+                    {' '}Hún byggir á{' '}
+                    <a href={entry.aiHeimild} rel="nofollow noopener" target="_blank">
+                      {entry.aiHeimildTitill || 'þessari heimild'}
+                    </a>{' '}— flettu henni upp ef nafnið skiptir þig máli.
+                  </>
+                ) : (
+                  <> Hún gæti verið röng.</>
+                )}{' '}
+                <a href="/um#areidanleiki">Nánar um áreiðanleika</a>.
               </p>
             )}
           </>

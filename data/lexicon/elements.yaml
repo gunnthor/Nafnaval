@@ -1457,3 +1457,226 @@ elements:
     stada: [vidlidur]
     flokkar: [konungborin]
     heimild: Zoëga 1910
+
+  # ── Viðbót: liðir sem greiningin fann að vantaði ────────────────────────────
+  # Hver liður hér er fletti í Zoëga (1910) eða Cleasby–Vigfusson (1874).
+  # Þeir voru valdir eftir greiningu á nöfnum sem orðasafnið réð ekki við,
+  # svo hver færsla opnar sem flest nöfn.
+
+  - id: bót
+    merking: bót, betrun; hjálp
+    skyring: Forliður í Bóthildur, Bótólfur. Sama orð og í „bæta“.
+    stada: [forlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+
+  - id: fann
+    merking: snjór, fönn
+    afbrigdi: [fönn]
+    stada: [forlidur]
+    flokkar: [vedur, nattura]
+    heimild: Zoëga 1910
+
+  - id: gló
+    merking: glóð, ljómi; að glóa
+    stada: [forlidur]
+    flokkar: [ljos]
+    heimild: Zoëga 1910
+
+  - id: dóm
+    merking: dómur, úrskurður
+    stada: [forlidur, vidlidur]
+    flokkar: [viska, konungborin]
+    heimild: Zoëga 1910
+
+  - id: baug
+    merking: baugur, hringur; hringur úr gulli
+    afbrigdi: [baugur]
+    skyring: Baugar voru gjafir höfðingja til fylgdarmanna og tákn auðs.
+    stada: [forlidur, vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+
+  - id: harð
+    merking: harður, sterkur
+    afbrigdi: [harður]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: bein
+    merking: bein; beinn, réttur
+    stada: [forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: móð
+    merking: hugur, skap, hugrekki
+    afbrigdi: [móður]
+    skyring: Sama orð og í „móðugur“. Viðliður í Arnmóður, Hermóður.
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur, viska]
+    heimild: Zoëga 1910
+
+  - id: hjör
+    merking: sverð
+    afbrigdi: [hjörr]
+    skyring: Fornt skáldamál fyrir sverð; forliður í Hjördís, Hjörleifur.
+    stada: [forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: rand
+    merking: rönd, skjaldarrönd; skjöldur
+    afbrigdi: [rönd, randa]
+    stada: [forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: reyk
+    merking: reykur
+    stada: [forlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+
+  - id: ljóm
+    merking: ljómi, blik
+    stada: [forlidur]
+    flokkar: [ljos]
+    heimild: Zoëga 1910
+
+  - id: járn
+    merking: járn
+    stada: [forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: stál
+    merking: stál
+    stada: [forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: vé
+    merking: helgur staður, hof
+    skyring: Sama orð og í „vígja“. Forliður í Vésteinn, Vébjörn.
+    stada: [forlidur]
+    flokkar: [godafraedi]
+    heimild: Zoëga 1910
+
+  - id: tryggv
+    merking: tryggur, trúr
+    afbrigdi: [tryggvi, tryggva]
+    stada: [forlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+
+  - id: fast
+    merking: fastur, staðfastur
+    afbrigdi: [fasti]
+    stada: [forlidur, vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: fús
+    merking: fús, viljugur
+    stada: [vidlidur]
+    flokkar: [gledi]
+    heimild: Zoëga 1910
+
+  - id: holt
+    merking: holt, skógi vaxin hæð
+    stada: [vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+
+  - id: land
+    merking: land
+    stada: [forlidur, vidlidur]
+    flokkar: [nattura]
+    heimild: Zoëga 1910
+
+  - id: bakk
+    merking: bakki, árbakki
+    afbrigdi: [bakki]
+    stada: [forlidur]
+    flokkar: [nattura, vatn]
+    heimild: Zoëga 1910
+
+  - id: hrað
+    merking: hraður, snar
+    stada: [forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: mjöll
+    merking: nýfallinn snjór
+    stada: [vidlidur]
+    flokkar: [vedur, nattura]
+    heimild: Zoëga 1910
+
+  - id: vagn
+    merking: vagn
+    skyring: Einnig heiti á stjörnumerkinu Karlsvagni.
+    stada: [forlidur]
+    flokkar: [stjornur]
+    heimild: Zoëga 1910
+
+  - id: örv
+    merking: ör, píla; örlátur
+    afbrigdi: [ör]
+    stada: [forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: hvat
+    merking: hvatur, snar, djarfur
+    stada: [forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: þegn
+    merking: þegn, frjáls maður
+    stada: [vidlidur]
+    flokkar: [konungborin]
+    heimild: Zoëga 1910
+
+  - id: rekk
+    merking: rekkur, hraustur maður
+    afbrigdi: [rekkur]
+    stada: [vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: egg
+    merking: egg, sverðsegg
+    stada: [forlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: gnýr
+    merking: gnýr, hávaði; vopnagnýr
+    afbrigdi: [gný]
+    stada: [vidlidur]
+    flokkar: [hernadur]
+    heimild: Zoëga 1910
+
+  - id: drífa
+    merking: snjódrífa, hríð
+    afbrigdi: [dríf]
+    stada: [vidlidur]
+    flokkar: [vedur]
+    heimild: Zoëga 1910
+
+  - id: fjól
+    merking: fjóla (blóm)
+    stada: [forlidur]
+    flokkar: [plontur, litir]
+    heimild: Cleasby-Vigfusson 1874
+
+  - id: erl
+    merking: erlendur, útlendur
+    afbrigdi: [erlend]
+    stada: [forlidur]
+    flokkar: []
+    heimild: Zoëga 1910

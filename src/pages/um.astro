@@ -47,8 +47,9 @@ const pct = (n: number) => `${((100 * n) / counts.samthykkt).toFixed(0)}%`;
           greiningin er ekki fullviss. {tala(counts.likleg)} nöfn ({pct(counts.likleg)}).
         </li>
         <li>
-          <span class="badge badge-ostadfest">Óstaðfest</span> — samið af gervigreind og
-          <strong>ekki staðfest með heimild</strong>. Getur verið rangt.
+          <span class="badge badge-ostadfest">Óstaðfest</span> — tekið saman af gervigreind
+          eftir leit á vefnum. Hverri slíkri skýringu fylgir <strong>slóð á heimildina</strong>
+          sem hún byggir á, en enginn nafnfræðingur hefur yfirfarið hana.
           {tala(counts.ostadfest)} nöfn ({pct(counts.ostadfest)}).
         </li>
       </ul>
@@ -60,6 +61,22 @@ const pct = (n: number) => `${((100 * n) / counts.samthykkt).toFixed(0)}%`;
         Þetta er ekki fræðirit. Ef nafn skiptir þig máli — til dæmis ef þú ert að velja nafn á barn —
         er rétt að fletta því líka upp í <em>Nöfnum Íslendinga</em> eftir Guðrúnu Kvaran og
         Sigurð Jónsson, sem er ítarlegasta heimildin um íslensk mannanöfn.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Af hverju gervigreindin leitar en giskar ekki</h2>
+      <p>
+        Fyrri útgáfa af þessum vef lét gervigreind skrifa skýringar eftir minni. Það er
+        varhugavert: fyrir nafn sem enginn hefur skrifað um skilar slíkt kerfi ekki auðu
+        heldur <em>sennilega hljómandi skýringu</em>, og sjálfsmat líkansins á eigin óvissu
+        grípur það ekki.
+      </p>
+      <p>
+        Núna leitar gervigreindin á vefnum og verður að skila slóð á heimild fyrir hverju
+        nafni. Skýring sem kemur án heimildar er einfaldlega felld niður. Þess vegna eru
+        mörg nöfn hér án merkingar — það þýðir að við fundum ekkert um þau, ekki að við
+        höfum ekki reynt.
       </p>
     </section>
 

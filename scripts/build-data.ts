@@ -41,6 +41,9 @@ interface AiDraft {
   skyring?: string;
   uppruni?: string;
   flokkar?: string[];
+  /** URL the draft was based on. Rendered on the page so it can be checked. */
+  heimild?: string;
+  heimildTitill?: string;
 }
 
 // ── Load every source ───────────────────────────────────────────────────────
@@ -187,6 +190,8 @@ for (const rec of register) {
   let lidir: Segment[] = [];
   let confidence: Confidence | null = null;
   let uppruni: string | null = null;
+  let aiHeimild: string | null = null;
+  let aiHeimildTitill: string | null = null;
   const flokkar = new Set<string>();
 
   const override = overrides.get(lower);
@@ -212,6 +217,8 @@ for (const rec of register) {
     skyring = draft.skyring ?? null;
     confidence = 'ostadfest';
     uppruni = draft.uppruni ?? null;
+    aiHeimild = draft.heimild ?? null;
+    aiHeimildTitill = draft.heimildTitill ?? null;
     for (const f of draft.flokkar ?? []) flokkar.add(f);
     tally.ai++;
   } else {
@@ -263,6 +270,8 @@ for (const rec of register) {
     confidence,
     flokkar: [...flokkar].sort(),
     vinsaeldir: popularity,
+    aiHeimild,
+    aiHeimildTitill,
     beyging: declensionByName.get(lower) ?? null,
     ...(skyring ? { skyring } : {}),
   } as NameEntry & { skyring?: string });
