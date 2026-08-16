@@ -14,7 +14,7 @@ const pending = sortNames(
   (e) => e.nafn,
 );
 
-/** Group by ruling decade — the interesting way to read this list. */
+/** Group by ruling decade, which is the interesting way to read this list. */
 const byDecade = new Map<string, NameEntry[]>();
 for (const e of rejected) {
   const year = /(\d{4})/.exec(e.verdict ?? '')?.[1];

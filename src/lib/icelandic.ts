@@ -30,8 +30,8 @@ function rank(ch: string): number {
 /**
  * Compares two strings in Icelandic alphabetical order.
  *
- * DELIBERATELY NOT `Intl.Collator('is')`. Browsers that ship a reduced ICU —
- * and there are plenty, including some mobile webviews — silently resolve
+ * DELIBERATELY NOT `Intl.Collator('is')`. Browsers that ship a reduced ICU,
+ * and there are plenty, including some mobile webviews, silently resolve
  * `is` to `en-US`, which sorts Æsa before Anna and drops Ösp into the middle
  * of the alphabet. The server (full ICU) would then disagree with the client
  * on the same page. An explicit table is a few lines and always right.
@@ -52,7 +52,7 @@ export function compareIcelandic(a: string, b: string): number {
 export const collator = { compare: compareIcelandic };
 
 /**
- * Formats a number the Icelandic way — 4973 becomes "4.973".
+ * Formats a number the Icelandic way: 4973 becomes "4.973".
  * Same reasoning as the collator: `toLocaleString('is-IS')` returns "4,973"
  * wherever ICU is trimmed, so the hero and the list below it would disagree.
  */
@@ -121,18 +121,18 @@ export function displayCase(name: string): string {
 }
 
 /**
- * Whether a name survives being written abroad — powers the "auðvelt erlendis"
+ * Whether a name survives being written abroad. Powers the "auðvelt erlendis"
  * filter for parents who expect to live outside Iceland.
  *
  * The test is not "contains no Icelandic letters", it is "is the name still
  * itself once the letter is dropped". Two different problems get confused here:
  *
- *   Droppable — á é í ó ú ý ö. Losing the mark leaves a name people abroad
+ *   Droppable: á é í ó ú ý ö. Losing the mark leaves a name people abroad
  *   already recognise and spell: Róbert → Robert, María → Maria, Björk → Bjork.
  *   These marks also exist across Spanish, French, Hungarian, German and
  *   Swedish, so they are often not lost at all.
  *
- *   Not droppable — þ ð æ. There is no accepted single-letter substitute, so
+ *   Not droppable: þ ð æ. There is no accepted single-letter substitute, so
  *   the name has to be transliterated and changes shape: Þóra becomes Thora,
  *   Tora or Pora depending on who is guessing, and Guðrún becomes Gudrun.
  *   That is the case where a parent abroad spends a lifetime spelling it out.

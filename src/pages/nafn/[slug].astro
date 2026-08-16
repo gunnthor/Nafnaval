@@ -4,6 +4,7 @@ import TrustBadge from '../../components/TrustBadge.astro';
 import Sparkline from '../../components/Sparkline.astro';
 import arAxis from '../../data/ar.json';
 import { CATEGORY_BY_SLUG } from '../../lib/categories.ts';
+import { HJARTA } from '../../lib/hjarta.ts';
 import { slugify, collator, tala } from '../../lib/icelandic.ts';
 import nofn from '../../data/nofn.json';
 import type { NameEntry } from '../../lib/types.ts';
@@ -36,7 +37,7 @@ const STATUS_LABEL: Record<string, string> = {
 };
 
 /**
- * Names sharing an element — the exploration loop.
+ * Names sharing an element. This is the exploration loop.
  *
  * Ordered by how many people actually bear them, NOT alphabetically. Sorting
  * A–Ö and then cutting to 24 meant every list was Aðal-, Arn-, Ás- and nothing
@@ -71,8 +72,8 @@ const parent = entry.erRitbreyting && entry.ritbreytingAf
 const pop = entry.vinsaeldir;
 
 const description = entry.merking
-  ? `${entry.nafn} — ${entry.merking}. ${TYPE_LABEL[entry.type] ?? ''}, ${STATUS_LABEL[entry.status ?? ''] ?? ''}.`
-  : `${entry.nafn} — ${TYPE_LABEL[entry.type] ?? 'nafn'} í íslenskri mannanafnaskrá.`;
+  ? `${entry.nafn}: ${entry.merking}. ${TYPE_LABEL[entry.type] ?? ''}, ${STATUS_LABEL[entry.status ?? ''] ?? ''}.`
+  : `${entry.nafn} er ${(TYPE_LABEL[entry.type] ?? 'nafn').toLowerCase()} í íslenskri mannanafnaskrá.`;
 ---
 
 <Base title={entry.nafn} description={description}>
@@ -89,7 +90,7 @@ const description = entry.merking
         entry.status === 'Sam' && (
           <p style="margin:0.85rem 0 0">
             <button class="vista vista-stor" type="button" data-vista={entry.slug} aria-pressed="false">
-              <span class="stjarna" aria-hidden="true">☆</span>
+              <Fragment set:html={HJARTA} />
               <span class="vista-texti">Setja á listann</span>
             </button>
           </p>
@@ -112,7 +113,7 @@ const description = entry.merking
                     {' '}Hún byggir á{' '}
                     <a href={entry.aiHeimild} rel="nofollow noopener" target="_blank">
                       {entry.aiHeimildTitill || 'þessari heimild'}
-                    </a>{' '}— flettu henni upp ef nafnið skiptir þig máli.
+                    </a>. Flettu henni upp ef nafnið skiptir þig máli.
                   </>
                 ) : (
                   <> Hún gæti verið röng.</>
@@ -135,7 +136,7 @@ const description = entry.merking
     {
       entry.lidir.length > 0 && (
         <section class="card">
-          {/* A one-element name is not a compound — it *is* the element. */}
+          {/* A one-element name is not a compound. It *is* the element. */}
           <h2>{entry.lidir.length > 1 ? 'Nafnið er sett saman úr' : 'Nafnið er dregið af'}</h2>
           <div class="lidir">
             {entry.lidir.map((seg, i) => (

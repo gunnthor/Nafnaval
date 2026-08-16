@@ -9,7 +9,7 @@ export interface RegisterRecord {
   /** Ruling date, dd.mm.yyyy. Present on ~41% of records. */
   verdict: string | null;
   visible: boolean;
-  /** Cross-reference to a preferred spelling — NOT a meaning. */
+  /** Cross-reference to a preferred spelling, NOT a meaning. */
   description: string | null;
   url: string | null;
 }
@@ -84,8 +84,8 @@ export interface NameEntry {
 }
 
 /**
- * Bearer counts from Þjóðskrá. Unlike the Hagstofa tables — which only publish
- * the ~100 commonest names per gender — this covers every name down to a single
+ * Bearer counts from Þjóðskrá. Unlike the Hagstofa tables, which only publish
+ * the ~100 commonest names per gender, this covers every name down to a single
  * bearer, so nearly all names have real numbers rather than a blank.
  */
 export interface Popularity {
@@ -93,7 +93,7 @@ export interface Popularity {
   fjoldi: number;
   /** People whose SECOND name this is. Often much larger than `fjoldi`. */
   fjoldiAnnad: number;
-  /** Both positions combined — the honest answer to "how many are called this". */
+  /** Both positions combined: the honest answer to "how many are called this". */
   alls: number;
   /** Rank by `fjoldi` among names of the same gender. Null when nobody bears it. */
   saeti: number | null;

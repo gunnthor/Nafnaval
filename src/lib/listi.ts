@@ -1,10 +1,12 @@
 /**
- * The shortlist — names the visitor has saved while choosing.
+ * The shortlist: names the visitor has saved while choosing.
  *
  * Stored in localStorage, never sent anywhere. The site is static and has no
  * accounts, so the only way to move a list between devices (or send it to the
  * other parent) is the share link, which encodes the slugs in the URL.
  */
+
+import { HJARTA } from './hjarta.ts';
 
 const KEY = 'nafnaval:listi';
 const EVENT = 'nafnaval:listi-breytt';
@@ -26,7 +28,7 @@ function skrifa(slugs: string[]) {
   try {
     localStorage.setItem(KEY, JSON.stringify(slugs));
   } catch {
-    /* storage unavailable — keep working in-memory for this page view */
+    /* storage unavailable; keep working in-memory for this page view */
   }
   document.dispatchEvent(new CustomEvent(EVENT, { detail: slugs }));
 }
@@ -80,13 +82,16 @@ export function samstillaHnappa(root: ParentNode = document) {
   const saved = new Set(lesa());
   for (const btn of root.querySelectorAll<HTMLElement>('[data-vista]')) {
     const on = saved.has(btn.dataset.vista!);
+    // Whether the heart reads as filled follows from aria-pressed in CSS, so
+    // this is the only attribute a toggle has to touch.
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    // Buttons with a visible text label keep it; the star lives in its own
-    // span so repainting never destroys the wording next to it.
-    const star = btn.querySelector('.stjarna');
+    // A button rendered by the server already carries its heart. One built by
+    // a page script may not yet, and inserting it here keeps every call site
+    // from having to remember.
+    if (!btn.querySelector('.hjarta')) btn.insertAdjacentHTML('afterbegin', HJARTA);
+    // Buttons with a visible text label keep it; the label lives in its own
+    // span so repainting never destroys the wording next to the heart.
     const label = btn.querySelector('.vista-texti');
-    if (star) star.textContent = on ? '★' : '☆';
-    else btn.textContent = on ? '★' : '☆';
     if (label) label.textContent = on ? 'Á listanum' : 'Setja á listann';
     btn.setAttribute('aria-label', on ? 'Fjarlægja af listanum' : 'Setja á listann');
   }
@@ -98,7 +103,7 @@ export function samstillaHnappa(root: ParentNode = document) {
  * double-toggle every click (add then immediately remove).
  *
  * The guard lives on the document, not in module scope, because the layout
- * script and the page script can be bundled separately — two module instances,
+ * script and the page script can be bundled separately: two module instances,
  * one DOM.
  */
 export function tengjaHnappa() {

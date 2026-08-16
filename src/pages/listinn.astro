@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { HJARTA_INLINE } from '../lib/hjarta.ts';
 ---
 
 <Base
@@ -15,7 +16,7 @@ import Base from '../layouts/Base.astro';
     </div>
 
     <p id="tomur" class="empty" hidden>
-      Listinn er tómur. Ýttu á stjörnuna <span aria-hidden="true">☆</span> við nafn til að
+      Listinn er tómur. Ýttu á hjartað <Fragment set:html={HJARTA_INLINE} /> við nafn til að
       setja það á listann. <a href="/">Byrjaðu að leita</a>.
     </p>
 
@@ -48,6 +49,7 @@ import Base from '../layouts/Base.astro';
 <script>
   import { lesa, fjarlaegja, hreinsa, flytjaInn, viObreytingu, tengjaTeljara } from '../lib/listi.ts';
   import { collator, tala } from '../lib/icelandic.ts';
+  import { HJARTA } from '../lib/hjarta.ts';
 
   interface Row {
     n: string;
@@ -101,7 +103,9 @@ import Base from '../layouts/Base.astro';
       const rm = document.createElement('button');
       rm.type = 'button';
       rm.className = 'vista';
-      rm.textContent = '★';
+      // Everything on this page is on the list by definition, so the heart is
+      // always filled and clicking it removes rather than toggles.
+      rm.innerHTML = HJARTA;
       rm.setAttribute('aria-pressed', 'true');
       rm.setAttribute('aria-label', `Taka ${r.n} af listanum`);
       rm.addEventListener('click', (e) => {
@@ -119,7 +123,7 @@ import Base from '../layouts/Base.astro';
     tomur.hidden = any;
     adgerdir.hidden = !any;
     // A slug in storage with no matching row means the name is no longer in
-    // the register (or the index changed) — say so rather than dropping it
+    // the register (or the index changed), so say so rather than dropping it
     // silently.
     const missing = slugs.length - sorted.length;
     if (missing > 0) {
@@ -139,7 +143,7 @@ import Base from '../layouts/Base.astro';
       deilt.hidden = false;
       deilt.textContent = 'Hlekkur afritaður. Sendu hann á hvern sem er.';
     } catch {
-      // Share cancelled, or clipboard blocked — show the link to copy by hand.
+      // Share cancelled, or clipboard blocked. Show the link to copy by hand.
       deilt.hidden = false;
       deilt.textContent = url;
     }
@@ -151,7 +155,7 @@ import Base from '../layouts/Base.astro';
     if (confirm('Viltu hreinsa allan listann?')) hreinsa();
   });
 
-  // A shared link arrives as ?n=slug1,slug2 — merge rather than overwrite, so
+  // A shared link arrives as ?n=slug1,slug2. Merge rather than overwrite, so
   // opening someone else's list never wipes your own.
   const incoming = new URLSearchParams(location.search).get('n');
   const incomingSlugs = (incoming ?? '').split(',').filter(Boolean);

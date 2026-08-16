@@ -4,10 +4,18 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  /** Set on the front page, whose title already names the site. */
+  berTitill?: boolean;
 }
 
-const { title, description = 'Merking og uppruni íslenskra mannanafna.' } = Astro.props;
-const full = title === 'Nafnaval' ? title : `${title} — Nafnaval`;
+const SITE = 'Mannanöfn';
+
+const {
+  title,
+  description = 'Merking og uppruni íslenskra mannanafna.',
+  berTitill = false,
+} = Astro.props;
+const full = berTitill ? title : `${title} · ${SITE}`;
 ---
 
 <!doctype html>
@@ -21,20 +29,47 @@ const full = title === 'Nafnaval' ? title : `${title} — Nafnaval`;
     <meta property="og:title" content={full} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="is_IS" />
+    <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16150f" media="(prefers-color-scheme: dark)" />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%C3%9E%3C/text%3E%3C/svg%3E"
     />
+    {/*
+      Must run before the first paint, and before the bundled modules load, or
+      a visitor who chose light gets a flash of the dark palette on every
+      navigation. No attribute at all means "follow the operating system",
+      which is the default the CSS already handles.
+    */}
+    <script is:inline>
+      try {
+        var t = localStorage.getItem('nafnaval:tema');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {
+        /* storage blocked; the system preference still applies */
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
       <div class="wrap">
-        <a class="logo" href="/">Nafnaval</a>
+        <a class="logo" href="/">Mannanöfn</a>
         <nav class="site-nav">
           <a href="/flokkar">Flokkar</a>
           <a href="/hafnad">Hafnað</a>
           <a href="/listinn">Listinn<span class="count-badge" id="listi-teljari" hidden></span></a>
           <a href="/um">Um</a>
+          <button class="tema" id="tema" type="button" aria-label="Skipta milli ljóss og dökks útlits">
+            <svg class="ikon sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="4.2"></circle>
+              <path
+                d="M12 2.4v2M12 19.6v2M4.4 4.4l1.4 1.4M18.2 18.2l1.4 1.4M2.4 12h2M19.6 12h2M4.4 19.6l1.4-1.4M18.2 5.8l1.4-1.4"
+              ></path>
+            </svg>
+            <svg class="ikon tungl" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M20.6 14.7A8.7 8.7 0 0 1 9.3 3.4a8.7 8.7 0 1 0 11.3 11.3z"></path>
+            </svg>
+          </button>
         </nav>
       </div>
     </header>
@@ -61,6 +96,23 @@ const full = title === 'Nafnaval' ? title : `${title} — Nafnaval`;
       import { tengjaTeljara, tengjaHnappa } from '../lib/listi.ts';
       tengjaTeljara();
       tengjaHnappa();
+
+      // Light/dark switch. With no explicit choice stored we are following the
+      // system, so the first click has to resolve what the visitor is actually
+      // looking at before it can flip to the opposite of it.
+      const rot = document.documentElement;
+      document.getElementById('tema')?.addEventListener('click', () => {
+        const dokkt = rot.dataset.theme
+          ? rot.dataset.theme === 'dark'
+          : matchMedia('(prefers-color-scheme: dark)').matches;
+        const naest = dokkt ? 'light' : 'dark';
+        rot.dataset.theme = naest;
+        try {
+          localStorage.setItem('nafnaval:tema', naest);
+        } catch {
+          /* storage blocked; the choice lasts for this page view only */
+        }
+      });
     </script>
   </body>
 </html>

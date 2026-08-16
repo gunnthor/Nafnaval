@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { GROUP_LABELS, childrenOf, topLevelIn } from '../lib/categories.ts';
+import { HJARTA } from '../lib/hjarta.ts';
 import { tala } from '../lib/icelandic.ts';
 import nofn from '../data/nofn.json';
 import type { NameEntry } from '../lib/types.ts';
@@ -27,16 +28,17 @@ const withMeaning = browsable.filter((e) => e.merking).length;
 ---
 
 <Base
-  title="Nafnaval"
+  berTitill
+  title="Íslensk mannanöfn: merking, uppruni og vinsældir"
   description={`Merking og uppruni ${browsable.length} íslenskra mannanafna. Leitaðu, síaðu eftir flokkum og grafðu þig niður í liðina sem nöfnin eru byggð úr.`}
 >
   <div class="wrap">
     <div class="hero">
-      <h1>Hvað þýðir nafnið?</h1>
+      <h1>Merking og uppruni íslenskra mannanafna</h1>
       <p>
         Öll <strong>{tala(browsable.length)} nöfnin</strong> í íslenskri
-        mannanafnaskrá — merking þeirra, liðirnir sem þau eru byggð úr, beygingin og
-        hversu margir bera þau í dag.
+        mannanafnaskrá, með merkingu þeirra, liðunum sem þau eru byggð úr,
+        beygingunni og fjölda þeirra sem bera þau í dag.
       </p>
     </div>
   </div>
@@ -70,12 +72,12 @@ const withMeaning = browsable.filter((e) => e.merking).length;
           <strong>sleppa</strong>, þrisvar til að slökkva.
         </p>
         <p class="skyring" style="font-size:0.8rem;margin:0 0 1rem">
-          Innan hvers hóps nægir að nafn passi við <strong>eina</strong> síu —
-          Vatn og Veður sýnir nöfn sem tengjast öðru hvoru. Milli hópa þarf allt að passa.
+          Innan hvers hóps nægir að nafn passi við <strong>eina</strong> síu.
+          Vatn og Veður sýnir því nöfn sem tengjast öðru hvoru. Milli hópa þarf allt að passa.
         </p>
 
         {/*
-          Kyn goes first — it is what most people narrow by before anything
+          Kyn goes first, because it is what most people narrow by before anything
           else, and on mobile the sheet still scrolls, so position matters.
 
           Kynhlutlaus is a category chip, not a third gender chip, on purpose:
@@ -149,7 +151,7 @@ const withMeaning = browsable.filter((e) => e.merking).length;
         </div>
 
         <p class="result-count" id="count" data-total={browsable.length}>
-          {tala(browsable.length)} nöfn — {tala(withMeaning)} með skráða merkingu
+          {tala(browsable.length)} nöfn, þar af {tala(withMeaning)} með skráða merkingu
         </p>
 
         <ul class="name-list" id="results">
@@ -161,7 +163,7 @@ const withMeaning = browsable.filter((e) => e.merking).length;
                   <span class="nafn">{e.nafn}</span>
                   <span class="merking">{e.merking ?? ''}</span>
                   <span class="fjoldi">{e.vinsaeldir ? tala(e.vinsaeldir.alls) : ''}</span>
-                  <button class="vista" type="button" data-vista={e.slug} aria-pressed="false" aria-label="Setja á listann">☆</button>
+                  <button class="vista" type="button" data-vista={e.slug} aria-pressed="false" aria-label="Setja á listann" set:html={HJARTA} />
                 </a>
               </li>
             ))
@@ -191,6 +193,7 @@ const withMeaning = browsable.filter((e) => e.merking).length;
 <script>
   import { fold, collator, tala } from '../lib/icelandic.ts';
   import { CATEGORY_BY_SLUG } from '../lib/categories.ts';
+  import { HJARTA } from '../lib/hjarta.ts';
   import { tengjaHnappa, tengjaTeljara, samstillaHnappa } from '../lib/listi.ts';
 
   interface Row {
@@ -271,7 +274,9 @@ const withMeaning = browsable.filter((e) => e.merking).length;
       save.type = 'button';
       save.className = 'vista';
       save.dataset.vista = r.s;
-      save.textContent = '☆';
+      // Painted here rather than left to samstillaHnappa so the row never
+      // renders one frame tall and then grows once the heart lands in it.
+      save.innerHTML = HJARTA;
 
       a.append(g, n, m, c, save);
       li.append(a);
@@ -363,7 +368,7 @@ const withMeaning = browsable.filter((e) => e.merking).length;
 
     /**
      * Selections are grouped by facet: within one group the filters are an OR,
-     * across groups an AND. Picking Vatn and Veður means "either", not "both" —
+     * across groups an AND. Picking Vatn and Veður means "either", not "both":
      * ANDing them returned 48 names where the union is 667, and nobody picking
      * two kinds of nature wants the intersection.
      *

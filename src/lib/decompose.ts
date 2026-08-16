@@ -8,7 +8,7 @@
  * The two things that make this non-trivial in Icelandic:
  *
  *  1. INFLECTION. Names carry a nominative ending that is not part of the
- *     meaning — Guðmundur is guð + mund + -ur. We try each plausible ending
+ *     meaning: Guðmundur is guð + mund + -ur. We try each plausible ending
  *     (including none) and let scoring pick.
  *
  *  2. U-UMLAUT. The same element surfaces differently depending on position:
@@ -77,7 +77,7 @@ export class Decomposer {
 
   /**
    * Decompose a name. Returns null when nothing sufficiently convincing is
-   * found — the caller then falls through to overrides or an AI draft.
+   * found, and the caller then falls through to overrides or an AI draft.
    */
   decompose(name: string, type: NameType): Decomposition | null {
     const lower = name.toLowerCase();
@@ -134,7 +134,7 @@ export class Decomposer {
       // compound the first part must be attested as a forliður and the last as
       // a viðliður. This is what keeps Kristín from splitting.
       if (isFirst && isLast) {
-        // whole name is one element — always allowed
+        // whole name is one element, always allowed
       } else if (isFirst && !el.stada.includes('forlidur')) {
         continue;
       } else if (isLast && !el.stada.includes('vidlidur')) {
@@ -205,7 +205,7 @@ export class Decomposer {
 
   /**
    * Confidence tiers. These map directly to the three visual treatments in the
-   * UI, so the thresholds are deliberately conservative — it is much worse to
+   * UI, so the thresholds are deliberately conservative: it is much worse to
    * present a guess as settled than to under-claim.
    */
   private confidenceOf(d: Decomposition): Confidence {

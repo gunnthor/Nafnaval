@@ -1,6 +1,17 @@
-/* Nafnaval — mobile-first, single stylesheet, no framework. */
+/* Mannanöfn: mobile-first, single stylesheet, no framework. */
 
+/*
+ * Theming has three states, not two. `data-theme` on <html> is an explicit
+ * choice the visitor made and it wins in both directions; with no attribute we
+ * follow the operating system. Every dark value therefore has to be written
+ * twice, once behind the media query (guarded so an explicit "light" beats a
+ * dark OS) and once behind the attribute. Colours used only in dark mode live
+ * in a token here rather than in a scattered media query further down, so this
+ * duplication stays confined to one place.
+ */
 :root {
+  color-scheme: light;
+
   --bg: #faf7f1;
   --surface: #ffffff;
   --border: #e6dfd2;
@@ -9,13 +20,15 @@
   --muted: #6b6558;
   --accent: #285249;
   --accent-soft: #e6efea;
+  /* Text sitting on a filled --accent background. */
+  --on-accent: #ffffff;
 
-  /* Display face for names themselves. Icelandic orthography — the accents,
-     ð, þ, æ, ö — has more presence in a serif, and it separates the names
-     from the interface chrome around them. */
+  /* Display face for names themselves. Icelandic orthography, with its
+     accents and ð, þ, æ, ö, has more presence in a serif, and it separates
+     the names from the interface chrome around them. */
   --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
 
-  /* Trust tiers. These three must stay visually distinct — the whole
+  /* Trust tiers. These three must stay visually distinct, because the whole
      honesty story of the site rests on the reader telling them apart. */
   --stadfest: #2f5d50;
   --stadfest-bg: #e8f0ec;
@@ -27,15 +40,21 @@
   /* Exclusion and shortlist need their own hues, distinct from the trust tiers. */
   --exclude: #a03d33;
   --exclude-bg: #f7e9e7;
-  --save: #b1552b;
-  --save-bg: #f9ece3;
+  /* The shortlist heart. Deliberately a plain red: it is the one control on
+     the site whose meaning should need no explaining. */
+  --hjarta: #d92b2b;
+  --hjarta-bg: #fbeae8;
+
+  /* Scrim on the little × inside an active-filter pill. */
+  --x-bg: rgb(0 0 0 / 0.09);
 
   --radius: 10px;
   --tap: 44px; /* minimum comfortable touch target */
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
     --bg: #16150f;
     --surface: #1f1d17;
     --border: #38332a;
@@ -44,6 +63,7 @@
     --muted: #a09889;
     --accent: #7fc0aa;
     --accent-soft: #23302b;
+    --on-accent: #16211d;
     --stadfest: #7fc0aa;
     --stadfest-bg: #22302b;
     --likleg: #d9b872;
@@ -52,9 +72,34 @@
     --ostadfest-bg: #2a2722;
     --exclude: #e08b7f;
     --exclude-bg: #33231f;
-    --save: #e0a06f;
-    --save-bg: #33271d;
+    --hjarta: #ff6b6b;
+    --hjarta-bg: #37211f;
+    --x-bg: rgb(255 255 255 / 0.14);
   }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #16150f;
+  --surface: #1f1d17;
+  --border: #38332a;
+  --border-soft: #2a271f;
+  --text: #ece8e0;
+  --muted: #a09889;
+  --accent: #7fc0aa;
+  --accent-soft: #23302b;
+  --on-accent: #16211d;
+  --stadfest: #7fc0aa;
+  --stadfest-bg: #22302b;
+  --likleg: #d9b872;
+  --likleg-bg: #322a1a;
+  --ostadfest: #a09889;
+  --ostadfest-bg: #2a2722;
+  --exclude: #e08b7f;
+  --exclude-bg: #33231f;
+  --hjarta: #ff6b6b;
+  --hjarta-bg: #37211f;
+  --x-bg: rgb(255 255 255 / 0.14);
 }
 
 *,
@@ -109,9 +154,51 @@ h2 { font-size: 1.15rem; }
 .site-nav {
   margin-inline-start: auto;
   display: flex;
+  align-items: center;
   gap: 1rem;
   font-size: 0.9rem;
 }
+
+/* ── Light/dark switch ───────────────────────────────────────────────────── */
+.tema {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.tema:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.tema .ikon {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/*
+ * Which icon shows is a question of the *effective* theme, and in the default
+ * "follow the system" state no attribute is present to key off. So the icons
+ * are both in the markup and CSS picks one, mirroring the three-state cascade
+ * in the tokens above. The icon names the destination: a sun means "switch to
+ * light", so it appears while the page is dark.
+ */
+.tema .sol { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .tema .sol { display: block; }
+  :root:not([data-theme='light']) .tema .tungl { display: none; }
+}
+:root[data-theme='dark'] .tema .sol { display: block; }
+:root[data-theme='dark'] .tema .tungl { display: none; }
+:root[data-theme='light'] .tema .sol { display: none; }
+:root[data-theme='light'] .tema .tungl { display: block; }
 
 /* ── Search + filters ────────────────────────────────────────────────────── */
 .searchbar {
@@ -209,11 +296,11 @@ a:focus-visible {
   cursor: pointer;
 }
 /* Tri-state: off → include → exclude → off. Exclude must not read as a
-   stronger "on" — hence the strikethrough as well as the colour change. */
+   stronger "on", hence the strikethrough as well as the colour change. */
 .chip[data-state='inc'] {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 .chip[data-state='exc'] {
   background: var(--exclude-bg);
@@ -222,9 +309,6 @@ a:focus-visible {
   text-decoration: line-through;
 }
 .chip[data-state='exc']::before { content: '−\00a0'; text-decoration: none; }
-@media (prefers-color-scheme: dark) {
-  .chip[data-state='inc'] { color: #16211d; }
-}
 
 /* Nested faith categories sit under their parent. */
 .chips-nested {
@@ -268,12 +352,9 @@ a:focus-visible {
   width: 1.15rem;
   height: 1.15rem;
   border-radius: 50%;
-  background: rgb(0 0 0 / 0.09);
+  background: var(--x-bg);
   font-size: 0.9rem;
   line-height: 1;
-}
-@media (prefers-color-scheme: dark) {
-  .pill .x { background: rgb(255 255 255 / 0.14); }
 }
 .link-btn {
   background: none;
@@ -302,8 +383,32 @@ a:focus-visible {
   border-radius: 50%;
   cursor: pointer;
 }
-.vista[aria-pressed='true'] { color: var(--save); }
 .vista:hover { background: var(--accent-soft); }
+
+/*
+ * Inline SVG rather than ♡/♥, because the text hearts render as full-colour
+ * emoji on several platforms no matter what we ask for, and the whole point is
+ * that the outline stays neutral until the name is actually saved.
+ *
+ * Saved state is expressed purely in CSS off aria-pressed, so repainting the
+ * list never has to swap the markup.
+ */
+.hjarta {
+  width: 1.3em;
+  height: 1.3em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linejoin: round;
+  transition: fill 0.15s ease, stroke 0.15s ease, transform 0.15s ease;
+}
+.vista[aria-pressed='true'] .hjarta { fill: var(--hjarta); stroke: var(--hjarta); }
+.vista:hover .hjarta { transform: scale(1.12); }
+@media (prefers-reduced-motion: reduce) {
+  .hjarta { transition: none; }
+  .vista:hover .hjarta { transform: none; }
+}
 
 .vista-stor {
   width: auto;
@@ -316,8 +421,8 @@ a:focus-visible {
   margin: 0;
 }
 .vista-stor[aria-pressed='true'] {
-  border-color: var(--save);
-  background: var(--save-bg);
+  border-color: var(--hjarta);
+  background: var(--hjarta-bg);
 }
 
 .count-badge {
@@ -330,10 +435,9 @@ a:focus-visible {
   line-height: 1.25rem;
   text-align: center;
   color: #fff;
-  background: var(--save);
+  background: var(--hjarta);
   border-radius: 999px;
 }
-@media (prefers-color-scheme: dark) { .count-badge { color: #16211d; } }
 
 /* ── Results ─────────────────────────────────────────────────────────────── */
 .result-count {
@@ -425,7 +529,7 @@ a:focus-visible {
 }
 .card h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 
-/* Element breakdown — the "digging in" surface. */
+/* Element breakdown: the "digging in" surface. */
 .lidir { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0.5rem; }
 .lidur {
   flex: 1 1 10rem;
@@ -497,7 +601,7 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
   .layout { display: grid; grid-template-columns: 17.5rem minmax(0, 1fr); gap: 2rem; align-items: start; }
   /* On desktop the panel is a plain column in the page, not a scroll region.
      It used to be sticky with its own max-height and overflow, which put a
-     second scrollbar inside the page — you could scroll the filters, the page,
+     second scrollbar inside the page: you could scroll the filters, the page,
      or both, and it was never obvious which one you were in. Static and
      full-height means every filter is simply there. */
   .filters {
@@ -550,10 +654,9 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
 .btn-primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-weight: 650;
 }
-@media (prefers-color-scheme: dark) { .btn-primary { color: #16211d; } }
 
 /* Sticks to the bottom of the sheet so it is reachable however long the
    filter list gets. */
@@ -658,10 +761,9 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
 }
 .seg button[aria-pressed='true'] {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-weight: 600;
 }
-@media (prefers-color-scheme: dark) { .seg button[aria-pressed='true'] { color: #16211d; } }
 
 /* Related names get a count under each, so the ordering is legible. */
 .related-grid {
@@ -683,4 +785,15 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
 .related-item .c { display: block; font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 .vista-stor .vista-texti { font-size: 0.92rem; font-weight: 550; color: var(--text); }
-.vista-stor[aria-pressed='true'] .vista-texti { color: var(--save); }
+.vista-stor[aria-pressed='true'] .vista-texti { color: var(--hjarta); }
+
+/* The heart used as a glyph inside running prose, e.g. the empty-list hint. */
+.hjarta-inline {
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: -0.18em;
+  fill: var(--hjarta);
+  stroke: var(--hjarta);
+  stroke-width: 1.7;
+  stroke-linejoin: round;
+}

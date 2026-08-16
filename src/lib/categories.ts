@@ -5,7 +5,7 @@
  *   - INHERITED: conferred by a name's elements via the lexicon. Tagging ~215
  *     elements is what tags thousands of names, so this is where the leverage
  *     is. Adding a category here means adding it to elements.yaml too.
- *   - REGLA (rule-based): derived from the register record itself — gender,
+ *   - REGLA (rule-based): derived from the register record itself, so gender,
  *     length, popularity, spelling. Computed in build-data.ts.
  */
 
@@ -38,7 +38,7 @@ export const CATEGORIES: Category[] = [
   // ── Fólk og trú ───────────────────────────────────────────────────────────
   // Trúarbrögð is a parent: tagging a name with any faith below also tags it
   // here. Abrahamic names (Adam, Sara, Abraham) legitimately carry more than
-  // one of these at once — that overlap is worth showing, not flattening.
+  // one of these at once, and that overlap is worth showing, not flattening.
   { slug: 'truarbrogd', heiti: 'Trúarbrögð', lysing: 'Nöfn sem tengjast trúarbrögðum', hopur: 'folk' },
   { slug: 'godafraedi', heiti: 'Norræn trú', lysing: 'Þór, Freyr, dísir og álfar', hopur: 'folk', parent: 'truarbrogd' },
   { slug: 'kristni', heiti: 'Kristni', lysing: 'Kristur, dýrlingar og nöfn sem bárust með kristni', hopur: 'folk', parent: 'truarbrogd' },
@@ -59,7 +59,7 @@ export const CATEGORIES: Category[] = [
   { slug: 'sjaldgaeft', heiti: 'Sjaldgæf nöfn', lysing: 'Færri en 30 bera nafnið, að eiginnafni og öðru nafni samanlögðu', hopur: 'hagnytt', regla: true },
   { slug: 'nysamthykkt', heiti: 'Nýsamþykkt', lysing: 'Samþykkt af mannanafnanefnd frá 2015', hopur: 'hagnytt', regla: true },
   { slug: 'stutt', heiti: 'Stutt nöfn', lysing: 'Fimm stafir eða færri', hopur: 'hagnytt', regla: true },
-  { slug: 'audvelt-erlendis', heiti: 'Auðvelt erlendis', lysing: 'Engin þ, ð eða æ. Broddar og ö sleppa — Róbert verður Robert erlendis, en Þóra verður Thora', hopur: 'hagnytt', regla: true },
+  { slug: 'audvelt-erlendis', heiti: 'Auðvelt erlendis', lysing: 'Engin þ, ð eða æ. Broddar og ö sleppa: Róbert verður Robert erlendis, en Þóra verður Thora', hopur: 'hagnytt', regla: true },
   { slug: 'erlent', heiti: 'Erlend að uppruna', lysing: 'Nöfn sem bárust úr öðrum málum', hopur: 'hagnytt', regla: true },
   { slug: 'millinafn', heiti: 'Millinöfn', lysing: 'Nöfn sem má bera sem millinafn', hopur: 'hagnytt', regla: true },
 ];
@@ -81,7 +81,7 @@ export function childrenOf(parent: string): Category[] {
   return CATEGORIES.filter((c) => c.parent === parent);
 }
 
-/** Top-level categories within a group — children are rendered nested. */
+/** Top-level categories within a group. Children are rendered nested. */
 export function topLevelIn(hopur: Category['hopur']): Category[] {
   return CATEGORIES.filter((c) => c.hopur === hopur && !c.parent);
 }
