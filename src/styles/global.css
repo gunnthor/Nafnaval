@@ -494,18 +494,30 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
     /* minmax(0, 1fr), not 1fr: a bare 1fr track floors at min-content, so the
      nowrap bearer-count column pushed the whole grid past the viewport at
      tablet widths. */
-  .layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 2rem; align-items: start; }
+  .layout { display: grid; grid-template-columns: 17.5rem minmax(0, 1fr); gap: 2rem; align-items: start; }
+  /* On desktop the panel is a plain column in the page, not a scroll region.
+     It used to be sticky with its own max-height and overflow, which put a
+     second scrollbar inside the page — you could scroll the filters, the page,
+     or both, and it was never obvious which one you were in. Static and
+     full-height means every filter is simply there. */
   .filters {
-    position: sticky;
-    top: 5.25rem;
+    position: static;
     inset: auto;
-    max-height: calc(100vh - 7rem);
+    max-height: none;
+    overflow: visible;
     transform: none;
     box-shadow: none;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1rem;
+    padding: 1.1rem;
   }
+  /* The groups carry the structure now that nothing is hidden below a fold. */
+  .filters .filter-group + .filter-group {
+    margin-top: 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--border-soft);
+  }
+  .filters #clear-filters { width: 100%; margin-top: 1.25rem; }
   .filters-backdrop, .filter-toggle { display: none !important; }
   /* Single column on desktop. Rows now carry a meaning, a bearer count and a
      save button; two CSS columns overflowed the container and truncated the
