@@ -17,7 +17,10 @@ const byGroup = groups.map((g) => ({
   heiti: GROUP_LABELS[g],
   // Only top-level categories here; children (the faiths) render nested
   // beneath their parent so the hierarchy is visible rather than implied.
-  categories: topLevelIn(g).map((c) => ({ ...c, born: childrenOf(c.slug) })),
+  // Kynhlutlaus is rendered in the Kyn group instead, so drop it here.
+  categories: topLevelIn(g)
+    .filter((c) => c.slug !== 'kynhlutlaust')
+    .map((c) => ({ ...c, born: childrenOf(c.slug) })),
 }));
 
 const withMeaning = browsable.filter((e) => e.merking).length;
@@ -66,6 +69,26 @@ const withMeaning = browsable.filter((e) => e.merking).length;
           Smelltu einu sinni til að <strong>hafa með</strong>, tvisvar til að
           <strong>sleppa</strong>, þrisvar til að slökkva.
         </p>
+
+        {/*
+          Kyn goes first — it is what most people narrow by before anything
+          else, and on mobile the sheet still scrolls, so position matters.
+
+          Kynhlutlaus is a category chip, not a third gender chip, on purpose:
+          millinöfn also carry gender "hlutlaust", so a gender-based chip would
+          lump 219 middle names in with the 43 names the register actually
+          marks KH. The category means exactly one thing.
+        */}
+        <div class="filter-group">
+          <h3>Kyn</h3>
+          <div class="chips">
+            <button class="chip" type="button" data-kyn="kvk">Kvenmannsnöfn</button>
+            <button class="chip" type="button" data-kyn="kk">Karlmannsnöfn</button>
+            <button class="chip" type="button" data-flokkur="kynhlutlaust" title="Nöfn skráð kynhlutlaus í mannanafnaskrá">
+              Kynhlutlaus
+            </button>
+          </div>
+        </div>
         {
           byGroup.map((group) => (
             <div class="filter-group">
@@ -111,21 +134,6 @@ const withMeaning = browsable.filter((e) => e.merking).length;
       <div>
         <div class="active-filters" id="active-filters" hidden>
           <span class="label">Virkar síur:</span>
-        </div>
-
-        {/*
-          Gender sits outside the filter sheet on purpose. It is the first
-          thing most people narrow by when choosing a name, and it used to be
-          the last of ~30 chips inside the sheet — invisible on a phone
-          without scrolling the whole panel.
-        */}
-        <div class="sortbar">
-          <span class="label">Sýna:</span>
-          <span class="seg" role="group" aria-label="Kyn">
-            <button type="button" data-kynval="" aria-pressed="true">Öll</button>
-            <button type="button" data-kynval="kvk" aria-pressed="false">Kvenmannsnöfn</button>
-            <button type="button" data-kynval="kk" aria-pressed="false">Karlmannsnöfn</button>
-          </span>
         </div>
 
         <div class="sortbar">
@@ -404,7 +412,6 @@ const withMeaning = browsable.filter((e) => e.merking).length;
   }
 
   function syncChips() {
-    syncGenderBar();
     for (const btn of document.querySelectorAll<HTMLButtonElement>('.chip')) {
       const slug = btn.dataset.flokkur ?? btn.dataset.kyn!;
       const map = btn.dataset.flokkur ? categories : genders;
@@ -461,24 +468,6 @@ const withMeaning = browsable.filter((e) => e.merking).length;
       for (const [k, b] of Object.entries(sortButtons)) {
         b.setAttribute('aria-pressed', k === key ? 'true' : 'false');
       }
-      apply();
-    });
-  }
-
-  // The bar and the (now removed) sheet chips share one state map, so the
-  // URL, the active-filter pills and this control can never disagree.
-  const genderButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-kynval]')];
-  function syncGenderBar() {
-    const active = [...genders].find(([, v]) => v === 'inc')?.[0] ?? '';
-    for (const b of genderButtons) {
-      b.setAttribute('aria-pressed', b.dataset.kynval === active ? 'true' : 'false');
-    }
-  }
-  for (const btn of genderButtons) {
-    btn.addEventListener('click', () => {
-      genders.clear();
-      if (btn.dataset.kynval) genders.set(btn.dataset.kynval, 'inc');
-      syncGenderBar();
       apply();
     });
   }

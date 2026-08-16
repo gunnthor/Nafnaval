@@ -55,8 +55,8 @@ export const CATEGORIES: Category[] = [
 
   // ── Hagnýtt (reglubundið) ─────────────────────────────────────────────────
   { slug: 'kynhlutlaust', heiti: 'Kynhlutlaus nöfn', lysing: 'Nöfn skráð kynhlutlaus í mannanafnaskrá', hopur: 'hagnytt', regla: true },
-  { slug: 'vinsael', heiti: 'Vinsæl nöfn', lysing: 'Meðal 100 algengustu nafna landsins', hopur: 'hagnytt', regla: true },
-  { slug: 'sjaldgaeft', heiti: 'Sjaldgæf nöfn', lysing: 'Nöfn utan vinsældalistans', hopur: 'hagnytt', regla: true },
+  { slug: 'vinsael', heiti: 'Vinsæl nöfn', lysing: 'Meðal 100 algengustu nafna hvors kyns', hopur: 'hagnytt', regla: true },
+  { slug: 'sjaldgaeft', heiti: 'Sjaldgæf nöfn', lysing: 'Færri en 30 bera nafnið, að eiginnafni og öðru nafni samanlögðu', hopur: 'hagnytt', regla: true },
   { slug: 'nysamthykkt', heiti: 'Nýsamþykkt', lysing: 'Samþykkt af mannanafnanefnd frá 2015', hopur: 'hagnytt', regla: true },
   { slug: 'stutt', heiti: 'Stutt nöfn', lysing: 'Fimm stafir eða færri', hopur: 'hagnytt', regla: true },
   { slug: 'audvelt-erlendis', heiti: 'Auðvelt erlendis', lysing: 'Engir séríslenskir stafir — ð, þ, æ, ö eða broddar', hopur: 'hagnytt', regla: true },

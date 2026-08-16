@@ -87,14 +87,26 @@ const overrides = new Map(overrideList.map((o) => [o.nafn.toLowerCase(), o]));
 const draftsByName = new Map(drafts.map((d) => [d.nafn.toLowerCase(), d]));
 const elementById = new Map(elements.map((e) => [e.id, e]));
 const declensionByName = new Map(declensions.map((d) => [d.nafn.toLowerCase(), d.beyging]));
+/** A name is "rare" below this many bearers, first name and middle name summed. */
+const RARE_THRESHOLD = 30;
+
 // ── Bearer counts and ranks ─────────────────────────────────────────────────
 const YEAR_AXIS = tidni.ar;
 const latest = (xs: number[]) => (xs.length ? xs[xs.length - 1] : 0);
+
+/** Which ranking bucket a register type belongs to. */
+const bucketOf = (type: RegisterRecord['type']) =>
+  type === 'ST' ? 'kvk' : type === 'DR' ? 'kk' : 'annad';
 
 /**
  * Rank is computed here rather than taken from a source, because no source
  * ranks every name — Þjóðskrá publishes counts, so the ordering is ours to
  * derive. Ranked within gender, by first-name bearers, ties sharing a rank.
+ *
+ * Keyed by bucket AND name: 31 names are registered under more than one type
+ * (Aldan is both DR and MI, Alex is both ST and DR). Keying by name alone let
+ * the last bucket processed overwrite the others, so Aldan carried the
+ * 52-name millinafn ranking while being displayed as a karlmannsnafn.
  */
 const rankByName = new Map<string, { saeti: number; af: number }>();
 {
@@ -104,8 +116,8 @@ const rankByName = new Map<string, { saeti: number; af: number }>();
     if (rec.type === 'RST' || rec.type === 'RDR') continue;
     const n = latest(tidni.nofn[rec.icelandicName]?.e ?? []);
     if (n <= 0) continue;
-    const g = rec.type === 'ST' ? 'kvk' : rec.type === 'DR' ? 'kk' : 'annad';
-    (byGender.get(g) ?? byGender.set(g, []).get(g)!).push({ nafn: rec.icelandicName, n });
+    const g = bucketOf(rec.type);
+    (byGender.get(g) ?? byGender.set(g, []).get(g)!).push({ nafn: `${g}|${rec.icelandicName}`, n });
   }
   for (const list of byGender.values()) {
     list.sort((a, b) => b.n - a.n);
@@ -121,7 +133,7 @@ const rankByName = new Map<string, { saeti: number; af: number }>();
   }
 }
 
-function popularityFor(lower: string): Popularity | null {
+function popularityFor(lower: string, type: RegisterRecord['type']): Popularity | null {
   const row = tidni.nofn[lower];
   if (!row) return null;
   const fjoldi = latest(row.e);
@@ -131,7 +143,7 @@ function popularityFor(lower: string): Popularity | null {
   // Ten years back on the same axis, so the comparison is like-for-like.
   const tenBack = row.e.length >= 11 ? row.e[row.e.length - 11] : 0;
   const breyting = tenBack > 0 ? Math.round(((fjoldi - tenBack) / tenBack) * 100) : null;
-  const rank = rankByName.get(lower);
+  const rank = rankByName.get(`${bucketOf(type)}|${lower}`);
 
   return {
     fjoldi,
@@ -232,13 +244,27 @@ for (const rec of register) {
   }
 
   // ── Rule-based categories ────────────────────────────────────────────────
-  const popularity = popularityFor(lower);
+  const popularity = popularityFor(lower, rec.type);
   const year = verdictYear(rec.verdict);
 
   if (rec.type === 'KH') flokkar.add('kynhlutlaust');
   if (rec.type === 'MI') flokkar.add('millinafn');
-  if (popularity) flokkar.add('vinsael');
-  else if (rec.status === 'Sam') flokkar.add('sjaldgaeft');
+  // Both are counted on first name + middle name combined, because a name can
+  // be uncommon in first position and ordinary overall (Lóa: 202 + 472).
+  //
+  // These thresholds used to be "has popularity data" vs "has none", which made
+  // sense when the source only published the top ~100 per gender. Þjóðskrá
+  // covers every name, so that rule tagged 90% of the register as "vinsæl".
+  if (rec.status === 'Sam') {
+    // Rank only means "popular" inside the two large gender buckets. The
+    // neutral/middle-name bucket holds a few hundred names, so a name with a
+    // single bearer ranks inside its top 100 — which is how Agl (1 bearer)
+    // ended up tagged both vinsæl and sjaldgæf.
+    const g = genderOf(rec.type);
+    const ranked = g === 'kvk' || g === 'kk';
+    if (ranked && popularity?.saeti != null && popularity.saeti <= 100) flokkar.add('vinsael');
+    if ((popularity?.alls ?? 0) < RARE_THRESHOLD) flokkar.add('sjaldgaeft');
+  }
   if (year && year >= 2015) flokkar.add('nysamthykkt');
   if (rec.icelandicName.length <= 5) flokkar.add('stutt');
   if (isKeyboardFriendly(rec.icelandicName)) flokkar.add('audvelt-erlendis');
