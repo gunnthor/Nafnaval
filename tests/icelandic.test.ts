@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { compareIcelandic, tala, fold, slugify, displayCase } from '../src/lib/icelandic.ts';
+import { compareIcelandic, tala, fold, slugify, displayCase, isKeyboardFriendly } from '../src/lib/icelandic.ts';
 
 const sorted = (xs: string[]) => [...xs].sort(compareIcelandic);
 
@@ -84,5 +84,32 @@ describe('folding and slugs', () => {
     expect(displayCase('þórbjörg')).toBe('Þórbjörg');
     expect(displayCase('ösp')).toBe('Ösp');
     expect(displayCase('ægir')).toBe('Ægir');
+  });
+});
+
+describe('auðvelt erlendis', () => {
+  it('accepts names whose marks can simply be dropped', () => {
+    // Róbert → Robert, María → Maria, Björk → Bjork: same name abroad.
+    for (const n of ['Róbert', 'María', 'Björk', 'Ólafur', 'Kristín', 'Ósk', 'Ýr']) {
+      expect(isKeyboardFriendly(n)).toBe(true);
+    }
+  });
+
+  it('rejects names that must be transliterated to be written', () => {
+    // No single-letter substitute exists, so the spelling changes shape.
+    for (const n of ['Þóra', 'Guðrún', 'Sæbjörg', 'Æsa', 'Sigríður']) {
+      expect(isKeyboardFriendly(n)).toBe(false);
+    }
+  });
+
+  it('treats ö as droppable but ð as not, even in the same name', () => {
+    expect(isKeyboardFriendly('Höskuldur')).toBe(true); // Hoskuldur
+    expect(isKeyboardFriendly('Höröur')).toBe(true);
+    expect(isKeyboardFriendly('Hörður')).toBe(false); // ð → Hordur
+  });
+
+  it('plain ASCII names always qualify', () => {
+    expect(isKeyboardFriendly('Anna')).toBe(true);
+    expect(isKeyboardFriendly('Jon')).toBe(true);
   });
 });

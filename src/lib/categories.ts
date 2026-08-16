@@ -59,7 +59,7 @@ export const CATEGORIES: Category[] = [
   { slug: 'sjaldgaeft', heiti: 'Sjaldgæf nöfn', lysing: 'Færri en 30 bera nafnið, að eiginnafni og öðru nafni samanlögðu', hopur: 'hagnytt', regla: true },
   { slug: 'nysamthykkt', heiti: 'Nýsamþykkt', lysing: 'Samþykkt af mannanafnanefnd frá 2015', hopur: 'hagnytt', regla: true },
   { slug: 'stutt', heiti: 'Stutt nöfn', lysing: 'Fimm stafir eða færri', hopur: 'hagnytt', regla: true },
-  { slug: 'audvelt-erlendis', heiti: 'Auðvelt erlendis', lysing: 'Engir séríslenskir stafir — ð, þ, æ, ö eða broddar', hopur: 'hagnytt', regla: true },
+  { slug: 'audvelt-erlendis', heiti: 'Auðvelt erlendis', lysing: 'Engin þ, ð eða æ. Broddar og ö sleppa — Róbert verður Robert erlendis, en Þóra verður Thora', hopur: 'hagnytt', regla: true },
   { slug: 'erlent', heiti: 'Erlend að uppruna', lysing: 'Nöfn sem bárust úr öðrum málum', hopur: 'hagnytt', regla: true },
   { slug: 'millinafn', heiti: 'Millinöfn', lysing: 'Nöfn sem má bera sem millinafn', hopur: 'hagnytt', regla: true },
 ];

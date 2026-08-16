@@ -121,9 +121,24 @@ export function displayCase(name: string): string {
 }
 
 /**
- * Whether a name is spellable on a non-Icelandic keyboard — powers the
- * "auðvelt erlendis" filter for parents who expect to live abroad.
+ * Whether a name survives being written abroad — powers the "auðvelt erlendis"
+ * filter for parents who expect to live outside Iceland.
+ *
+ * The test is not "contains no Icelandic letters", it is "is the name still
+ * itself once the letter is dropped". Two different problems get confused here:
+ *
+ *   Droppable — á é í ó ú ý ö. Losing the mark leaves a name people abroad
+ *   already recognise and spell: Róbert → Robert, María → Maria, Björk → Bjork.
+ *   These marks also exist across Spanish, French, Hungarian, German and
+ *   Swedish, so they are often not lost at all.
+ *
+ *   Not droppable — þ ð æ. There is no accepted single-letter substitute, so
+ *   the name has to be transliterated and changes shape: Þóra becomes Thora,
+ *   Tora or Pora depending on who is guessing, and Guðrún becomes Gudrun.
+ *   That is the case where a parent abroad spends a lifetime spelling it out.
+ *
+ * Treating a broddur as equivalent to þ excluded Róbert, which is plainly wrong.
  */
 export function isKeyboardFriendly(name: string): boolean {
-  return !/[áðéíóúýþæö]/i.test(name);
+  return !/[þðæ]/i.test(name);
 }
