@@ -69,6 +69,10 @@ const withMeaning = browsable.filter((e) => e.merking).length;
           Smelltu einu sinni til að <strong>hafa með</strong>, tvisvar til að
           <strong>sleppa</strong>, þrisvar til að slökkva.
         </p>
+        <p class="skyring" style="font-size:0.8rem;margin:0 0 1rem">
+          Innan hvers hóps nægir að nafn passi við <strong>eina</strong> síu —
+          Vatn og Veður sýnir nöfn sem tengjast öðru hvoru. Milli hópa þarf allt að passa.
+        </p>
 
         {/*
           Kyn goes first — it is what most people narrow by before anything
@@ -82,9 +86,9 @@ const withMeaning = browsable.filter((e) => e.merking).length;
         <div class="filter-group">
           <h3>Kyn</h3>
           <div class="chips">
-            <button class="chip" type="button" data-kyn="kvk">Kvenmannsnöfn</button>
-            <button class="chip" type="button" data-kyn="kk">Karlmannsnöfn</button>
-            <button class="chip" type="button" data-flokkur="kynhlutlaust" title="Nöfn skráð kynhlutlaus í mannanafnaskrá">
+            <button class="chip" type="button" data-kyn="kvk" data-hopur="kyn">Kvenmannsnöfn</button>
+            <button class="chip" type="button" data-kyn="kk" data-hopur="kyn">Karlmannsnöfn</button>
+            <button class="chip" type="button" data-flokkur="kynhlutlaust" data-hopur="kyn" title="Nöfn skráð kynhlutlaus í mannanafnaskrá">
               Kynhlutlaus
             </button>
           </div>
@@ -97,7 +101,7 @@ const withMeaning = browsable.filter((e) => e.merking).length;
                 {group.categories
                   .filter((c) => c.born.length === 0)
                   .map((c) => (
-                    <button class="chip" type="button" data-flokkur={c.slug} title={c.lysing}>
+                    <button class="chip" type="button" data-flokkur={c.slug} data-hopur={group.slug} title={c.lysing}>
                       {c.heiti}
                     </button>
                   ))}
@@ -107,13 +111,13 @@ const withMeaning = browsable.filter((e) => e.merking).length;
                 .map((c) => (
                   <div style="margin-top:0.5rem">
                     <div class="chips">
-                      <button class="chip" type="button" data-flokkur={c.slug} title={c.lysing}>
+                      <button class="chip" type="button" data-flokkur={c.slug} data-hopur={group.slug} title={c.lysing}>
                         {c.heiti}
                       </button>
                     </div>
                     <div class="chips chips-nested">
                       {c.born.map((b) => (
-                        <button class="chip" type="button" data-flokkur={b.slug} title={b.lysing}>
+                        <button class="chip" type="button" data-flokkur={b.slug} data-hopur={group.slug} title={b.lysing}>
                           {b.heiti}
                         </button>
                       ))}
@@ -345,25 +349,50 @@ const withMeaning = browsable.filter((e) => e.merking).length;
   const escapeHtml = (s: string) =>
     s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 
+  /** Which visual group each chip belongs to, read straight from the markup. */
+  const facetOf = new Map<string, string>();
+  for (const btn of document.querySelectorAll<HTMLButtonElement>('.chip[data-hopur]')) {
+    const slug = btn.dataset.flokkur ?? btn.dataset.kyn;
+    if (slug) facetOf.set(slug, btn.dataset.hopur!);
+  }
+
   function apply() {
     const needle = fold(q.value);
-    const incCats = [...categories].filter(([, v]) => v === 'inc').map(([k]) => k);
     const excCats = [...categories].filter(([, v]) => v === 'exc').map(([k]) => k);
-    const incGen = [...genders].filter(([, v]) => v === 'inc').map(([k]) => k);
     const excGen = [...genders].filter(([, v]) => v === 'exc').map(([k]) => k);
+
+    /**
+     * Selections are grouped by facet: within one group the filters are an OR,
+     * across groups an AND. Picking Vatn and Veður means "either", not "both" —
+     * ANDing them returned 48 names where the union is 667, and nobody picking
+     * two kinds of nature wants the intersection.
+     *
+     * Gender and Kynhlutlaus share the `kyn` facet, so those three OR together
+     * too, even though gender matches a row's `g` and the category its `f`.
+     */
+    const inc = new Map<string, { cats: string[]; kyn: string[] }>();
+    const slot = (facet: string) =>
+      inc.get(facet) ?? inc.set(facet, { cats: [], kyn: [] }).get(facet)!;
+    for (const [slug, state] of categories) {
+      if (state === 'inc') slot(facetOf.get(slug) ?? 'annad').cats.push(slug);
+    }
+    for (const [g, state] of genders) {
+      if (state === 'inc') slot(facetOf.get(g) ?? 'kyn').kyn.push(g);
+    }
 
     matches = rows.filter((r) => {
       if (needle && !r.l.includes(needle) && !fold(r.m).includes(needle)) return false;
-      // Exclusions win over inclusions: "no religious names" must mean none.
+      // Exclusions stay strict: excluding two things means neither.
       for (const c of excCats) if (r.f.includes(c)) return false;
       if (excGen.includes(r.g)) return false;
-      for (const c of incCats) if (!r.f.includes(c)) return false;
-      if (incGen.length && !incGen.includes(r.g)) return false;
+      for (const sel of inc.values()) {
+        const hit =
+          sel.cats.some((c) => r.f.includes(c)) || sel.kyn.some((g) => g === r.g);
+        if (!hit) return false;
+      }
       return true;
     });
 
-    // While searching, prefix matches always come first — otherwise the
-    // chosen sort applies.
     if (needle) {
       matches.sort((a, b) => {
         const ap = a.l.startsWith(needle) ? 0 : 1;
