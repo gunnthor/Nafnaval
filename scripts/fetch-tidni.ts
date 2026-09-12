@@ -71,6 +71,21 @@ const store: Store = existsSync(OUT)
       nofn: {},
     };
 
+// The stored series are positional: each name's array is indexed by store.ar.
+// When the calendar rolls over, YEARS grows by one and newly fetched names would
+// get a longer array than the thousands already saved, leaving the two silently
+// misaligned. Nobody's count for the new year is known yet, so the store is
+// stale in its entirety rather than something to extend in place.
+const axisMatches =
+  Array.isArray(store.ar) && store.ar.length === YEARS.length && store.ar.every((y, i) => y === YEARS[i]);
+if (!axisMatches) {
+  const had = Array.isArray(store.ar) && store.ar.length ? `${store.ar[0]}..${store.ar.at(-1)}` : '(ekkert)';
+  console.error(`Árabilið hefur breyst: geymslan nær ${had}, núverandi bil er ${YEARS[0]}..${YEARS.at(-1)}.`);
+  console.error('Tölur nýja ársins eru óþekktar fyrir öll nöfn, svo geymslan er úrelt í heild sinni.');
+  console.error('Eyddu data/raw/nafntidni.json og keyrðu aftur til að sækja allar tölur upp á nýtt.');
+  process.exit(1);
+}
+
 const register: RegisterRecord[] = JSON.parse(
   readFileSync(resolve(root, 'data/raw/mannanafnaskra.json'), 'utf8'),
 );
@@ -121,6 +136,9 @@ let done = 0;
 let failed = 0;
 
 function save() {
+  // Records when the numbers were last fetched, not when the file was created,
+  // so the snapshot's age is readable without consulting git.
+  store.sott = new Date().toISOString().slice(0, 10);
   mkdirSync(resolve(root, 'data/raw'), { recursive: true });
   writeFileSync(OUT, JSON.stringify(store), 'utf8');
 }
