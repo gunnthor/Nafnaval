@@ -3,6 +3,9 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -15,12 +18,13 @@
     "lint:lexicon": "tsx scripts/validate-lexicon.ts",
     "ai:gapfill": "tsx scripts/ai-gapfill.ts",
     "test": "vitest run",
+    "test:sources": "tsx scripts/test-sources.ts",
     "fetch:tidni": "tsx scripts/fetch-tidni.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.116.0",
-    "astro": "^5.2.5"
+    "astro": "^7.3.2"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

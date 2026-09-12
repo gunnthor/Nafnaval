@@ -40,16 +40,6 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=c4372a95-14e9-11ee-9bbb-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 1,
-  "icelandicName": "aaron",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4338,
   "icelandicName": "aaron",
   "type": "DR",
@@ -60,11 +50,21 @@
   "url": null
  },
  {
-  "id": 4795,
+  "id": 1,
+  "icelandicName": "aaron",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3417,
   "icelandicName": "abel",
   "type": "ST",
-  "status": "Sam",
-  "verdict": "16.10.2018",
+  "status": "Haf",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -80,11 +80,11 @@
   "url": null
  },
  {
-  "id": 3417,
+  "id": 4795,
   "icelandicName": "abel",
   "type": "ST",
-  "status": "Haf",
-  "verdict": null,
+  "status": "Sam",
+  "verdict": "16.10.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -325,6 +325,16 @@
   "type": "ST",
   "status": "Sam",
   "verdict": "01.04.2009",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 8612,
+  "icelandicName": "aðalsól",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "12.08.2026",
   "visible": true,
   "description": null,
   "url": null
@@ -580,21 +590,21 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=7f842197-ab8c-11ed-9bb5-f992086adea7&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 4644,
-  "icelandicName": "adrian",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "06.01.2017",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 2,
   "icelandicName": "adrian",
   "type": "DR",
   "status": "Haf",
   "verdict": "21.01.2010",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4644,
+  "icelandicName": "adrian",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "06.01.2017",
   "visible": true,
   "description": null,
   "url": null
@@ -790,16 +800,6 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=e7d8d862-e1f1-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 5887,
-  "icelandicName": "aftur",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "13.03.2024",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=e7d8d862-e1f1-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 7102,
   "icelandicName": "aftur",
   "type": "DR",
@@ -808,6 +808,16 @@
   "visible": true,
   "description": null,
   "url": null
+ },
+ {
+  "id": 5887,
+  "icelandicName": "aftur",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "13.03.2024",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=e7d8d862-e1f1-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 1846,
@@ -990,16 +1000,6 @@
   "url": null
  },
  {
-  "id": 3941,
-  "icelandicName": "aisha",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "04.11.2009",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5484,
   "icelandicName": "aisha",
   "type": "ST",
@@ -1008,6 +1008,16 @@
   "visible": true,
   "description": null,
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=ae631d66-ab8e-11ed-9bb5-f992086adea7&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 3941,
+  "icelandicName": "aisha",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "04.11.2009",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 4687,
@@ -1230,7 +1240,7 @@
   "url": null
  },
  {
-  "id": 5437,
+  "id": 5436,
   "icelandicName": "alejandro",
   "type": "DR",
   "status": "Sam",
@@ -1240,7 +1250,7 @@
   "url": null
  },
  {
-  "id": 5436,
+  "id": 5437,
   "icelandicName": "alejandro",
   "type": "DR",
   "status": "Sam",
@@ -1300,11 +1310,11 @@
   "url": null
  },
  {
-  "id": 4853,
+  "id": 64,
   "icelandicName": "alex",
-  "type": "ST",
+  "type": "DR",
   "status": "Sam",
-  "verdict": "22.05.2019",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -1320,11 +1330,11 @@
   "url": null
  },
  {
-  "id": 64,
+  "id": 4853,
   "icelandicName": "alex",
-  "type": "DR",
+  "type": "ST",
   "status": "Sam",
-  "verdict": null,
+  "verdict": "22.05.2019",
   "visible": true,
   "description": null,
   "url": null
@@ -1420,21 +1430,21 @@
   "url": null
  },
  {
-  "id": 5311,
-  "icelandicName": "alexsandra",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "22.03.2022",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 1686,
   "icelandicName": "alexsandra",
   "type": "RST",
   "status": "Haf",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 5311,
+  "icelandicName": "alexsandra",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "22.03.2022",
   "visible": true,
   "description": null,
   "url": null
@@ -1450,21 +1460,21 @@
   "url": null
  },
  {
-  "id": 4230,
-  "icelandicName": "alexsandra",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "01.03.2012",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4229,
   "icelandicName": "alexsandra",
   "type": "ST",
   "status": "Haf",
   "verdict": "26.06.2018",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4230,
+  "icelandicName": "alexsandra",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "01.03.2012",
   "visible": true,
   "description": null,
   "url": null
@@ -1950,21 +1960,21 @@
   "url": null
  },
  {
-  "id": 5166,
-  "icelandicName": "alpha",
-  "type": "KH",
-  "status": "Sam",
-  "verdict": "09.09.2021",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5060,
   "icelandicName": "alpha",
   "type": "DR",
   "status": "Haf",
   "verdict": "19.01.2021",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 5166,
+  "icelandicName": "alpha",
+  "type": "KH",
+  "status": "Sam",
+  "verdict": "09.09.2021",
   "visible": true,
   "description": null,
   "url": null
@@ -2137,6 +2147,16 @@
   "verdict": "01.03.2022",
   "visible": true,
   "description": null,
+  "url": null
+ },
+ {
+  "id": 8684,
+  "icelandicName": "amelia",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": "Amelía",
   "url": null
  },
  {
@@ -2740,16 +2760,6 @@
   "url": null
  },
  {
-  "id": 1778,
-  "icelandicName": "annamaría",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5677,
   "icelandicName": "annamaría",
   "type": "ST",
@@ -2768,6 +2778,16 @@
   "visible": true,
   "description": null,
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=4f518bc0-beaa-11ee-b881-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 1778,
+  "icelandicName": "annamaría",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 83,
@@ -2800,21 +2820,21 @@
   "url": null
  },
  {
-  "id": 4133,
-  "icelandicName": "annarr",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "27.4.2011",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4108,
   "icelandicName": "annarr",
   "type": "DR",
   "status": "Haf",
   "verdict": "21.01.2011",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4133,
+  "icelandicName": "annarr",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "27.4.2011",
   "visible": true,
   "description": null,
   "url": null
@@ -3020,21 +3040,21 @@
   "url": null
  },
  {
-  "id": 4692,
-  "icelandicName": "antonio",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "22.09.2017",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5,
   "icelandicName": "antonio",
   "type": "DR",
   "status": "Haf",
   "verdict": "20.07.2007",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4692,
+  "icelandicName": "antonio",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "22.09.2017",
   "visible": true,
   "description": null,
   "url": null
@@ -3200,20 +3220,20 @@
   "url": null
  },
  {
-  "id": 4743,
+  "id": 4742,
   "icelandicName": "araminta",
-  "type": "ST",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": "18.04.2018",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 4742,
+  "id": 4743,
   "icelandicName": "araminta",
-  "type": "MI",
-  "status": "Haf",
+  "type": "ST",
+  "status": "Sam",
   "verdict": "18.04.2018",
   "visible": true,
   "description": null,
@@ -3500,21 +3520,21 @@
   "url": null
  },
  {
-  "id": 94,
-  "icelandicName": "aríel",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4702,
   "icelandicName": "aríel",
   "type": "ST",
   "status": "Sam",
   "verdict": "31.10.2017",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 94,
+  "icelandicName": "aríel",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -5850,6 +5870,16 @@
   "url": null
  },
  {
+  "id": 3998,
+  "icelandicName": "austar",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "08.07.2009",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 136,
   "icelandicName": "austar",
   "type": "DR",
@@ -5870,11 +5900,11 @@
   "url": null
  },
  {
-  "id": 3998,
-  "icelandicName": "austar",
+  "id": 3878,
+  "icelandicName": "austarr",
   "type": "MI",
   "status": "Haf",
-  "verdict": "08.07.2009",
+  "verdict": "06.02.2009",
   "visible": true,
   "description": null,
   "url": null
@@ -5883,16 +5913,6 @@
   "id": 3876,
   "icelandicName": "austarr",
   "type": "ST",
-  "status": "Haf",
-  "verdict": "06.02.2009",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
-  "id": 3878,
-  "icelandicName": "austarr",
-  "type": "MI",
   "status": "Haf",
   "verdict": "06.02.2009",
   "visible": true,
@@ -6300,26 +6320,6 @@
   "url": null
  },
  {
-  "id": 10,
-  "icelandicName": "baltazar",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
-  "id": 4271,
-  "icelandicName": "baltazar",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "19.02.2017",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5347,
   "icelandicName": "baltazar",
   "type": "RDR",
@@ -6330,11 +6330,31 @@
   "url": null
  },
  {
+  "id": 10,
+  "icelandicName": "baltazar",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 4983,
   "icelandicName": "baltazar",
   "type": "DR",
   "status": "Haf",
   "verdict": "16.07.2020",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4271,
+  "icelandicName": "baltazar",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "19.02.2017",
   "visible": true,
   "description": null,
   "url": null
@@ -6420,6 +6440,16 @@
   "url": null
  },
  {
+  "id": 8651,
+  "icelandicName": "bári",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "12.08.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 6370,
   "icelandicName": "baróns",
   "type": "MI",
@@ -6460,21 +6490,21 @@
   "url": null
  },
  {
-  "id": 4923,
-  "icelandicName": "bastian",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "11.12.2019",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 3944,
   "icelandicName": "bastian",
   "type": "DR",
   "status": "Haf",
   "verdict": "04.11.2009",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4923,
+  "icelandicName": "bastian",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "11.12.2019",
   "visible": true,
   "description": null,
   "url": null
@@ -6940,12 +6970,12 @@
   "url": null
  },
  {
-  "id": 3962,
+  "id": 4129,
   "icelandicName": "berg",
   "type": "MI",
   "status": "Haf",
-  "verdict": "17.12.2009",
-  "visible": true,
+  "verdict": "4.4.2011",
+  "visible": false,
   "description": null,
   "url": null
  },
@@ -6960,12 +6990,12 @@
   "url": null
  },
  {
-  "id": 4129,
+  "id": 3962,
   "icelandicName": "berg",
   "type": "MI",
   "status": "Haf",
-  "verdict": "4.4.2011",
-  "visible": false,
+  "verdict": "17.12.2009",
+  "visible": true,
   "description": null,
   "url": null
  },
@@ -7120,14 +7150,14 @@
   "url": null
  },
  {
-  "id": 5955,
+  "id": 3904,
   "icelandicName": "bergman",
-  "type": "MI",
+  "type": "ST",
   "status": "Haf",
-  "verdict": "16.04.2024",
+  "verdict": "17.12.2008",
   "visible": true,
   "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=651cc834-fd60-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+  "url": null
  },
  {
   "id": 5954,
@@ -7140,14 +7170,14 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=651cc834-fd60-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 3904,
+  "id": 5955,
   "icelandicName": "bergman",
-  "type": "ST",
+  "type": "MI",
   "status": "Haf",
-  "verdict": "17.12.2008",
+  "verdict": "16.04.2024",
   "visible": true,
   "description": null,
-  "url": null
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=651cc834-fd60-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 203,
@@ -7980,20 +8010,20 @@
   "url": null
  },
  {
-  "id": 225,
+  "id": 1787,
   "icelandicName": "bjarkar",
-  "type": "DR",
-  "status": "Sam",
+  "type": "ST",
+  "status": "Haf",
   "verdict": null,
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 1787,
+  "id": 225,
   "icelandicName": "bjarkar",
-  "type": "ST",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": null,
   "visible": true,
   "description": null,
@@ -8080,20 +8110,20 @@
   "url": null
  },
  {
-  "id": 3395,
+  "id": 229,
   "icelandicName": "bjarnar",
-  "type": "MI",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": null,
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 229,
+  "id": 3395,
   "icelandicName": "bjarnar",
-  "type": "DR",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": null,
   "visible": true,
   "description": null,
@@ -8940,9 +8970,9 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=f1ebfcb0-01c4-11ec-813f-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 5950,
+  "id": 5951,
   "icelandicName": "boom",
-  "type": "MI",
+  "type": "DR",
   "status": "Haf",
   "verdict": "16.04.2024",
   "visible": true,
@@ -8950,9 +8980,9 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=292fdfe5-fd5c-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 5951,
+  "id": 5950,
   "icelandicName": "boom",
-  "type": "DR",
+  "type": "MI",
   "status": "Haf",
   "verdict": "16.04.2024",
   "visible": true,
@@ -9010,16 +9040,6 @@
   "url": null
  },
  {
-  "id": 5457,
-  "icelandicName": "borghild",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "10.12.2022",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=331eb1a9-7afb-11ed-9bb3-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 4237,
   "icelandicName": "borghild",
   "type": "ST",
@@ -9028,6 +9048,16 @@
   "visible": true,
   "description": null,
   "url": null
+ },
+ {
+  "id": 5457,
+  "icelandicName": "borghild",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "10.12.2022",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=331eb1a9-7afb-11ed-9bb3-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 2070,
@@ -9100,20 +9130,20 @@
   "url": null
  },
  {
-  "id": 3967,
+  "id": 3966,
   "icelandicName": "bót",
-  "type": "MI",
-  "status": "Haf",
+  "type": "ST",
+  "status": "Sam",
   "verdict": "07.01.2010",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 3966,
+  "id": 3967,
   "icelandicName": "bót",
-  "type": "ST",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": "07.01.2010",
   "visible": true,
   "description": null,
@@ -9330,6 +9360,16 @@
   "url": null
  },
  {
+  "id": 8685,
+  "icelandicName": "brian",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 2087,
   "icelandicName": "bríana",
   "type": "ST",
@@ -9380,21 +9420,21 @@
   "url": null
  },
  {
-  "id": 1558,
-  "icelandicName": "brim",
-  "type": "MI",
-  "status": "Sam",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5272,
   "icelandicName": "brim",
   "type": "ST",
   "status": "Sam",
   "verdict": "13.01.2022",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 1558,
+  "icelandicName": "brim",
+  "type": "MI",
+  "status": "Sam",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -9930,21 +9970,21 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=ebaf2e87-e1f2-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 4512,
-  "icelandicName": "cæsar",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "27.05.2015",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4072,
   "icelandicName": "cæsar",
   "type": "DR",
   "status": "Haf",
   "verdict": "13.07.2010",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4512,
+  "icelandicName": "cæsar",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "27.05.2015",
   "visible": true,
   "description": null,
   "url": null
@@ -10020,21 +10060,21 @@
   "url": null
  },
  {
-  "id": 1688,
-  "icelandicName": "carla",
-  "type": "RST",
-  "status": "Haf",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4125,
   "icelandicName": "carla",
   "type": "ST",
   "status": "Sam",
   "verdict": "23.3.2011",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 1688,
+  "icelandicName": "carla",
+  "type": "RST",
+  "status": "Haf",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -10200,22 +10240,22 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=75c0415b-5343-11f0-b892-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 4411,
-  "icelandicName": "cesar",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "09.04.2014",
-  "visible": false,
-  "description": null,
-  "url": null
- },
- {
   "id": 1630,
   "icelandicName": "cesar",
   "type": "DR",
   "status": "Haf",
   "verdict": "05.09.2013",
   "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4411,
+  "icelandicName": "cesar",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "09.04.2014",
+  "visible": false,
   "description": null,
   "url": null
  },
@@ -10290,21 +10330,21 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=22ceba55-bf29-11ed-9bb7-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 3936,
-  "icelandicName": "chris",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "14.04.2009",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5276,
   "icelandicName": "chris",
   "type": "DR",
   "status": "Sam",
   "verdict": "13.01.2022",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3936,
+  "icelandicName": "chris",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "14.04.2009",
   "visible": true,
   "description": null,
   "url": null
@@ -10360,16 +10400,6 @@
   "url": null
  },
  {
-  "id": 3494,
-  "icelandicName": "christian",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "11.03.2004",
-  "visible": false,
-  "description": null,
-  "url": null
- },
- {
   "id": 287,
   "icelandicName": "christian",
   "type": "RDR",
@@ -10377,6 +10407,16 @@
   "verdict": "08.07.2009",
   "visible": true,
   "description": "Kristján",
+  "url": null
+ },
+ {
+  "id": 3494,
+  "icelandicName": "christian",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "11.03.2004",
+  "visible": false,
+  "description": null,
   "url": null
  },
  {
@@ -10450,16 +10490,6 @@
   "url": null
  },
  {
-  "id": 4598,
-  "icelandicName": "cleopatra",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "03.06.2016",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5163,
   "icelandicName": "cleopatra",
   "type": "ST",
@@ -10467,6 +10497,16 @@
   "verdict": "09.09.2021",
   "visible": true,
   "description": "Kleópatra",
+  "url": null
+ },
+ {
+  "id": 4598,
+  "icelandicName": "cleopatra",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "03.06.2016",
+  "visible": true,
+  "description": null,
   "url": null
  },
  {
@@ -10530,16 +10570,6 @@
   "url": null
  },
  {
-  "id": 3668,
-  "icelandicName": "curver",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "27.02.2006",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 7991,
   "icelandicName": "curver",
   "type": "DR",
@@ -10548,6 +10578,16 @@
   "visible": true,
   "description": null,
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=b24f3d2e-2852-11f1-b89c-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 3668,
+  "icelandicName": "curver",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "27.02.2006",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 5941,
@@ -10930,20 +10970,20 @@
   "url": null
  },
  {
-  "id": 299,
+  "id": 3398,
   "icelandicName": "dalmar",
-  "type": "DR",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": null,
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 3398,
+  "id": 299,
   "icelandicName": "dalmar",
-  "type": "MI",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": null,
   "visible": true,
   "description": null,
@@ -11030,9 +11070,9 @@
   "url": null
  },
  {
-  "id": 1559,
+  "id": 302,
   "icelandicName": "dan",
-  "type": "MI",
+  "type": "DR",
   "status": "Sam",
   "verdict": null,
   "visible": true,
@@ -11040,9 +11080,9 @@
   "url": null
  },
  {
-  "id": 302,
+  "id": 1559,
   "icelandicName": "dan",
-  "type": "DR",
+  "type": "MI",
   "status": "Sam",
   "verdict": null,
   "visible": true,
@@ -11110,6 +11150,16 @@
   "url": null
  },
  {
+  "id": 7062,
+  "icelandicName": "dania",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.05.2025",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=ada0c281-2fed-11f0-b891-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
   "id": 4176,
   "icelandicName": "dania",
   "type": "ST",
@@ -11130,21 +11180,21 @@
   "url": null
  },
  {
-  "id": 7062,
-  "icelandicName": "dania",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "08.05.2025",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=ada0c281-2fed-11f0-b891-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 2117,
   "icelandicName": "danía",
   "type": "ST",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3618,
+  "icelandicName": "daniel",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "18.07.2005",
   "visible": true,
   "description": null,
   "url": null
@@ -11156,16 +11206,6 @@
   "status": "Haf",
   "verdict": "06.04.2004",
   "visible": false,
-  "description": null,
-  "url": null
- },
- {
-  "id": 3618,
-  "icelandicName": "daniel",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "18.07.2005",
-  "visible": true,
   "description": null,
   "url": null
  },
@@ -11560,22 +11600,22 @@
   "url": null
  },
  {
-  "id": 2123,
-  "icelandicName": "didda",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 3443,
   "icelandicName": "didda",
   "type": "ST",
   "status": "Sam",
   "verdict": null,
   "visible": false,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 2123,
+  "icelandicName": "didda",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": null,
+  "visible": true,
   "description": null,
   "url": null
  },
@@ -11610,21 +11650,21 @@
   "url": null
  },
  {
-  "id": 4783,
-  "icelandicName": "diego",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "20.09.2018",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4200,
   "icelandicName": "diego",
   "type": "DR",
   "status": "Haf",
   "verdict": "28.10.2011",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4783,
+  "icelandicName": "diego",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "20.09.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -11990,21 +12030,21 @@
   "url": null
  },
  {
-  "id": 4794,
-  "icelandicName": "dór",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "16.10.2018",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 317,
   "icelandicName": "dór",
   "type": "DR",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4794,
+  "icelandicName": "dór",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "16.10.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -12210,6 +12250,16 @@
   "url": null
  },
  {
+  "id": 8690,
+  "icelandicName": "drea",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 3681,
   "icelandicName": "dreki",
   "type": "DR",
@@ -12280,21 +12330,21 @@
   "url": null
  },
  {
-  "id": 3879,
-  "icelandicName": "dúa",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "06.02.2009",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 2143,
   "icelandicName": "dúa",
   "type": "ST",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3879,
+  "icelandicName": "dúa",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "06.02.2009",
   "visible": true,
   "description": null,
   "url": null
@@ -12460,21 +12510,21 @@
   "url": null
  },
  {
-  "id": 4517,
-  "icelandicName": "dylan",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "29.06.2015",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5287,
   "icelandicName": "dylan",
   "type": "DR",
   "status": "Sam",
   "verdict": "26.01.2022",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4517,
+  "icelandicName": "dylan",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "29.06.2015",
   "visible": true,
   "description": null,
   "url": null
@@ -12690,16 +12740,6 @@
   "url": null
  },
  {
-  "id": 5152,
-  "icelandicName": "eden",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "09.09.2021",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5153,
   "icelandicName": "eden",
   "type": "ST",
@@ -12708,6 +12748,16 @@
   "visible": true,
   "description": null,
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=0ba8464c-123d-11ec-813f-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 5152,
+  "icelandicName": "eden",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "09.09.2021",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 330,
@@ -12790,16 +12840,6 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=8e1264fa-cfcd-11ed-9bb8-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 3399,
-  "icelandicName": "eðvald",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 334,
   "icelandicName": "eðvald",
   "type": "DR",
@@ -12815,6 +12855,16 @@
   "type": "MI",
   "status": "Haf",
   "verdict": "28.01.2019",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3399,
+  "icelandicName": "eðvald",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -13400,20 +13450,20 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=eda40d2a-7422-11ef-b888-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 4228,
+  "id": 4227,
   "icelandicName": "ektavon",
-  "type": "MI",
-  "status": "Sam",
+  "type": "DR",
+  "status": "Haf",
   "verdict": "1.2.2012",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 4227,
+  "id": 4228,
   "icelandicName": "ektavon",
-  "type": "DR",
-  "status": "Haf",
+  "type": "MI",
+  "status": "Sam",
   "verdict": "1.2.2012",
   "visible": true,
   "description": null,
@@ -13600,22 +13650,22 @@
   "url": null
  },
  {
-  "id": 3695,
-  "icelandicName": "eldon",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "22.06.2006",
-  "visible": false,
-  "description": null,
-  "url": null
- },
- {
   "id": 4093,
   "icelandicName": "eldon",
   "type": "DR",
   "status": "Sam",
   "verdict": "02.12.2010",
   "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3695,
+  "icelandicName": "eldon",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "22.06.2006",
+  "visible": false,
   "description": null,
   "url": null
  },
@@ -13740,16 +13790,6 @@
   "url": null
  },
  {
-  "id": 5583,
-  "icelandicName": "elenora",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "07.06.2023",
-  "visible": true,
-  "description": "Elenóra",
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=2e16fe59-14e9-11ee-9bbb-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 1791,
   "icelandicName": "elenora",
   "type": "ST",
@@ -13758,6 +13798,16 @@
   "visible": true,
   "description": null,
   "url": null
+ },
+ {
+  "id": 5583,
+  "icelandicName": "elenora",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "07.06.2023",
+  "visible": true,
+  "description": "Elenóra",
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=2e16fe59-14e9-11ee-9bbb-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 2179,
@@ -13780,16 +13830,6 @@
   "url": null
  },
  {
-  "id": 3730,
-  "icelandicName": "eleonora",
-  "type": "RST",
-  "status": "Sam",
-  "verdict": "02.02.2007",
-  "visible": false,
-  "description": "Elinóra (tekið úr birtingu skv. símtali við Skúla Þjóðskrá. 09.10.2008)",
-  "url": null
- },
- {
   "id": 3643,
   "icelandicName": "eleonora",
   "type": "ST",
@@ -13797,6 +13837,16 @@
   "verdict": "19.9.2005",
   "visible": true,
   "description": null,
+  "url": null
+ },
+ {
+  "id": 3730,
+  "icelandicName": "eleonora",
+  "type": "RST",
+  "status": "Sam",
+  "verdict": "02.02.2007",
+  "visible": false,
+  "description": "Elinóra (tekið úr birtingu skv. símtali við Skúla Þjóðskrá. 09.10.2008)",
   "url": null
  },
  {
@@ -16220,20 +16270,20 @@
   "url": null
  },
  {
-  "id": 4767,
+  "id": 4766,
   "icelandicName": "eykam",
-  "type": "DR",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": "14.08.2018",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 4766,
+  "id": 4767,
   "icelandicName": "eykam",
-  "type": "MI",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": "14.08.2018",
   "visible": true,
   "description": null,
@@ -16750,21 +16800,21 @@
   "url": null
  },
  {
-  "id": 4055,
-  "icelandicName": "fenris",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "24.06.2010",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4054,
   "icelandicName": "fenris",
   "type": "DR",
   "status": "Haf",
   "verdict": "05.09.2013",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4055,
+  "icelandicName": "fenris",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "24.06.2010",
   "visible": true,
   "description": null,
   "url": null
@@ -17030,9 +17080,9 @@
   "url": null
  },
  {
-  "id": 3400,
+  "id": 16,
   "icelandicName": "finngálkn",
-  "type": "MI",
+  "type": "DR",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -17040,9 +17090,9 @@
   "url": null
  },
  {
-  "id": 16,
+  "id": 3400,
   "icelandicName": "finngálkn",
-  "type": "DR",
+  "type": "MI",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -17470,16 +17520,6 @@
   "url": null
  },
  {
-  "id": 4071,
-  "icelandicName": "fossmar",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "13.07.2010",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4070,
   "icelandicName": "fossmar",
   "type": "MI",
@@ -17487,6 +17527,16 @@
   "verdict": "13.07.2010",
   "visible": true,
   "description": "m.fyrirv. 3mgr6gr l.45/1996",
+  "url": null
+ },
+ {
+  "id": 4071,
+  "icelandicName": "fossmar",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "13.07.2010",
+  "visible": true,
+  "description": null,
   "url": null
  },
  {
@@ -17630,6 +17680,16 @@
   "url": null
  },
  {
+  "id": 3804,
+  "icelandicName": "franzisca",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "23.04.2008",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 4022,
   "icelandicName": "franzisca",
   "type": "RST",
@@ -17656,16 +17716,6 @@
   "status": "Haf",
   "verdict": null,
   "visible": false,
-  "description": null,
-  "url": null
- },
- {
-  "id": 3804,
-  "icelandicName": "franzisca",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "23.04.2008",
-  "visible": true,
   "description": null,
   "url": null
  },
@@ -17720,16 +17770,6 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=825b4c24-2feb-11f0-b891-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 4056,
-  "icelandicName": "freya",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "24.06.2010",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5425,
   "icelandicName": "freya",
   "type": "ST",
@@ -17737,6 +17777,16 @@
   "verdict": "05.09.2022",
   "visible": true,
   "description": "Freyja",
+  "url": null
+ },
+ {
+  "id": 4056,
+  "icelandicName": "freya",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "24.06.2010",
+  "visible": true,
+  "description": null,
   "url": null
  },
  {
@@ -17920,21 +17970,21 @@
   "url": null
  },
  {
-  "id": 4606,
-  "icelandicName": "frida",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "24.06.2016",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4007,
   "icelandicName": "frida",
   "type": "ST",
   "status": "Haf",
   "verdict": "08.07.2009",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4606,
+  "icelandicName": "frida",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "24.06.2016",
   "visible": true,
   "description": null,
   "url": null
@@ -18580,16 +18630,6 @@
   "url": null
  },
  {
-  "id": 1639,
-  "icelandicName": "gabriel",
-  "type": "RDR",
-  "status": "Sam",
-  "verdict": null,
-  "visible": false,
-  "description": null,
-  "url": null
- },
- {
   "id": 3652,
   "icelandicName": "gabriel",
   "type": "RDR",
@@ -18597,6 +18637,16 @@
   "verdict": "25.11.2005",
   "visible": true,
   "description": "Gabríel",
+  "url": null
+ },
+ {
+  "id": 1639,
+  "icelandicName": "gabriel",
+  "type": "RDR",
+  "status": "Sam",
+  "verdict": null,
+  "visible": false,
+  "description": null,
   "url": null
  },
  {
@@ -18920,20 +18970,20 @@
   "url": null
  },
  {
-  "id": 490,
+  "id": 3401,
   "icelandicName": "gautur",
-  "type": "DR",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": null,
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 3401,
+  "id": 490,
   "icelandicName": "gautur",
-  "type": "MI",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": null,
   "visible": true,
   "description": null,
@@ -19300,20 +19350,20 @@
   "url": null
  },
  {
-  "id": 4160,
+  "id": 4161,
   "icelandicName": "georgía",
-  "type": "MI",
-  "status": "Haf",
+  "type": "ST",
+  "status": "Sam",
   "verdict": "16.06.2011",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 4161,
+  "id": 4160,
   "icelandicName": "georgía",
-  "type": "ST",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": "16.06.2011",
   "visible": true,
   "description": null,
@@ -19470,20 +19520,20 @@
   "url": null
  },
  {
-  "id": 18,
+  "id": 2341,
   "icelandicName": "gígja",
-  "type": "DR",
-  "status": "Haf",
+  "type": "ST",
+  "status": "Sam",
   "verdict": null,
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 2341,
+  "id": 18,
   "icelandicName": "gígja",
-  "type": "ST",
-  "status": "Sam",
+  "type": "DR",
+  "status": "Haf",
   "verdict": null,
   "visible": true,
   "description": null,
@@ -19780,21 +19830,21 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=9c85bf4e-f6ca-11f0-b899-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 5442,
-  "icelandicName": "gleymérei",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "02.11.2022",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4812,
   "icelandicName": "gleymérei",
   "type": "ST",
   "status": "Haf",
   "verdict": "20.11.2018",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 5442,
+  "icelandicName": "gleymérei",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "02.11.2022",
   "visible": true,
   "description": null,
   "url": null
@@ -20060,9 +20110,9 @@
   "url": null
  },
  {
-  "id": 6404,
+  "id": 6405,
   "icelandicName": "gonzales",
-  "type": "ST",
+  "type": "MI",
   "status": "Haf",
   "verdict": "16.09.2024",
   "visible": true,
@@ -20070,9 +20120,9 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=a10a0b88-75c7-11ef-b888-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 6405,
+  "id": 6404,
   "icelandicName": "gonzales",
-  "type": "MI",
+  "type": "ST",
   "status": "Haf",
   "verdict": "16.09.2024",
   "visible": true,
@@ -21000,20 +21050,20 @@
   "url": null
  },
  {
-  "id": 3764,
+  "id": 3763,
   "icelandicName": "gull",
-  "type": "MI",
-  "status": "Sam",
+  "type": "ST",
+  "status": "Haf",
   "verdict": "06.12.2006",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 3763,
+  "id": 3764,
   "icelandicName": "gull",
-  "type": "ST",
-  "status": "Haf",
+  "type": "MI",
+  "status": "Sam",
   "verdict": "06.12.2006",
   "visible": true,
   "description": null,
@@ -22860,11 +22910,21 @@
   "url": null
  },
  {
-  "id": 3991,
+  "id": 4242,
+  "icelandicName": "hávarr",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "24.06.2010",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3992,
   "icelandicName": "hávarr",
   "type": "DR",
   "status": "Haf",
-  "verdict": "20.07.2009",
+  "verdict": null,
   "visible": false,
   "description": null,
   "url": null
@@ -22880,12 +22940,12 @@
   "url": null
  },
  {
-  "id": 4242,
+  "id": 3991,
   "icelandicName": "hávarr",
   "type": "DR",
-  "status": "Sam",
-  "verdict": "24.06.2010",
-  "visible": true,
+  "status": "Haf",
+  "verdict": "20.07.2009",
+  "visible": false,
   "description": null,
   "url": null
  },
@@ -22896,16 +22956,6 @@
   "status": "Haf",
   "verdict": "14.01.2010",
   "visible": true,
-  "description": null,
-  "url": null
- },
- {
-  "id": 3992,
-  "icelandicName": "hávarr",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": null,
-  "visible": false,
   "description": null,
   "url": null
  },
@@ -22940,16 +22990,6 @@
   "url": null
  },
  {
-  "id": 4634,
-  "icelandicName": "hector",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "18.11.2016",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4053,
   "icelandicName": "hector",
   "type": "DR",
@@ -22965,6 +23005,16 @@
   "type": "DR",
   "status": "Haf",
   "verdict": "14.09.2006",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4634,
+  "icelandicName": "hector",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "18.11.2016",
   "visible": true,
   "description": null,
   "url": null
@@ -23190,6 +23240,16 @@
   "url": null
  },
  {
+  "id": 3989,
+  "icelandicName": "heiðmarr",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "20.07.2009",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 3990,
   "icelandicName": "heiðmarr",
   "type": "DR",
@@ -23200,11 +23260,11 @@
   "url": null
  },
  {
-  "id": 3989,
+  "id": 8688,
   "icelandicName": "heiðmarr",
   "type": "DR",
   "status": "Haf",
-  "verdict": "20.07.2009",
+  "verdict": "08.09.2026",
   "visible": true,
   "description": null,
   "url": null
@@ -23280,21 +23340,21 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=913505df-9053-11ef-b889-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 4995,
-  "icelandicName": "heiður",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "17.08.2020",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 2456,
   "icelandicName": "heiður",
   "type": "ST",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4995,
+  "icelandicName": "heiður",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "17.08.2020",
   "visible": true,
   "description": null,
   "url": null
@@ -23400,16 +23460,6 @@
   "url": null
  },
  {
-  "id": 7057,
-  "icelandicName": "hel",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "08.05.2025",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=fe997404-2fea-11f0-b891-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 5193,
   "icelandicName": "hel",
   "type": "ST",
@@ -23418,6 +23468,16 @@
   "visible": true,
   "description": null,
   "url": null
+ },
+ {
+  "id": 7057,
+  "icelandicName": "hel",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "08.05.2025",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=fe997404-2fea-11f0-b891-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 4640,
@@ -24350,6 +24410,16 @@
   "url": null
  },
  {
+  "id": 8689,
+  "icelandicName": "himbrimi",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 3496,
   "icelandicName": "himinbjörg",
   "type": "ST",
@@ -25010,16 +25080,6 @@
   "url": null
  },
  {
-  "id": 7235,
-  "icelandicName": "hó",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "24.06.2025",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=5e3b7d55-534d-11f0-b892-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 6538,
   "icelandicName": "hó",
   "type": "DR",
@@ -25028,6 +25088,16 @@
   "visible": true,
   "description": null,
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=a9aa5272-cc2d-11ef-b88c-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 7235,
+  "icelandicName": "hó",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "24.06.2025",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=5e3b7d55-534d-11f0-b892-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 2541,
@@ -25150,16 +25220,6 @@
   "url": null
  },
  {
-  "id": 4533,
-  "icelandicName": "hólm",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "30.09.2015",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 721,
   "icelandicName": "hólm",
   "type": "DR",
@@ -25170,11 +25230,31 @@
   "url": null
  },
  {
+  "id": 4533,
+  "icelandicName": "hólm",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "30.09.2015",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 722,
   "icelandicName": "hólmar",
   "type": "DR",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 8687,
+  "icelandicName": "hólmarr",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "08.09.2026",
   "visible": true,
   "description": null,
   "url": null
@@ -26390,21 +26470,21 @@
   "url": null
  },
  {
-  "id": 4465,
-  "icelandicName": "huxland",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "22.12.2014",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4448,
   "icelandicName": "huxland",
   "type": "MI",
   "status": "Haf",
   "verdict": "3.10.2014",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4465,
+  "icelandicName": "huxland",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "22.12.2014",
   "visible": true,
   "description": null,
   "url": null
@@ -26870,21 +26950,21 @@
   "url": null
  },
  {
-  "id": 2552,
-  "icelandicName": "indra",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4704,
   "icelandicName": "indra",
   "type": "DR",
   "status": "Haf",
   "verdict": "24.11.2017",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 2552,
+  "icelandicName": "indra",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -27430,6 +27510,16 @@
   "url": null
  },
  {
+  "id": 8649,
+  "icelandicName": "inuk",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "31.08.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 2588,
   "icelandicName": "ír",
   "type": "ST",
@@ -27700,16 +27790,6 @@
   "url": null
  },
  {
-  "id": 3727,
-  "icelandicName": "ísarr",
-  "type": "RDR",
-  "status": "Sam",
-  "verdict": "02.02.2007",
-  "visible": true,
-  "description": "Ísar",
-  "url": null
- },
- {
   "id": 23,
   "icelandicName": "ísarr",
   "type": "DR",
@@ -27717,6 +27797,16 @@
   "verdict": null,
   "visible": false,
   "description": null,
+  "url": null
+ },
+ {
+  "id": 3727,
+  "icelandicName": "ísarr",
+  "type": "RDR",
+  "status": "Sam",
+  "verdict": "02.02.2007",
+  "visible": true,
+  "description": "Ísar",
   "url": null
  },
  {
@@ -28270,16 +28360,6 @@
   "url": null
  },
  {
-  "id": 5012,
-  "icelandicName": "ivy",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "21.09.2020",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 7535,
   "icelandicName": "ivy",
   "type": "ST",
@@ -28288,6 +28368,16 @@
   "visible": true,
   "description": "Ivý",
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=b8792384-a5e7-11f0-b896-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 5012,
+  "icelandicName": "ivy",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "21.09.2020",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 5038,
@@ -28570,9 +28660,9 @@
   "url": null
  },
  {
-  "id": 3405,
+  "id": 24,
   "icelandicName": "járnsíða",
-  "type": "MI",
+  "type": "DR",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -28580,9 +28670,9 @@
   "url": null
  },
  {
-  "id": 24,
+  "id": 3405,
   "icelandicName": "járnsíða",
-  "type": "DR",
+  "type": "MI",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -28720,16 +28810,6 @@
   "url": null
  },
  {
-  "id": 8542,
-  "icelandicName": "jean",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "30.07.2026",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4069,
   "icelandicName": "jean",
   "type": "DR",
@@ -28740,21 +28820,21 @@
   "url": null
  },
  {
-  "id": 4263,
+  "id": 8542,
   "icelandicName": "jean",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "21.06.2012",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "30.07.2026",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 3726,
-  "icelandicName": "jeanne",
-  "type": "MI",
+  "id": 4263,
+  "icelandicName": "jean",
+  "type": "ST",
   "status": "Haf",
-  "verdict": "02.02.2007",
+  "verdict": "21.06.2012",
   "visible": true,
   "description": null,
   "url": null
@@ -28785,6 +28865,16 @@
   "type": "ST",
   "status": "Haf",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3726,
+  "icelandicName": "jeanne",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "02.02.2007",
   "visible": true,
   "description": null,
   "url": null
@@ -30070,16 +30160,6 @@
   "url": null
  },
  {
-  "id": 4768,
-  "icelandicName": "júlí",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "14.08.2018",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 852,
   "icelandicName": "júlí",
   "type": "DR",
@@ -30090,11 +30170,11 @@
   "url": null
  },
  {
-  "id": 4239,
-  "icelandicName": "julia",
+  "id": 4768,
+  "icelandicName": "júlí",
   "type": "ST",
-  "status": "Haf",
-  "verdict": "02.04.2012",
+  "status": "Sam",
+  "verdict": "14.08.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -30105,6 +30185,16 @@
   "type": "ST",
   "status": "Sam",
   "verdict": "21.08.2017",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4239,
+  "icelandicName": "julia",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "02.04.2012",
   "visible": true,
   "description": null,
   "url": null
@@ -30340,21 +30430,21 @@
   "url": null
  },
  {
-  "id": 3995,
-  "icelandicName": "kai",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "08.07.2009",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4491,
   "icelandicName": "kai",
   "type": "DR",
   "status": "Sam",
   "verdict": "23.03.2015",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3995,
+  "icelandicName": "kai",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "08.07.2009",
   "visible": true,
   "description": null,
   "url": null
@@ -30640,6 +30730,16 @@
   "url": null
  },
  {
+  "id": 8616,
+  "icelandicName": "kamban",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "22.04.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 5095,
   "icelandicName": "kamban",
   "type": "MI",
@@ -30710,9 +30810,9 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=5183d54c-7b4a-11eb-8131-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 1801,
+  "id": 3406,
   "icelandicName": "kap",
-  "type": "ST",
+  "type": "MI",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -30720,9 +30820,9 @@
   "url": null
  },
  {
-  "id": 3406,
+  "id": 1801,
   "icelandicName": "kap",
-  "type": "MI",
+  "type": "ST",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -31370,16 +31470,6 @@
   "url": null
  },
  {
-  "id": 5976,
-  "icelandicName": "kaya",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "26.04.2024",
-  "visible": true,
-  "description": "Kaja",
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=3d5c8e34-03da-11ef-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 5000,
   "icelandicName": "kaya",
   "type": "ST",
@@ -31388,6 +31478,16 @@
   "visible": true,
   "description": null,
   "url": null
+ },
+ {
+  "id": 5976,
+  "icelandicName": "kaya",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "26.04.2024",
+  "visible": true,
+  "description": "Kaja",
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=3d5c8e34-03da-11ef-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 3861,
@@ -32270,16 +32370,6 @@
   "url": null
  },
  {
-  "id": 3781,
-  "icelandicName": "kona",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "22.05.2019",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5130,
   "icelandicName": "kona",
   "type": "ST",
@@ -32288,6 +32378,16 @@
   "visible": true,
   "description": null,
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=e50bee25-019e-11ec-813f-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 3781,
+  "icelandicName": "kona",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "22.05.2019",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 2698,
@@ -32308,6 +32408,16 @@
   "visible": true,
   "description": null,
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=b5f50417-e1f0-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 8696,
+  "icelandicName": "konni",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 2699,
@@ -32590,9 +32700,9 @@
   "url": null
  },
  {
-  "id": 3735,
+  "id": 3736,
   "icelandicName": "kristal",
-  "type": "ST",
+  "type": "MI",
   "status": "Haf",
   "verdict": "28.04.2007",
   "visible": true,
@@ -32600,9 +32710,9 @@
   "url": null
  },
  {
-  "id": 3736,
+  "id": 3735,
   "icelandicName": "kristal",
-  "type": "MI",
+  "type": "ST",
   "status": "Haf",
   "verdict": "28.04.2007",
   "visible": true,
@@ -33770,21 +33880,21 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=057e62cf-77d0-11ee-9bc1-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 4811,
-  "icelandicName": "lauritz",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "13.12.2018",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 933,
   "icelandicName": "lauritz",
   "type": "DR",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4811,
+  "icelandicName": "lauritz",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "13.12.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -33840,6 +33950,16 @@
   "url": null
  },
  {
+  "id": 3947,
+  "icelandicName": "leah",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "04.11.2009",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 5786,
   "icelandicName": "leah",
   "type": "ST",
@@ -33855,16 +33975,6 @@
   "type": "MI",
   "status": "Haf",
   "verdict": "19.01.2021",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
-  "id": 3947,
-  "icelandicName": "leah",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "04.11.2009",
   "visible": true,
   "description": null,
   "url": null
@@ -34240,21 +34350,21 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=25d6fdf9-cc2d-11ef-b88c-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 3650,
-  "icelandicName": "liam",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "25.11.2005",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4851,
   "icelandicName": "liam",
   "type": "DR",
   "status": "Sam",
   "verdict": "24.04.2019",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3650,
+  "icelandicName": "liam",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "25.11.2005",
   "visible": true,
   "description": null,
   "url": null
@@ -34320,16 +34430,6 @@
   "url": null
  },
  {
-  "id": 1807,
-  "icelandicName": "liisa",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5168,
   "icelandicName": "liisa",
   "type": "ST",
@@ -34340,11 +34440,11 @@
   "url": null
  },
  {
-  "id": 5164,
-  "icelandicName": "lilith",
+  "id": 1807,
+  "icelandicName": "liisa",
   "type": "ST",
-  "status": "Sam",
-  "verdict": "09.09.2021",
+  "status": "Haf",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -34355,6 +34455,16 @@
   "type": "ST",
   "status": "Haf",
   "verdict": "24.11.2020",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 5164,
+  "icelandicName": "lilith",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "09.09.2021",
   "visible": true,
   "description": null,
   "url": null
@@ -34380,21 +34490,21 @@
   "url": null
  },
  {
-  "id": 3526,
-  "icelandicName": "liljan",
-  "type": "MI",
-  "status": "Sam",
-  "verdict": "23.06.2004",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4591,
   "icelandicName": "liljan",
   "type": "ST",
   "status": "Sam",
   "verdict": "03.06.2016",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3526,
+  "icelandicName": "liljan",
+  "type": "MI",
+  "status": "Sam",
+  "verdict": "23.06.2004",
   "visible": true,
   "description": null,
   "url": null
@@ -34610,21 +34720,21 @@
   "url": null
  },
  {
-  "id": 4723,
-  "icelandicName": "lind",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "26.01.2018",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 2751,
   "icelandicName": "lind",
   "type": "ST",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4723,
+  "icelandicName": "lind",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "26.01.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -34650,21 +34760,21 @@
   "url": null
  },
  {
-  "id": 948,
-  "icelandicName": "lindberg",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4777,
   "icelandicName": "lindberg",
   "type": "MI",
   "status": "Sam",
   "verdict": "22.08.2018",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 948,
+  "icelandicName": "lindberg",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -35300,20 +35410,20 @@
   "url": null
  },
  {
-  "id": 4736,
+  "id": 4735,
   "icelandicName": "lóni",
-  "type": "MI",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": "20.03.2018",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 4735,
+  "id": 4736,
   "icelandicName": "lóni",
-  "type": "DR",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": "20.03.2018",
   "visible": true,
   "description": null,
@@ -35350,16 +35460,6 @@
   "url": null
  },
  {
-  "id": 1658,
-  "icelandicName": "lórenz",
-  "type": "RDR",
-  "status": "Sam",
-  "verdict": null,
-  "visible": true,
-  "description": "Lórens",
-  "url": null
- },
- {
   "id": 1634,
   "icelandicName": "lórenz",
   "type": "RDR",
@@ -35367,6 +35467,16 @@
   "verdict": null,
   "visible": true,
   "description": null,
+  "url": null
+ },
+ {
+  "id": 1658,
+  "icelandicName": "lórenz",
+  "type": "RDR",
+  "status": "Sam",
+  "verdict": null,
+  "visible": true,
+  "description": "Lórens",
   "url": null
  },
  {
@@ -35470,16 +35580,6 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=9698d204-cfc7-11ed-9bb8-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 4785,
-  "icelandicName": "lucas",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "20.09.2018",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5079,
   "icelandicName": "lucas",
   "type": "DR",
@@ -35490,11 +35590,11 @@
   "url": null
  },
  {
-  "id": 4850,
-  "icelandicName": "lucia",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "24.04.2019",
+  "id": 4785,
+  "icelandicName": "lucas",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "20.09.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -35505,6 +35605,16 @@
   "type": "ST",
   "status": "Haf",
   "verdict": "03.05.2005",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4850,
+  "icelandicName": "lucia",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "24.04.2019",
   "visible": true,
   "description": null,
   "url": null
@@ -36230,16 +36340,6 @@
   "url": null
  },
  {
-  "id": 4882,
-  "icelandicName": "maia",
-  "type": "RST",
-  "status": "Sam",
-  "verdict": "02.09.2019",
-  "visible": true,
-  "description": "Maja",
-  "url": null
- },
- {
   "id": 1808,
   "icelandicName": "maia",
   "type": "ST",
@@ -36247,6 +36347,16 @@
   "verdict": null,
   "visible": false,
   "description": null,
+  "url": null
+ },
+ {
+  "id": 4882,
+  "icelandicName": "maia",
+  "type": "RST",
+  "status": "Sam",
+  "verdict": "02.09.2019",
+  "visible": true,
+  "description": "Maja",
   "url": null
  },
  {
@@ -36400,16 +36510,6 @@
   "url": null
  },
  {
-  "id": 3421,
-  "icelandicName": "malin",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4945,
   "icelandicName": "malin",
   "type": "RST",
@@ -36417,6 +36517,16 @@
   "verdict": "20.02.2020",
   "visible": true,
   "description": "Malín",
+  "url": null
+ },
+ {
+  "id": 3421,
+  "icelandicName": "malin",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": null,
+  "visible": true,
+  "description": null,
   "url": null
  },
  {
@@ -36450,9 +36560,9 @@
   "url": null
  },
  {
-  "id": 3770,
+  "id": 3769,
   "icelandicName": "malm",
-  "type": "MI",
+  "type": "DR",
   "status": "Haf",
   "verdict": "14.11.2006",
   "visible": true,
@@ -36460,9 +36570,9 @@
   "url": null
  },
  {
-  "id": 3769,
+  "id": 3770,
   "icelandicName": "malm",
-  "type": "DR",
+  "type": "MI",
   "status": "Haf",
   "verdict": "14.11.2006",
   "visible": true,
@@ -36600,16 +36710,6 @@
   "url": null
  },
  {
-  "id": 5037,
-  "icelandicName": "manuela",
-  "type": "RST",
-  "status": "Sam",
-  "verdict": "19.10.2020",
-  "visible": true,
-  "description": "Manúela",
-  "url": null
- },
- {
   "id": 3871,
   "icelandicName": "manuela",
   "type": "ST",
@@ -36617,6 +36717,16 @@
   "verdict": "14.01.2009",
   "visible": true,
   "description": null,
+  "url": null
+ },
+ {
+  "id": 5037,
+  "icelandicName": "manuela",
+  "type": "RST",
+  "status": "Sam",
+  "verdict": "19.10.2020",
+  "visible": true,
+  "description": "Manúela",
   "url": null
  },
  {
@@ -36980,6 +37090,16 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=49eeb961-3abe-11ef-b886-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
+  "id": 8691,
+  "icelandicName": "mariam",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": "Maríam",
+  "url": null
+ },
+ {
   "id": 2827,
   "icelandicName": "maríam",
   "type": "ST",
@@ -37150,16 +37270,6 @@
   "url": null
  },
  {
-  "id": 3434,
-  "icelandicName": "maríkó",
-  "type": "RST",
-  "status": "Sam",
-  "verdict": "16.10.2008",
-  "visible": false,
-  "description": "Marikó - ef. Maríkóar",
-  "url": null
- },
- {
   "id": 4607,
   "icelandicName": "maríkó",
   "type": "RST",
@@ -37167,6 +37277,16 @@
   "verdict": "15.10.2008",
   "visible": true,
   "description": "Marikó",
+  "url": null
+ },
+ {
+  "id": 3434,
+  "icelandicName": "maríkó",
+  "type": "RST",
+  "status": "Sam",
+  "verdict": "16.10.2008",
+  "visible": false,
+  "description": "Marikó - ef. Maríkóar",
   "url": null
  },
  {
@@ -37280,16 +37400,6 @@
   "url": null
  },
  {
-  "id": 4034,
-  "icelandicName": "maríon",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "31.03.2010",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4720,
   "icelandicName": "maríon",
   "type": "DR",
@@ -37300,11 +37410,11 @@
   "url": null
  },
  {
-  "id": 1812,
-  "icelandicName": "marís",
+  "id": 4034,
+  "icelandicName": "maríon",
   "type": "ST",
-  "status": "Haf",
-  "verdict": null,
+  "status": "Sam",
+  "verdict": "31.03.2010",
   "visible": true,
   "description": null,
   "url": null
@@ -37314,6 +37424,16 @@
   "icelandicName": "marís",
   "type": "DR",
   "status": "Sam",
+  "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 1812,
+  "icelandicName": "marís",
+  "type": "ST",
+  "status": "Haf",
   "verdict": null,
   "visible": true,
   "description": null,
@@ -37830,21 +37950,21 @@
   "url": null
  },
  {
-  "id": 4848,
-  "icelandicName": "marzellíus",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "24.04.2019",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 3893,
   "icelandicName": "marzellíus",
   "type": "DR",
   "status": "Haf",
   "verdict": "28.04.2010",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4848,
+  "icelandicName": "marzellíus",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "24.04.2019",
   "visible": true,
   "description": null,
   "url": null
@@ -37995,6 +38115,16 @@
   "type": "ST",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 8650,
+  "icelandicName": "matteo",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "31.08.2026",
   "visible": true,
   "description": null,
   "url": null
@@ -38930,6 +39060,16 @@
   "url": null
  },
  {
+  "id": 8615,
+  "icelandicName": "mir",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "12.08.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 3596,
   "icelandicName": "mír",
   "type": "DR",
@@ -39150,16 +39290,6 @@
   "url": null
  },
  {
-  "id": 5908,
-  "icelandicName": "móari",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "20.03.2024",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=a0cbb43b-e6cb-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 5909,
   "icelandicName": "móari",
   "type": "MI",
@@ -39170,14 +39300,14 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=a0cbb43b-e6cb-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 5308,
-  "icelandicName": "móberg",
+  "id": 5908,
+  "icelandicName": "móari",
   "type": "DR",
-  "status": "Sam",
-  "verdict": "01.03.2022",
+  "status": "Haf",
+  "verdict": "20.03.2024",
   "visible": true,
   "description": null,
-  "url": null
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=a0cbb43b-e6cb-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 1601,
@@ -39185,6 +39315,16 @@
   "type": "MI",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 5308,
+  "icelandicName": "móberg",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "01.03.2022",
   "visible": true,
   "description": null,
   "url": null
@@ -39320,21 +39460,21 @@
   "url": null
  },
  {
-  "id": 4756,
-  "icelandicName": "moon",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "26.06.2018",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5278,
   "icelandicName": "moon",
   "type": "ST",
   "status": "Sam",
   "verdict": "13.01.2022",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4756,
+  "icelandicName": "moon",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "26.06.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -39530,20 +39670,20 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=493e7a6e-a5e7-11f0-b896-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 3409,
+  "id": 1013,
   "icelandicName": "múli",
-  "type": "MI",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": null,
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 1013,
+  "id": 3409,
   "icelandicName": "múli",
-  "type": "DR",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": null,
   "visible": true,
   "description": null,
@@ -39890,21 +40030,21 @@
   "url": null
  },
  {
-  "id": 4730,
-  "icelandicName": "nancy",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "20.03.2018",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 1813,
   "icelandicName": "nancy",
   "type": "ST",
   "status": "Haf",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4730,
+  "icelandicName": "nancy",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "20.03.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -40150,16 +40290,6 @@
   "url": null
  },
  {
-  "id": 4993,
-  "icelandicName": "nathalía",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "17.08.2020",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5474,
   "icelandicName": "nathalía",
   "type": "RST",
@@ -40170,11 +40300,11 @@
   "url": null
  },
  {
-  "id": 4408,
-  "icelandicName": "nathan",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "09.04.2014",
+  "id": 4993,
+  "icelandicName": "nathalía",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "17.08.2020",
   "visible": true,
   "description": null,
   "url": null
@@ -40185,6 +40315,16 @@
   "type": "DR",
   "status": "Haf",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4408,
+  "icelandicName": "nathan",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "09.04.2014",
   "visible": true,
   "description": null,
   "url": null
@@ -41080,20 +41220,20 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=ccca950b-61db-11ee-9bc0-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 5133,
+  "id": 5132,
   "icelandicName": "octavius",
-  "type": "DR",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": "11.08.2021",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 5132,
+  "id": 5133,
   "icelandicName": "octavius",
-  "type": "MI",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": "11.08.2021",
   "visible": true,
   "description": null,
@@ -41640,16 +41780,6 @@
   "url": null
  },
  {
-  "id": 5094,
-  "icelandicName": "ólasteina",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "01.07.2021",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=23721727-db33-11eb-813d-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 3456,
   "icelandicName": "ólasteina",
   "type": "ST",
@@ -41660,6 +41790,16 @@
   "url": null
  },
  {
+  "id": 5094,
+  "icelandicName": "ólasteina",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "01.07.2021",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=23721727-db33-11eb-813d-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
   "id": 3734,
   "icelandicName": "olav",
   "type": "RDR",
@@ -41667,6 +41807,16 @@
   "verdict": "20.07.2007",
   "visible": true,
   "description": "Ólafur",
+  "url": null
+ },
+ {
+  "id": 8686,
+  "icelandicName": "olavi",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": null,
   "url": null
  },
  {
@@ -41980,21 +42130,21 @@
   "url": null
  },
  {
-  "id": 4641,
-  "icelandicName": "ónarr",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "06.01.2017",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4664,
   "icelandicName": "ónarr",
   "type": "DR",
   "status": "Sam",
   "verdict": "23.05.2017",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4641,
+  "icelandicName": "ónarr",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "06.01.2017",
   "visible": true,
   "description": null,
   "url": null
@@ -42088,6 +42238,16 @@
   "visible": true,
   "description": null,
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=e6a52407-94ea-11ee-b87f-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 8694,
+  "icelandicName": "oríana",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 5295,
@@ -42190,21 +42350,21 @@
   "url": null
  },
  {
-  "id": 1831,
-  "icelandicName": "örn",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "18. desember 2001",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 1538,
   "icelandicName": "örn",
   "type": "DR",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 1831,
+  "icelandicName": "örn",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "18. desember 2001",
   "visible": true,
   "description": null,
   "url": null
@@ -42548,6 +42708,16 @@
   "visible": true,
   "description": "Össur",
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=ed2e252d-4718-11ee-9bbe-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 8614,
+  "icelandicName": "pá",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "12.08.2026",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 2951,
@@ -43070,16 +43240,6 @@
   "url": null
  },
  {
-  "id": 8063,
-  "icelandicName": "pia",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "16.03.2026",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=81add6d5-2857-11f1-b89c-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 3863,
   "icelandicName": "pia",
   "type": "ST",
@@ -43088,6 +43248,16 @@
   "visible": true,
   "description": null,
   "url": null
+ },
+ {
+  "id": 8063,
+  "icelandicName": "pia",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "16.03.2026",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=81add6d5-2857-11f1-b89c-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 3896,
@@ -43100,21 +43270,21 @@
   "url": null
  },
  {
-  "id": 5257,
-  "icelandicName": "pírati",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "16.12.2021",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4734,
   "icelandicName": "pírati",
   "type": "MI",
   "status": "Haf",
   "verdict": "20.03.2018",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 5257,
+  "icelandicName": "pírati",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "16.12.2021",
   "visible": true,
   "description": null,
   "url": null
@@ -43255,6 +43425,16 @@
   "type": "DR",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 8693,
+  "icelandicName": "rae",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.09.2026",
   "visible": true,
   "description": null,
   "url": null
@@ -43470,21 +43650,21 @@
   "url": null
  },
  {
-  "id": 4750,
-  "icelandicName": "ram",
-  "type": "MI",
-  "status": "Haf",
-  "verdict": "26.06.2018",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4774,
   "icelandicName": "ram",
   "type": "DR",
   "status": "Sam",
   "verdict": "14.08.2018",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4750,
+  "icelandicName": "ram",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "26.06.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -43740,21 +43920,21 @@
   "url": null
  },
  {
-  "id": 3517,
-  "icelandicName": "regin",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "24.11.2020",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5279,
   "icelandicName": "regin",
   "type": "DR",
   "status": "Sam",
   "verdict": "13.01.2022",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3517,
+  "icelandicName": "regin",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "24.11.2020",
   "visible": true,
   "description": null,
   "url": null
@@ -43770,21 +43950,21 @@
   "url": null
  },
  {
-  "id": 1637,
-  "icelandicName": "reginbald",
-  "type": "RDR",
-  "status": "Haf",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4158,
   "icelandicName": "reginbald",
   "type": "MI",
   "status": "Sam",
   "verdict": "03.06.2011",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 1637,
+  "icelandicName": "reginbald",
+  "type": "RDR",
+  "status": "Haf",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -43990,21 +44170,21 @@
   "url": null
  },
  {
-  "id": 4098,
-  "icelandicName": "reykdal",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "22.12.2010",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4389,
   "icelandicName": "reykdal",
   "type": "DR",
   "status": "Sam",
   "verdict": "10.2.2014",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4098,
+  "icelandicName": "reykdal",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "22.12.2010",
   "visible": true,
   "description": null,
   "url": null
@@ -44290,22 +44470,22 @@
   "url": null
  },
  {
-  "id": 3460,
-  "icelandicName": "ríó",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 3454,
   "icelandicName": "ríó",
   "type": "DR",
   "status": "Sam",
   "verdict": null,
   "visible": false,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3460,
+  "icelandicName": "ríó",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": null,
+  "visible": true,
   "description": null,
   "url": null
  },
@@ -44580,20 +44760,20 @@
   "url": null
  },
  {
-  "id": 3672,
+  "id": 3673,
   "icelandicName": "róman",
-  "type": "MI",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": "04.03.2006",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 3673,
+  "id": 3672,
   "icelandicName": "róman",
-  "type": "DR",
-  "status": "Sam",
+  "type": "MI",
+  "status": "Haf",
   "verdict": "04.03.2006",
   "visible": true,
   "description": null,
@@ -44770,21 +44950,21 @@
   "url": null
  },
  {
-  "id": 1818,
-  "icelandicName": "rosemarie",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "19.03.2020",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5205,
   "icelandicName": "rosemarie",
   "type": "ST",
   "status": "Sam",
   "verdict": "12.10.2021",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 1818,
+  "icelandicName": "rosemarie",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "19.03.2020",
   "visible": true,
   "description": null,
   "url": null
@@ -45690,16 +45870,6 @@
   "url": null
  },
  {
-  "id": 39,
-  "icelandicName": "sævarr",
-  "type": "RDR",
-  "status": "Sam",
-  "verdict": "25.05.2006",
-  "visible": true,
-  "description": "Sævar. Fallbeygist: Sævarr-Sævar-Sævari-Sævars",
-  "url": null
- },
- {
   "id": 3591,
   "icelandicName": "sævarr",
   "type": "MI",
@@ -45707,6 +45877,16 @@
   "verdict": "15.04.2005",
   "visible": true,
   "description": null,
+  "url": null
+ },
+ {
+  "id": 39,
+  "icelandicName": "sævarr",
+  "type": "RDR",
+  "status": "Sam",
+  "verdict": "25.05.2006",
+  "visible": true,
+  "description": "Sævar. Fallbeygist: Sævarr-Sævar-Sævari-Sævars",
   "url": null
  },
  {
@@ -45950,6 +46130,16 @@
   "url": null
  },
  {
+  "id": 8613,
+  "icelandicName": "salts",
+  "type": "MI",
+  "status": "Sam",
+  "verdict": "12.08.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 4979,
   "icelandicName": "salvador",
   "type": "DR",
@@ -46018,6 +46208,16 @@
   "visible": true,
   "description": null,
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=1e9b83d5-9796-11f0-b895-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 8692,
+  "icelandicName": "samíra",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 5861,
@@ -46235,6 +46435,16 @@
   "type": "DR",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 8698,
+  "icelandicName": "scarlet",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.09.2026",
   "visible": true,
   "description": null,
   "url": null
@@ -48130,21 +48340,21 @@
   "url": null
  },
  {
-  "id": 4221,
-  "icelandicName": "siv",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "1.2.2012",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 3758,
   "icelandicName": "siv",
   "type": "ST",
   "status": "Haf",
   "verdict": "29.12.2006",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4221,
+  "icelandicName": "siv",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "1.2.2012",
   "visible": true,
   "description": null,
   "url": null
@@ -48425,6 +48635,16 @@
   "type": "DR",
   "status": "Sam",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 8695,
+  "icelandicName": "skógur",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "08.09.2026",
   "visible": true,
   "description": null,
   "url": null
@@ -50020,9 +50240,9 @@
   "url": null
  },
  {
-  "id": 1261,
+  "id": 1617,
   "icelandicName": "steinberg",
-  "type": "DR",
+  "type": "MI",
   "status": "Sam",
   "verdict": null,
   "visible": true,
@@ -50030,9 +50250,9 @@
   "url": null
  },
  {
-  "id": 1617,
+  "id": 1261,
   "icelandicName": "steinberg",
-  "type": "MI",
+  "type": "DR",
   "status": "Sam",
   "verdict": null,
   "visible": true,
@@ -51080,20 +51300,20 @@
   "url": null
  },
  {
-  "id": 4293,
+  "id": 4294,
   "icelandicName": "svanhild",
-  "type": "MI",
-  "status": "Sam",
+  "type": "ST",
+  "status": "Haf",
   "verdict": "20.11.2012",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 4294,
+  "id": 4293,
   "icelandicName": "svanhild",
-  "type": "ST",
-  "status": "Haf",
+  "type": "MI",
+  "status": "Sam",
   "verdict": "20.11.2012",
   "visible": true,
   "description": null,
@@ -51800,16 +52020,6 @@
   "url": null
  },
  {
-  "id": 3560,
-  "icelandicName": "tanya",
-  "type": "RST",
-  "status": "Sam",
-  "verdict": "16.11.2004",
-  "visible": true,
-  "description": "Tanja",
-  "url": null
- },
- {
   "id": 3542,
   "icelandicName": "tanya",
   "type": "ST",
@@ -51817,6 +52027,16 @@
   "verdict": "19.08.2004",
   "visible": true,
   "description": null,
+  "url": null
+ },
+ {
+  "id": 3560,
+  "icelandicName": "tanya",
+  "type": "RST",
+  "status": "Sam",
+  "verdict": "16.11.2004",
+  "visible": true,
+  "description": "Tanja",
   "url": null
  },
  {
@@ -51870,16 +52090,6 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=0b66a636-61da-11ee-9bc0-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 5116,
-  "icelandicName": "tatiana",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "25.03.2021",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=486fe198-9b91-11eb-8134-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 5155,
   "icelandicName": "tatiana",
   "type": "ST",
@@ -51888,6 +52098,16 @@
   "visible": true,
   "description": "Tatíana Tatjana",
   "url": null
+ },
+ {
+  "id": 5116,
+  "icelandicName": "tatiana",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "25.03.2021",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=486fe198-9b91-11eb-8134-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 5118,
@@ -52050,16 +52270,6 @@
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=b2e09114-e1f2-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
-  "id": 5123,
-  "icelandicName": "thalia",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "06.08.2021",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=f1bf08c7-019c-11ec-813f-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 4101,
   "icelandicName": "thalia",
   "type": "ST",
@@ -52068,6 +52278,16 @@
   "visible": true,
   "description": null,
   "url": null
+ },
+ {
+  "id": 5123,
+  "icelandicName": "thalia",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "06.08.2021",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=f1bf08c7-019c-11ec-813f-005056bc8c60&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 3868,
@@ -52100,6 +52320,16 @@
   "url": null
  },
  {
+  "id": 5348,
+  "icelandicName": "theadór",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "25.04.2022",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 4708,
   "icelandicName": "theadór",
   "type": "DR",
@@ -52115,16 +52345,6 @@
   "type": "DR",
   "status": "Haf",
   "verdict": "21.09.2020",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
-  "id": 5348,
-  "icelandicName": "theadór",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "25.04.2022",
   "visible": true,
   "description": null,
   "url": null
@@ -52170,6 +52390,16 @@
   "url": null
  },
  {
+  "id": 3814,
+  "icelandicName": "theó",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "15.05.2008",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 5036,
   "icelandicName": "theó",
   "type": "RDR",
@@ -52185,16 +52415,6 @@
   "type": "DR",
   "status": "Haf",
   "verdict": "14.01.2020",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
-  "id": 3814,
-  "icelandicName": "theó",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "15.05.2008",
   "visible": true,
   "description": null,
   "url": null
@@ -52250,16 +52470,6 @@
   "url": null
  },
  {
-  "id": 3532,
-  "icelandicName": "theophilus",
-  "type": "DR",
-  "status": "Haf",
-  "verdict": "23.06.2004",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 3480,
   "icelandicName": "theophilus",
   "type": "DR",
@@ -52270,11 +52480,11 @@
   "url": null
  },
  {
-  "id": 3639,
-  "icelandicName": "theresa",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "15.09.2005",
+  "id": 3532,
+  "icelandicName": "theophilus",
+  "type": "DR",
+  "status": "Haf",
+  "verdict": "23.06.2004",
   "visible": true,
   "description": null,
   "url": null
@@ -52285,6 +52495,16 @@
   "type": "RST",
   "status": "Haf",
   "verdict": null,
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 3639,
+  "icelandicName": "theresa",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "15.09.2005",
   "visible": true,
   "description": null,
   "url": null
@@ -52690,16 +52910,6 @@
   "url": null
  },
  {
-  "id": 4002,
-  "icelandicName": "tóbý",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "08.07.2009",
-  "visible": true,
-  "description": "ef. Tóbýjar",
-  "url": null
- },
- {
   "id": 5052,
   "icelandicName": "tóbý",
   "type": "ST",
@@ -52707,6 +52917,16 @@
   "verdict": "22.12.2020",
   "visible": true,
   "description": null,
+  "url": null
+ },
+ {
+  "id": 4002,
+  "icelandicName": "tóbý",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.07.2009",
+  "visible": true,
+  "description": "ef. Tóbýjar",
   "url": null
  },
  {
@@ -53080,9 +53300,9 @@
   "url": null
  },
  {
-  "id": 3669,
+  "id": 3670,
   "icelandicName": "twist",
-  "type": "DR",
+  "type": "MI",
   "status": "Haf",
   "verdict": "27.02.2006",
   "visible": true,
@@ -53090,9 +53310,9 @@
   "url": null
  },
  {
-  "id": 3670,
+  "id": 3669,
   "icelandicName": "twist",
-  "type": "MI",
+  "type": "DR",
   "status": "Haf",
   "verdict": "27.02.2006",
   "visible": true,
@@ -54800,16 +55020,6 @@
   "url": null
  },
  {
-  "id": 4016,
-  "icelandicName": "veronica",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "04.02.2010",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 5859,
   "icelandicName": "veronica",
   "type": "ST",
@@ -54818,6 +55028,16 @@
   "visible": true,
   "description": "Veroníka",
   "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=7b754e09-e1e7-11ee-b883-005056bcde1f&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
+ },
+ {
+  "id": 4016,
+  "icelandicName": "veronica",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "04.02.2010",
+  "visible": true,
+  "description": null,
+  "url": null
  },
  {
   "id": 1824,
@@ -54960,6 +55180,16 @@
   "url": null
  },
  {
+  "id": 8697,
+  "icelandicName": "vex",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "08.09.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
   "id": 3865,
   "icelandicName": "vibeka",
   "type": "ST",
@@ -54990,21 +55220,21 @@
   "url": null
  },
  {
-  "id": 1825,
-  "icelandicName": "viborg",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 8196,
   "icelandicName": "viborg",
   "type": "DR",
   "status": "Haf",
   "verdict": "22.04.2026",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 1825,
+  "icelandicName": "viborg",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -55120,9 +55350,9 @@
   "url": null
  },
  {
-  "id": 42,
+  "id": 3414,
   "icelandicName": "vídó",
-  "type": "DR",
+  "type": "MI",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -55130,9 +55360,9 @@
   "url": null
  },
  {
-  "id": 3414,
+  "id": 42,
   "icelandicName": "vídó",
-  "type": "MI",
+  "type": "DR",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -55340,20 +55570,20 @@
   "url": null
  },
  {
-  "id": 4190,
+  "id": 4189,
   "icelandicName": "víking",
-  "type": "MI",
-  "status": "Sam",
+  "type": "DR",
+  "status": "Haf",
   "verdict": "28.10.2011",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 4189,
+  "id": 4190,
   "icelandicName": "víking",
-  "type": "DR",
-  "status": "Haf",
+  "type": "MI",
+  "status": "Sam",
   "verdict": "28.10.2011",
   "visible": true,
   "description": null,
@@ -55410,21 +55640,21 @@
   "url": null
  },
  {
-  "id": 1420,
-  "icelandicName": "vilberg",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": null,
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4412,
   "icelandicName": "vilberg",
   "type": "MI",
   "status": "Haf",
   "verdict": "09.04.2014",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 1420,
+  "icelandicName": "vilberg",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": null,
   "visible": true,
   "description": null,
   "url": null
@@ -56130,16 +56360,6 @@
   "url": null
  },
  {
-  "id": 5465,
-  "icelandicName": "xavier",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "05.01.2023",
-  "visible": true,
-  "description": null,
-  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=82056c1c-934e-11ed-9bb4-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
- },
- {
   "id": 3703,
   "icelandicName": "xavier",
   "type": "DR",
@@ -56148,6 +56368,16 @@
   "visible": true,
   "description": null,
   "url": null
+ },
+ {
+  "id": 5465,
+  "icelandicName": "xavier",
+  "type": "DR",
+  "status": "Sam",
+  "verdict": "05.01.2023",
+  "visible": true,
+  "description": null,
+  "url": "https://www.stjornarradid.is/gogn/urskurdir-og-alit-/stakur-urskurdur/?newsid=82056c1c-934e-11ed-9bb4-005056bc4727&cname=Mannanafnanefnd&cid=e219adf8-4214-11e7-941a-005056bc530c"
  },
  {
   "id": 5443,
@@ -56430,9 +56660,9 @@
   "url": null
  },
  {
-  "id": 1701,
+  "id": 1827,
   "icelandicName": "ýrena",
-  "type": "RST",
+  "type": "ST",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -56440,9 +56670,9 @@
   "url": null
  },
  {
-  "id": 1827,
+  "id": 1701,
   "icelandicName": "ýrena",
-  "type": "ST",
+  "type": "RST",
   "status": "Haf",
   "verdict": null,
   "visible": true,
@@ -56580,11 +56810,11 @@
   "url": null
  },
  {
-  "id": 3887,
+  "id": 5179,
   "icelandicName": "zar",
   "type": "MI",
   "status": "Haf",
-  "verdict": "22.05.2019",
+  "verdict": "09.09.2021",
   "visible": true,
   "description": null,
   "url": null
@@ -56600,20 +56830,20 @@
   "url": null
  },
  {
-  "id": 5178,
+  "id": 3887,
   "icelandicName": "zar",
-  "type": "DR",
-  "status": "Sam",
-  "verdict": "09.09.2021",
+  "type": "MI",
+  "status": "Haf",
+  "verdict": "22.05.2019",
   "visible": true,
   "description": null,
   "url": null
  },
  {
-  "id": 5179,
+  "id": 5178,
   "icelandicName": "zar",
-  "type": "MI",
-  "status": "Haf",
+  "type": "DR",
+  "status": "Sam",
   "verdict": "09.09.2021",
   "visible": true,
   "description": null,
@@ -56680,31 +56910,11 @@
   "url": null
  },
  {
-  "id": 3786,
-  "icelandicName": "zíta",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "04.11.2009",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4042,
   "icelandicName": "zíta",
   "type": "MI",
   "status": "Haf",
   "verdict": "15.04.2010",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
-  "id": 4790,
-  "icelandicName": "zíta",
-  "type": "ST",
-  "status": "Sam",
-  "verdict": "20.09.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -56720,11 +56930,21 @@
   "url": null
  },
  {
-  "id": 4550,
-  "icelandicName": "zoe",
+  "id": 3786,
+  "icelandicName": "zíta",
   "type": "ST",
   "status": "Haf",
-  "verdict": "8.1.2016",
+  "verdict": "04.11.2009",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4790,
+  "icelandicName": "zíta",
+  "type": "ST",
+  "status": "Sam",
+  "verdict": "20.09.2018",
   "visible": true,
   "description": null,
   "url": null
@@ -56735,6 +56955,16 @@
   "type": "ST",
   "status": "Sam",
   "verdict": "20.02.2019",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4550,
+  "icelandicName": "zoe",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "8.1.2016",
   "visible": true,
   "description": null,
   "url": null
@@ -57290,7 +57520,7 @@
   "url": null
  },
  {
-  "id": 4554,
+  "id": 4553,
   "icelandicName": "þorbrá",
   "type": "ST",
   "status": "Sam",
@@ -57300,7 +57530,7 @@
   "url": null
  },
  {
-  "id": 4553,
+  "id": 4554,
   "icelandicName": "þorbrá",
   "type": "ST",
   "status": "Sam",
@@ -57980,21 +58210,21 @@
   "url": null
  },
  {
-  "id": 4251,
-  "icelandicName": "þórsteinunn",
-  "type": "ST",
-  "status": "Haf",
-  "verdict": "14.05.2012",
-  "visible": true,
-  "description": null,
-  "url": null
- },
- {
   "id": 4255,
   "icelandicName": "þórsteinunn",
   "type": "ST",
   "status": "Sam",
   "verdict": "21.05.2012",
+  "visible": true,
+  "description": null,
+  "url": null
+ },
+ {
+  "id": 4251,
+  "icelandicName": "þórsteinunn",
+  "type": "ST",
+  "status": "Haf",
+  "verdict": "14.05.2012",
   "visible": true,
   "description": null,
   "url": null

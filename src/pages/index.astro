@@ -131,6 +131,16 @@ const withMeaning = browsable.filter((e) => e.merking).length;
         }
         <button class="btn" type="button" id="clear-filters">Hreinsa síur</button>
 
+        {/*
+          The síur above and the flokkar pages are the same categories seen two
+          ways. Saying so, and linking one to the other, is what keeps the two
+          words from reading as two unrelated features.
+        */}
+        <p class="filters-footnote">
+          Síurnar eru flokkarnir sjálfir.
+          <a href="/flokkar">Skoða þá alla með fjölda nafna</a>.
+        </p>
+
         {/* Mobile only: without this the sheet covers the very results it filters. */}
         <button class="btn btn-primary sheet-apply" type="button" id="apply-filters">
           Sýna niðurstöður

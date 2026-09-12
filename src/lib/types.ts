@@ -15,7 +15,8 @@ export interface RegisterRecord {
 }
 
 export type NameType = 'ST' | 'DR' | 'MI' | 'KH' | 'RST' | 'RDR';
-export type NameStatus = 'Sam' | 'Haf' | 'Óaf';
+/** The register carries a record with no status at all, so this is nullable. */
+export type NameStatus = 'Sam' | 'Haf' | 'Óaf' | null;
 
 /** How much we trust a meaning. Drives distinct visual treatment in the UI. */
 export type Confidence = 'stadfest' | 'likleg' | 'ostadfest';
@@ -46,6 +47,12 @@ export interface Segment {
   texti: string;
   /** Lexicon element id this segment resolved to, if any. */
   lidur: string | null;
+  /**
+   * The element page's slug. Filled in by the build, not the decomposer: two
+   * elements can fold to the same slug (fríður / friður), so it cannot be
+   * derived from `lidur` alone without knowing the whole lexicon.
+   */
+  slug?: string;
   merking: string | null;
   heimild: string | null;
 }
@@ -103,6 +110,14 @@ export interface Popularity {
   ferill: number[];
   /** Change in first-name count over the last ten years, as a percentage. */
   breyting: number | null;
+  /**
+   * True when the name is registered under more than one gender and this entry
+   * is not the one the count belongs to. Þjóðskrá counts by name string only,
+   * so the figures above cover everyone called this, of any gender. Such
+   * entries carry no `saeti`: a rank drawn from borrowed bearers is not a
+   * rank, it is a claim.
+   */
+  kynOvisst: boolean;
 }
 
 /** Singular declension: the four Icelandic cases. */

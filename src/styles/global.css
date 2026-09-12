@@ -310,6 +310,13 @@ a:focus-visible {
 }
 .chip[data-state='exc']::before { content: '−\00a0'; text-decoration: none; }
 
+.filters-footnote {
+  margin: 0.9rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 /* Nested faith categories sit under their parent. */
 .chips-nested {
   margin: 0.4rem 0 0 0.75rem;
@@ -588,6 +595,16 @@ table.beyging tr:last-child th, table.beyging tr:last-child td { border-bottom: 
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.85rem;
+}
+/* Carries what the header used to, so it is a size up from the fine print
+   underneath it rather than more of the same. */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.35rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 550;
 }
 
 .empty { padding: 2.5rem 0; text-align: center; color: var(--muted); }

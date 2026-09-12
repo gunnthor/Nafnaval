@@ -32,6 +32,7 @@ npm run dev
 | `npm run lint:lexicon` | Validate `data/lexicon/elements.yaml` (catches form collisions) |
 | `npm run ai:gapfill` | Draft meanings for names the lexicon can't explain (needs `ANTHROPIC_API_KEY`) |
 | `npm test` | Decomposition, collation and folding tests |
+| `npm run test:sources` | Check the four upstream APIs still return the shapes the fetch scripts parse. Makes real requests, so it is **not** part of `npm test`, so run it on a schedule or before a refresh |
 
 ## Hvernig merkingar verða til
 
@@ -93,16 +94,25 @@ Never blur these — the site's honesty depends on the reader telling them apart
 ## Heimildir og leyfi
 
 - **Mannanafnaskrá** — Þjóðskrá Íslands / mannanafnanefnd, via island.is.
-- **Vinsældir** — Hagstofa Íslands (top ~100 per gender only; most names have no rank).
+- **Fjöldi berenda**: Þjóðskrá Íslands, gegnum þjónustuna á bak við „Hversu margir
+  heita nafninu?“. Covers every name, from 2004 to the current year; the rank shown on
+  the site is computed from these counts, since no source ranks all names.
+  Hagstofa's own top-100 tables (`npm run fetch:stats`) are **not** used by the build.
 - **Beygingar** — BÍN, Stofnun Árna Magnússonar í íslenskum fræðum, **CC BY-SA 4.0**.
   Kept in its own file (`data/raw/beygingar.json`) so the share-alike obligation stays
   scoped to BÍN-derived material. Attribution is surfaced on `/um` and in the footer.
 - **Liðamerkingar** — Zoëga (1910) and Cleasby–Vigfusson (1874), both public domain.
 
+None of these sources version their APIs or announce changes, so the failure mode
+is not an outage. It is a 200 whose shape quietly stopped matching, surfacing much
+later as blank fields on the site. `npm run test:sources` asserts the shapes the
+fetch scripts destructure and fails loudly when one drifts. A 429 is reported as
+inconclusive rather than as a failure, so throttling never raises a false alarm.
+
 ## Útgáfa
 
-Static output — any host works. `netlify.toml` is included; for Cloudflare Pages set
-build command `npm run build` and output directory `dist`.
+Static output. Build command `npm run build`, output directory `dist`. No adapter
+and no host config; see **Hýsing** below for where it actually runs.
 
 ## Leyfi
 

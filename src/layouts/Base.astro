@@ -54,11 +54,16 @@ const full = berTitill ? title : `${title} · ${SITE}`;
     <header class="site-header">
       <div class="wrap">
         <a class="logo" href="/">Mannanöfn</a>
+        {/*
+          Only the shortlist lives up here. "Flokkar" used to sit beside it and
+          named the same thing the front page calls "Síur", which meant two
+          words for one concept in the two places a visitor looks first. The
+          browse surfaces moved to the footer; the shortlist stays because it
+          is the one item carrying state, and its counter has to be visible
+          from wherever you happen to save a name.
+        */}
         <nav class="site-nav">
-          <a href="/flokkar">Flokkar</a>
-          <a href="/hafnad">Hafnað</a>
-          <a href="/listinn">Listinn<span class="count-badge" id="listi-teljari" hidden></span></a>
-          <a href="/um">Um</a>
+          <a href="/listinn">Listinn minn<span class="count-badge" id="listi-teljari" hidden></span></a>
           <button class="tema" id="tema" type="button" aria-label="Skipta milli ljóss og dökks útlits">
             <svg class="ikon sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <circle cx="12" cy="12" r="4.2"></circle>
@@ -80,6 +85,16 @@ const full = berTitill ? title : `${title} · ${SITE}`;
 
     <footer class="site-footer">
       <div class="wrap">
+        {/*
+          These are browse surfaces rather than steps in choosing a name, but
+          they still need to be one click away on every page so neither
+          visitors nor crawlers have to guess the URLs.
+        */}
+        <nav class="footer-nav" aria-label="Fleiri síður">
+          <a href="/flokkar">Flokkar</a>
+          <a href="/hafnad">Hafnað</a>
+          <a href="/um">Um vefinn</a>
+        </nav>
         <p>
           Nafnaskrá og fjöldatölur frá <a href="https://island.is/leit-i-mannanafnaskra">Þjóðskrá
           Íslands</a>, beygingar úr <a href="https://bin.arnastofnun.is">BÍN</a>

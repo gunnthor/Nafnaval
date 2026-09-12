@@ -55,7 +55,11 @@ interface Store {
   nofn: Record<string, { e: number[]; a: number[] }>;
 }
 
-const YEARS = Array.from({ length: 2026 - 2004 + 1 }, (_, i) => 2004 + i);
+// The series runs to the current year, not a pinned one: a hardcoded ceiling
+// silently stops the counts advancing the moment the year rolls over. A year the
+// API has no rows for yet simply aligns to 0.
+const LAST_YEAR = new Date().getUTCFullYear();
+const YEARS = Array.from({ length: LAST_YEAR - 2004 + 1 }, (_, i) => 2004 + i);
 
 const store: Store = existsSync(OUT)
   ? JSON.parse(readFileSync(OUT, 'utf8'))

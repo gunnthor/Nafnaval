@@ -5,7 +5,7 @@ import Sparkline from '../../components/Sparkline.astro';
 import arAxis from '../../data/ar.json';
 import { CATEGORY_BY_SLUG } from '../../lib/categories.ts';
 import { HJARTA } from '../../lib/hjarta.ts';
-import { slugify, collator, tala } from '../../lib/icelandic.ts';
+import { collator, tala } from '../../lib/icelandic.ts';
 import nofn from '../../data/nofn.json';
 import type { NameEntry } from '../../lib/types.ts';
 
@@ -143,7 +143,7 @@ const description = entry.merking
               <>
                 {i > 0 && <span class="plus" aria-hidden="true">+</span>}
                 {seg.lidur ? (
-                  <a class="lidur" href={`/lidur/${slugify(seg.lidur)}`}>
+                  <a class="lidur" href={`/lidur/${seg.slug}`}>
                     <span class="texti">{seg.lidur}</span>
                     <span class="gloss">{seg.merking}</span>
                     {seg.heimild && <span class="heimild">Heimild: {seg.heimild}</span>}
@@ -203,6 +203,22 @@ const description = entry.merking
               </div>
             )}
           </div>
+
+          {/*
+            No rank for these, and the reason has to be on the page rather than
+            left as a gap the reader explains to themselves. Þjóðskrá counts by
+            name, not by name and gender, so the figures above are everyone
+            called this.
+          */}
+          {pop.kynOvisst && (
+            <p class="notice" style="margin-bottom:0.9rem">
+              {entry.nafn} er skráð undir fleiri en einu kyni í mannanafnaskrá, og
+              Þjóðskrá telur ekki eftir kyni. Tölurnar hér ná því til <strong>allra</strong>
+              {' '}sem bera nafnið, ekki bara þeirra sem bera það sem
+              {entry.gender === 'kk' ? ' karlmannsnafn' : entry.gender === 'kvk' ? ' kvenmannsnafn' : ' millinafn'}.
+              Af sömu ástæðu er ekkert sæti sýnt: við vitum ekki hvað talan skiptist.
+            </p>
+          )}
 
           {pop.ferill.some((v) => v > 0) && (
             <>
